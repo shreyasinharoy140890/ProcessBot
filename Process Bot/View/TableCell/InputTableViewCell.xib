@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="InputTableViewCell" customModule="Process_Bot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-Db-Zhl">
+                        <rect key="frame" x="16" y="26.5" width="22.5" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JiY-Db-Zhl" secondAttribute="height" multiplier="1:1" id="RUd-zR-Jy4"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkc-9Y-gBu">
+                        <rect key="frame" x="48.5" y="10" width="261.5" height="55"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gkc-9Y-gBu" secondAttribute="trailing" constant="10" id="KKn-JL-hHU"/>
+                    <constraint firstItem="JiY-Db-Zhl" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.07" id="NAs-1y-wVb"/>
+                    <constraint firstItem="gkc-9Y-gBu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dAG-Vn-hbf"/>
+                    <constraint firstItem="gkc-9Y-gBu" firstAttribute="leading" secondItem="JiY-Db-Zhl" secondAttribute="trailing" constant="10" id="dtq-d8-Rfj"/>
+                    <constraint firstItem="JiY-Db-Zhl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lCU-hq-zxK"/>
+                    <constraint firstAttribute="bottom" secondItem="gkc-9Y-gBu" secondAttribute="bottom" constant="10" id="laF-2A-ZRQ"/>
+                    <constraint firstItem="JiY-Db-Zhl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="oZG-Ar-53d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageSidepanel" destination="JiY-Db-Zhl" id="9dX-TX-FuS"/>
+                <outlet property="lblSidepanel" destination="gkc-9Y-gBu" id="huX-nY-5dN"/>
+            </connections>
+            <point key="canvasLocation" x="11.594202898550726" y="77.34375"/>
+        </tableViewCell>
+    </objects>
+</document>
