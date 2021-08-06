@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4410071E26BD81AD00104B21 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4410071B26BD81AD00104B21 /* DashboardVC.xib */; };
 		73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73479E9326BA837F005B06B5 /* LoginModels.swift */; };
 		7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349BAE626A04D44001360ED /* SidePanelViewController.swift */; };
 		7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349BAE726A04D44001360ED /* SidePanelViewController.xib */; };
@@ -71,7 +72,6 @@
 		CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4177526B3FE4300B445A8 /* DayAxisValueFormatter.swift */; };
 		CDC4177D26B3FE4300B445A8 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4177626B3FE4300B445A8 /* DateValueFormatter.swift */; };
 		CDC4177E26B3FE4300B445A8 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4177726B3FE4300B445A8 /* LargeValueFormatter.swift */; };
-		CDEE0BDB26B9A07400A11DD9 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEE0BD826B9A07400A11DD9 /* DashboardVC.xib */; };
 		CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE0C0D26B9A51100A11DD9 /* LoginViewModel.swift */; };
 		CDEE0C1026B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */; };
 		CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE0C1226B9A51F00A11DD9 /* RequestManager.swift */; };
@@ -120,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4410071B26BD81AD00104B21 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		73479E9326BA837F005B06B5 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		7349BAE626A04D44001360ED /* SidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		7349BAE726A04D44001360ED /* SidePanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
@@ -184,7 +185,6 @@
 		CDC4177526B3FE4300B445A8 /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
 		CDC4177626B3FE4300B445A8 /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		CDC4177726B3FE4300B445A8 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
-		CDEE0BD826B9A07400A11DD9 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		CDEE0C0D26B9A51100A11DD9 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalWorkerRobotViewModel.swift; sourceTree = "<group>"; };
 		CDEE0C1226B9A51F00A11DD9 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 		7356D897269ECE6600CC76D3 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE0BD826B9A07400A11DD9 /* DashboardVC.xib */,
+				4410071B26BD81AD00104B21 /* DashboardVC.xib */,
 				CDC4176F26B3FE4300B445A8 /* Components */,
 				CDC4177326B3FE4300B445A8 /* Formatters */,
 				CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */,
@@ -549,7 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				736DE88C26A83C6000277988 /* SplashLoadingViewController.xib in Resources */,
-				CDEE0BDB26B9A07400A11DD9 /* DashboardVC.xib in Resources */,
+				4410071E26BD81AD00104B21 /* DashboardVC.xib in Resources */,
 				73A627F126AEAF090073F0EB /* Aileron-BoldItalic.otf in Resources */,
 				73A627FD26AEAF090073F0EB /* Aileron-BlackItalic.otf in Resources */,
 				7349BAEE26A054B7001360ED /* SidePanelTableViewCell.xib in Resources */,

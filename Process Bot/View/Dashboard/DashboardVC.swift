@@ -9,8 +9,12 @@ import UIKit
 import Charts
 
 
-class DashboardVC: DemoBaseViewController {
-
+class DashboardVC: DemoBaseViewController, AxisValueFormatter {
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return departments[min(max(Int(value), 0), departments.count - 1)]
+    }
+    
     var borderWidth : CGFloat = 4 // Should be less or equal to the `radius` property
     var radius : CGFloat = 10
     var triangleHeight : CGFloat = 15
@@ -47,7 +51,10 @@ class DashboardVC: DemoBaseViewController {
         
         return formatter
     }()
-    
+    let departments = ["HR & CM", "Finance"]
+    let preRPA = [60.7, 56.0]
+    let postRPA = [77.5,66.3 ]
+    var savings = [Double]()
     override func viewDidLoad() {
         super.viewDidLoad()
         SidePanelViewController.default.delegate = self
@@ -59,12 +66,12 @@ class DashboardVC: DemoBaseViewController {
         setLineChart()
         setPieChart()
         updateChartData4()
-        setstackedbar()
-      //  floationgrobotButton.isEnabled = false
+         setstackedbar()
+        //  floationgrobotButton.isEnabled = false
         
         //MARK:- scrollview scrolling (Shreya)
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
-         scrollView.setContentOffset(bottomOffset, animated: true)
+        scrollView.setContentOffset(bottomOffset, animated: true)
         
     }
     
@@ -73,9 +80,9 @@ class DashboardVC: DemoBaseViewController {
         let scrollViewHeight = Float(scrollView.frame.size.height)
         let scrollContentSizeHeight = Float(scrollView.contentSize.height)
         let scrollOffset = Float(scrollView.contentOffset.y)
-
+        
         if scrollOffset + scrollViewHeight == scrollContentSizeHeight {
-        //    floationgrobotButton.isEnabled = true
+            //    floationgrobotButton.isEnabled = true
         }
     }
     
@@ -86,148 +93,166 @@ class DashboardVC: DemoBaseViewController {
         barchart1View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
         barchart1View.layer.cornerRadius = 5
         barchart1View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        pausedView.layer.cornerRadius = 5
-        pausedView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        cancelledView.layer.cornerRadius = 5
-        cancelledView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        errorView.layer.cornerRadius = 5
-        errorView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        completedView.layer.cornerRadius = 5
-        completedView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        runningView.layer.cornerRadius = 5
-        runningView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        linechartView.layer.cornerRadius = 5
-        linechartView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        piechartView.layer.cornerRadius = 5
-        piechartView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        barchart2View.layer.cornerRadius = 5
-        barchart2View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        barchart3View.layer.cornerRadius = 5
-        barchart3View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                pausedView.layer.cornerRadius = 5
+                pausedView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                cancelledView.layer.cornerRadius = 5
+                cancelledView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                errorView.layer.cornerRadius = 5
+                errorView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                completedView.layer.cornerRadius = 5
+                completedView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                runningView.layer.cornerRadius = 5
+                runningView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                linechartView.layer.cornerRadius = 5
+                linechartView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                piechartView.layer.cornerRadius = 5
+                piechartView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                barchart2View.layer.cornerRadius = 5
+                barchart2View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
+                barchart3View.layer.cornerRadius = 5
+                barchart3View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
     }
     
     //MARK:- Customization bar chart 1 (Shreya)
     func setBarchart1()
     {
-        self.options = [.toggleValues,
-                        .toggleHighlight,
-                        .animateX,
-                        .animateY,
-                        .animateXY,
-                        .saveToGallery,
-                        .togglePinchZoom,
-                        .toggleAutoScaleMinMax,
-                        .toggleData,
-                        .toggleBarBorders]
+        //        self.options = [.toggleValues,
+        //                        .toggleHighlight,
+        //                        .animateX,
+        //                        .animateY,
+        //                        .animateXY,
+        //                        .saveToGallery,
+        //                        .togglePinchZoom,
+        //                        .toggleAutoScaleMinMax,
+        //                        .toggleData,
+        //                        .toggleBarBorders]
         
-       // chartView.delegate = self
+        // chartView.delegate = self
         
-        chartView.chartDescription.enabled =  false
+        let savingsdata = zip(postRPA, preRPA).map { $0 - $1 }
+        savings = savingsdata.map({$0 * (-1)})
+        print(savings)
         
-        chartView.pinchZoomEnabled = false
+        chartView.delegate = self
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.noDataText = "You need to provide data for the chart."
+        //   barChartView.chartDescription?.text = "sales vs bought "
+        
+        
+        //legend
+        let legend = chartView.legend
+        legend.enabled = true
+        legend.horizontalAlignment = .right
+        legend.verticalAlignment = .top
+        legend.orientation = .vertical
+        legend.drawInside = true
+        legend.yOffset = 10.0;
+        legend.xOffset = 10.0;
+        legend.yEntrySpace = 0.0;
+        
         chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = true
         
-        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1), font: .systemFont(ofSize: 12), textColor: .white, insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-        marker.chartView = chartView
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        chartView.marker = marker
-        
-        let l = chartView.legend
-        l.horizontalAlignment = .right
-        l.verticalAlignment = .top
-        l.orientation = .vertical
-        l.drawInside = true
-        l.font = .systemFont(ofSize: 8, weight: .light)
-        l.yOffset = 10
-        l.xOffset = 10
-        l.yEntrySpace = 0
-//        chartView.legend = l
-
-        let xAxis = chartView.xAxis
-        xAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
-        xAxis.granularity = 1
-        xAxis.centerAxisLabelsEnabled = true
-        xAxis.valueFormatter = IntAxisValueFormatter()
-        
-        let leftAxisFormatter = NumberFormatter()
-        leftAxisFormatter.maximumFractionDigits = 1
-        
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
-        leftAxis.valueFormatter = LargeValueFormatter()
-        leftAxis.spaceTop = 0.35
-        leftAxis.axisMinimum = 0
+        chartView.chartDescription.enabled = false
         
         chartView.rightAxis.enabled = false
-//        sliderX.value = 2
-//        sliderY.value = 100
-        self.updateChartData()
+        
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.labelFont = .systemFont(ofSize: 13)
+        xAxis.drawAxisLineEnabled = false
+        xAxis.labelTextColor = .lightGray
+        xAxis.labelCount = 2
+        xAxis.centerAxisLabelsEnabled = true
+        xAxis.granularity = 1
+        xAxis.valueFormatter = self
+        xAxis.labelFont = .systemFont(ofSize:14)
+        
+        let leftAxis = chartView.leftAxis
+        leftAxis.drawLabelsEnabled = true
+        leftAxis.spaceTop = 0.25
+        leftAxis.spaceBottom = 0.25
+        leftAxis.drawAxisLineEnabled = true
+        leftAxis.drawZeroLineEnabled = true
+        leftAxis.zeroLineColor = .gray
+        leftAxis.zeroLineWidth = 0.7
+        leftAxis.labelFont = .systemFont(ofSize: 14, weight: .light)
+        updateChartData()
     }
-  
+    
     override func updateChartData() {
-        if self.shouldHideData {
-            chartView.data = nil
-            return
-        }
+        chartView.noDataText = "You need to provide data for the chart."
+        var dataEntries: [BarChartDataEntry] = []
+        var dataEntries1: [BarChartDataEntry] = []
+        var dataEntries2:[BarChartDataEntry] = []
         
-        self.setDataCount(Int(2), range: UInt32(100))
-    }
-    
-    func setDataCount(_ count: Int, range: UInt32) {
-        let groupSpace = 0.08
-        let barSpace = 0.03
-        let barWidth = 0.2
-        // (0.2 + 0.03) * 4 + 0.08 = 1.00 -> interval per "group"
-
-        let randomMultiplier = range * 100000
-        let groupCount = count + 1
-        let startYear = 1980
-        let endYear = startYear + groupCount
-        
-        let block: (Int) -> BarChartDataEntry = { (i) -> BarChartDataEntry in
-            return BarChartDataEntry(x: Double(i), y: Double(arc4random_uniform(randomMultiplier)))
-        }
-        let yVals1 = (startYear ..< endYear).map(block)
-        let yVals2 = (startYear ..< endYear).map(block)
-        let yVals3 = (startYear ..< endYear).map(block)
-        let yVals4 = (startYear ..< endYear).map(block)
-        
-        let set1 = BarChartDataSet(entries: yVals1, label: "Existing Cost")
-        set1.setColor(UIColor(red: 104/255, green: 241/255, blue: 175/255, alpha: 1))
-        
-        let set2 = BarChartDataSet(entries: yVals2, label: "RPA Cost")
-        set2.setColor(UIColor(red: 164/255, green: 228/255, blue: 251/255, alpha: 1))
-        
-        let set3 = BarChartDataSet(entries: yVals3, label: "Savings")
-        set3.setColor(UIColor(red: 242/255, green: 247/255, blue: 158/255, alpha: 1))
-//
-//        let set4 = BarChartDataSet(entries: yVals4, label: "Company D")
-//        set4.setColor(UIColor(red: 255/255, green: 102/255, blue: 0/255, alpha: 1))
-        
-        let data: BarChartData = [set1, set2, set3]
-        data.setValueFont(.systemFont(ofSize: 10, weight: .light))
-        data.setValueFormatter(LargeValueFormatter())
-        
-        // specify the width each bar should have
-        data.barWidth = barWidth
-
-        // restrict the x-axis range
-        chartView.xAxis.axisMinimum = Double(startYear)
-        
-        // groupWidthWithGroupSpace(...) is a helper that calculates the width each group needs based on the provided parameters
-        chartView.xAxis.axisMaximum = Double(startYear) + data.groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(groupCount)
-        
-        data.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
-
-        chartView.data = data
-    }
-    
-    override func optionTapped(_ option: Option) {
-        super.handleOption(option, forChartView: chartView)
-    }
-  //MARK:- Customization of LineChart (Shreya)
-    func setLineChart(){
+        for i in 0..<self.departments.count {
+            
+            let dataEntry = BarChartDataEntry(x: Double(i) , y: preRPA[i])
+            dataEntries.append(dataEntry)
+            
+            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: postRPA[i])
+            dataEntries1.append(dataEntry1)
+            
+            let dataEntry2 = BarChartDataEntry(x: Double(i) , y: savings[i])
+            dataEntries2.append(dataEntry2)
+            
        
+            
+        }
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Unit sold")
+        chartDataSet.highlightEnabled = false
+        chartDataSet.setColor(UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1))
+        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Unit Bought")
+        chartDataSet1.highlightEnabled = false
+        chartDataSet1.setColor(UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1))
+        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Savings")
+        chartDataSet2.setColor(UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1))
+        chartDataSet2.highlightEnabled = false
+        let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1,chartDataSet2]
+        chartDataSet.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+        chartDataSet1.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+        chartDataSet2.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+        //chartDataSet.colors = ChartColorTemplates.colorful()
+        //let chartData = BarChartData(dataSet: chartDataSet)
+        
+        let chartData = BarChartData(dataSets: dataSets)
+        
+        
+        let groupSpace = 0.8
+        let barSpace = 0.05
+        let barWidth = 0.8
+        // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
+        
+        let groupCount = 2
+        let startYear = 0
+        
+        
+        chartData.barWidth = barWidth;
+        chartView.xAxis.axisMinimum = Double(startYear)
+        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+        print("Groupspace: \(gg)")
+        chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
+        
+        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
+        //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+        chartView.notifyDataSetChanged()
+        
+        chartView.data = chartData
+        
+        //background color
+        chartView.backgroundColor = UIColor.white
+        chartView.pinchZoomEnabled = false
+        //chart animation
+        //        chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
+        
+        
+    }
+    
+    //MARK:- Customization of LineChart (Shreya)
+    func setLineChart(){
+        
         self.options = [.toggleValues,
                         .toggleHighlight,
                         .animateX,
@@ -239,13 +264,13 @@ class DashboardVC: DemoBaseViewController {
                         .toggleData]
         
         chartView2.delegate = self
-
+        chartView2.xAxis.drawGridLinesEnabled = false
         chartView2.chartDescription.enabled = false
         
         chartView2.dragEnabled = true
         chartView2.setScaleEnabled(true)
         chartView2.maxVisibleCount = 200
-        chartView2.pinchZoomEnabled = true
+        chartView2.pinchZoomEnabled = false
         
         let l = chartView2.legend
         l.horizontalAlignment = .right
@@ -255,7 +280,7 @@ class DashboardVC: DemoBaseViewController {
         l.font = .systemFont(ofSize: 10, weight: .light)
         l.xOffset = 5
         
-        let leftAxis = chartView.leftAxis
+        let leftAxis = chartView2.leftAxis
         leftAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
         leftAxis.axisMinimum = 0
         
@@ -267,7 +292,7 @@ class DashboardVC: DemoBaseViewController {
         updateChartData2()
     }
     
-     func updateChartData2() {
+    func updateChartData2() {
         if self.shouldHideData {
             chartView2.data = nil
             return
@@ -289,12 +314,13 @@ class DashboardVC: DemoBaseViewController {
             let val = Double(arc4random_uniform(range) + 3)
             return ChartDataEntry(x: Double(i) + 0.66, y: val)
         }
-
+        
         
         let set1 = ScatterChartDataSet(entries: values1, label: "Running")
         set1.setScatterShape(.square)
         set1.setColor(ChartColorTemplates.colorful()[0])
         set1.scatterShapeSize = 8
+        set1.highlightEnabled = false
         
         let set2 = ScatterChartDataSet(entries: values2, label: "Completed")
         set2.setScatterShape(.circle)
@@ -302,21 +328,23 @@ class DashboardVC: DemoBaseViewController {
         set2.scatterShapeHoleRadius = 3.5
         set2.setColor(ChartColorTemplates.colorful()[1])
         set2.scatterShapeSize = 8
+        set2.highlightEnabled = false
         
         let set3 = ScatterChartDataSet(entries: values3, label: "Error")
         set3.setScatterShape(.cross)
         set3.setColor(ChartColorTemplates.colorful()[2])
         set3.scatterShapeSize = 8
+        set3.highlightEnabled = false
         
         let data: ScatterChartData = [set1, set2, set3]
         data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-
+        
         chartView2.data = data
     }
     
     
-//MARK:- Customization of PieChart
-   
+    //MARK:- Customization of PieChart
+    
     func setPieChart()
     {
         self.options = [.toggleValues,
@@ -344,14 +372,14 @@ class DashboardVC: DemoBaseViewController {
         l.xEntrySpace = 7
         l.yEntrySpace = 0
         l.yOffset = 0
-//        chartView.legend = l
-
+        //        chartView.legend = l
+        
         // entry label styling
-       // chartView3.entryLabelColor = .white
-       // chartView3.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
+        // chartView3.entryLabelColor = .white
+        // chartView3.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
         updateChartData3()
     }
-     func updateChartData3() {
+    func updateChartData3() {
         if self.shouldHideData {
             chartView3.data = nil
             return
@@ -393,9 +421,11 @@ class DashboardVC: DemoBaseViewController {
         
         chartView3.data = data
         chartView3.highlightValues(nil)
+     
+        
     }
     
-     func optionTapped3(_ option: Option) {
+    func optionTapped3(_ option: Option) {
         switch option {
         case .toggleXValues:
             chartView3.drawEntryLabelsEnabled = !chartView3.drawEntryLabelsEnabled
@@ -412,7 +442,7 @@ class DashboardVC: DemoBaseViewController {
         case .toggleLabelsMinimumAngle:
             chartView3.sliceTextDrawingThreshold = chartView3.sliceTextDrawingThreshold == 0.0 ? 20.0 : 0.0
             chartView3.setNeedsDisplay()
-
+            
         case .drawCenter:
             chartView3.drawCenterTextEnabled = !chartView3.drawCenterTextEnabled
             chartView3.setNeedsDisplay()
@@ -428,16 +458,16 @@ class DashboardVC: DemoBaseViewController {
             
         case .spin:
             chartView3.spin(duration: 2,
-                           fromAngle: chartView3.rotationAngle,
-                           toAngle: chartView3.rotationAngle + 360,
-                           easingOption: .easeInCubic)
+                            fromAngle: chartView3.rotationAngle,
+                            toAngle: chartView3.rotationAngle + 360,
+                            easingOption: .easeInCubic)
             
         default:
             handleOption(option, forChartView: chartView3)
         }
     }
     
- //MARK:- Setup singlebarchartview (Shreya)
+    //MARK:- Setup singlebarchartview (Shreya)
     
     func updateChartData4() {
         if self.shouldHideData {
@@ -450,7 +480,7 @@ class DashboardVC: DemoBaseViewController {
     
     func setDataCount4(_ count: Int, range: UInt32) {
         let start = 1
-        
+        chartView4.xAxis.drawGridLinesEnabled = false
         let yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
             let mult = range + 1
             let val = Double(arc4random_uniform(mult))
@@ -469,19 +499,21 @@ class DashboardVC: DemoBaseViewController {
             chartView4.notifyDataSetChanged()
         } else {
             set1 = BarChartDataSet(entries: yVals, label: "Errors")
-            set1.colors = [ChartColorTemplates.material()[0]]
+            set1.colors = [UIColor(red: 219/255, green: 83/255, blue: 83/255, alpha: 1)]
             set1.drawValuesEnabled = false
+            set1.highlightEnabled = false
             
             let data = BarChartData(dataSet: set1)
             data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
             data.barWidth = 0.9
             chartView4.data = data
+            chartView4.pinchZoomEnabled = false
         }
         
-//        chartView.setNeedsDisplay()
+        //        chartView.setNeedsDisplay()
     }
     
- //MARK:- Setup Stacked Bar (Shreya)
+    //MARK:- Setup Stacked Bar (Shreya)
     
     func setstackedbar()
     {
@@ -499,7 +531,7 @@ class DashboardVC: DemoBaseViewController {
         
         
         chartView5.delegate = self
-        
+        chartView5.xAxis.drawGridLinesEnabled = false
         chartView5.chartDescription.enabled = false
         
         chartView5.maxVisibleCount = 40
@@ -524,11 +556,11 @@ class DashboardVC: DemoBaseViewController {
         l.form = .square
         l.formToTextSpace = 12
         l.xEntrySpace = 12
-//        chartView.legend = l
-
-//        sliderX.value = 12
-//        sliderY.value = 100
-//        slidersValueChanged(nil)
+        //        chartView.legend = l
+        
+        //        sliderX.value = 12
+        //        sliderY.value = 100
+        //        slidersValueChanged(nil)
         
         self.updateChartData5()
     }
@@ -558,7 +590,7 @@ class DashboardVC: DemoBaseViewController {
         set.drawIconsEnabled = false
         set.colors = [ChartColorTemplates.joyful()[0], ChartColorTemplates.joyful()[1], ChartColorTemplates.joyful()[2],ChartColorTemplates.joyful()[3],ChartColorTemplates.joyful()[4]]
         set.stackLabels = ["Total Running", "Completed", "Error","Paused","Cancelled"]
-        
+        set.highlightEnabled = false
         let data = BarChartData(dataSet: set)
         data.setValueFont(.systemFont(ofSize: 7, weight: .light))
         data.setValueFormatter(DefaultValueFormatter(formatter: formatter))
@@ -581,15 +613,15 @@ class DashboardVC: DemoBaseViewController {
             sender.isSelected = true
         }
     }
-  
-  
+    
+    
     
 }
 
 
 
 extension DashboardVC:SidePanelDelegate {
-  
+    
     
     
     func didDisplayMenu(status: Bool) {
