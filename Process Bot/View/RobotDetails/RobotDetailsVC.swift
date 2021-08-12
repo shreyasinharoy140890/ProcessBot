@@ -22,7 +22,7 @@
         var robotname:String?
         var dictRobotDetails:PublishedRobotModel?
         var dictRobotDetailsInAction:InActionModel?
-        var dictRobotLogHistory:logHistoryModel?
+        var dictRobotLogHistory:robitDetailsModel?
         var viewModelRobotDetails:RobotDetailsViewModelProtocol?
         var srtWorkerType:String?
         var triggerid:String?
@@ -46,11 +46,17 @@
             lblRobotName.text = robotname ?? ""
             self.viewModelRobotDetails = RobotDetailsViewModel ()
             viewModelRobotDetails?.manager = RequestManager()
-            if let triggerd = triggerid  {
-                callGetInAction(triggeredid: triggerd)
-            }else {
+//            if let triggerd = triggerid  {
+//                callGetInAction(triggeredid: triggerd)
+//            }else {
                 callGetInAction2()
-            }
+//            }
+//            if let _ = dictRobotDetails {
+//                tableRobotDetails.reloadData()
+//            }
+//            if let _ = dictRobotDetailsInAction {
+//                tableRobotDetails.reloadData()
+//            }
             
           //  tableRobotDetails.reloadData()
             
@@ -96,14 +102,15 @@
             cell.cellSetup(index: indexPath.row, workerType: srtWorkerType ?? "")
             cell.dictPublishDetails = dictRobotDetails
             cell.dictInActionDetails = dictRobotDetailsInAction
-            if srtWorkerType == digitalWorkerType.LogHistory.rawValue {
-                cell.dictLogHistory = dictLogHistory
-                if (indexPath.row == 0 ){
-                    cell.lblPostDetails.text = dictLogHistory?.publishedScriptID
-                }else if (indexPath.row == 1){
-                    cell.lblPostDetails.text = dictLogHistory?.machineName
-                }
-            }
+            cell.dictLogHistory = dictLogHistory
+//            if srtWorkerType == digitalWorkerType.LogHistory.rawValue {
+//                cell.dictLogHistory = dictLogHistory
+//                if (indexPath.row == 0 ){
+//                    cell.lblPostDetails.text = dictLogHistory?.publishedScriptID
+//                }else if (indexPath.row == 1){
+//                    cell.lblPostDetails.text = dictLogHistory?.machineName
+//                }
+//            }
 
             cell.selectionStyle = .none
             
@@ -139,13 +146,16 @@
                         self.srtWorkerType = digitalWorkerType.Scheduled.rawValue
                         self.dictLogHistory = self.viewModelRobotDetails?.arrayLogHistory[0]
                         print(self.dictLogHistory as Any)
-                        let delay = 15
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
-                        hideActivityIndicator(viewController: self)
+//                        let delay = 15
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
+                        DispatchQueue.main.async {
                        
-                        self.tableRobotDetails.reloadData()
+                            hideActivityIndicator(viewController: self)
+                            if let _ = self.dictLogHistory {
+                                self.tableRobotDetails.reloadData()
+                            }
                         }
-                       // self.callGetInAction2()
+                        // self.callGetInAction2()
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -164,11 +174,11 @@
                 switch result {
                 case .success(let result):
                     if let success = result as? Bool , success == true {
-                       // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
-                       DispatchQueue.main.async {
-                        hideActivityIndicator(viewController: self)
-                        
-                        self.tableRobotDetails.reloadData()
+                        // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
+                        DispatchQueue.main.async {
+                            hideActivityIndicator(viewController: self)
+                            
+                            self.tableRobotDetails.reloadData()
                         }
                     }
                 case .failure(let error):

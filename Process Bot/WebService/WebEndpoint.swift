@@ -73,8 +73,8 @@ extension Endpoint {
         Endpoint(base:environment.baseURL, path: "api/Workers/CurrentTaskDetails?")
     }
     
-    static var addBenefit: Self {
-        Endpoint(base:environment.baseURL, path: "APP/benifit")
+    static var RunRobot: Self {
+        Endpoint(base:environment.baseURL, path: "api/Tasks/Schedule")
     }
     
     static var notification: Self {

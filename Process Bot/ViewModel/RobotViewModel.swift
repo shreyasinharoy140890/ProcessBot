@@ -22,6 +22,9 @@ protocol RobotViewModelProtocol : class {
     func callLogHistory( completion:@escaping (ProcessBot<Any?>)-> Void)
     var arrayLogHistory:[logHistoryModel]{get}
     var arrayPublishDataStore:[PublishedRobotModel]{get set}
+    func callLogHistoryRobotDetails(triggeredId:String?, completion:@escaping (ProcessBot<Any?>)-> Void)
+    var arrayLogHistoryDetails:[robitDetailsModel]{get set}
+    func callRunRobot(publishedScriptID:String?,ClientID:String?,workerID:String?,MachineKey:String?,RunByUserID:String?, completion:@escaping (ProcessBot<Any?>)-> Void)
 }
 class RobotViewModel:RobotViewModelProtocol {
     var manager: RequestManager?
@@ -33,6 +36,7 @@ class RobotViewModel:RobotViewModelProtocol {
     var arrayPublishDataStore = [PublishedRobotModel]()
     
     var arrayLogHistory = [logHistoryModel]()
+    var arrayLogHistoryDetails = [robitDetailsModel]()
     
     var searchRobotString: String?
     
@@ -229,6 +233,129 @@ class RobotViewModel:RobotViewModelProtocol {
                         let inaction = try JSONDecoder().decode([logHistoryModel].self, from: dictResponse as! Data)
                         self.arrayLogHistory = inaction
 
+                        completion(.success(true))
+                    }
+                    catch _ {
+                        completion(.failure(ProcessBotNetWorkrror.noData))
+                    }
+                    
+                }
+                else {
+                    completion(.failure(ProcessBotNetWorkrror.noData))
+                }
+                break
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            
+        })
+        
+    }
+    
+    func callLogHistoryRobotDetails(triggeredId:String?, completion:@escaping (ProcessBot<Any?>)-> Void){
+        guard let triggerid  = triggeredId else {
+             completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
+             return
+         }
+       guard let token  = UserDefaults.standard.value(forKey: "TOKEN") else {
+            completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
+            return
+        }
+        guard let clientId  = UserDefaults.standard.value(forKey: "CLIENTID") else {
+             completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
+             return
+         }
+       // let dictParams:[String:Any] = ["ClientID": clientId]
+        let headers : HTTPHeaders = [
+            "Token": "\(token)",
+            "AppName":"IntelgicApp"
+        ]
+        self.manager?.request(.customGetURL(with: .logHistoryRobotDetails, components: ["ClientID":clientId,"TriggerID":triggerid]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+            
+            switch result {
+            case .success(let jsonresponce):
+                if let dictResponse = jsonresponce {
+                    print(dictResponse)
+                    do{
+                        let schedulemodel = try JSONDecoder().decode([robitDetailsModel].self, from: dictResponse as! Data)
+                        self.arrayLogHistoryDetails = schedulemodel
+                       print( self.arrayLogHistory.count)
+
+                        completion(.success(true))
+                    }
+                    catch _ {
+                        completion(.failure(ProcessBotNetWorkrror.noData))
+                    }
+                    
+                }
+                else {
+                    completion(.failure(ProcessBotNetWorkrror.noData))
+                }
+                break
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            
+        })
+        
+    }
+    
+    func callRunRobot(publishedScriptID:String?,ClientID:String?,workerID:String?,MachineKey:String?,RunByUserID:String?, completion:@escaping (ProcessBot<Any?>)-> Void){
+        guard let strpublishedScriptID = publishedScriptID, strpublishedScriptID.trimmed.count > 0 else {
+            completion(.failure(ProcessBotError.customMessage("please enter your email address")))
+            return
+        }
+       
+        guard let strClientID = ClientID , strClientID.trimmed.count > 0 else {
+            completion(.failure(ProcessBotError.customMessage("please enter your Password")))
+            return
+        }
+        guard let strworkerID = workerID , strworkerID.trimmed.count > 0 else {
+            completion(.failure(ProcessBotError.customMessage("please enter your Password")))
+            return
+        }
+        guard let strMachineKey = MachineKey , strMachineKey.trimmed.count > 0 else {
+            completion(.failure(ProcessBotError.customMessage("please enter your Password")))
+            return
+        }
+        guard let strRunByUserID = RunByUserID , strRunByUserID.trimmed.count > 0 else {
+            completion(.failure(ProcessBotError.customMessage("please enter your Password")))
+            return
+        }
+        
+        guard let token  = UserDefaults.standard.value(forKey: "TOKEN") else {
+            completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
+            return
+        }
+//        publishedScriptID:”ScriptID”,
+//                ClientID:”ClientID”,
+//                workerID:”WorkerID”,
+//                MachineKey:”MachineKey”,
+//                RunByUserID:”LogedInUserID”,
+//                JsonData:”{key:”value”}”
+        let dictParams:[String:Any] = ["publishedScriptID": strpublishedScriptID,
+                                       "ClientID": strClientID,"workerID":strworkerID,"MachineKey":strMachineKey,"RunByUserID":strRunByUserID,"JsonData":[:]]
+        print(dictParams)
+        
+        let headers : HTTPHeaders = [
+            "Token": "\(token)",
+            "AppName":"IntelgicApp"
+        ]
+        self.manager?.request(.RunRobot, method: .post, parameters: dictParams, encoding: .json, headers: headers, handler:   { (result) in
+            
+            switch result {
+            case .success(let jsonresponce):
+                if let dictResponse = jsonresponce {
+                    print(dictResponse)
+                    do{
+//                        let loginmodel = try JSONDecoder().decode([LoginModels].self, from: dictResponse as! Data)
+//                        self.userModel = loginmodel
+//                        print(self.userModel[0].clientID!)
+//                        UserDefaults.standard.set(self.userModel[0].clientID!, forKey: "CLIENTID")
+//                        UserDefaults.standard.set(self.userModel[0].userID!, forKey: "USERID")
+//                        UserDefaults.standard.set(self.userModel[0].appSecret!, forKey: "APPSECRET")
+//                        UserDefaults.standard.set(self.userModel[0].email!, forKey: "EMAIL")
+//                        UserDefaults.standard.set(self.userModel[0].fullName!, forKey: "FULLNAME")
                         completion(.success(true))
                     }
                     catch _ {

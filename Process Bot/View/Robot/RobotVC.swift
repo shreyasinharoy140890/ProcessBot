@@ -173,9 +173,11 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: ScheduledTableViewCell.self), for: indexPath) as! ScheduledTableViewCell
             cell.btnRobotDetails.tag = indexPath.row
             cell.btnRobotDetails.addTarget(self, action: #selector(RobotDetails(_:)), for: .touchUpInside)
-           // cell.btnThreeDot.addTarget(self, action: #selector(btnScheduleRobot1(_:)), for: .touchUpInside)
+            cell.btnSchedulrDetails.addTarget(self, action: #selector(btnShowScheduledDetails(_:)), for: .touchUpInside)
+            cell.btnSchedulrDetails.tag = indexPath.row
+           
             cell.btnThreeDot.tag = indexPath.row
-           // cell.imgRobot.image = UIImage(named: viewModelRobot?.arraySchedule[indexPath.row].userName ?? "")
+
             cell.lblRobotName.text = viewModelRobot?.arraySchedule[indexPath.row].userName ?? ""
             cell.lblMachineName.text = viewModelRobot?.arraySchedule[indexPath.row].machineName ?? ""
             cell.lblSchedulePeriod.text = "\(viewModelRobot?.arraySchedule[indexPath.row].scheduledPeriod ?? 0) \(viewModelRobot?.arraySchedule[indexPath.row].scheduledType ?? "")"
@@ -193,13 +195,12 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             return cell
         }else {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: PublishRobotTableViewCell.self), for: indexPath) as! PublishRobotTableViewCell
-//            cell.btnRobotDetails.addTarget(self, action: #selector(RobotDetails(_:)), for: .touchUpInside)
-            cell.btnPauseRun.addTarget(self, action: #selector(btnpauseRun(_:)), for: .touchUpInside)
+
+//            cell.btnPauseRun.addTarget(self, action: #selector(btnpauseRun(_:)), for: .touchUpInside)
             cell.btnPauseRun.tag = indexPath.row
             cell.btnRobotDetails.tag = indexPath.row
             cell.btn3Dot.addTarget(self, action: #selector(btnScheduleRobot(_:)), for: .touchUpInside)
             cell.btn3Dot.tag = indexPath.row
-           // cell.arrayimg = viewModelRobot?.arrayimg
             cell.btnViewDetails.addTarget(self, action: #selector(btnShowRobotDetails(_:)), for: .touchUpInside)
             cell.btnViewDetails.tag = indexPath.row
             cell.btnQuickView.tag = indexPath.row
@@ -207,9 +208,9 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             cell.arrayPublish = viewModelRobot?.arrayPublish ?? []
             cell.arrayInAction = viewModelRobot?.arrayInAction ?? []
             cell.arrayLogHistory = viewModelRobot?.arrayLogHistory ?? []
-            
             cell.setupCell(workerType: getRobotWorkType, Index: indexPath.row)
-            
+            cell.btnRun.addTarget(self, action: #selector(btnRunRobot(_:)), for: .touchUpInside)
+            cell.btnRun.tag = indexPath.row
         cell.selectionStyle = .none
         return cell
         }
@@ -247,7 +248,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             robotVC.dictRobotDetailsInAction = viewModelRobot?.arrayInAction[sender.tag]
             robotVC.srtWorkerType = digitalWorkerType.Inaction.rawValue
         }else {
-            robotVC.dictRobotLogHistory = viewModelRobot?.arrayLogHistory[sender.tag]
+           // robotVC.dictRobotLogHistory = viewModelRobot?.arrayLogHistory[sender.tag]
             robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
             robotVC.triggerid = viewModelRobot?.arrayLogHistory[sender.tag].triggerID
         }
@@ -257,17 +258,8 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
     }
     @objc func btnScheduleRobot(_ sender:UIButton ){
         if (getRobotWorkType == digitalWorkerType.LogHistory.rawValue){
-            let robotVC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
-            robotVC.dictRobotLogHistory = viewModelRobot?.arrayLogHistory[sender.tag]
-            robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
-            robotVC.robotimg = "" //viewModelRobot?.arrayInAction[sender.tag].logoPath
-                //viewModelRobot?.arrayimg[sender.tag][0]
-            robotVC.robotname = viewModelRobot?.arrayLogHistory[sender.tag].robotName
-           // robotVC.robotimg = viewModelRobot?.arrayimg[sender.tag][0]
-            //robotVC.robotname = viewModelRobot?.arrayimg[sender.tag][1]
-                // robotVC.RobotDetails = viewModelRobot?.arrayPublish[sender.tag]
-            robotVC.triggerid = viewModelRobot?.arrayLogHistory[sender.tag].triggerID
-            self.navigationController?.pushViewController(robotVC, animated: true)
+            callGetLogHistoryDetails(triggeredid:viewModelRobot?.arrayLogHistory[sender.tag].triggerID ?? "")
+            
         }else if (getRobotWorkType == digitalWorkerType.Inaction.rawValue){
             let robotVC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
             robotVC.dictRobotDetailsInAction = viewModelRobot?.arrayInAction[sender.tag]
@@ -288,8 +280,12 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
         }
         }
     }
-    @objc func btnScheduleRobot1(_ sender:UIButton ){
-
+    @objc func btnShowScheduledDetails(_ sender:UIButton ){
+        let scheduleVC = ScheduleDetailsVC(nibName: "ScheduleDetailsVC", bundle: nil)
+        scheduleVC.robotimg = ""
+        scheduleVC.robotname = viewModelRobot?.arraySchedule[sender.tag].friendlyName
+        scheduleVC.dictScheduleDetails = viewModelRobot?.arraySchedule[sender.tag]
+        self.navigationController?.pushViewController(scheduleVC, animated: true)
         
     }
     
@@ -318,7 +314,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
                 //viewModelRobot?.arrayimg[sender.tag][0]
             robotVC.robotname = viewModelRobot?.arrayInAction[sender.tag].friendlyName
         }else {
-            robotVC.dictRobotLogHistory = viewModelRobot?.arrayLogHistory[sender.tag]
+           // robotVC.dictRobotLogHistory = viewModelRobot?.arrayLogHistory[sender.tag]
             robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
             robotVC.robotimg = "" //viewModelRobot?.arrayInAction[sender.tag].logoPath
                 //viewModelRobot?.arrayimg[sender.tag][0]
@@ -330,8 +326,10 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
         
     }
     
-    @objc func btnpauseRun(_ sender:UIButton) {
-       
+    @objc func btnRunRobot(_ sender:UIButton) {
+        if let userid = UserDefaults.standard.value(forKey: "USERID") {
+            callRunRobotApi(publishedScriptID: viewModelRobot?.arrayPublish[sender.tag].publishedScriptID ?? "", ClientID: viewModelRobot?.arrayPublish[sender.tag].clientID ?? "", workerID: viewModelRobot?.arrayPublish[sender.tag].workerID ?? "", MachineKey: viewModelRobot?.arrayPublish[sender.tag].machineKey ?? "", RunByUserID: userid as? String)
+        }
 
     }
 
@@ -364,9 +362,7 @@ extension RobotVC:UITextFieldDelegate{
                         
                     }
                 case .failure( _): break
-                    
-                    
-                }
+               }
             })
             
         }else {
@@ -388,7 +384,7 @@ extension RobotVC {
             switch result {
             case .success(let result):
                 if let success = result as? Bool , success == true {
-                    self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
+                   // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
                    DispatchQueue.main.async {
                     hideActivityIndicator(viewController: self)
                     
@@ -467,6 +463,66 @@ extension RobotVC {
                     hideActivityIndicator(viewController: self)
                     
                     self.tableRobot.reloadData()
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+    
+    func callGetLogHistoryDetails(triggeredid:String){
+        DispatchQueue.main.async {
+            showActivityIndicator(viewController: self)
+        }
+        viewModelRobot?.callLogHistoryRobotDetails(triggeredId:triggeredid ,completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+
+                    DispatchQueue.main.async {
+                        hideActivityIndicator(viewController: self)
+                        let robotVC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
+                        robotVC.dictRobotLogHistory = self.viewModelRobot?.arrayLogHistoryDetails[0]
+                        robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
+                        robotVC.robotimg = ""
+                        robotVC.robotname = self.viewModelRobot?.arrayLogHistoryDetails[0].friendlyName ?? ""
+                        robotVC.triggerid = triggeredid
+                        self.navigationController?.pushViewController(robotVC, animated: true)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+    
+    func callRunRobotApi(publishedScriptID:String?,ClientID:String?,workerID:String?,MachineKey:String?,RunByUserID:String?){
+        DispatchQueue.main.async {
+            showActivityIndicator(viewController: self)
+        }
+        viewModelRobot?.callRunRobot(publishedScriptID:publishedScriptID,ClientID:ClientID,workerID:workerID,MachineKey:MachineKey,RunByUserID:RunByUserID, completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+
+                    DispatchQueue.main.async {
+                        hideActivityIndicator(viewController: self)
+//                        let robotVC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
+//                        robotVC.dictRobotLogHistory = self.viewModelRobot?.arrayLogHistoryDetails[0]
+//                        robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
+//                        robotVC.robotimg = ""
+//                        robotVC.robotname = self.viewModelRobot?.arrayLogHistoryDetails[0].friendlyName ?? ""
+//                        robotVC.triggerid = triggeredid
+//                        self.navigationController?.pushViewController(robotVC, animated: true)
                     }
                 }
             case .failure(let error):

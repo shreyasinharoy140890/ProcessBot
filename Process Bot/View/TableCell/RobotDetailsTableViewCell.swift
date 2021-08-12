@@ -72,28 +72,22 @@ class RobotDetailsTableViewCell: UITableViewCell {
             break
         }
     }else {
-        if (index == 0){
-            lblPostDetails.text = dictLogHistory?.publishedScriptID
-        }else if (index == 1) {
-            lblPostDetails.text = dictLogHistory?.machineName
-        }else if (index == 2){
-            lblPostDetails.text = dictLogHistory?.workerName
-        }
+       
         
-//        switch index{
-//        case 0: lblPostDetails.text = dictLogHistory?.publishedScriptID
-//        case 1: lblPostDetails.text = dictLogHistory?.machineName
-//        case 2: lblPostDetails.text = dictLogHistory?.workerName
-//        case 3: lblPostDetails.text = dictLogHistory?.friendlyName
-//        case 4: lblPostDetails.text = "\(dictLogHistory?.executionTime ?? "")"
-//        case 5: lblPostDetails.text = dictLogHistory?.currentStaus
-//        case 6: lblPostDetails.text = dictLogHistory?.version
-//        case 7: lblPostDetails.text = dictLogHistory?.publishedOn
-//        case 8: lblPostDetails.text = dictLogHistory?.robotType
-//
-//        default:
-//            break
-//        }
+        switch index{
+        case 0: lblPostDetails.text = dictLogHistory?.publishedScriptID
+        case 1: lblPostDetails.text = dictLogHistory?.machineName
+        case 2: lblPostDetails.text = dictLogHistory?.workerName
+        case 3: lblPostDetails.text = dictLogHistory?.friendlyName
+        case 4: lblPostDetails.text = "\(dictLogHistory?.executionTime ?? "")"
+        case 5: lblPostDetails.text = dictLogHistory?.currentStaus
+        case 6: lblPostDetails.text = dictLogHistory?.version
+        case 7: lblPostDetails.text = dictLogHistory?.publishedOn
+        case 8: lblPostDetails.text = dictLogHistory?.robotType
+
+        default:
+            break
+        }
     
     }
     }

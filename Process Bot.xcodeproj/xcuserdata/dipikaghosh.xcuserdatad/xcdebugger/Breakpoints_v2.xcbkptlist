@@ -30,10 +30,10 @@
             filePath = "Process Bot/View/Robot/RobotVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "RobotDetails(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,13 +46,13 @@
             filePath = "Process Bot/ViewModel/RobotViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "callScheduleRobot(completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "741E7EE2-BF2A-4ED6-9CC1-C8D3E785B665 - 84dd5b18c757f6ce"
+                  uuid = "741E7EE2-BF2A-4ED6-9CC1-C8D3E785B665 - 84dd5b18c757f62d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/ViewModel/RobotViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
                   offsetFromSymbolStart = "190">
                </Location>
                <Location
-                  uuid = "741E7EE2-BF2A-4ED6-9CC1-C8D3E785B665 - 84dd5b18c757f6ce"
+                  uuid = "741E7EE2-BF2A-4ED6-9CC1-C8D3E785B665 - 84dd5b18c757f62d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,8 +77,8 @@
                   urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/ViewModel/RobotViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
                   offsetFromSymbolStart = "194">
                </Location>
             </Locations>
@@ -96,8 +96,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "btnScheduled(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +110,42 @@
             filePath = "Process Bot/View/Robot/RobotVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "callGetAllWorkerRobot()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "19FC229C-77BC-4FE0-8E2B-1DE169F9554A - 86c74f446c92c32b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;Swift.Optional&lt;Any&gt;, Swift.Error&gt;) -&gt; () in Process_Bot.RobotVC.callGetAllWorkerRobot() -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/Robot/RobotVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "387"
+                  endingLineNumber = "387"
+                  offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  uuid = "19FC229C-77BC-4FE0-8E2B-1DE169F9554A - 10b784cb6308de72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.Result&lt;Swift.Optional&lt;Any&gt;, Swift.Error&gt;) -&gt; () in Process_Bot.RobotVC.callGetAllWorkerRobot() -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/Robot/RobotVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "388"
+                  endingLineNumber = "388"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,6 +177,191 @@
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "cellSetup(index:workerType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "13989">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "14595">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "15213">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "15831">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "16449">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "17417">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "18035">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "18653">
+               </Location>
+               <Location
+                  uuid = "DC5C2D1A-A995-441A-AEEE-D94884C3EA31 - 4500c55574a0587"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Process_Bot.RobotDetailsTableViewCell.cellSetup(index: Swift.Int, workerType: Swift.String) -&gt; ()"
+                  moduleName = "Process Bot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipikaghosh/Documents/ProjectInteljic/ProcessBot/Process%20Bot%20/Process%20Bot/View/TableCell/RobotDetailsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "19271">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37153292-1B0E-40DC-9EBC-5672CD194A87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Process Bot/View/RobotDetails/RobotDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81989681-C7CB-49E3-AC91-0B5E53C0FC4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Process Bot/View/RobotDetails/RobotDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AF72BC0-E0F0-476A-A5EC-3253F04542E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Process Bot/View/Robot/RobotVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

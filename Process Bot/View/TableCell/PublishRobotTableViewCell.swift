@@ -159,6 +159,7 @@ class PublishRobotTableViewCell: UITableViewCell {
 
     func hideDetailView() {
         viewDetails.isHidden = true
+        viewPopUP.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

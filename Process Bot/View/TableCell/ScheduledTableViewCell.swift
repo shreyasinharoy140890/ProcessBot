@@ -26,6 +26,7 @@ class ScheduledTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblScheduleTime: UILabel!
     @IBOutlet weak var lblScheduleDate: UILabel!
+    @IBOutlet weak var btnSchedulrDetails: UIButton!
     
     
     var arrayimg = [["user_pic1","David Thomas"],["user_pic2","William corry"],["user_pic3","Jhon deo"],["user_pic4","Bill gates"],["user_pic5","William corry"],["user_pic","Marino"],["user_pic7","Nichole"],["user_pic2","William corry"],["user_pic3","William corry"]]
