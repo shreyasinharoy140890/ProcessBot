@@ -18,7 +18,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var borderWidth : CGFloat = 4 // Should be less or equal to the `radius` property
     var radius : CGFloat = 10
     var triangleHeight : CGFloat = 15
-    
+    var userDataPopover: UIPopoverController?
     
     @IBOutlet weak var btnMenu: UIButton!
     
@@ -48,8 +48,9 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     @IBOutlet weak var roiView: UIView!
     @IBOutlet weak var procesroiView: UIView!
     @IBOutlet weak var activityView: UIView!
-    
+    @IBOutlet var contentView: UIView!
     @IBOutlet weak var floationgrobotButton: UIButton!
+   
     var nameData: [String]!
     lazy var stackedformatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -87,6 +88,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         //MARK:- scrollview scrolling (Shreya)
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
         scrollView.setContentOffset(bottomOffset, animated: true)
+        
         
     }
     
@@ -556,22 +558,18 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
 
 
 @IBAction func buttonTap(sender: UIButton) {
-    var popoverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popoverId")
-           var nav = UINavigationController(rootViewController: popoverContent)
-    nav.modalPresentationStyle = UIModalPresentationStyle.popover
-           var popover = nav.popoverPresentationController
-    popoverContent.preferredContentSize = CGSize(width: 50,height: 50)
-    popover!.delegate = self
-    popover!.sourceView = sender
-    popover!.sourceRect = sender.bounds
+    let VC = PopOverVC(nibName: "PopOver", bundle: nil)
 
-    self.present(nav, animated: true, completion: nil)
+    VC.modalPresentationStyle = .automatic
+    VC.preferredContentSize = CGSize(width: 300, height: 200)
+    self.navigationController?.present(VC, animated: true, completion: nil)
+   
     }
 
     // UIPopoverPresentationControllerDelegate method
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         // Force popover style
-        return UIModalPresentationStyle.none
+        return UIModalPresentationStyle.overCurrentContext
     }
 }
 extension DashboardVC:SidePanelDelegate {
