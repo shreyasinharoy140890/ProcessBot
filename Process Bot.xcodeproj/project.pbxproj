@@ -11,6 +11,10 @@
 		440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A315A26C5069B00A231AB /* PopOverVC.swift */; };
 		440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A316026C528C800A231AB /* departmentTableViewCell.swift */; };
 		440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A316126C528C800A231AB /* departmentTableViewCell.xib */; };
+		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
+		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
+		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
+		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
 		73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73479E9326BA837F005B06B5 /* LoginModels.swift */; };
 		7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349BAE626A04D44001360ED /* SidePanelViewController.swift */; };
 		7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349BAE726A04D44001360ED /* SidePanelViewController.xib */; };
@@ -131,6 +135,10 @@
 		440A315A26C5069B00A231AB /* PopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverVC.swift; sourceTree = "<group>"; };
 		440A316026C528C800A231AB /* departmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentTableViewCell.swift; sourceTree = "<group>"; };
 		440A316126C528C800A231AB /* departmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = departmentTableViewCell.xib; sourceTree = "<group>"; };
+		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
+		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
+		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
+		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		73479E9326BA837F005B06B5 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		7349BAE626A04D44001360ED /* SidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		7349BAE726A04D44001360ED /* SidePanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		73479E9026BA834E005B06B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */,
 				73479E9326BA837F005B06B5 /* LoginModels.swift */,
 				737B7BCA26BD44CE00C891DA /* robotModel.swift */,
 			);
@@ -307,6 +316,8 @@
 				73A6280826AEFCF60073F0EB /* PublishRobotTableViewCell.xib */,
 				73517DB126B19F1A003AE13B /* ScheduledTableViewCell.swift */,
 				73517DB226B19F1A003AE13B /* ScheduledTableViewCell.xib */,
+				4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */,
+				4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -458,6 +469,7 @@
 				CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */,
 				7368D2E026BBE30400BAF352 /* RobotViewModel.swift */,
 				73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */,
+				44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -593,6 +605,7 @@
 				7356D8A2269EDA8000CC76D3 /* InputTableViewCell.xib in Resources */,
 				7393C87D269DEC0C00F35C33 /* LaunchScreen.storyboard in Resources */,
 				73A627FB26AEAF090073F0EB /* Aileron-Bold.otf in Resources */,
+				4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */,
 				7349BAFC26A082E3001360ED /* ScheduleCollectionViewCell.xib in Resources */,
 				73A627DD26AE9A3E0073F0EB /* RobotDetailsTableViewCell.xib in Resources */,
 				73A627FC26AEAF090073F0EB /* Aileron-Italic.otf in Resources */,
@@ -618,12 +631,14 @@
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
+				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,
 				73517DB326B19F1A003AE13B /* ScheduledTableViewCell.swift in Sources */,
 				7393C86E269DEC0C00F35C33 /* AppDelegate.swift in Sources */,
 				CDEE0C2326B9A51F00A11DD9 /* HTTPMethod.swift in Sources */,
 				7356D87D269EBF3F00CC76D3 /* DashboardVC.swift in Sources */,
 				7393C88D269DEE5900F35C33 /* CustomExtension.swift in Sources */,
 				CDEE0C1F26B9A51F00A11DD9 /* WebEndpoint.swift in Sources */,
+				44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */,
 				CDEE0C2726B9A51F00A11DD9 /* NetworkLogger.swift in Sources */,
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
 				737B7BCB26BD44CE00C891DA /* robotModel.swift in Sources */,
@@ -637,6 +652,7 @@
 				73CD3C74269F1B8100D451E0 /* Routing.swift in Sources */,
 				CDC4177D26B3FE4300B445A8 /* DateValueFormatter.swift in Sources */,
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
+				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
 				CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */,
 				7393C870269DEC0C00F35C33 /* SceneDelegate.swift in Sources */,
 				CDC4177926B3FE4300B445A8 /* BalloonMarker.swift in Sources */,
@@ -801,7 +817,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XUD229K67W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Process\\ Bot/View/Dashboard/Supporting\\ Files",
@@ -827,7 +843,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XUD229K67W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Process\\ Bot/View/Dashboard/Supporting\\ Files",

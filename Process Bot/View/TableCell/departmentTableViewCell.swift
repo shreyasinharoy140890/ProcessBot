@@ -9,8 +9,6 @@ import UIKit
 
 class departmentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var departmentImageView: UIImageView!
-    
     @IBOutlet weak var departmentLabel: UILabel!
     
     override func awakeFromNib() {

@@ -9,7 +9,7 @@ import UIKit
 import Charts
 
 
-class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
+class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return departments[min(max(Int(value), 0), departments.count - 1)]
@@ -19,7 +19,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var radius : CGFloat = 10
     var triangleHeight : CGFloat = 15
     var userDataPopover: UIPopoverController?
-    
+    var arraydate = ["1 month","3 month","1 year","3 year"]
+    let dateCellId = "dateCollectionViewCell"
     @IBOutlet weak var btnMenu: UIButton!
     
     //MARK:- IBOutlets (Shreya)
@@ -48,9 +49,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     @IBOutlet weak var roiView: UIView!
     @IBOutlet weak var procesroiView: UIView!
     @IBOutlet weak var activityView: UIView!
-    @IBOutlet var contentView: UIView!
     @IBOutlet weak var floationgrobotButton: UIButton!
-   
+    @IBOutlet weak var collectionViewdate: UICollectionView!
     var nameData: [String]!
     lazy var stackedformatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -89,8 +89,24 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
         scrollView.setContentOffset(bottomOffset, animated: true)
         
-        
+        collectionViewdate.register(UINib.init(nibName: dateCellId, bundle: nil), forCellWithReuseIdentifier: dateCellId)
     }
+    //MArk:- CollectionView datasource and delegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arraydate.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:dateCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCollectionViewCell", for: indexPath) as! dateCollectionViewCell
+        cell.lbldate.text = arraydate [indexPath.row]
+        return cell
+    }
+   
+    func moveCollectionToFrame(contentOffset : CGFloat) {
+        
+        let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionViewdate.contentOffset.y ,width : self.collectionViewdate.frame.width,height : self.collectionViewdate.frame.height)
+            self.collectionViewdate.scrollRectToVisible(frame, animated: true)
+    }
+    
     
     //MARK: ScrollView Delegate Method (Shreya)
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -555,7 +571,19 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
             sender.isSelected = true
         }
     }
-
+    @IBAction func btnLeftArrowAction(_ sender: Any) {
+        let collectionBounds = self.collectionViewdate.bounds
+        let contentOffset = CGFloat(floor(self.collectionViewdate.contentOffset.x - collectionBounds.size.width))
+        self.moveCollectionToFrame(contentOffset: contentOffset)
+        
+    }
+    @IBAction func btnRightArrowAction(_ sender: Any) {
+        
+        let collectionBounds = self.collectionViewdate.bounds
+        let contentOffset = CGFloat(floor(self.collectionViewdate.contentOffset.x + collectionBounds.size.width))
+        self.moveCollectionToFrame(contentOffset: contentOffset)
+        
+    }
 
 @IBAction func buttonTap(sender: UIButton) {
     let VC = PopOverVC(nibName: "PopOver", bundle: nil)

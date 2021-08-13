@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopOverVC: UIViewController {
+class PopOverVC: UIViewController,AlertDisplayer{
   
     let productCellId = "departmentTableViewCell"
     @IBOutlet weak var departmentTableView: UITableView!
@@ -16,17 +16,19 @@ class PopOverVC: UIViewController {
     
     var departmentarray:NSArray = ["Human Resource","Account & Finance","Client Demo","Admin","CRM"]
     var logoImages: [UIImage] = [UIImage(named: "human_resource_icon")!, UIImage(named: "account_icon")!,UIImage(named: "client_demo_icon")!,UIImage(named: "admin_icon")!,UIImage(named: "crm_icon")!]
-    
+    var viewModelDirectoryDetails:DirectoryDetailsViewModelProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.viewModelDirectoryDetails = DirectoryDetailsViewModel()
+        viewModelDirectoryDetails?.manager = RequestManager()
         // Do any additional setup after loading the view.
         contentView.bounds.size = CGSize(width: 300, height: 250)
         // Register cell
         departmentTableView.register(UINib.init(nibName: productCellId, bundle: nil), forCellReuseIdentifier: productCellId)
         departmentTableView.rowHeight = UITableView.automaticDimension
         departmentTableView.separatorColor = UIColor.clear
-        departmentTableView.reloadData()
+      //  departmentTableView.reloadData()
+        callGetAllDepartmentDetails()
     }
     
     //MARK:- Button Actions (Shreya - 12.08.1990)
@@ -44,14 +46,15 @@ class PopOverVC: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return departmentarray.count
+         return viewModelDirectoryDetails?.departmentarray.count ?? 0
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: productCellId, for: indexPath) as! departmentTableViewCell
             cell.selectionStyle = .none
-            cell.departmentLabel.text = departmentarray[indexPath.row] as! String
-            cell.departmentImageView.image = logoImages[indexPath.row]
+            cell.departmentLabel.text = viewModelDirectoryDetails?.departmentarray[indexPath.row].directoryName ?? ""
+//            cell.departmentLabel.text = departmentarray[indexPath.row] as! String
+        //    cell.departmentImageView.image = logoImages[indexPath.row]
           //  cell.lbDesc.text = product.desc!
             return cell
         }
@@ -59,3 +62,31 @@ class PopOverVC: UIViewController {
         
     }
 
+// MARK:- Api Call
+
+extension PopOverVC {
+    func callGetAllDepartmentDetails(){
+        DispatchQueue.main.async {
+            showActivityIndicator(viewController: self)
+        }
+        viewModelDirectoryDetails?.getDirectoryList( directoryId:"0", completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                   // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
+                   DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    
+                    self.departmentTableView.reloadData()
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+}
