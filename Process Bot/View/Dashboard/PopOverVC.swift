@@ -12,9 +12,6 @@ class PopOverVC: UIViewController,AlertDisplayer{
     let productCellId = "departmentTableViewCell"
     @IBOutlet weak var departmentTableView: UITableView!
     @IBOutlet weak var contentView: UIView!
-    
-    
-    var departmentarray:NSArray = ["Human Resource","Account & Finance","Client Demo","Admin","CRM"]
     var logoImages: [UIImage] = [UIImage(named: "human_resource_icon")!, UIImage(named: "account_icon")!,UIImage(named: "client_demo_icon")!,UIImage(named: "admin_icon")!,UIImage(named: "crm_icon")!]
     var viewModelDirectoryDetails:DirectoryDetailsViewModelProtocol?
     override func viewDidLoad() {
@@ -52,17 +49,14 @@ class PopOverVC: UIViewController,AlertDisplayer{
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: productCellId, for: indexPath) as! departmentTableViewCell
             cell.selectionStyle = .none
+            print(viewModelDirectoryDetails?.departmentarray)
             cell.departmentLabel.text = viewModelDirectoryDetails?.departmentarray[indexPath.row].directoryName ?? ""
-//            cell.departmentLabel.text = departmentarray[indexPath.row] as! String
-        //    cell.departmentImageView.image = logoImages[indexPath.row]
-          //  cell.lbDesc.text = product.desc!
             return cell
         }
-        
-        
+  
     }
 
-// MARK:- Api Call
+// MARK:- Api Call (Shreya - 13.08.21)
 
 extension PopOverVC {
     func callGetAllDepartmentDetails(){
