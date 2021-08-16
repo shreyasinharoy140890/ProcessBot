@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2926C67DF80011603A /* TopTenRobotModel.swift */; };
+		44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */; };
+		440A315726C5019600A231AB /* PopOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A315626C5019600A231AB /* PopOver.xib */; };
+		440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A315A26C5069B00A231AB /* PopOverVC.swift */; };
+		440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A316026C528C800A231AB /* departmentTableViewCell.swift */; };
+		440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A316126C528C800A231AB /* departmentTableViewCell.xib */; };
+		445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */; };
+		445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */; };
+		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
+		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
+		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
+		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
 		73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73479E9326BA837F005B06B5 /* LoginModels.swift */; };
 		7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349BAE626A04D44001360ED /* SidePanelViewController.swift */; };
 		7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349BAE726A04D44001360ED /* SidePanelViewController.xib */; };
@@ -124,6 +136,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44034F2926C67DF80011603A /* TopTenRobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
+		44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
+		440A315626C5019600A231AB /* PopOver.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
+		440A315A26C5069B00A231AB /* PopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverVC.swift; sourceTree = "<group>"; };
+		440A316026C528C800A231AB /* departmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentTableViewCell.swift; sourceTree = "<group>"; };
+		440A316126C528C800A231AB /* departmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = departmentTableViewCell.xib; sourceTree = "<group>"; };
+		445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
+		445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
+		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
+		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
+		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
+		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		73479E9326BA837F005B06B5 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		7349BAE626A04D44001360ED /* SidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		7349BAE726A04D44001360ED /* SidePanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
@@ -223,8 +247,11 @@
 		73479E9026BA834E005B06B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */,
+				44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */,
 				73479E9326BA837F005B06B5 /* LoginModels.swift */,
 				737B7BCA26BD44CE00C891DA /* robotModel.swift */,
+				44034F2926C67DF80011603A /* TopTenRobotModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,11 +302,13 @@
 		7356D897269ECE6600CC76D3 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				73A2B7D426C42C7D00D6D053 /* DashboardVC.xib */,
 				CDC4176F26B3FE4300B445A8 /* Components */,
 				CDC4177326B3FE4300B445A8 /* Formatters */,
 				CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */,
 				7356D87B269EBF3F00CC76D3 /* DashboardVC.swift */,
+				73A2B7D426C42C7D00D6D053 /* DashboardVC.xib */,
+				440A315626C5019600A231AB /* PopOver.xib */,
+				440A315A26C5069B00A231AB /* PopOverVC.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -287,6 +316,8 @@
 		7356D89D269ED81E00CC76D3 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				440A316026C528C800A231AB /* departmentTableViewCell.swift */,
+				440A316126C528C800A231AB /* departmentTableViewCell.xib */,
 				7356D89F269EDA8000CC76D3 /* InputTableViewCell.swift */,
 				7356D8A0269EDA8000CC76D3 /* InputTableViewCell.xib */,
 				7349BAEB26A054B7001360ED /* SidePanelTableViewCell.swift */,
@@ -297,6 +328,8 @@
 				73A6280826AEFCF60073F0EB /* PublishRobotTableViewCell.xib */,
 				73517DB126B19F1A003AE13B /* ScheduledTableViewCell.swift */,
 				73517DB226B19F1A003AE13B /* ScheduledTableViewCell.xib */,
+				4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */,
+				4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -445,10 +478,13 @@
 		CDEE0C0C26B9A51100A11DD9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */,
 				CDEE0C0D26B9A51100A11DD9 /* LoginViewModel.swift */,
 				CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */,
 				7368D2E026BBE30400BAF352 /* RobotViewModel.swift */,
 				73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */,
+				44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */,
+				44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -567,6 +603,7 @@
 				7349BAEE26A054B7001360ED /* SidePanelTableViewCell.xib in Resources */,
 				73A627F026AEAF090073F0EB /* Aileron-Light.otf in Resources */,
 				73A627F326AEAF090073F0EB /* Aileron-UltraLight.otf in Resources */,
+				440A315726C5019600A231AB /* PopOver.xib in Resources */,
 				7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */,
 				73A627F226AEAF090073F0EB /* Aileron-ThinItalic.otf in Resources */,
 				73A6280A26AEFCF60073F0EB /* PublishRobotTableViewCell.xib in Resources */,
@@ -576,12 +613,14 @@
 				73517DB426B19F1A003AE13B /* ScheduledTableViewCell.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
 				73A627F426AEAF090073F0EB /* Aileron-Heavy.otf in Resources */,
+				440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */,
 				73CD3C6C269F174D00D451E0 /* LoginVC.xib in Resources */,
 				73A627D826AE97470073F0EB /* RobotDetailsVC.xib in Resources */,
 				73A627FF26AEAF090073F0EB /* Aileron-Regular.otf in Resources */,
 				7356D8A2269EDA8000CC76D3 /* InputTableViewCell.xib in Resources */,
 				7393C87D269DEC0C00F35C33 /* LaunchScreen.storyboard in Resources */,
 				73A627FB26AEAF090073F0EB /* Aileron-Bold.otf in Resources */,
+				4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */,
 				7349BAFC26A082E3001360ED /* ScheduleCollectionViewCell.xib in Resources */,
 				73A627DD26AE9A3E0073F0EB /* RobotDetailsTableViewCell.xib in Resources */,
 				73A627FC26AEAF090073F0EB /* Aileron-Italic.otf in Resources */,
@@ -605,15 +644,19 @@
 				CDC4177A26B3FE4300B445A8 /* RadarMarkerView.swift in Sources */,
 				7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
+				445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
+				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,
 				73517DB326B19F1A003AE13B /* ScheduledTableViewCell.swift in Sources */,
 				7393C86E269DEC0C00F35C33 /* AppDelegate.swift in Sources */,
 				CDEE0C2326B9A51F00A11DD9 /* HTTPMethod.swift in Sources */,
 				7356D87D269EBF3F00CC76D3 /* DashboardVC.swift in Sources */,
 				7393C88D269DEE5900F35C33 /* CustomExtension.swift in Sources */,
 				CDEE0C1F26B9A51F00A11DD9 /* WebEndpoint.swift in Sources */,
+				44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */,
 				CDEE0C2726B9A51F00A11DD9 /* NetworkLogger.swift in Sources */,
+				445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */,
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
 				737B7BCB26BD44CE00C891DA /* robotModel.swift in Sources */,
 				CDC4177826B3FE4300B445A8 /* XYMarkerView.swift in Sources */,
@@ -626,14 +669,17 @@
 				73CD3C74269F1B8100D451E0 /* Routing.swift in Sources */,
 				CDC4177D26B3FE4300B445A8 /* DateValueFormatter.swift in Sources */,
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
+				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
 				CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */,
 				7393C870269DEC0C00F35C33 /* SceneDelegate.swift in Sources */,
 				CDC4177926B3FE4300B445A8 /* BalloonMarker.swift in Sources */,
 				CDEE0C2526B9A51F00A11DD9 /* Router.swift in Sources */,
+				440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */,
 				73CD3C6B269F174D00D451E0 /* LoginVC.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
 				7349BAF526A0798F001360ED /* ScheduleDetailsVC.swift in Sources */,
+				440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */,
 				CDC4177B26B3FE4300B445A8 /* IntAxisValueFormatter.swift in Sources */,
 				CDC4176E26B3FE0B00B445A8 /* DemoBaseViewController.swift in Sources */,
 				735E71DD26C4ED630078C6C0 /* CircularProgressBar.swift in Sources */,
@@ -641,10 +687,12 @@
 				CDEE0C2626B9A51F00A11DD9 /* HTTPHeaders.swift in Sources */,
 				736DE88B26A83C6000277988 /* SplashLoadingViewController.swift in Sources */,
 				7393C878269DEC0C00F35C33 /* Process_Bot.xcdatamodeld in Sources */,
+				44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */,
 				7368D2E126BBE30400BAF352 /* RobotViewModel.swift in Sources */,
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
 				CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */,
+				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,
 				7393C889269DEE3B00F35C33 /* Constant.swift in Sources */,
 				73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */,
 				CDEE0C2826B9A51F00A11DD9 /* UserAgentBuilder.swift in Sources */,
@@ -787,8 +835,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUD229K67W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -802,7 +850,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Intelgic.Process-Bot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ProcessBotDevProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -813,8 +861,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUD229K67W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -828,7 +876,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Intelgic.Process-Bot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ProcessBotDevProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
