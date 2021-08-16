@@ -33,7 +33,7 @@ class TopTenRobotViewModel:TopTenRobotViewModelProtocol {
           
          
          
-        self.manager?.request(.customGetURL(with: .performerdetails, components: ["ClientID":clientId,"DirectoryID":"0"]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+        self.manager?.request(.customGetURL(with: .performerdetails, components: ["ClientID":clientId]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
              
              switch result {
              case .success(let jsonresponce):

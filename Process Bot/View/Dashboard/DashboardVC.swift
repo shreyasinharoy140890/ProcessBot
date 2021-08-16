@@ -22,9 +22,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var arraydate = ["1 month","3 month","1 year","3 year"]
     let dateCellId = "dateCollectionViewCell"
     var viewModelperformerDetails:TopTenRobotViewModelProtocol?
+    var viewModelnonperformerDetails:TopTenNonPerformerViewModelProtocol?
+    var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var arrayperformername = [String]()
     var arrayperformersuccessrate = [Int]()
+    var arraynonperformername = [String]()
+    var arraynonformererrorrate = [Int]()
     @IBOutlet weak var btnMenu: UIButton!
     
     //MARK:- IBOutlets (Shreya)
@@ -88,7 +92,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         setupUI()
         setchartsview()
         updateChartData()
-        setChart()
+     //   setChart()
         setstackedbar()
         //MARK:- scrollview scrolling (Shreya)
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
@@ -96,9 +100,11 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         
         collectionViewdate.register(UINib.init(nibName: dateCellId, bundle: nil), forCellWithReuseIdentifier: dateCellId)
         self.viewModelperformerDetails = TopTenRobotViewModel()
+        self.viewModelnonperformerDetails = TopTenNonPerformerViewModel()
         viewModelperformerDetails?.manager = RequestManager()
-        
+        viewModelnonperformerDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
+        callGetAllNonPerformerDetails()
     }
     //MArk:- CollectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -230,7 +236,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         l.yEntrySpace = 0
         l.yOffset = 0
         
-        //2nd Bar Chart Designing
+        //Performer Chart Designing
         chartView4.pinchZoomEnabled = false
         chartView4.xAxis.drawGridLinesEnabled = false
         chartView4.xAxis.drawLabelsEnabled = false
@@ -240,6 +246,22 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView4.leftAxis.axisMinimum = 0
         chartView4.leftAxis.axisRange = 20
         chartView4.rightAxis.axisMaximum = 0
+        
+        
+       //Non-Performer Chart Designing
+        chartView6.pinchZoomEnabled = false
+        chartView6.xAxis.drawGridLinesEnabled = false
+        chartView6.xAxis.drawLabelsEnabled = false
+        chartView6.rightAxis.drawLabelsEnabled = false
+        chartView6.legend.enabled = true
+        chartView6.leftAxis.granularity = 1
+        chartView6.leftAxis.axisMinimum = 0
+        chartView6.leftAxis.axisRange = 20
+        chartView6.rightAxis.axisMaximum = 0
+        
+        
+        
+        
     }
     
     
@@ -419,28 +441,9 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     }
     
     
-    func setChart() {
-        let goals = [6, 8, 26]
-        
-        //barChartView.animate(yAxisDuration: 2.0)
-        chartView6.pinchZoomEnabled = false
-        chartView6.xAxis.drawGridLinesEnabled = false
-        chartView6.xAxis.drawLabelsEnabled = false
-        chartView6.rightAxis.drawLabelsEnabled = false
-        chartView6.legend.enabled = true
-        var dataEntries: [BarChartDataEntry] = []
-        
-        for i in 0..<goals.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(goals[i]))
-            dataEntries.append(dataEntry)
-        }
-        
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Error")
-        chartDataSet.colors = [NSUIColor.red]
-        let chartData = BarChartData(dataSet: chartDataSet)
-        chartView6.data = chartData
-        chartData.barWidth = 0.5
-    }
+//    func setChart() {
+//       callGetAllNonPerformerDetails()
+//    }
     
     //MARK:- Stacked Bar Designing
     
@@ -657,13 +660,66 @@ extension DashboardVC:AlertDisplayer
             }
         })
     }
+    func callGetAllNonPerformerDetails(){
+        DispatchQueue.main.async {
+         //   showActivityIndicator(viewController: self)
+        }
+        viewModelnonperformerDetails?.getnonPerformerList(completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async { [self] in
+            
+                        robotnonperformerdetails = viewModelnonperformerDetails!.nonperformerdetails
+                        for i in 0..<robotnonperformerdetails.count
+                        {
+                            print(robotnonperformerdetails[i].robotName!)
+                           
+                            arraynonperformername.append(robotnonperformerdetails[i].robotName!)
+                            arraynonformererrorrate.append(robotnonperformerdetails[i].errorRate!)
+                           
+                        }
+                        print(arraynonperformername)
+                        print(arraynonformererrorrate)
+                        var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+                      
+                              for i in 0..<arraynonperformername.count {
+                                  yVals1.append(BarChartDataEntry(x: Double(i), y: Double(arraynonformererrorrate[i])))
+                              }
+                        
+                              // 2 - create a data set with our array
+                        var set1: BarChartDataSet! = nil
+                              if let set = chartView6.data?.first as? BarChartDataSet {
+                                  set1 = set
+                                  set1.replaceEntries(yVals1)
+                                  chartView6.data?.notifyDataChanged()
+                                  chartView6.notifyDataSetChanged()
+                              } else {
+                                  set1 = BarChartDataSet(entries: yVals1, label: "Error")
+                                  set1.colors = [(UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1))]
+                                  set1.drawValuesEnabled = false
+                                  set1.highlightEnabled = false
+                      
+                                  let data = BarChartData(dataSet: set1)
+                                  data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
+                                  data.barWidth = 0.9
+                                  chartView6.data = data
+                                hideActivityIndicator(viewController: self)
+
+                          }
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
     
-    
-    
-    
-    
-    
-    
+ 
     
 }
      

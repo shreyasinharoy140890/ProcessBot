@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2926C67DF80011603A /* TopTenRobotModel.swift */; };
+		44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */; };
 		440A315726C5019600A231AB /* PopOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A315626C5019600A231AB /* PopOver.xib */; };
 		440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A315A26C5069B00A231AB /* PopOverVC.swift */; };
 		440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A316026C528C800A231AB /* departmentTableViewCell.swift */; };
 		440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A316126C528C800A231AB /* departmentTableViewCell.xib */; };
-		445F1BCE26CA3CE400EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BCD26CA3CE400EC55CC /* TopTenNonPerformerModel.swift */; };
-		445F1BD226CA3E7000EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BD126CA3E7000EC55CC /* TopTenNonPerformerViewModel.swift */; };
-		445F1BE126CA439500EC55CC /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BDE26CA439500EC55CC /* TopTenRobotModel.swift */; };
-		445F1BE326CA43A300EC55CC /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BE226CA43A300EC55CC /* TopTenRobotViewModel.swift */; };
+		445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */; };
+		445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
@@ -137,14 +136,13 @@
 
 /* Begin PBXFileReference section */
 		44034F2926C67DF80011603A /* TopTenRobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
+		44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
 		440A315626C5019600A231AB /* PopOver.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
 		440A315A26C5069B00A231AB /* PopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverVC.swift; sourceTree = "<group>"; };
 		440A316026C528C800A231AB /* departmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentTableViewCell.swift; sourceTree = "<group>"; };
 		440A316126C528C800A231AB /* departmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = departmentTableViewCell.xib; sourceTree = "<group>"; };
-		445F1BCD26CA3CE400EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
-		445F1BD126CA3E7000EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
-		445F1BDE26CA439500EC55CC /* TopTenRobotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
-		445F1BE226CA43A300EC55CC /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
+		445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
+		445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
@@ -247,12 +245,11 @@
 		73479E9026BA834E005B06B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				445F1BDE26CA439500EC55CC /* TopTenRobotModel.swift */,
+				445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */,
 				44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */,
 				73479E9326BA837F005B06B5 /* LoginModels.swift */,
 				737B7BCA26BD44CE00C891DA /* robotModel.swift */,
 				44034F2926C67DF80011603A /* TopTenRobotModel.swift */,
-				445F1BCD26CA3CE400EC55CC /* TopTenNonPerformerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,13 +475,13 @@
 		CDEE0C0C26B9A51100A11DD9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				445F1BE226CA43A300EC55CC /* TopTenRobotViewModel.swift */,
+				445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */,
 				CDEE0C0D26B9A51100A11DD9 /* LoginViewModel.swift */,
 				CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */,
 				7368D2E026BBE30400BAF352 /* RobotViewModel.swift */,
 				73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */,
 				44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */,
-				445F1BD126CA3E7000EC55CC /* TopTenNonPerformerViewModel.swift */,
+				44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -644,6 +641,7 @@
 				CDC4177A26B3FE4300B445A8 /* RadarMarkerView.swift in Sources */,
 				7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
+				445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
 				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,
@@ -655,6 +653,7 @@
 				CDEE0C1F26B9A51F00A11DD9 /* WebEndpoint.swift in Sources */,
 				44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */,
 				CDEE0C2726B9A51F00A11DD9 /* NetworkLogger.swift in Sources */,
+				445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */,
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
 				737B7BCB26BD44CE00C891DA /* robotModel.swift in Sources */,
 				CDC4177826B3FE4300B445A8 /* XYMarkerView.swift in Sources */,
@@ -689,12 +688,9 @@
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
 				CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */,
-				445F1BCE26CA3CE400EC55CC /* TopTenNonPerformerModel.swift in Sources */,
-				445F1BD226CA3E7000EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
+				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,
 				7393C889269DEE3B00F35C33 /* Constant.swift in Sources */,
 				73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */,
-				445F1BE126CA439500EC55CC /* TopTenRobotModel.swift in Sources */,
-				445F1BE326CA43A300EC55CC /* TopTenRobotViewModel.swift in Sources */,
 				CDEE0C2826B9A51F00A11DD9 /* UserAgentBuilder.swift in Sources */,
 				CDEE0C2126B9A51F00A11DD9 /* URLParameterEncoding.swift in Sources */,
 			);
