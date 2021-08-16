@@ -49,11 +49,13 @@ class PublishRobotTableViewCell: UITableViewCell {
     @IBOutlet weak var lblHeader2: UILabel!
     @IBOutlet weak var lblheader3: UILabel!
     
+    @IBOutlet weak var viewProgressBar: CircularProgressBar!
     
     
     var arrayPublish:[PublishedRobotModel]?
     var arrayInAction:[InActionModel]?
     var arrayLogHistory:[logHistoryModel]?
+    var currentTime:Double = 0
     
     
     
@@ -69,8 +71,18 @@ class PublishRobotTableViewCell: UITableViewCell {
         lblCancel.isHidden = true
         viewPopUP.addShadow(offset: CGSize.init(width: 0, height: 1), color: .black, radius: 2, opacity: 0.7)
         viewPopUP.isHidden = true
+        viewProgressBar.safePercent = 100
+        viewProgressBar.lineColor = .blue
+        viewProgressBar.lineFinishColor = .blue
+        viewProgressBar.lineBackgroundColor = .gray
+       // handleTap()
        // viewStop.isHidden = true
         // Initialization code
+        self.viewProgressBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    
+    @objc func handleTap() {
+        viewProgressBar.setProgress(to: 1, withAnimation: true)
     }
 
 
@@ -103,6 +115,7 @@ class PublishRobotTableViewCell: UITableViewCell {
             }else {
             imgRobot.downloaded(from: arrayPublish?[Index].logoPath ?? "")
             }
+            viewProgressBar.isHidden = true
         }else if workerType == digitalWorkerType.Inaction.rawValue {
             imgStop.isHidden = false
             lblStop.isHidden = false
@@ -123,6 +136,30 @@ class PublishRobotTableViewCell: UITableViewCell {
             lblHeader2.text = "Host name"
             lblheader3.text = "Robot Type"
             imgRobot.image = UIImage(named: "robot_circle_icon")
+            viewProgressBar.isHidden = false
+            var currentTime:Double = 0
+            let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+                if currentTime >= 2 {
+                    timer.invalidate()
+                } else {
+                    currentTime += 0.05
+                    let percent = currentTime/2 * 100
+                    self.lblRobotName.text = "\(Int(self.viewProgressBar.progress ?? 0.0 * percent))"
+                        //self.viewProgressBar.label.text
+                        //"\(Int(progress * percent))"
+                    //self.setForegroundLayerColorForSafePercent()
+                    //self.configLabel()
+                }
+            }
+            timer.fire()
+            
+       // }
+//            currentTime += 0.05
+//            let percent = currentTime/2 * 100
+            lblRobotName.text = viewProgressBar.label.text ?? ""
+                //"\(Int(viewProgressBar.progress ?? 0.0 * percent))"
+                //viewProgressBar.progr
+                //"\(Int(viewProgressBar. * percent))"
             
         }
         else if workerType == digitalWorkerType.LogHistory.rawValue {
@@ -145,6 +182,7 @@ class PublishRobotTableViewCell: UITableViewCell {
             lblHeader2.text = "Host name"
             lblheader3.text = "Triggered By"
             imgRobot.image = UIImage(named: "robot_circle_icon")
+            viewProgressBar.isHidden = true
             
         }
     
