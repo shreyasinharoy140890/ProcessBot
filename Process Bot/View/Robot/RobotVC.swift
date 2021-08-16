@@ -198,7 +198,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
 
 //            cell.btnPauseRun.addTarget(self, action: #selector(btnpauseRun(_:)), for: .touchUpInside)
             cell.btnPauseRun.tag = indexPath.row
-            cell.btnRobotDetails.tag = indexPath.row
+           // cell.btnRobotDetails.tag = indexPath.row
             cell.btn3Dot.addTarget(self, action: #selector(btnScheduleRobot(_:)), for: .touchUpInside)
             cell.btn3Dot.tag = indexPath.row
             cell.btnViewDetails.addTarget(self, action: #selector(btnShowRobotDetails(_:)), for: .touchUpInside)
