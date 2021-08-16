@@ -23,12 +23,19 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     let dateCellId = "dateCollectionViewCell"
     var viewModelperformerDetails:TopTenRobotViewModelProtocol?
     var viewModelnonperformerDetails:TopTenNonPerformerViewModelProtocol?
+    var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
+    var costsavingsdetails = [CostsavingsDataModel]()
     var arrayperformername = [String]()
     var arrayperformersuccessrate = [Int]()
     var arraynonperformername = [String]()
     var arraynonformererrorrate = [Int]()
+    var departmentarray = [String]()
+    var arraypostRPA = [Double]()
+    var arraypreRPA = [Double]()
+    var arraySavings = [Double]()
+    var savings = [Double]()
     @IBOutlet weak var btnMenu: UIButton!
     
     //MARK:- IBOutlets (Shreya)
@@ -81,7 +88,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     let departments = ["HR & CM", "Finance"]
     let preRPA = [60.7, 56.0]
     let postRPA = [77.5,66.3 ]
-    var savings = [Double]()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,10 +108,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         collectionViewdate.register(UINib.init(nibName: dateCellId, bundle: nil), forCellWithReuseIdentifier: dateCellId)
         self.viewModelperformerDetails = TopTenRobotViewModel()
         self.viewModelnonperformerDetails = TopTenNonPerformerViewModel()
+        self.viewModelCostSavingsDetails = CostSavingsViewModel()
         viewModelperformerDetails?.manager = RequestManager()
         viewModelnonperformerDetails?.manager = RequestManager()
+        viewModelCostSavingsDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
         callGetAllNonPerformerDetails()
+       callCostSavingsDetails()
     }
     //MArk:- CollectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -172,7 +182,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     
     func setchartsview()
     {
-        //First Chart View designing
+        //Cost Savings Chart Designing
         chartView.delegate = self
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.noDataText = "You need to provide data for the chart."
@@ -236,6 +246,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         l.yEntrySpace = 0
         l.yOffset = 0
         
+     
+
         //Performer Chart Designing
         chartView4.pinchZoomEnabled = false
         chartView4.xAxis.drawGridLinesEnabled = false
@@ -270,57 +282,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     override func updateChartData() {
         
         //MARK:- First Chart Data Updation (Shreya - 11.08.2021)
-        let savingsdata = zip(postRPA, preRPA).map { $0 - $1 }
-        savings = savingsdata.map({$0 * (-1)})
-        print(savings)
-        chartView.noDataText = "You need to provide data for the chart."
-        var dataEntries: [BarChartDataEntry] = []
-        var dataEntries1: [BarChartDataEntry] = []
-        var dataEntries2:[BarChartDataEntry] = []
-        for i in 0..<self.departments.count {
-            let dataEntry = BarChartDataEntry(x: Double(i) , y: preRPA[i])
-            dataEntries.append(dataEntry)
-            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: postRPA[i])
-            dataEntries1.append(dataEntry1)
-            let dataEntry2 = BarChartDataEntry(x: Double(i) , y: savings[i])
-            dataEntries2.append(dataEntry2)
-        }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Pre RPA")
-        chartDataSet.highlightEnabled = false
-        chartDataSet.setColor(UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1))
-        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Post RPA")
-        chartDataSet1.highlightEnabled = false
-        chartDataSet1.setColor(UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1))
-        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Savings")
-        chartDataSet2.setColor(UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1))
-        chartDataSet2.highlightEnabled = false
-        let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1,chartDataSet2]
-        chartDataSet.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
-        chartDataSet1.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
-        chartDataSet2.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
-        //chartDataSet.colors = ChartColorTemplates.colorful()
-        //let chartData = BarChartData(dataSet: chartDataSet)
-        let chartData = BarChartData(dataSets: dataSets)
-        let groupSpace = 0.8
-        let barSpace = 0.05
-        let barWidth = 0.8
-        // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
-        let groupCount = 2
-        let startYear = 0
-        chartData.barWidth = barWidth;
-        chartView.xAxis.axisMinimum = Double(startYear)
-        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        print("Groupspace: \(gg)")
-        chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
-        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
-        //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        chartView.notifyDataSetChanged()
-        chartView.data = chartData
-        //background color
-        chartView.backgroundColor = UIColor.white
-        chartView.pinchZoomEnabled = false
-        //chart animation
-        //        chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
+       
         
         //MARK: - Line Chart Data Updation (Shreya - 11.08.2021)
         
@@ -719,6 +681,94 @@ extension DashboardVC:AlertDisplayer
         })
     }
     
+    func callCostSavingsDetails(){
+        DispatchQueue.main.async {
+         //   showActivityIndicator(viewController: self)
+        }
+        viewModelCostSavingsDetails?.getSavingsList(completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async { [self] in
+            
+                        costsavingsdetails = viewModelCostSavingsDetails!.costsavingsdetails
+                        for i in 0..<costsavingsdetails.count
+                        {
+                            print(costsavingsdetails[i].directoryName!)
+                           
+                            departmentarray.append(costsavingsdetails[i].directoryName!)
+                            arraypostRPA.append(costsavingsdetails[i].existingCost!)
+                            arraypreRPA.append(costsavingsdetails[i].rPACost!)
+                            arraySavings.append(costsavingsdetails[i].costSavings!)
+                            
+                           
+                        }
+                     print(departmentarray)
+                     print(arraypostRPA)
+                     print(arraypreRPA)
+                     print(arraySavings)
+                        let savingsdata = zip(arraypostRPA, arraypreRPA).map { $0 - $1 }
+                        savings = savingsdata.map({$0 * (-1)})
+                        print(savings)
+                        chartView.noDataText = "You need to provide data for the chart."
+                        var dataEntries: [BarChartDataEntry] = []
+                        var dataEntries1: [BarChartDataEntry] = []
+                        var dataEntries2:[BarChartDataEntry] = []
+                        for i in 0..<self.departmentarray.count {
+                            let dataEntry = BarChartDataEntry(x: Double(i) , y: arraypreRPA[i])
+                            dataEntries.append(dataEntry)
+                            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: arraypostRPA[i])
+                            dataEntries1.append(dataEntry1)
+                            let dataEntry2 = BarChartDataEntry(x: Double(i) , y: savings[i])
+                            dataEntries2.append(dataEntry2)
+                        }
+                        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Pre RPA")
+                        chartDataSet.highlightEnabled = false
+                        chartDataSet.setColor(UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1))
+                        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Post RPA")
+                        chartDataSet1.highlightEnabled = false
+                        chartDataSet1.setColor(UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1))
+                        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Savings")
+                        chartDataSet2.setColor(UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1))
+                        chartDataSet2.highlightEnabled = false
+                        let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1,chartDataSet2]
+                        chartDataSet.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+                        chartDataSet1.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+                        chartDataSet2.valueFont = UIFont(name: "HelveticaNeue-Light", size: 12) ?? UIFont.systemFont(ofSize: 12)
+                        //chartDataSet.colors = ChartColorTemplates.colorful()
+                        //let chartData = BarChartData(dataSet: chartDataSet)
+                        let chartData = BarChartData(dataSets: dataSets)
+                        let groupSpace = 0.8
+                        let barSpace = 0.05
+                        let barWidth = 0.8
+                        // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
+                        let groupCount = 2
+                        let startYear = 0
+                        chartData.barWidth = barWidth;
+                        chartView.xAxis.axisMinimum = Double(startYear)
+                        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+                        print("Groupspace: \(gg)")
+                        chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
+                        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
+                        //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+                        chartView.notifyDataSetChanged()
+                        chartView.data = chartData
+                        //background color
+                        chartView.backgroundColor = UIColor.white
+                        chartView.pinchZoomEnabled = false
+                        //chart animation
+                        //        chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
  
     
 }

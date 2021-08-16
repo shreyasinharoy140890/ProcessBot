@@ -96,6 +96,11 @@ extension Endpoint {
         Endpoint(base:environment.baseURL, path: "api/Dashboard/TopTenRobotError?")
     }
     
+    static var costsavingsdetails:Self
+    {
+        Endpoint(base:environment.baseURL, path: "api/Dashboard/DirectrywiseROI?")
+    }
+    
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         
         var modifiedPath = endpoint.path

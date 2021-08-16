@@ -19,6 +19,8 @@
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
 		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
+		44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB10CF26CAA68700A88DF4 /* CostSavingsDataModel.swift */; };
+		44FB10D426CAA69300A88DF4 /* CostSavingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB10D326CAA69300A88DF4 /* CostSavingsViewModel.swift */; };
 		73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73479E9326BA837F005B06B5 /* LoginModels.swift */; };
 		7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349BAE626A04D44001360ED /* SidePanelViewController.swift */; };
 		7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349BAE726A04D44001360ED /* SidePanelViewController.xib */; };
@@ -147,6 +149,8 @@
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
 		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		44FB10CF26CAA68700A88DF4 /* CostSavingsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostSavingsDataModel.swift; sourceTree = "<group>"; };
+		44FB10D326CAA69300A88DF4 /* CostSavingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostSavingsViewModel.swift; sourceTree = "<group>"; };
 		73479E9326BA837F005B06B5 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		7349BAE626A04D44001360ED /* SidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		7349BAE726A04D44001360ED /* SidePanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 		73479E9026BA834E005B06B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				44FB10CF26CAA68700A88DF4 /* CostSavingsDataModel.swift */,
 				445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */,
 				44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */,
 				73479E9326BA837F005B06B5 /* LoginModels.swift */,
@@ -475,6 +480,7 @@
 		CDEE0C0C26B9A51100A11DD9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				44FB10D326CAA69300A88DF4 /* CostSavingsViewModel.swift */,
 				445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */,
 				CDEE0C0D26B9A51100A11DD9 /* LoginViewModel.swift */,
 				CDEE0C0E26B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift */,
@@ -638,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDEE0C1026B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift in Sources */,
+				44FB10D426CAA69300A88DF4 /* CostSavingsViewModel.swift in Sources */,
 				CDC4177A26B3FE4300B445A8 /* RadarMarkerView.swift in Sources */,
 				7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
@@ -673,6 +680,7 @@
 				CDEE0C2526B9A51F00A11DD9 /* Router.swift in Sources */,
 				440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */,
 				73CD3C6B269F174D00D451E0 /* LoginVC.swift in Sources */,
+				44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
 				7349BAF526A0798F001360ED /* ScheduleDetailsVC.swift in Sources */,
