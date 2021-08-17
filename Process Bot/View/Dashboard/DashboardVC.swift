@@ -340,7 +340,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: roidataEntries, label:"")
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: players.count)
+        pieChartDataSet.colors = [UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1),UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1)
+]
         
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -368,12 +369,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         set.sliceSpace = 2
         
         
-        set.colors = ChartColorTemplates.vordiplom()
-            + ChartColorTemplates.joyful()
-            + ChartColorTemplates.colorful()
-            + ChartColorTemplates.liberty()
-            + ChartColorTemplates.pastel()
-            + [UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)]
+        set.colors = [UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1)]
         
         let data = PieChartData(dataSet: set)
         
@@ -478,7 +474,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         
         let set2 = BarChartDataSet(entries: yVals, label: "")
         set2.drawIconsEnabled = false
-        set2.colors = [ChartColorTemplates.joyful()[0], ChartColorTemplates.joyful()[1], ChartColorTemplates.joyful()[2],ChartColorTemplates.joyful()[3],ChartColorTemplates.joyful()[4]]
+        set2.colors = [UIColor(red: 40/255, green: 167/255, blue: 69/255, alpha: 1), UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1), UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1),UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1)]
         set2.stackLabels = ["Total Running", "Completed", "Error","Paused","Cancelled"]
         set2.highlightEnabled = false
         let data = BarChartData(dataSet: set2)
