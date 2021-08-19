@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A315A26C5069B00A231AB /* PopOverVC.swift */; };
 		440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A316026C528C800A231AB /* departmentTableViewCell.swift */; };
 		440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A316126C528C800A231AB /* departmentTableViewCell.xib */; };
+		440A986726CE5B5800AFF6D3 /* SuccessRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A986626CE5B5800AFF6D3 /* SuccessRateDataModel.swift */; };
+		440A986926CE5B9200AFF6D3 /* SuccessRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A986826CE5B9200AFF6D3 /* SuccessRateViewModel.swift */; };
+		440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A986A26CE62B800AFF6D3 /* ActivityDataModel.swift */; };
+		440A986D26CE62CE00AFF6D3 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */; };
 		445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */; };
 		445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
@@ -80,7 +84,7 @@
 		73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0324626B9C1E90023E3CD /* ResultType.swift */; };
 		73FA3A7E26C25D60002E471C /* RobotDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */; };
 		8A5FDF4EE22640EFA1DA9CE4 /* Pods_Process_Bot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24164C8B06E345739080EE30 /* Pods_Process_Bot.framework */; };
-		CDC4159826B3DC8700B445A8 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDC4159826B3DC8700B445A8 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC4176B26B3FDDB00B445A8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; };
 		CDC4176C26B3FDDB00B445A8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC4176E26B3FE0B00B445A8 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */; };
@@ -130,7 +134,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CDC4159826B3DC8700B445A8 /* BuildFile in Embed Frameworks */,
+				CDC4159826B3DC8700B445A8 /* (null) in Embed Frameworks */,
 				CDC4176C26B3FDDB00B445A8 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -146,6 +150,10 @@
 		440A315A26C5069B00A231AB /* PopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverVC.swift; sourceTree = "<group>"; };
 		440A316026C528C800A231AB /* departmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentTableViewCell.swift; sourceTree = "<group>"; };
 		440A316126C528C800A231AB /* departmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = departmentTableViewCell.xib; sourceTree = "<group>"; };
+		440A986626CE5B5800AFF6D3 /* SuccessRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRateDataModel.swift; sourceTree = "<group>"; };
+		440A986826CE5B9200AFF6D3 /* SuccessRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRateViewModel.swift; sourceTree = "<group>"; };
+		440A986A26CE62B800AFF6D3 /* ActivityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataModel.swift; sourceTree = "<group>"; };
+		440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
 		445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -262,6 +270,8 @@
 				73479E9326BA837F005B06B5 /* LoginModels.swift */,
 				737B7BCA26BD44CE00C891DA /* robotModel.swift */,
 				44034F2926C67DF80011603A /* TopTenRobotModel.swift */,
+				440A986626CE5B5800AFF6D3 /* SuccessRateDataModel.swift */,
+				440A986A26CE62B800AFF6D3 /* ActivityDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -461,7 +471,6 @@
 				8A6F79715CB03CE886313529 /* Pods-Process Bot.debug.xcconfig */,
 				8895DB351D4663FE1B90F4C4 /* Pods-Process Bot.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -516,6 +525,8 @@
 				73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */,
 				44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */,
 				44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */,
+				440A986826CE5B9200AFF6D3 /* SuccessRateViewModel.swift */,
+				440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -737,6 +748,7 @@
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
 				737B7BCB26BD44CE00C891DA /* robotModel.swift in Sources */,
 				CDC4177826B3FE4300B445A8 /* XYMarkerView.swift in Sources */,
+				440A986726CE5B5800AFF6D3 /* SuccessRateDataModel.swift in Sources */,
 				73A6280926AEFCF60073F0EB /* PublishRobotTableViewCell.swift in Sources */,
 				73A627D726AE97470073F0EB /* RobotDetailsVC.swift in Sources */,
 				CDC4177E26B3FE4300B445A8 /* LargeValueFormatter.swift in Sources */,
@@ -759,6 +771,7 @@
 				7349BAF526A0798F001360ED /* ScheduleDetailsVC.swift in Sources */,
 				440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */,
 				CDC4177B26B3FE4300B445A8 /* IntAxisValueFormatter.swift in Sources */,
+				440A986D26CE62CE00AFF6D3 /* ActivityViewModel.swift in Sources */,
 				CDC4176E26B3FE0B00B445A8 /* DemoBaseViewController.swift in Sources */,
 				735E71DD26C4ED630078C6C0 /* CircularProgressBar.swift in Sources */,
 				73A6280426AEE8B10073F0EB /* RobotVC.swift in Sources */,
@@ -768,6 +781,8 @@
 				44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */,
 				7368D2E126BBE30400BAF352 /* RobotViewModel.swift in Sources */,
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
+				440A986926CE5B9200AFF6D3 /* SuccessRateViewModel.swift in Sources */,
+				440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */,
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
 				CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */,
 				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,

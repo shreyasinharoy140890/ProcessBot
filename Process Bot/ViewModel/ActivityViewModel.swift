@@ -1,21 +1,18 @@
 //
-//  CostSavingsViewModel.swift
+//  ActivityViewModel.swift
 //  Process Bot
 //
-//  Created by Shreya Sinha Roy on 16/08/21.
+//  Created by Shreya Sinha Roy on 19/08/21.
 //
 
 import Foundation
-protocol CostSavingsViewModelProtocol : class {
-    func getSavingsList(completion:@escaping (ProcessBot<Any?>) -> Void)
+protocol ActivityViewModelProtocol : class {
+    func getActivityDetails(completion:@escaping (ProcessBot<Any?>) -> Void)
     var manager: RequestManager? { get set }
-    var costsavingsdetails:[CostsavingsDataModel]{get}
+    var activityarray:[ActivityDataModel]{get}
 }
-class CostSavingsViewModel:CostSavingsViewModelProtocol {
-    var manager: RequestManager?
-    
-    var costsavingsdetails: [CostsavingsDataModel] = []
-    func getSavingsList(completion: @escaping (ProcessBot<Any?>) -> Void) {
+class ActivityViewModel:ActivityViewModelProtocol {
+    func getActivityDetails(completion: @escaping (ProcessBot<Any?>) -> Void) {
         guard let token  = UserDefaults.standard.value(forKey: "TOKEN") else {
              completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
              return
@@ -24,6 +21,10 @@ class CostSavingsViewModel:CostSavingsViewModelProtocol {
               completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
               return
           }
+//         guard let userid  = UserDefaults.standard.value(forKey: "USERID") else {
+//              completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
+//              return
+//          }
         // let dictParams:[String:Any] = ["ClientID": clientId]
          let headers : HTTPHeaders = [
              "Token": "\(token)",
@@ -32,16 +33,15 @@ class CostSavingsViewModel:CostSavingsViewModelProtocol {
           
          
          
-        self.manager?.request(.customGetURL(with: .costsavingsdetails, components: ["ClientID":clientId,"period":"1"]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+         self.manager?.request(.customGetURL(with: .activitydetails, components: ["ClientID":clientId,"Days":"30"]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
              
              switch result {
              case .success(let jsonresponce):
                  if let dictResponse = jsonresponce {
                      print(dictResponse)
                      do{
-                         let directorymodel = try JSONDecoder().decode([CostsavingsDataModel].self, from: dictResponse as! Data)
-                         self.costsavingsdetails = directorymodel
-
+                         let activitymodel = try JSONDecoder().decode([ActivityDataModel].self, from: dictResponse as! Data)
+                        self.activityarray = activitymodel
                          completion(.success(true))
                      }
                      catch _ {
@@ -58,11 +58,13 @@ class CostSavingsViewModel:CostSavingsViewModelProtocol {
              }
              
          })
-    }
+         
+     }
+     
+   
+    var manager: RequestManager?
+    
+    var activityarray: [ActivityDataModel] = []
     
     
-    }
-    
-    
-    
-
+}

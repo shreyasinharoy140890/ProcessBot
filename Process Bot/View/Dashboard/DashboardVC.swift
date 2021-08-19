@@ -24,9 +24,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var viewModelperformerDetails:TopTenRobotViewModelProtocol?
     var viewModelnonperformerDetails:TopTenNonPerformerViewModelProtocol?
     var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
+    var viewModelSuccessRateDetails:SuccessRateViewModelProtocol?
+    var viewModelActivityDetails:ActivityViewModelProtocol?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var costsavingsdetails = [CostsavingsDataModel]()
+    var successratedetails = [SuccessRateDataModel]()
+    var activitydetails = [ActivityDataModel]()
     var arrayperformername = [String]()
     var arrayperformersuccessrate = [Int]()
     var arraynonperformername = [String]()
@@ -36,7 +40,16 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var arraypreRPA = [Double]()
     var arraySavings = [Double]()
     var savings = [Double]()
-   
+    var arraysuccessrate = [Int]()
+    var arrayerrorrate = [Int]()
+    var arrayactivitydate = [String]()
+    var arraytotalrunning = [Int]()
+    var arrayrunning = [Int]()
+    var arraycompleted = [Int]()
+    var arrayerror = [Int]()
+    var arraypaused = [Int]()
+    var arraycancelled = [Int]()
+    
     @IBOutlet weak var btnMenu: UIButton!
     
     //MARK:- IBOutlets (Shreya)
@@ -48,7 +61,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     @IBOutlet var chartView2: LineChartView!
     @IBOutlet var chartView3: PieChartView!
     @IBOutlet var chartView4: BarChartView!
-    @IBOutlet var chartView5: PieChartView!
     @IBOutlet weak var chartView6: BarChartView!
     @IBOutlet weak var proceepie1: PieChartView!
     @IBOutlet weak var activitychartView: BarChartView!
@@ -62,17 +74,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     @IBOutlet weak var barchart2View: UIView!
     @IBOutlet weak var barchart3View: UIView!
     @IBOutlet weak var barchart4View: UIView!
-    @IBOutlet weak var roiView: UIView!
     @IBOutlet weak var procesroiView: UIView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var buttonradioonemonth: UIButton!
     @IBOutlet weak var buttonradio3months: UIButton!
     @IBOutlet weak var buttonradio1year: UIButton!
     @IBOutlet weak var buttonradio5years: UIButton!
-    
-  
-    
-    
+   
     var nameData: [String]!
     lazy var stackedformatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -115,14 +123,18 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         self.viewModelperformerDetails = TopTenRobotViewModel()
         self.viewModelnonperformerDetails = TopTenNonPerformerViewModel()
         self.viewModelCostSavingsDetails = CostSavingsViewModel()
+        self.viewModelSuccessRateDetails = SuccessRateDetailsViewModel()
+        self.viewModelActivityDetails = ActivityViewModel()
         viewModelperformerDetails?.manager = RequestManager()
         viewModelnonperformerDetails?.manager = RequestManager()
         viewModelCostSavingsDetails?.manager = RequestManager()
+        viewModelSuccessRateDetails?.manager = RequestManager()
+        viewModelActivityDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
         callGetAllNonPerformerDetails()
         callCostSavingsDetails()
-        
-        
+      //  callSuccessRateDetails()
+        callgetactivitylist()
         arrButtons.append(buttonradioonemonth)
         arrButtons.append(buttonradio3months)
         arrButtons.append(buttonradio1year)
@@ -167,8 +179,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         barchart3View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
         barchart4View.layer.cornerRadius = 5
         barchart4View.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
-        roiView.layer.cornerRadius = 5
-        roiView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
         procesroiView.layer.cornerRadius = 5
         procesroiView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.gray, radius: 5.0, opacity: 0.4)
         activityView.layer.cornerRadius = 5
@@ -179,7 +189,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     func setchartsview()
     {
         //Cost Savings Chart Designing
-        chartView.delegate = self
+        //chartView.delegate = self
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.noDataText = "You need to provide data for the chart."
         //   barChartView.chartDescription?.text = "sales vs bought "
@@ -218,6 +228,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         leftAxis.labelFont = .systemFont(ofSize: 14, weight: .light)
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
         leftAxis.axisRange = 20000
+        
+        
         //Line Chart designing
         chartView2.xAxis.drawGridLinesEnabled = false
         chartView2.xAxis.drawLabelsEnabled = false
@@ -241,8 +253,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         l.xEntrySpace = 7
         l.yEntrySpace = 0
         l.yOffset = 0
-        
-        
         
         //Performer Chart Designing
         chartView4.pinchZoomEnabled = false
@@ -268,18 +278,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView6.rightAxis.axisMaximum = 0
         
         
-        
-        
     }
     
     
     //MARK:- Customization bar chart 1 (Shreya)
     
     override func updateChartData() {
-        
-        //MARK:- First Chart Data Updation (Shreya - 11.08.2021)
-        
-        
+
         //MARK: - Line Chart Data Updation (Shreya - 11.08.2021)
         
         //  yAxis.customAxisMin = 0
@@ -318,41 +323,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         }
         self.setDataCount3(Int(2), range: UInt32(200))
         
-        // MARK: - Performer Bar Chart Data Updation (Shreya)
-        
-        if self.shouldHideData {
-            chartView4.data = nil
-            return
-        }
-        
-        self.setDataCount4()
-        
-        // MARK: - ROI Pie Chart Data Updation (Shreya - 11.08.2021)
-        
-        let players = ["Pre RPA", "Post RPA", "Savings"]
-        let goals = [6, 8, 26]
-        // 1. Set ChartDataEntry
-        var roidataEntries: [ChartDataEntry] = []
-        for i in 0..<players.count {
-            let dataEntry = PieChartDataEntry(value: Double(goals[i]), label: players[i], data:  players[i] as AnyObject)
-            roidataEntries.append(dataEntry)
-        }
-        
-        // 2. Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: roidataEntries, label:"")
-        pieChartDataSet.colors = [UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1),UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1)
-]
-        
-        // 3. Set ChartData
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
-        let roiformat = NumberFormatter()
-        roiformat.numberStyle = .percent
-        formatter.percentSymbol = "%"
-        let roiformatter = DefaultValueFormatter(formatter: roiformat)
-        pieChartData.setValueFormatter(roiformatter)
-        
-        // 4. Assign it to the chart's data
-        chartView5.data = pieChartData
         
     }
     
@@ -388,20 +358,9 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         
         
     }
-    
-    //MARK:- Setup PerformerChartView (Shreya)
-    func setDataCount4() {
-        callGetAllPerformerDetails()
-    }
-    
-    
-    //    func setChart() {
-    //       callGetAllNonPerformerDetails()
-    //    }
-    
+
     //MARK:- Stacked Bar Designing
-    
-    
+ 
     func setstackedbar()
     {
         self.options = [.toggleValues,
@@ -448,57 +407,48 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         //        sliderY.value = 100
         //        slidersValueChanged(nil)
         
-        self.updateChartData5()
+  //      self.updateChartData5()
     }
     
     
-    func updateChartData5() {
-        if self.shouldHideData {
-            activitychartView.data = nil
-            return
-        }
-        
-        self.setChartData5(count: 8, range: 50)
-    }
-    func setChartData5(count: Int, range: UInt32) {
-        let yVals = (0..<count).map { (i) -> BarChartDataEntry in
-            let mult = range + 1
-            let val1 = Double(arc4random_uniform(mult) + mult / 3)
-            let val2 = Double(arc4random_uniform(mult) + mult / 3)
-            let val3 = Double(arc4random_uniform(mult) + mult / 3)
-            let val4 = Double(arc4random_uniform(mult) + mult / 3)
-            let val5 = Double(arc4random_uniform(mult) + mult / 3)
-            
-            return BarChartDataEntry(x: Double(i), yValues: [val1, val2, val3,val4,val5])
-        }
-        
-        let set2 = BarChartDataSet(entries: yVals, label: "")
-        set2.drawIconsEnabled = false
-        set2.colors = [UIColor(red: 40/255, green: 167/255, blue: 69/255, alpha: 1), UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1), UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1),UIColor(red: 240/255, green: 215/255, blue: 139/255, alpha: 1)]
-        set2.stackLabels = ["Total Running", "Completed", "Error","Paused","Cancelled"]
-        set2.highlightEnabled = false
-        let data = BarChartData(dataSet: set2)
-        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-        data.setValueTextColor(.white)
-        
-        activitychartView.fitBars = true
-        activitychartView.data = data
-    }
-    
-    // MARK:- Color Customization
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
-        var colors: [UIColor] = []
-        for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        return colors
-    }
-    
-    
+//    func updateChartData5() {
+//        if self.shouldHideData {
+//            activitychartView.data = nil
+//            return
+//        }
+//
+//        self.setChartData5()
+//    }
+//    func setChartData5() {
+//        let yVals = (0..<count).map { (i) -> BarChartDataEntry in
+//            let mult = range + 1
+//            let val1 = Double(arc4random_uniform(mult) + mult / 3)
+//            let val2 = Double(arc4random_uniform(mult) + mult / 3)
+//            let val3 = Double(arc4random_uniform(mult) + mult / 3)
+//            let val4 = Double(arc4random_uniform(mult) + mult / 3)
+//            let val5 = Double(arc4random_uniform(mult) + mult / 3)
+//
+//            return BarChartDataEntry(x: Double(i), yValues: [val1, val2, val3,val4,val5])
+//        }
+//
+//        let set2 = BarChartDataSet(entries: yVals, label: "")
+//        set2.drawIconsEnabled = false
+//        set2.colors = [
+//        UIColor(red: 147/255, green: 201/255, blue: 64/255, alpha: 1),
+//        UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),
+//        UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1),
+//        UIColor(red: 7/255, green: 84/255, blue: 128/255, alpha: 1),
+//        UIColor(red: 254/255, green: 217/255, blue: 102/255, alpha: 1)]
+//        set2.stackLabels = ["Total Running", "Completed", "Error","Paused","Cancelled"]
+//        set2.highlightEnabled = false
+//        let data = BarChartData(dataSet: set2)
+//        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
+//        data.setValueTextColor(.white)
+//
+//        activitychartView.fitBars = true
+//        activitychartView.data = data
+//    }
+//
     //MARK:- Button actions
     @IBAction func btnShowMenu(_ sender: UIButton) {
         if sender.isSelected {
@@ -551,7 +501,8 @@ extension DashboardVC:SidePanelDelegate {
 
 
 //MARK:- Api Call
-//Succes rate Bar Chart Data (Shreya - 16.8.1990)
+
+//Performer Bar Chart Data (Shreya - 16.8.1990)
 extension DashboardVC:AlertDisplayer
 {
     func callGetAllPerformerDetails(){
@@ -615,6 +566,8 @@ extension DashboardVC:AlertDisplayer
             }
         })
     }
+    
+// NonPerformer Bar Chart Data -(Shreya)
     func callGetAllNonPerformerDetails(){
         DispatchQueue.main.async {
             //   showActivityIndicator(viewController: self)
@@ -674,7 +627,8 @@ extension DashboardVC:AlertDisplayer
             }
         })
     }
-    
+
+// Cost Savings Bar Chart Data (Shreya - 18.08.2021)
     func callCostSavingsDetails(){
         DispatchQueue.main.async {
             //   showActivityIndicator(viewController: self)
@@ -770,11 +724,128 @@ extension DashboardVC:AlertDisplayer
             }
         })
     }
+// Success Rate Pie-Chart Data
+    func callSuccessRateDetails(){
+        DispatchQueue.main.async {
+            showActivityIndicator(viewController: self)
+        }
+        viewModelSuccessRateDetails?.getSuccessList( completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                   // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
+                   DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.successratedetails = self.viewModelSuccessRateDetails!.ratearray
+                   
+                    
+                    
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
     
+func callgetactivitylist()
+{
+    DispatchQueue.main.async {
+        showActivityIndicator(viewController: self)
+    }
+    viewModelActivityDetails?.getActivityDetails( completion: { [self] result in
+        switch result {
+        case .success(let result):
+            if let success = result as? Bool , success == true {
+               // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
+                self.activitydetails = self.viewModelActivityDetails!.activityarray
+                print(self.activitydetails)
+                for i in 0..<self.activitydetails.count
+                {
+                    self.arrayactivitydate.append(self.activitydetails[i].date!)
+                    arraytotalrunning.append(activitydetails[i].totalRun!)
+                    arraycompleted.append(self.activitydetails[i].completed!)
+                    arrayrunning.append(self.activitydetails[i].running!)
+                    arrayerror.append(activitydetails[i].error!)
+                    arraypaused.append(activitydetails[i].paused!)
+                    arraycancelled.append(activitydetails[i].cancelled!)
+                }
+                print(arrayactivitydate)
+                print(arraytotalrunning)
+                print(arraycompleted)
+                print(arrayrunning)
+                print(arrayerror)
+                print(arraypaused)
+                print(arraycancelled)
+                
+                var dataEntries1: [BarChartDataEntry] = []
+                var dataEntries2: [BarChartDataEntry] = []
+                var dataEntries3:[BarChartDataEntry] = []
+                var dataEntries4:[BarChartDataEntry] = []
+                var dataEntries5:[BarChartDataEntry] = []
+                for i in 0..<self.arrayactivitydate.count {
+                    let dataEntry1 = BarChartDataEntry(x: Double(i) , y: Double(arraytotalrunning[i]))
+                    dataEntries1.append(dataEntry1)
+                    let dataEntry2 = BarChartDataEntry(x:Double(i),y:Double(arraycompleted[i]))
+                    dataEntries2.append(dataEntry2)
+                    let dataEntry3 = BarChartDataEntry(x:Double(i),y:Double(arrayerror[i]))
+                    dataEntries3.append(dataEntry3)
+                    let dataEntry4 = BarChartDataEntry(x:Double(i),y:Double(arraypaused[i]))
+                    dataEntries4.append(dataEntry4)
+                    let dataEntry5 = BarChartDataEntry(x:Double(i),y:Double(arraycancelled[i]))
+                    dataEntries5.append(dataEntry5)
+                    
+                    let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Total Running")
+                    chartDataSet1.colors =  [ UIColor(red: 147/255, green: 201/255, blue: 64/255, alpha: 1)]
+                    let chartDataSet2 = BarChartDataSet(entries: dataEntries2,label: "Completed")
+                    chartDataSet2.colors = [ UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1)]
+                    let chartDataSet3 = BarChartDataSet(entries: dataEntries3,label: "Error")
+                    chartDataSet3.colors = [UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1)]
+                    let chartDataSet4 = BarChartDataSet(entries: dataEntries4,label: "Paused")
+                    chartDataSet4.colors = [ UIColor(red: 7/255, green: 84/255, blue: 128/255, alpha: 1)]
+                    let chartDataSet5 = BarChartDataSet(entries: dataEntries5,label: "Cancelled")
+                    chartDataSet5.colors = [UIColor(red: 254/255, green: 217/255, blue: 102/255, alpha: 1)]
+                    let dataSets: [BarChartDataSet] = [chartDataSet1,chartDataSet2,chartDataSet3,chartDataSet4,chartDataSet5]
+                    let chartData = BarChartData(dataSets: dataSets)
+                    activitychartView.data = chartData
+                    chartData.setValueFont(.systemFont(ofSize: 7, weight: .light))
+                    chartData.setValueTextColor(.white)
+                    let groupSpace = 0.8
+                    let barSpace = 0.05
+                    let barWidth = 0.8
+                    // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
+                    let groupCount = arrayrunning.count
+                    let startYear = 0
+                    chartData.barWidth = barWidth;
+                    activitychartView.fitBars = true
+                    
+                }
+               DispatchQueue.main.async {
+                hideActivityIndicator(viewController: self)
+                
+            //    self.tableRobot.reloadData()
+                }
+            }
+        case .failure(let error):
+            DispatchQueue.main.async {
+                hideActivityIndicator(viewController: self)
+                self.showAlertWith(message: error.localizedDescription)
+            }
+            
+        }
+    })
+}
+  
+func getrunningHistory()
+{
     
 }
-
-
+ 
+}
 
 extension Array {
     public func toDictionary<Key: Hashable>(with selectKey: (Element) -> Key) -> [Key:Element] {
