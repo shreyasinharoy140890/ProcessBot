@@ -14,6 +14,7 @@ class LoginVC: UIViewController,UITextFieldDelegate,AlertDisplayer{
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var viewPassword: UIView!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnRegistration: UIButton!
     var viewmodelLogin:loginViewModelProtocol?
     
     
@@ -25,7 +26,13 @@ class LoginVC: UIViewController,UITextFieldDelegate,AlertDisplayer{
         testEmail.tag = 0
         textPassword.tag = 1
         testEmail.addTarget(self, action: #selector(getTextInput(_:)), for: .editingChanged)
+        //placeholder text color - (Shreya-20.8.21)
+        testEmail.attributedPlaceholder = NSAttributedString(string: "Email",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         textPassword.addTarget(self, action: #selector(getTextInput(_:)), for: .editingChanged)
+        //placeholder text color - (Shreya-20.8.21)
+        textPassword.attributedPlaceholder = NSAttributedString(string: "Password",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         viewmodelLogin = LoginViewModel()
         viewmodelLogin?.manager = RequestManager()
         callGetToken()
@@ -36,6 +43,8 @@ class LoginVC: UIViewController,UITextFieldDelegate,AlertDisplayer{
         viewEmail.layer.cornerRadius = 5
         viewPassword.layer.cornerRadius = 5
         btnLogin.layer.cornerRadius = 5
+        //Add Corner Radius to Registration Button - (Shreya - 20.8.2021)
+        btnRegistration.layer.cornerRadius = 5
         viewEmail.addShadow(offset: CGSize.init(width: 0, height: 2), color: .gray, radius: 3, opacity: 0.6)
         viewPassword.addShadow(offset: CGSize.init(width: 0, height: 2), color: .gray, radius: 3, opacity: 0.6)
     }

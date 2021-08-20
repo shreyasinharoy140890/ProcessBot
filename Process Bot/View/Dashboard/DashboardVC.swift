@@ -24,12 +24,10 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var viewModelperformerDetails:TopTenRobotViewModelProtocol?
     var viewModelnonperformerDetails:TopTenNonPerformerViewModelProtocol?
     var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
-    var viewModelSuccessRateDetails:SuccessRateViewModelProtocol?
     var viewModelActivityDetails:ActivityViewModelProtocol?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var costsavingsdetails = [CostsavingsDataModel]()
-    var successratedetails = [SuccessRateDataModel]()
     var activitydetails = [ActivityDataModel]()
     var arrayperformername = [String]()
     var arrayperformersuccessrate = [Int]()
@@ -40,8 +38,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var arraypreRPA = [Double]()
     var arraySavings = [Double]()
     var savings = [Double]()
-    var arraysuccessrate = [Int]()
-    var arrayerrorrate = [Int]()
     var arrayactivitydate = [String]()
     var arraytotalrunning = [Int]()
     var arrayrunning = [Int]()
@@ -123,16 +119,15 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         self.viewModelperformerDetails = TopTenRobotViewModel()
         self.viewModelnonperformerDetails = TopTenNonPerformerViewModel()
         self.viewModelCostSavingsDetails = CostSavingsViewModel()
-        self.viewModelSuccessRateDetails = SuccessRateDetailsViewModel()
         self.viewModelActivityDetails = ActivityViewModel()
         viewModelperformerDetails?.manager = RequestManager()
         viewModelnonperformerDetails?.manager = RequestManager()
         viewModelCostSavingsDetails?.manager = RequestManager()
-        viewModelSuccessRateDetails?.manager = RequestManager()
         viewModelActivityDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
         callGetAllNonPerformerDetails()
         callCostSavingsDetails()
+     //   getrunningHistory()
       //  callSuccessRateDetails()
         callgetactivitylist()
         arrButtons.append(buttonradioonemonth)
@@ -243,9 +238,11 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         yAxis.labelTextColor = .black
         yAxis.labelPosition = .outsideChart
         yAxis.axisLineColor = .black
-        chartView3.delegate = self
+        
+       
         
         //Pie Chart Designing
+        chartView3.delegate = self
         let l = chartView3.legend
         l.horizontalAlignment = .right
         l.verticalAlignment = .top
@@ -724,34 +721,8 @@ extension DashboardVC:AlertDisplayer
             }
         })
     }
-// Success Rate Pie-Chart Data
-    func callSuccessRateDetails(){
-        DispatchQueue.main.async {
-            showActivityIndicator(viewController: self)
-        }
-        viewModelSuccessRateDetails?.getSuccessList( completion: { result in
-            switch result {
-            case .success(let result):
-                if let success = result as? Bool , success == true {
-                   // self.getRobotWorkType = digitalWorkerType.Scheduled.rawValue
-                   DispatchQueue.main.async {
-                    hideActivityIndicator(viewController: self)
-                    self.successratedetails = self.viewModelSuccessRateDetails!.ratearray
-                   
-                    
-                    
-                    }
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    hideActivityIndicator(viewController: self)
-                    self.showAlertWith(message: error.localizedDescription)
-                }
-                
-            }
-        })
-    }
-    
+
+//Activity List BarChart Data -(Shreya - 20.8.2021)
 func callgetactivitylist()
 {
     DispatchQueue.main.async {
@@ -769,7 +740,6 @@ func callgetactivitylist()
                     self.arrayactivitydate.append(self.activitydetails[i].date!)
                     arraytotalrunning.append(activitydetails[i].totalRun!)
                     arraycompleted.append(self.activitydetails[i].completed!)
-                    arrayrunning.append(self.activitydetails[i].running!)
                     arrayerror.append(activitydetails[i].error!)
                     arraypaused.append(activitydetails[i].paused!)
                     arraycancelled.append(activitydetails[i].cancelled!)
@@ -777,7 +747,6 @@ func callgetactivitylist()
                 print(arrayactivitydate)
                 print(arraytotalrunning)
                 print(arraycompleted)
-                print(arrayrunning)
                 print(arrayerror)
                 print(arraypaused)
                 print(arraycancelled)
@@ -840,10 +809,7 @@ func callgetactivitylist()
     })
 }
   
-func getrunningHistory()
-{
-    
-}
+
  
 }
 
