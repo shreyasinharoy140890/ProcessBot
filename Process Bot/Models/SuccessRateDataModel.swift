@@ -2,7 +2,7 @@
 //  SuccessRateDataModel.swift
 //  Process Bot
 //
-//  Created by Shreya Sinha Roy on 19/08/21.
+//  Created by Shreya Sinha Roy on 20/08/21.
 //
 
 import Foundation

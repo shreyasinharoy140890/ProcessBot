@@ -346,7 +346,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzZ-E6-M4W">
-                                    <rect key="frame" x="23" y="942" width="346" height="688"/>
+                                    <rect key="frame" x="23" y="942" width="346" height="723"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0H-rq-Xgd">
                                             <rect key="frame" x="8" y="20" width="92" height="17"/>
@@ -358,7 +358,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS3-pJ-LD5" customClass="PieChartView" customModule="Charts">
-                                            <rect key="frame" x="0.0" y="64" width="346" height="616"/>
+                                            <rect key="frame" x="0.0" y="64" width="346" height="640"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                     </subviews>
@@ -366,7 +366,7 @@
                                     <constraints>
                                         <constraint firstItem="pS3-pJ-LD5" firstAttribute="leading" secondItem="LzZ-E6-M4W" secondAttribute="leading" id="Bu0-H4-Go5"/>
                                         <constraint firstItem="w0H-rq-Xgd" firstAttribute="leading" secondItem="LzZ-E6-M4W" secondAttribute="leadingMargin" id="DCA-Yv-Zq3"/>
-                                        <constraint firstAttribute="bottom" secondItem="pS3-pJ-LD5" secondAttribute="bottom" constant="8" id="EZ7-YA-z2O"/>
+                                        <constraint firstAttribute="bottom" secondItem="pS3-pJ-LD5" secondAttribute="bottom" constant="19" id="EZ7-YA-z2O"/>
                                         <constraint firstItem="pS3-pJ-LD5" firstAttribute="top" secondItem="w0H-rq-Xgd" secondAttribute="bottom" constant="27" id="Mu0-VG-y3x"/>
                                         <constraint firstAttribute="trailing" secondItem="pS3-pJ-LD5" secondAttribute="trailing" id="SuD-dt-Js7"/>
                                         <constraint firstItem="pS3-pJ-LD5" firstAttribute="top" secondItem="LzZ-E6-M4W" secondAttribute="top" constant="64" id="c9U-xk-StH"/>
@@ -460,7 +460,7 @@
                                 <constraint firstItem="Gyl-zq-kmK" firstAttribute="top" secondItem="H0f-8n-gNb" secondAttribute="bottom" constant="24" id="6D9-VX-crr"/>
                                 <constraint firstAttribute="bottom" secondItem="tAO-Kt-JXb" secondAttribute="bottom" constant="332" id="6QH-Wh-pdr"/>
                                 <constraint firstItem="LzZ-E6-M4W" firstAttribute="top" secondItem="Gyl-zq-kmK" secondAttribute="bottom" constant="15" id="74D-tf-dt9"/>
-                                <constraint firstItem="6YM-Db-ib5" firstAttribute="top" secondItem="LzZ-E6-M4W" secondAttribute="bottom" constant="60" id="7G0-lZ-Dee"/>
+                                <constraint firstItem="6YM-Db-ib5" firstAttribute="top" secondItem="LzZ-E6-M4W" secondAttribute="bottom" constant="25" id="7G0-lZ-Dee"/>
                                 <constraint firstItem="LzZ-E6-M4W" firstAttribute="top" secondItem="Out-XZ-i8F" secondAttribute="top" constant="942" id="EyA-cl-L5M"/>
                                 <constraint firstItem="LzZ-E6-M4W" firstAttribute="leading" secondItem="6YM-Db-ib5" secondAttribute="leading" constant="2" id="Hq5-16-dwf"/>
                                 <constraint firstItem="H0f-8n-gNb" firstAttribute="top" secondItem="ELj-mN-W9S" secondAttribute="bottom" constant="23" id="IOd-pC-4gL"/>
@@ -479,7 +479,7 @@
                                 <constraint firstItem="2OB-9k-4Uy" firstAttribute="leading" secondItem="Out-XZ-i8F" secondAttribute="leading" constant="23" id="kKf-64-vhv"/>
                                 <constraint firstItem="tAO-Kt-JXb" firstAttribute="trailing" secondItem="2OB-9k-4Uy" secondAttribute="trailing" constant="2" id="lgX-cX-SXs"/>
                                 <constraint firstItem="2OB-9k-4Uy" firstAttribute="centerX" secondItem="H0f-8n-gNb" secondAttribute="centerX" constant="-1" id="n7Y-CH-XHE"/>
-                                <constraint firstAttribute="bottom" secondItem="LzZ-E6-M4W" secondAttribute="bottom" constant="2370" id="pL0-RY-TaO"/>
+                                <constraint firstAttribute="bottom" secondItem="LzZ-E6-M4W" secondAttribute="bottom" constant="2335" id="pL0-RY-TaO"/>
                                 <constraint firstAttribute="height" constant="4000" id="rN6-zT-WK6"/>
                                 <constraint firstItem="2OB-9k-4Uy" firstAttribute="top" secondItem="6YM-Db-ib5" secondAttribute="bottom" constant="35" id="xFx-ii-9MS"/>
                                 <constraint firstAttribute="trailing" secondItem="6YM-Db-ib5" secondAttribute="trailing" constant="27" id="yNP-hg-zm2"/>

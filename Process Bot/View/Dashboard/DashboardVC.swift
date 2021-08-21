@@ -25,10 +25,14 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var viewModelnonperformerDetails:TopTenNonPerformerViewModelProtocol?
     var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
     var viewModelActivityDetails:ActivityViewModelProtocol?
+    var viewModelRunningHistoryDetails:RunningHistoryViewModelProtocol?
+    var viewMoelSuccessRateDetails:SuccessRateViewModelProtocol?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var costsavingsdetails = [CostsavingsDataModel]()
     var activitydetails = [ActivityDataModel]()
+    var runninghistorydetails = [RunningHistoryDataModel]()
+    var successratedetails = [SuccessRateDataModel]()
     var arrayperformername = [String]()
     var arrayperformersuccessrate = [Int]()
     var arraynonperformername = [String]()
@@ -45,6 +49,9 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var arrayerror = [Int]()
     var arraypaused = [Int]()
     var arraycancelled = [Int]()
+    var arrayhourlyrunning = [Int]()
+    var arrayhourlycompleted = [Int]()
+    var arrayhourlyerror = [Int]()
     
     @IBOutlet weak var btnMenu: UIButton!
     
@@ -120,15 +127,19 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         self.viewModelnonperformerDetails = TopTenNonPerformerViewModel()
         self.viewModelCostSavingsDetails = CostSavingsViewModel()
         self.viewModelActivityDetails = ActivityViewModel()
+        self.viewModelRunningHistoryDetails = RunningHistoryViewModel()
+        self.viewMoelSuccessRateDetails = SuccessRateViewModel()
         viewModelperformerDetails?.manager = RequestManager()
         viewModelnonperformerDetails?.manager = RequestManager()
         viewModelCostSavingsDetails?.manager = RequestManager()
         viewModelActivityDetails?.manager = RequestManager()
+        viewModelRunningHistoryDetails?.manager = RequestManager()
+        viewMoelSuccessRateDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
         callGetAllNonPerformerDetails()
         callCostSavingsDetails()
-     //   getrunningHistory()
-      //  callSuccessRateDetails()
+        callgetrunningHistorylist()
+        callgetSuccessRateList()
         callgetactivitylist()
         arrButtons.append(buttonradioonemonth)
         arrButtons.append(buttonradio3months)
@@ -199,8 +210,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         legend.xOffset = 10.0;
         legend.yEntrySpace = 5.0;
         chartView.drawBarShadowEnabled = false
-
-       // chartView.drawValueAboveBarEnabled = false
         chartView.chartDescription.enabled = false
         chartView.rightAxis.enabled = false
         let xAxis = chartView.xAxis
@@ -223,23 +232,25 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         leftAxis.labelFont = .systemFont(ofSize: 14, weight: .light)
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
         leftAxis.axisRange = 20000
+        chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         
         
         //Line Chart designing
-        chartView2.xAxis.drawGridLinesEnabled = false
+        chartView2.chartDescription.enabled = false
+        chartView2.rightAxis.enabled = false
+        chartView2.leftAxis.enabled = true
+        chartView2.rightAxis.drawAxisLineEnabled = false
+        chartView2.xAxis.drawAxisLineEnabled = false
         chartView2.xAxis.drawLabelsEnabled = false
-        chartView2.rightAxis.drawLabelsEnabled = false
-        chartView2.legend.enabled = true
-        chartView2.xAxis.axisMinimum = 0
-        chartView2.xAxis.granularity = 0
-        let yAxis = chartView2.leftAxis
-        yAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size:12)!
-        yAxis.setLabelCount(3, force: false)
-        yAxis.labelTextColor = .black
-        yAxis.labelPosition = .outsideChart
-        yAxis.axisLineColor = .black
-        
-       
+        chartView2.xAxis.drawGridLinesEnabled = false
+        chartView2.drawBordersEnabled = false
+        chartView2.setScaleEnabled(true)
+        let l2 = chartView2.legend
+        l2.horizontalAlignment = .right
+        l2.verticalAlignment = .top
+        l2.orientation = .vertical
+        l2.drawInside = false
+        chartView2.animate(xAxisDuration: 2, yAxisDuration: 2)
         
         //Pie Chart Designing
         chartView3.delegate = self
@@ -250,6 +261,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         l.xEntrySpace = 7
         l.yEntrySpace = 0
         l.yOffset = 0
+        chartView3.animate(xAxisDuration: 2, yAxisDuration: 2)
         
         //Performer Chart Designing
         chartView4.pinchZoomEnabled = false
@@ -261,6 +273,12 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView4.leftAxis.axisMinimum = 0
         chartView4.leftAxis.axisRange = 20
         chartView4.rightAxis.axisMaximum = 0
+        let l4 = chartView4.legend
+        l4.horizontalAlignment = .center
+        l4.verticalAlignment = .bottom
+        l4.orientation = .vertical
+        l4.drawInside = false
+        chartView4.animate(xAxisDuration: 2, yAxisDuration: 2)
         
         
         //Non-Performer Chart Designing
@@ -269,11 +287,16 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView6.xAxis.drawLabelsEnabled = false
         chartView6.rightAxis.drawLabelsEnabled = false
         chartView6.legend.enabled = true
+        let l6 = chartView6.legend
+        l6.horizontalAlignment = .center
+        l6.verticalAlignment = .bottom
+        l6.orientation = .vertical
+        l6.drawInside = false
         chartView6.leftAxis.granularity = 1
         chartView6.leftAxis.axisMinimum = 0
         chartView6.leftAxis.axisRange = 20
         chartView6.rightAxis.axisMaximum = 0
-        
+        chartView6.animate(xAxisDuration: 2, yAxisDuration: 2)
         
     }
     
@@ -282,35 +305,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     
     override func updateChartData() {
 
-        //MARK: - Line Chart Data Updation (Shreya - 11.08.2021)
-        
-        //  yAxis.customAxisMin = 0
-        let ys1 = Array(1..<10).map { x in return sin(Double(x) / 2.0 / 3.141 * 1.5) }
-        let ys2 = Array(1..<10).map { x in return cos(Double(x) / 2.0 / 3.141) }
-        let ys3 = Array(1..<10).map { x in return cos(Double(x) / 2.0 / 3.141 * 2.5) }
-        let yse1 = ys1.enumerated().map { x, y in return ChartDataEntry(x: Double(x), y: y) }
-        let yse2 = ys2.enumerated().map { x, y in return ChartDataEntry(x: Double(x), y: y) }
-        let yse3 = ys3.enumerated().map { x, y in return ChartDataEntry(x: Double(x), y: y) }
-        let ds1 = LineChartDataSet(entries: yse1, label: "Error")
-        ds1.colors = [NSUIColor.red]
-        ds1.drawCirclesEnabled = false
-        ds1.drawValuesEnabled = false
-        ds1.mode = .horizontalBezier // add this line
-        ds1.highlightEnabled = false
-        let ds2 = LineChartDataSet(entries: yse2, label: "Completed")
-        ds2.colors = [NSUIColor.blue]
-        ds2.drawCirclesEnabled = false
-        ds2.drawValuesEnabled = false
-        ds2.mode = .horizontalBezier
-        ds2.highlightEnabled = false
-        let ds3 = LineChartDataSet(entries: yse3, label: "Success")
-        ds3.colors = [NSUIColor.green]
-        ds3.drawCirclesEnabled = false
-        ds3.drawValuesEnabled = false
-        ds3.mode = .horizontalBezier
-        ds3.highlightEnabled = false
-        let data:LineChartData = [ds1,ds2,ds3]
-        chartView2.data = data
+   
         
         // MARK: - Pie Chart Data Updation(Shreya - 11.08.2021)
         self.setup(pieChartView: chartView3)
@@ -398,54 +393,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         l.form = .square
         l.formToTextSpace = 12
         l.xEntrySpace = 12
-        //        chartView.legend = l
-        
-        //        sliderX.value = 12
-        //        sliderY.value = 100
-        //        slidersValueChanged(nil)
-        
-  //      self.updateChartData5()
     }
-    
-    
-//    func updateChartData5() {
-//        if self.shouldHideData {
-//            activitychartView.data = nil
-//            return
-//        }
-//
-//        self.setChartData5()
-//    }
-//    func setChartData5() {
-//        let yVals = (0..<count).map { (i) -> BarChartDataEntry in
-//            let mult = range + 1
-//            let val1 = Double(arc4random_uniform(mult) + mult / 3)
-//            let val2 = Double(arc4random_uniform(mult) + mult / 3)
-//            let val3 = Double(arc4random_uniform(mult) + mult / 3)
-//            let val4 = Double(arc4random_uniform(mult) + mult / 3)
-//            let val5 = Double(arc4random_uniform(mult) + mult / 3)
-//
-//            return BarChartDataEntry(x: Double(i), yValues: [val1, val2, val3,val4,val5])
-//        }
-//
-//        let set2 = BarChartDataSet(entries: yVals, label: "")
-//        set2.drawIconsEnabled = false
-//        set2.colors = [
-//        UIColor(red: 147/255, green: 201/255, blue: 64/255, alpha: 1),
-//        UIColor(red: 72/255, green: 192/255, blue: 180/255, alpha: 1),
-//        UIColor(red: 220/255, green: 53/255, blue: 69/255, alpha: 1),
-//        UIColor(red: 7/255, green: 84/255, blue: 128/255, alpha: 1),
-//        UIColor(red: 254/255, green: 217/255, blue: 102/255, alpha: 1)]
-//        set2.stackLabels = ["Total Running", "Completed", "Error","Paused","Cancelled"]
-//        set2.highlightEnabled = false
-//        let data = BarChartData(dataSet: set2)
-//        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-//        data.setValueTextColor(.white)
-//
-//        activitychartView.fitBars = true
-//        activitychartView.data = data
-//    }
-//
     //MARK:- Button actions
     @IBAction func btnShowMenu(_ sender: UIButton) {
         if sender.isSelected {
@@ -809,8 +757,126 @@ func callgetactivitylist()
     })
 }
   
+    //Activity List BarChart Data -(Shreya - 20.8.2021)
+    func callgetrunningHistorylist()
+    {
+        DispatchQueue.main.async {
+           // showActivityIndicator(viewController: self)
+        }
+        viewModelRunningHistoryDetails?.getRunningHistoryDetails( completion: { [self] result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async {
+                 //    hideActivityIndicator(viewController: self)
+                    self.runninghistorydetails = self.viewModelRunningHistoryDetails!.runninghistoryarray
+                    print(self.runninghistorydetails)
+                        for i in 0..<self.runninghistorydetails.count
+                        {
+                            self.arrayhourlyrunning.append(self.runninghistorydetails[i].running!)
+                            self.arrayhourlycompleted.append(self.runninghistorydetails[i].completed!)
+                            arrayhourlyerror.append(self.runninghistorydetails[i].error!)
+                            
+                        }
+                        print(arrayhourlyrunning)
+                        print(arrayhourlycompleted)
+                        print(arrayhourlyerror)
+               
+                        var lineChartEntry1 = [ChartDataEntry]()
+                        var lineChartEntry2 = [ChartDataEntry]()
+                        var lineChartEntry3 = [ChartDataEntry]()
+                        for i in 0..<arrayhourlyerror.count {
+                            print(arrayhourlyrunning.count)
+                            print(arrayhourlycompleted.count)
+                            print(arrayhourlyerror.count)
+                            lineChartEntry1.append(ChartDataEntry(x: Double(i), y: Double(arrayhourlyrunning[i]) ))
+                          
+                            lineChartEntry2.append(ChartDataEntry(x: Double(i), y: Double(arrayhourlycompleted[i]) ))
+                            lineChartEntry3.append(ChartDataEntry(x: Double(i), y: Double(arrayhourlyerror[i]) ))
+                        }
+                        let line1 = LineChartDataSet(entries: lineChartEntry1, label: "Running")
+                        line1.colors = [NSUIColor.blue]
+                        line1.drawCirclesEnabled = false
+                        line1.drawValuesEnabled = false
+                        line1.mode = .horizontalBezier
+                        line1.highlightEnabled = false
+                        line1.lineWidth = 2.5
+                        line1.drawValuesEnabled = false
+                        line1.highlightEnabled = false
+                        let line2 = LineChartDataSet(entries: lineChartEntry2,label:"Completed")
+                        line2.colors = [NSUIColor.green]
+                        line2.drawCirclesEnabled = false
+                        line2.drawValuesEnabled = false
+                        line2.mode = .horizontalBezier
+                        line2.highlightEnabled = false
+                        line2.lineWidth = 2.5
+                        line2.drawValuesEnabled = false
+                        line2.highlightEnabled = false
+                        let line3 = LineChartDataSet(entries: lineChartEntry3,label:"Error")
+                        line3.colors = [NSUIColor.red]
+                        line3.drawCirclesEnabled = false
+                        line3.drawValuesEnabled = false
+                        line3.mode = .horizontalBezier
+                        line3.highlightEnabled = false
+                        line3.lineWidth = 2.5
+                        line3.drawValuesEnabled = false
+                        line3.highlightEnabled = false
+                        let lineChartData = LineChartData(dataSets: [line1,line2,line3])
+                        
+                        lineChartData.setValueFont(.systemFont(ofSize: 7, weight: .light))
+                        lineChartData.setValueTextColor(.white)
+                        
+                        chartView2.data = lineChartData
+                        
+                        
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
 
- 
+// Success Rate List Data (Shreya - 20.8.2021)
+    func callgetSuccessRateList()
+    {
+        DispatchQueue.main.async {
+           // showActivityIndicator(viewController: self)
+        }
+        viewMoelSuccessRateDetails?.getSuccessRateDetails( completion: { [self] result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async {
+                 //    hideActivityIndicator(viewController: self)
+                    self.successratedetails = self.viewMoelSuccessRateDetails!.successratearray
+                    print(self.successratedetails)
+                       
+                      
+               
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 extension Array {

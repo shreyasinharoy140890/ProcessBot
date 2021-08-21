@@ -17,6 +17,8 @@
 		440A986D26CE62CE00AFF6D3 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */; };
 		44153EFB26CF8E0F00E0D03A /* RunningHistoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44153EFA26CF8E0F00E0D03A /* RunningHistoryDataModel.swift */; };
 		44153EFF26CF8E2500E0D03A /* RunningHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44153EFE26CF8E2500E0D03A /* RunningHistoryViewModel.swift */; };
+		44153F0226CFB3E900E0D03A /* SuccessRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44153F0126CFB3E900E0D03A /* SuccessRateDataModel.swift */; };
+		44153F0626CFB43400E0D03A /* SuccessRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44153F0526CFB43400E0D03A /* SuccessRateViewModel.swift */; };
 		445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */; };
 		445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
@@ -154,6 +156,8 @@
 		440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		44153EFA26CF8E0F00E0D03A /* RunningHistoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryDataModel.swift; sourceTree = "<group>"; };
 		44153EFE26CF8E2500E0D03A /* RunningHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewModel.swift; sourceTree = "<group>"; };
+		44153F0126CFB3E900E0D03A /* SuccessRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRateDataModel.swift; sourceTree = "<group>"; };
+		44153F0526CFB43400E0D03A /* SuccessRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRateViewModel.swift; sourceTree = "<group>"; };
 		445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
 		445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				44034F2926C67DF80011603A /* TopTenRobotModel.swift */,
 				440A986A26CE62B800AFF6D3 /* ActivityDataModel.swift */,
 				44153EFA26CF8E0F00E0D03A /* RunningHistoryDataModel.swift */,
+				44153F0126CFB3E900E0D03A /* SuccessRateDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */,
 				440A986C26CE62CE00AFF6D3 /* ActivityViewModel.swift */,
 				44153EFE26CF8E2500E0D03A /* RunningHistoryViewModel.swift */,
+				44153F0526CFB43400E0D03A /* SuccessRateViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -732,6 +738,7 @@
 				44FB10D426CAA69300A88DF4 /* CostSavingsViewModel.swift in Sources */,
 				CDC4177A26B3FE4300B445A8 /* RadarMarkerView.swift in Sources */,
 				7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */,
+				44153F0226CFB3E900E0D03A /* SuccessRateDataModel.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
 				445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
@@ -741,6 +748,7 @@
 				7393C86E269DEC0C00F35C33 /* AppDelegate.swift in Sources */,
 				CDEE0C2326B9A51F00A11DD9 /* HTTPMethod.swift in Sources */,
 				7356D87D269EBF3F00CC76D3 /* DashboardVC.swift in Sources */,
+				44153F0626CFB43400E0D03A /* SuccessRateViewModel.swift in Sources */,
 				7393C88D269DEE5900F35C33 /* CustomExtension.swift in Sources */,
 				CDEE0C1F26B9A51F00A11DD9 /* WebEndpoint.swift in Sources */,
 				44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */,

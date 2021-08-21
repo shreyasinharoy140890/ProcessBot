@@ -102,14 +102,17 @@ extension Endpoint {
     }
     static var successratedetails:Self
     {
-        Endpoint(base:environment.baseURL, path: "api/Dashboard/RobotsSuccessRate?")
+        Endpoint(base:environment.baseURL, path: "api/DashBoard/RobotsSuccessRate?")
     }
     static var activitydetails:Self
     {
         Endpoint(base:environment.baseURL, path: "api/DashBoard/Activity?")
     }
-    
-    
+    static var runninghistorydetails:Self
+    {
+        Endpoint(base:environment.baseURL, path: "api/DashBoard/HourlyActivity?")
+    }
+  
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         
         var modifiedPath = endpoint.path
