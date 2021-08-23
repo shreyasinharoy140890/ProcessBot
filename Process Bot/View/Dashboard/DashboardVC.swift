@@ -26,7 +26,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
     var viewModelActivityDetails:ActivityViewModelProtocol?
     var viewModelRunningHistoryDetails:RunningHistoryViewModelProtocol?
-    var viewMoelSuccessRateDetails:SuccessRateViewModelProtocol?
+    var viewModelSuccessRateDetails:SuccessRateViewModelProtocol?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var costsavingsdetails = [CostsavingsDataModel]()
@@ -65,7 +65,6 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     @IBOutlet var chartView3: PieChartView!
     @IBOutlet var chartView4: BarChartView!
     @IBOutlet weak var chartView6: BarChartView!
-    @IBOutlet weak var proceepie1: PieChartView!
     @IBOutlet weak var activitychartView: BarChartView!
     @IBOutlet weak var pausedView: UIView!
     @IBOutlet weak var cancelledView: UIView!
@@ -114,6 +113,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         //SidePanelViewController.default.isloggedin = true
         // Do any additional setup after loading the view.
         //MARK:- Presentation of Views (Shreya)
+        chartView.data = nil
+        chartView2.data = nil
+        chartView3.data = nil
+        chartView4.data = nil
+        chartView6.data = nil
+        activitychartView.data = nil
+        
         setupUI()
         setchartsview()
         updateChartData()
@@ -128,13 +134,13 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         self.viewModelCostSavingsDetails = CostSavingsViewModel()
         self.viewModelActivityDetails = ActivityViewModel()
         self.viewModelRunningHistoryDetails = RunningHistoryViewModel()
-        self.viewMoelSuccessRateDetails = SuccessRateViewModel()
+        self.viewModelSuccessRateDetails = SuccessRateViewModel()
         viewModelperformerDetails?.manager = RequestManager()
         viewModelnonperformerDetails?.manager = RequestManager()
         viewModelCostSavingsDetails?.manager = RequestManager()
         viewModelActivityDetails?.manager = RequestManager()
         viewModelRunningHistoryDetails?.manager = RequestManager()
-        viewMoelSuccessRateDetails?.manager = RequestManager()
+        viewModelSuccessRateDetails?.manager = RequestManager()
         callGetAllPerformerDetails()
         callGetAllNonPerformerDetails()
         callCostSavingsDetails()
@@ -342,8 +348,8 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         pFormatter.percentSymbol = " %"
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         
-        data.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        data.setValueTextColor(.black)
+        data.setValueFont(.systemFont(ofSize: 11, weight: .bold))
+        data.setValueTextColor(.white)
         
         chartView3.data = data
         chartView3.highlightValues(nil)
@@ -460,7 +466,6 @@ extension DashboardVC:AlertDisplayer
                 if let success = result as? Bool , success == true {
                     DispatchQueue.main.async { [self] in
                         
-                        print(robotperformerdetails)
                         robotperformerdetails = viewModelperformerDetails!.performerdetails
                         print(robotperformerdetails)
                         for i in 0..<robotperformerdetails.count
@@ -590,8 +595,8 @@ extension DashboardVC:AlertDisplayer
                             print(costsavingsdetails[i].directoryName!)
                             
                             departmentarray.append(costsavingsdetails[i].directoryName!)
-                            arraypostRPA.append(costsavingsdetails[i].existingCost!)
-                            arraypreRPA.append(costsavingsdetails[i].rPACost!)
+                            arraypostRPA.append(costsavingsdetails[i].rPACost!)
+                            arraypreRPA.append(costsavingsdetails[i].existingCost!)
                             arraySavings.append(costsavingsdetails[i].costSavings!)
                             
                             
@@ -600,7 +605,7 @@ extension DashboardVC:AlertDisplayer
                         print(arraypostRPA)
                         print(arraypreRPA)
                         print(arraySavings)
-                        let savingsdata = zip(arraypostRPA, arraypreRPA).map { $0 - $1 }
+                        let savingsdata = zip(arraypreRPA, arraypostRPA).map { $0 - $1 }
                         savings = savingsdata
                         print(savings)
                         chartView.noDataText = "You need to provide data for the chart."
@@ -847,13 +852,13 @@ func callgetactivitylist()
         DispatchQueue.main.async {
            // showActivityIndicator(viewController: self)
         }
-        viewMoelSuccessRateDetails?.getSuccessRateDetails( completion: { [self] result in
+        viewModelSuccessRateDetails?.getSuccessRateDetails( completion: { [self] result in
             switch result {
             case .success(let result):
                 if let success = result as? Bool , success == true {
                     DispatchQueue.main.async {
                  //    hideActivityIndicator(viewController: self)
-                    self.successratedetails = self.viewMoelSuccessRateDetails!.successratearray
+                    self.successratedetails = self.viewModelSuccessRateDetails!.successratearray
                     print(self.successratedetails)
                        
                       
@@ -864,6 +869,7 @@ func callgetactivitylist()
                 DispatchQueue.main.async {
                     hideActivityIndicator(viewController: self)
                     self.showAlertWith(message: error.localizedDescription)
+                    chartView3.data = nil
                 }
                 
             }

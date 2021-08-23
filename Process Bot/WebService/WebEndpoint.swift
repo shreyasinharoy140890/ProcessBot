@@ -80,7 +80,11 @@ extension Endpoint {
     static var notification: Self {
         Endpoint(base:environment.baseURL, path: "APP/notifications")
     }
-    
+    static var stopPauseRobot:Self
+        {
+            Endpoint(base:environment.baseURL, path: "api/Tasks/PausedStop")
+            
+        }
     static var directorydetails:Self
     {
         Endpoint(base:environment.baseURL, path: "api/User/DirectoryList?")

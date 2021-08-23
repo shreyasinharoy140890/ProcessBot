@@ -36,7 +36,8 @@ class SuccessRateViewModel:SuccessRateViewModelProtocol {
                          print(dictResponse)
                          do{
                              let successratemodel = try JSONDecoder().decode([SuccessRateDataModel].self, from: dictResponse as! Data)
-                            self.successratearray = successratemodel
+                            print(successratemodel)
+//                            self.successratearray = successratemodel
                              completion(.success(true))
                          }
                          catch _ {

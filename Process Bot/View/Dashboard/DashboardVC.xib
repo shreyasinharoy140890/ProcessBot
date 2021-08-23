@@ -33,7 +33,6 @@
                 <outlet property="mainView" destination="GXE-6u-dLU" id="FVD-Cu-RXM"/>
                 <outlet property="pausedView" destination="vgd-4c-rBn" id="Dgf-VB-XCG"/>
                 <outlet property="piechartView" destination="LzZ-E6-M4W" id="B8q-6G-Ixx"/>
-                <outlet property="proceepie1" destination="f12-em-Yxv" id="zjo-iI-WvF"/>
                 <outlet property="procesroiView" destination="tAO-Kt-JXb" id="FBS-BO-SWC"/>
                 <outlet property="runningView" destination="Ju9-cT-7hL" id="kxE-UT-FqQ"/>
                 <outlet property="scrollView" destination="ZXJ-aF-Rji" id="m9t-bH-jcb"/>
