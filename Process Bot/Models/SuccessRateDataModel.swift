@@ -7,8 +7,8 @@
 
 import Foundation
 struct SuccessRateDataModel : Codable {
-    let sucessRate : Int?
-    let errorRate : Int?
+    var sucessRate : Int?
+    var errorRate : Int?
 
     enum CodingKeys: String, CodingKey {
 

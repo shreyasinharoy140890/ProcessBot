@@ -28,6 +28,9 @@
 		4466416226D385B60020912E /* PublishRobotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466416126D385B60020912E /* PublishRobotTableViewCell.xib */; };
 		4466416426D385CF0020912E /* ScheduledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466416326D385CF0020912E /* ScheduledTableViewCell.swift */; };
 		4466416626D385DF0020912E /* ScheduledTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466416526D385DF0020912E /* ScheduledTableViewCell.xib */; };
+		4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */; };
+		447492F826D511E200487842 /* MachineHostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447492F626D511E200487842 /* MachineHostVC.swift */; };
+		447492F926D511E200487842 /* MachineHostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447492F726D511E200487842 /* MachineHostVC.xib */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
@@ -167,6 +170,9 @@
 		4466416126D385B60020912E /* PublishRobotTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PublishRobotTableViewCell.xib; path = ../../../../../Downloads/PublishRobotTableViewCell.xib; sourceTree = "<group>"; };
 		4466416326D385CF0020912E /* ScheduledTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduledTableViewCell.swift; path = ../../../../../Downloads/ScheduledTableViewCell.swift; sourceTree = "<group>"; };
 		4466416526D385DF0020912E /* ScheduledTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduledTableViewCell.xib; path = ../../../../../Downloads/ScheduledTableViewCell.xib; sourceTree = "<group>"; };
+		4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostModel.swift; sourceTree = "<group>"; };
+		447492F626D511E200487842 /* MachineHostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostVC.swift; sourceTree = "<group>"; };
+		447492F726D511E200487842 /* MachineHostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineHostVC.xib; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
@@ -265,6 +271,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447492EF26D50D5000487842 /* MachineHost */ = {
+			isa = PBXGroup;
+			children = (
+				447492F626D511E200487842 /* MachineHostVC.swift */,
+				447492F726D511E200487842 /* MachineHostVC.xib */,
+			);
+			path = MachineHost;
+			sourceTree = "<group>";
+		};
 		73479E9026BA834E005B06B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +292,7 @@
 				440A986A26CE62B800AFF6D3 /* ActivityDataModel.swift */,
 				44153EFA26CF8E0F00E0D03A /* RunningHistoryDataModel.swift */,
 				44153F0126CFB3E900E0D03A /* SuccessRateDataModel.swift */,
+				4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +327,7 @@
 		7356D87A269EBF0900CC76D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				447492EF26D50D5000487842 /* MachineHost */,
 				73A6280126AED9FE0073F0EB /* Robot */,
 				73A627D426AE97020073F0EB /* RobotDetails */,
 				736DE88826A83C3C00277988 /* SplashLoading */,
@@ -681,6 +698,7 @@
 				7393C87A269DEC0C00F35C33 /* Assets.xcassets in Resources */,
 				4466416226D385B60020912E /* PublishRobotTableViewCell.xib in Resources */,
 				73A627F926AEAF090073F0EB /* Aileron-SemiBoldItalic.otf in Resources */,
+				447492F926D511E200487842 /* MachineHostVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +790,7 @@
 				CDEE0C2526B9A51F00A11DD9 /* Router.swift in Sources */,
 				440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */,
 				73CD3C6B269F174D00D451E0 /* LoginVC.swift in Sources */,
+				4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */,
 				44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
@@ -787,6 +806,7 @@
 				736DE88B26A83C6000277988 /* SplashLoadingViewController.swift in Sources */,
 				7393C878269DEC0C00F35C33 /* Process_Bot.xcdatamodeld in Sources */,
 				44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */,
+				447492F826D511E200487842 /* MachineHostVC.swift in Sources */,
 				4466415A26D384FE0020912E /* RobotViewModel.swift in Sources */,
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
 				440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */,

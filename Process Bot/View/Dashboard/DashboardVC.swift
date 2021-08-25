@@ -26,7 +26,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
     var viewModelCostSavingsDetails:CostSavingsViewModelProtocol?
     var viewModelActivityDetails:ActivityViewModelProtocol?
     var viewModelRunningHistoryDetails:RunningHistoryViewModelProtocol?
-    var viewModelSuccessRateDetails:SuccessRateViewModelProtocol?
+    var viewModelSuccessRateDetails:SuccessRateViewModel?
     var robotnonperformerdetails = [TopTenNonPerformerDataModel]()
     var robotperformerdetails = [topTenRobotDataModel]()
     var costsavingsdetails = [CostsavingsDataModel]()
@@ -245,6 +245,9 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView2.chartDescription.enabled = false
         chartView2.rightAxis.enabled = false
         chartView2.leftAxis.enabled = true
+        chartView2.leftAxis.granularity = 1
+        chartView2.leftAxis.axisMinimum = 0
+        chartView2.leftAxis.axisRange = 10
         chartView2.rightAxis.drawAxisLineEnabled = false
         chartView2.xAxis.drawAxisLineEnabled = false
         chartView2.xAxis.drawLabelsEnabled = false
@@ -253,7 +256,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView2.setScaleEnabled(true)
         let l2 = chartView2.legend
         l2.horizontalAlignment = .right
-        l2.verticalAlignment = .top
+        l2.verticalAlignment = .bottom
         l2.orientation = .vertical
         l2.drawInside = false
         chartView2.animate(xAxisDuration: 2, yAxisDuration: 2)
@@ -393,7 +396,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         
         let l = activitychartView.legend
         l.horizontalAlignment = .right
-        l.verticalAlignment = .bottom
+        l.verticalAlignment = .top
         l.orientation = .horizontal
         l.drawInside = false
         l.form = .square
@@ -858,7 +861,7 @@ func callgetactivitylist()
                 if let success = result as? Bool , success == true {
                     DispatchQueue.main.async {
                  //    hideActivityIndicator(viewController: self)
-                    self.successratedetails = self.viewModelSuccessRateDetails!.successratearray
+                    self.successratedetails = self.viewModelSuccessRateDetails!.rates
                     print(self.successratedetails)
                        
                       

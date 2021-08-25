@@ -26,7 +26,7 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
     
     static let `default` = SidePanelViewController()
     var delegate: SidePanelDelegate?
-    var arrayMenuDispaly = [["Digital worker","robot_icon"],["Process","process_icon"],["Cognitive Bot","cognative_icon"],["Administrative","administrative_icon"],["Machine Host","machine_hos_icon"],["Dashboard","dashboard_icon"],["Logout","logout_icon"]]
+    var arrayMenuDispaly = [["Digital Worker","robot_icon"],["Process","process_icon"],["Cognitive Bot","cognative_icon"],["Administrative","administrative_icon"],["Machine / Host","machine_hos_icon"],["Dashboard","dashboard_icon"],["Logout","logout_icon"]]
     
    override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +162,16 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
             
         }
         else if (indexPath.row == 4){
+          
+            if let VC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: MachineHostVC.self) {
+                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(VC, animated: true)
+            }
+            else {
+                let VC = MachineHostVC(nibName: "MachineHostVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+
+            }
+            
             
         }
         else if (indexPath.row == 5){
@@ -186,9 +196,7 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
     
     func logout() {
         
-       
-        
-        
+ 
         let alertOkAction = UIAlertAction(title: "YES".localized(), style: .default) { (_) in
             
             let defaults = UserDefaults.standard

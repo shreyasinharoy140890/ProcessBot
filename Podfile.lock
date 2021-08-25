@@ -1,16 +1,28 @@
 PODS:
+  - Alamofire (4.9.1)
   - DLRadioButton (1.4.12)
+  - SignalRSwift (2.0.3):
+    - Alamofire (~> 4.2)
+    - Starscream (~> 3.0)
+  - Starscream (3.1.1)
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
+  - SignalRSwift (~> 2.0.2)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - DLRadioButton
+    - SignalRSwift
+    - Starscream
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  SignalRSwift: 6f30893680780d4f4e9981795478ea43f5b63f3e
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 7ea4d3a722b3d632d644fb047afeb6b2cad96756
+PODFILE CHECKSUM: d33b5dcd1e7fe66daed896fa2aec5b2460a34978
 
 COCOAPODS: 1.10.2
