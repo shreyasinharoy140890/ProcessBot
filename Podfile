@@ -8,5 +8,5 @@ target 'Process Bot' do
   # Pods for Process Bot
 pod 'DLRadioButton', '~> 1.4'
 pod 'SignalRSwift', '~> 2.0.2'
-
+pod 'ExpandableCell'
 end

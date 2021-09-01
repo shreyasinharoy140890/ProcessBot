@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - DLRadioButton (1.4.12)
+  - ExpandableCell (1.3.1)
   - SignalRSwift (2.0.3):
     - Alamofire (~> 4.2)
     - Starscream (~> 3.0)
@@ -8,21 +9,24 @@ PODS:
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
+  - ExpandableCell
   - SignalRSwift (~> 2.0.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - DLRadioButton
+    - ExpandableCell
     - SignalRSwift
     - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  ExpandableCell: c57c3057395df3066ec33d239b59623825f1f716
   SignalRSwift: 6f30893680780d4f4e9981795478ea43f5b63f3e
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: d33b5dcd1e7fe66daed896fa2aec5b2460a34978
+PODFILE CHECKSUM: 6d794d4b0cf269e53cf39eda9b71c4b72a533067
 
 COCOAPODS: 1.10.2

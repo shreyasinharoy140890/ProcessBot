@@ -95,12 +95,13 @@ class LoginViewModel:loginViewModelProtocol {
                     do{
                         let loginmodel = try JSONDecoder().decode([LoginModels].self, from: dictResponse as! Data)
                         self.userModel = loginmodel
-                        print(self.userModel[0].clientID!)
+                        print(self.userModel[0].appName!)
                         UserDefaults.standard.set(self.userModel[0].clientID!, forKey: "CLIENTID")
                         UserDefaults.standard.set(self.userModel[0].userID!, forKey: "USERID")
                         UserDefaults.standard.set(self.userModel[0].appSecret!, forKey: "APPSECRET")
                         UserDefaults.standard.set(self.userModel[0].email!, forKey: "EMAIL")
                         UserDefaults.standard.set(self.userModel[0].fullName!, forKey: "FULLNAME")
+                        UserDefaults.standard.set(self.userModel[0].appName!,forKey:"APPNAME")
                         completion(.success(true))
                     }
                     catch _ {

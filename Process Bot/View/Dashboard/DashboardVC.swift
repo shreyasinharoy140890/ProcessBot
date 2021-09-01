@@ -234,7 +234,7 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         leftAxis.spaceBottom = 0.25
         leftAxis.drawAxisLineEnabled = true
         leftAxis.drawZeroLineEnabled = true
-        leftAxis.zeroLineWidth = 1.0
+        leftAxis.zeroLineWidth = 2.0
         leftAxis.labelFont = .systemFont(ofSize: 14, weight: .light)
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
         leftAxis.axisRange = 20000
@@ -248,10 +248,12 @@ class DashboardVC: DemoBaseViewController, AxisValueFormatter,UIPopoverControlle
         chartView2.leftAxis.granularity = 1
         chartView2.leftAxis.axisMinimum = 0
         chartView2.leftAxis.axisRange = 10
+        chartView2.leftAxis.zeroLineWidth = 2.0
+        chartView2.leftAxis.zeroLineColor = UIColor.black
         chartView2.rightAxis.drawAxisLineEnabled = false
         chartView2.xAxis.drawAxisLineEnabled = false
         chartView2.xAxis.drawLabelsEnabled = false
-        chartView2.xAxis.drawGridLinesEnabled = false
+        chartView2.xAxis.drawGridLinesEnabled = true
         chartView2.drawBordersEnabled = false
         chartView2.setScaleEnabled(true)
         let l2 = chartView2.legend

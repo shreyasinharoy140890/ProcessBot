@@ -116,7 +116,12 @@ extension Endpoint {
     {
         Endpoint(base:environment.baseURL, path: "api/DashBoard/HourlyActivity?")
     }
-  
+    
+    static var machinehostdetails:Self
+    {
+        Endpoint(base:environment.baseURL, path: "api/Workers/All")
+    }
+    
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         
         var modifiedPath = endpoint.path
