@@ -177,17 +177,18 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
         let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 70))
         var imageView = UIImageView()
         if (expandedSections.contains(section)) {
-            imageView = UIImageView.init(frame: CGRect(x: 180, y: 18, width: 18, height: 10))
+            imageView = UIImageView.init(frame: CGRect(x: 200, y: 25, width: 18, height: 10))
             imageView.image = UIImage(named: "down-arrow")
         } else {
-            imageView = UIImageView.init(frame: CGRect(x: 180, y: 15, width: 10, height: 18))
+            imageView = UIImageView.init(frame: CGRect(x: 210, y: 25, width: 10, height: 18))
             imageView.image = UIImage(named: "right-arrow")
         }
         
-        let headerTitle = UILabel.init(frame: CGRect(x: 60, y: 4, width: 250, height: 35))
+        let headerTitle = UILabel.init(frame: CGRect(x: 70, y: 12, width: 250, height: 35))
         headerTitle.text = sectionData[section]
+        headerTitle.font = UIFont.boldSystemFont(ofSize: 16.0)
         let headerimageView = UIImageView()
-        headerimageView.frame = CGRect(x: 20, y: 4, width: 30, height: 30)
+        headerimageView.frame = CGRect(x: 15, y: 10, width: 30, height: 30)
         headerimageView.image = sectionImageData[section]
         let tappedSection = UIButton.init(frame: CGRect(x: 0, y: 0, width: headerView.frame.size.width , height: headerView.frame.size.height))
         
