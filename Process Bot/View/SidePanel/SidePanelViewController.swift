@@ -163,9 +163,7 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
             lblEmailofUser.text = email as? String
         }
     }
-    
-   
-
+ 
 }
 
 extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {

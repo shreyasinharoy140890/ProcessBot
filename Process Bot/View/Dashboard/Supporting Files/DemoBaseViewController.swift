@@ -97,7 +97,7 @@ enum Option {
 
 class DemoBaseViewController: UIViewController, ChartViewDelegate {
     private var optionsTableView: UITableView? = nil
-    let parties = ["Error Rate", "Success Rate"]
+    let rates = ["Error Rate", "Success Rate"]
     
     @IBOutlet weak var optionsButton: UIButton!
     var options: [Option]!

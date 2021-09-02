@@ -16,12 +16,12 @@ import Foundation
 class SuccessRateViewModel {
     
     // MARK: - Initialization
-    init(model: [SuccessRateDataModel]? = nil) {
+    init(model: SuccessRateDataModel? = nil) {
         if let inputModel = model {
             rates = inputModel
         }
     }
-    var rates = [SuccessRateDataModel]()
+    var rates:SuccessRateDataModel?
     var manager: RequestManager? 
 
 }
@@ -50,10 +50,11 @@ extension SuccessRateViewModel {
                 case .success(let jsonresponce):
                     if let dictResponse = jsonresponce {
                         print(dictResponse)
-                        let decoder = JSONDecoder()
+                     
                         do{
-                            self.rates = try decoder.decode([SuccessRateDataModel].self, from: dictResponse as! Data)
-                            completion(.success(try decoder.decode([SuccessRateDataModel].self, from: dictResponse as! Data)))
+                            self.rates = try JSONDecoder().decode(SuccessRateDataModel.self, from: dictResponse as! Data)
+                                                        completion(.success(try JSONDecoder().decode(SuccessRateDataModel.self, from: dictResponse as! Data)))
+                            completion(.success(true))
                         }
                         catch _ {
                             completion(.failure(ProcessBotNetWorkrror.noData))

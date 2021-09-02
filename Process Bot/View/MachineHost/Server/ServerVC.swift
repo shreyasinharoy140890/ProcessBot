@@ -7,7 +7,7 @@
 
 import UIKit
 import SignalRSwift
-class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewDelegate, UITableViewDataSource {
+class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
     @IBOutlet weak var tableServer: UITableView!
     @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var viewHeader: UIView!
