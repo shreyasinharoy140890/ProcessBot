@@ -13,6 +13,7 @@ class StandAloneTableViewCell: UITableViewCell {
     @IBOutlet weak var viewShadow: UIView!
     @IBOutlet weak var lblUserTypeValue: UILabel!
     @IBOutlet weak var lblRemarksValue: UILabel!
+    @IBOutlet weak var btnkeys: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

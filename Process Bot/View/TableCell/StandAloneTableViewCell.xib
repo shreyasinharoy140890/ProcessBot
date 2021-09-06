@@ -149,6 +149,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnkeys" destination="6wR-dH-sqy" id="Aae-0N-bkp"/>
                 <outlet property="lblMachineNameValue" destination="VnW-Mi-Zf2" id="H03-rw-Stv"/>
                 <outlet property="lblRemarksValue" destination="YmL-s0-RSK" id="jiG-QK-Gw4"/>
                 <outlet property="lblUserTypeValue" destination="itY-pK-Mso" id="gt4-iL-sof"/>

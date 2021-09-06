@@ -13,6 +13,7 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var viewSearch: UIView!
     @IBOutlet weak var btnMenu: UIButton!
+    @IBOutlet weak var textFieldSearch: UITextField!
     var hub: HubProxy!
     var connection: HubConnection!
     var name: String!
@@ -25,6 +26,9 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
     var arrayusername = [String]()
     var arrayremarks = [String]()
     var arraykeys = [String]()
+    var filtered = [MachineHostModel]()
+    var searchText:String?
+    var isFiltering = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +41,8 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
         SidePanelViewController.default.delegate = self
         setupUI()
         getserverdetails()
+        textFieldSearch.text = searchText
+        textFieldSearch.addTarget(self, action: #selector(textFieldValueChange(_:)), for: .editingChanged)
     }
 
 
@@ -54,6 +60,7 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
         }
     }
     
+    
     //MARK:- Button Actions
        @IBAction func btnMenuAction(_ sender: UIButton) {
            if sender.isSelected {
@@ -68,7 +75,7 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
     
   //MARK:- TableView datasource and delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arraymachinename.count
+        return isFiltering == true ? filtered.count : arraymachinename.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -124,6 +131,23 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
                 
             }
         })
+    }
+    @objc func textFieldValueChange(_ txt: UITextField)  {
+        searchText = textFieldSearch.text!
+        
+        if (searchText != ""){
+            isFiltering = true
+
+            filtered = machinehostdetails.filter {
+                $0.machineName?.range(of: searchText!, options: .caseInsensitive, range: nil, locale: nil) != nil
+                        }
+                        print(filtered)
+            
+        }else {
+            isFiltering = false
+            filtered = machinehostdetails
+        }
+        self.tableServer.reloadData()
     }
     
     

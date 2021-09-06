@@ -9,11 +9,14 @@ import Foundation
 protocol MachineHostViewModelProtocol : class {
     func machineHostDetails(completion:@escaping (ProcessBot<Any?>) -> Void)
     var manager: RequestManager? { get set }
-    var machinearray:[MachineHostModel]{get}
+    var machinearray:[MachineHostModel]{get set}
+    var arrayMachineDataStore:[MachineHostModel]{get set}
+   
+    
 }
 class MachineHostViewModel:MachineHostViewModelProtocol {
+    var arrayMachineDataStore = [MachineHostModel]()
     var manager: RequestManager?
-    
     var machinearray: [MachineHostModel] = []
     
     func machineHostDetails(completion: @escaping (ProcessBot<Any?>) -> Void) {

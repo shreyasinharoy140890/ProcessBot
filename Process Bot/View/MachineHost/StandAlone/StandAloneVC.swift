@@ -7,13 +7,16 @@
 
 import UIKit
 import SignalRSwift
+import MaterialComponents.MaterialSnackbar
 class StandAloneVC: UIViewController,AlertDisplayer {
     
+    @IBOutlet weak var textFieldSearch: UITextField!
     @IBOutlet weak var tableStandAlone: UITableView!
     @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var viewSearch: UIView!
     @IBOutlet weak var btnMenu: UIButton!
+    var isFiltering = false
     var hub: HubProxy!
     var connection: HubConnection!
     var name: String!
@@ -26,6 +29,9 @@ class StandAloneVC: UIViewController,AlertDisplayer {
     var arrayusername = [String]()
     var arrayremarks = [String]()
     var arraykeys = [String]()
+    var machinekey:String?
+    var filtered = [MachineHostModel]()
+    var searchText:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModelstandaloneDetails = MachineHostViewModel()
@@ -35,7 +41,7 @@ class StandAloneVC: UIViewController,AlertDisplayer {
         tableStandAlone.register(StandAloneTableViewCell.self)
         SidePanelViewController.default.delegate = self
         setupUI()
-        
+        textFieldSearch.text = searchText
         let qs = ["AppName":appName as! String,
                   "Token": token as! String,
                   "ClientID":clientId as! String
@@ -75,7 +81,7 @@ class StandAloneVC: UIViewController,AlertDisplayer {
 
         connection.start()
         getstandalonedetails()
-        
+        textFieldSearch.addTarget(self, action: #selector(textFieldValueChange(_:)), for: .editingChanged)
     }
     
     func setupUI (){
@@ -98,7 +104,16 @@ class StandAloneVC: UIViewController,AlertDisplayer {
             sender.isSelected = true
         }
     }
-    
+    @objc func buttonViewLinkAction(sender:UIButton!) {
+            print("Button tapped")
+        
+    UIPasteboard.general.string = machinekey
+    print(UIPasteboard.general.string!)
+        let message = MDCSnackbarMessage()
+        message.text = UIPasteboard.general.string!
+        MDCSnackbarManager.default.show(message)
+        }
+   
 //MARK:- Webservice Calling
     
     func getstandalonedetails()
@@ -122,6 +137,10 @@ class StandAloneVC: UIViewController,AlertDisplayer {
                                 arrayusername.append(machinehostdetails[i].userName!)
                                 arrayremarks.append(machinehostdetails[i].conRemarks!)
                                 arraykeys.append(machinehostdetails[i].machineKey!)
+                                for i in 0..<arraykeys.count
+                                {
+                                    machinekey = arraykeys[i]
+                                }
                             }
                         }
                       
@@ -146,17 +165,22 @@ class StandAloneVC: UIViewController,AlertDisplayer {
     
     
 }
-
+//MARK: TableView datasource and delegate
 extension StandAloneVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arraymachinename.count
+        return isFiltering == true ? filtered.count : arraymachinename.count
+       // return arraymachinename.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: StandAloneTableViewCell.self), for: indexPath) as! StandAloneTableViewCell
+        
+          
         cell.lblRemarksValue.text = arrayremarks[indexPath.row]
         cell.lblMachineNameValue.text = arraymachinename[indexPath.row]
         cell.lblUserTypeValue.text = arrayusername[indexPath.row]
+        cell.btnkeys.addTarget(self, action: #selector(buttonViewLinkAction), for: .touchUpInside)
         return cell
     }
     
@@ -167,13 +191,32 @@ extension StandAloneVC: UITableViewDataSource,UITableViewDelegate {
     
 }
 
-extension StandAloneVC:SidePanelDelegate {
+extension StandAloneVC:SidePanelDelegate,UITextFieldDelegate {
     func didDisplayMenu(status: Bool) {
         if status == false {
             btnMenu.isSelected = false
         }
     }
-   
+    @objc func textFieldValueChange(_ txt: UITextField)  {
+        searchText = textFieldSearch.text!
+        
+        if (searchText != ""){
+            isFiltering = true
+
+            filtered = machinehostdetails.filter {
+                $0.machineName?.range(of: searchText!, options: .caseInsensitive, range: nil, locale: nil) != nil
+                        }
+                        print(filtered)
+            
+        }else {
+            isFiltering = false
+            filtered = machinehostdetails
+        }
+        self.tableStandAlone.reloadData()
+    }
+    
+    
 }
+
 
 

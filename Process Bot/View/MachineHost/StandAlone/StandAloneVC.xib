@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="btnMenu" destination="e2A-cx-40m" id="kA3-5s-AHS"/>
                 <outlet property="tableStandAlone" destination="4oV-Dl-hPv" id="RxZ-Yw-HsX"/>
+                <outlet property="textFieldSearch" destination="Hbg-UA-b2q" id="e4c-h1-Gx8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewHeader" destination="GBo-NB-nqr" id="JF9-bB-hbX"/>
                 <outlet property="viewSearch" destination="YXc-kc-N8A" id="5bx-iJ-CIG"/>
@@ -77,6 +78,9 @@
                                     <rect key="frame" x="10" y="10" width="311" height="30.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="rQP-Ub-8Gn"/>
+                                    </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kA-rU-gCg">
                                     <rect key="frame" x="331" y="7.5" width="36" height="36"/>
