@@ -289,7 +289,9 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
             item = row3[indexPath.row]
             if indexPath.row == 0
             {
-                print("0")
+                let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+
             }
         case 4:
             

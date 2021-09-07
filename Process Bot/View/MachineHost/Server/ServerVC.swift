@@ -80,7 +80,8 @@ class ServerVC: UIViewController,AlertDisplayer, SidePanelDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: StandAloneTableViewCell.self), for: indexPath) as! StandAloneTableViewCell
-        cell.lblRemarksValue.text = arrayremarks[indexPath.row]
+        
+      //  cell.lblRemarksValue.text = arrayremarks[indexPath.row]
         cell.lblMachineNameValue.text = arraymachinename[indexPath.row]
         cell.lblUserTypeValue.text = arrayusername[indexPath.row]
         return cell
