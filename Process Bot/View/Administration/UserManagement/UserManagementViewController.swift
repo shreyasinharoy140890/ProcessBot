@@ -22,6 +22,10 @@ class UserManagementViewController: UIViewController{
     var arraydatelist = [String]()
     var date:String?
     var time:String?
+    var filtered = [UserListModel]()
+    var searchText:String?
+    var isFiltering = false
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         tableusers.delegate = self
@@ -32,7 +36,8 @@ class UserManagementViewController: UIViewController{
         self.viewModeluserlistDetails = UserManagementViewModel()
         viewModeluserlistDetails?.manager = RequestManager()
         callGetuserlistDetails()
-       
+        textFieldSearch.addTarget(self, action: #selector(textFieldValueChange(_:)), for: .editingChanged)
+        textFieldSearch.text = searchText
     }
 
 
@@ -55,7 +60,9 @@ class UserManagementViewController: UIViewController{
                sender.isSelected = true
            }
        }
-
+    @IBAction func btnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 extension UserManagementViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +101,24 @@ extension UserManagementViewController:SidePanelDelegate {
             btnMenu.isSelected = false
         }
     }
-   
+    @objc func textFieldValueChange(_ txt: UITextField)  {
+        searchText = textFieldSearch.text!
+        
+        if (searchText != ""){
+            isFiltering = true
+
+            filtered = userlistdetails.filter {
+                $0.fullName?.range(of: searchText!, options: .caseInsensitive, range: nil, locale: nil) != nil
+                        }
+                        print(filtered)
+            
+        }else {
+            isFiltering = false
+            filtered = userlistdetails
+        }
+        self.tableusers.reloadData()
+    }
+    
 }
 extension UserManagementViewController:AlertDisplayer
 {

@@ -40,6 +40,12 @@
 		4466605426E7512C00DACC35 /* UserManagementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466605326E7512C00DACC35 /* UserManagementModel.swift */; };
 		4466606C26E7558B00DACC35 /* RobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466606B26E7558A00DACC35 /* RobotViewModel.swift */; };
 		4466606F26E7567300DACC35 /* UserManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466606E26E7567300DACC35 /* UserManagementViewModel.swift */; };
+		4466607326E77D8600DACC35 /* UpdateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466607126E77D8600DACC35 /* UpdateUserVC.swift */; };
+		4466607426E77D8600DACC35 /* UpdateUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466607226E77D8600DACC35 /* UpdateUserVC.xib */; };
+		4466608526E7A03B00DACC35 /* RolesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466608326E7A03B00DACC35 /* RolesPopupVC.swift */; };
+		4466608626E7A03B00DACC35 /* RolesPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466608426E7A03B00DACC35 /* RolesPopupVC.xib */; };
+		4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */; };
+		4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */; };
 		4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
@@ -195,6 +201,12 @@
 		4466605326E7512C00DACC35 /* UserManagementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementModel.swift; sourceTree = "<group>"; };
 		4466606B26E7558A00DACC35 /* RobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RobotViewModel.swift; path = ../../RobotViewModel.swift; sourceTree = "<group>"; };
 		4466606E26E7567300DACC35 /* UserManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementViewModel.swift; sourceTree = "<group>"; };
+		4466607126E77D8600DACC35 /* UpdateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserVC.swift; sourceTree = "<group>"; };
+		4466607226E77D8600DACC35 /* UpdateUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateUserVC.xib; sourceTree = "<group>"; };
+		4466608326E7A03B00DACC35 /* RolesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesPopupVC.swift; sourceTree = "<group>"; };
+		4466608426E7A03B00DACC35 /* RolesPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesPopupVC.xib; sourceTree = "<group>"; };
+		4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesTableViewCell.swift; sourceTree = "<group>"; };
+		4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesTableViewCell.xib; sourceTree = "<group>"; };
 		4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostModel.swift; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -310,6 +322,10 @@
 			children = (
 				4426326626E6630200B92296 /* UserManagementViewController.swift */,
 				4426326726E6630200B92296 /* UserManagementViewController.xib */,
+				4466607126E77D8600DACC35 /* UpdateUserVC.swift */,
+				4466607226E77D8600DACC35 /* UpdateUserVC.xib */,
+				4466608326E7A03B00DACC35 /* RolesPopupVC.swift */,
+				4466608426E7A03B00DACC35 /* RolesPopupVC.xib */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -531,6 +547,8 @@
 				449F05D826DF511000A86F1E /* ServerTableViewCell.xib */,
 				4426324726E636F600B92296 /* UserManagementTableViewCell.swift */,
 				4426324826E636F600B92296 /* UserManagementTableViewCell.xib */,
+				4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */,
+				4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -824,6 +842,7 @@
 				440A315726C5019600A231AB /* PopOver.xib in Resources */,
 				7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */,
 				73A627F226AEAF090073F0EB /* Aileron-ThinItalic.otf in Resources */,
+				4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */,
 				73A627FA26AEAF090073F0EB /* Aileron-SemiBold.otf in Resources */,
 				73A627F826AEAF090073F0EB /* Aileron-HeavyItalic.otf in Resources */,
 				44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */,
@@ -845,10 +864,12 @@
 				4446461C26DF521A00651174 /* ServerVC.xib in Resources */,
 				73A627FB26AEAF090073F0EB /* Aileron-Bold.otf in Resources */,
 				4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */,
+				4466607426E77D8600DACC35 /* UpdateUserVC.xib in Resources */,
 				7349BAFC26A082E3001360ED /* ScheduleCollectionViewCell.xib in Resources */,
 				73A627DD26AE9A3E0073F0EB /* RobotDetailsTableViewCell.xib in Resources */,
 				4426326926E6630200B92296 /* UserManagementViewController.xib in Resources */,
 				73A627FC26AEAF090073F0EB /* Aileron-Italic.otf in Resources */,
+				4466608626E7A03B00DACC35 /* RolesPopupVC.xib in Resources */,
 				73A627F626AEAF090073F0EB /* Aileron-LightItalic.otf in Resources */,
 				73A627F726AEAF090073F0EB /* Aileron-Thin.otf in Resources */,
 				73A627F526AEAF090073F0EB /* Aileron-UltraLightItalic.otf in Resources */,
@@ -907,6 +928,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4466607326E77D8600DACC35 /* UpdateUserVC.swift in Sources */,
 				449F05D926DF511000A86F1E /* ServerTableViewCell.swift in Sources */,
 				441FE48126DF94A300473FEB /* ScheduledTableViewCell.swift in Sources */,
 				44153EFF26CF8E2500E0D03A /* RunningHistoryViewModel.swift in Sources */,
@@ -918,6 +940,7 @@
 				4466606F26E7567300DACC35 /* UserManagementViewModel.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
 				445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
+				4466608526E7A03B00DACC35 /* RolesPopupVC.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
 				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,
@@ -976,6 +999,7 @@
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
 				CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */,
 				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,
+				4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */,
 				4446461B26DF521A00651174 /* ServerVC.swift in Sources */,
 				7393C889269DEE3B00F35C33 /* Constant.swift in Sources */,
 				73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */,

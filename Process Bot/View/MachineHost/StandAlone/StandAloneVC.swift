@@ -7,7 +7,6 @@
 
 import UIKit
 import SignalRSwift
-import MaterialComponents.MaterialSnackbar
 class StandAloneVC: UIViewController,AlertDisplayer {
     
     @IBOutlet weak var textFieldSearch: UITextField!
@@ -109,9 +108,7 @@ class StandAloneVC: UIViewController,AlertDisplayer {
         
     UIPasteboard.general.string = machinekey
     print(UIPasteboard.general.string!)
-        let message = MDCSnackbarMessage()
-        message.text = UIPasteboard.general.string!
-        MDCSnackbarManager.default.show(message)
+      
         }
    
 //MARK:- Webservice Calling

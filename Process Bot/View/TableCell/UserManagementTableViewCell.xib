@@ -224,6 +224,7 @@
             <viewLayoutGuide key="safeArea" id="LaV-Fl-Wft"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="btnupdate" destination="vHv-d9-Urh" id="3dp-XK-Iox"/>
                 <outlet property="labeldate" destination="RI6-v6-31a" id="ahB-CK-pkt"/>
                 <outlet property="labelfullname" destination="tzK-ic-BmY" id="zwZ-bF-wJp"/>
                 <outlet property="labelrolename" destination="N6O-Tj-ZsF" id="GoU-6K-gyB"/>
