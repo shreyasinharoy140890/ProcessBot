@@ -90,6 +90,9 @@
                             <rect key="frame" x="366" y="151" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="add_user_icon"/>
+                            <connections>
+                                <action selector="btnadduser:" destination="-1" eventType="touchUpInside" id="6RQ-zw-5BO"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

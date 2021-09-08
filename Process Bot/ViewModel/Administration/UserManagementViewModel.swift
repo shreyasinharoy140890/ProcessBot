@@ -12,6 +12,7 @@ protocol UserManagementViewModelProtocol : class {
     var manager: RequestManager? { get set }
     var usersdetails:[UserListModel]{get}
     var roleslist:[RoleListModel]{get}
+   
 }
 class UserManagementViewModel:UserManagementViewModelProtocol {
     var roleslist: [RoleListModel] = []

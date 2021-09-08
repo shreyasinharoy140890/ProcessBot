@@ -35,6 +35,8 @@
 		4445319626D946C300ADDC16 /* StandAloneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445319426D946C300ADDC16 /* StandAloneVC.swift */; };
 		4446461B26DF521A00651174 /* ServerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446461926DF521A00651174 /* ServerVC.swift */; };
 		4446461C26DF521A00651174 /* ServerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4446461A26DF521A00651174 /* ServerVC.xib */; };
+		4453F3B826E8F8B90020DA79 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453F3B626E8F8B90020DA79 /* AddUserViewController.swift */; };
+		4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4453F3B726E8F8B90020DA79 /* AddUserViewController.xib */; };
 		445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */; };
 		445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */; };
 		4466605426E7512C00DACC35 /* UserManagementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466605326E7512C00DACC35 /* UserManagementModel.swift */; };
@@ -42,8 +44,6 @@
 		4466606F26E7567300DACC35 /* UserManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466606E26E7567300DACC35 /* UserManagementViewModel.swift */; };
 		4466607326E77D8600DACC35 /* UpdateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466607126E77D8600DACC35 /* UpdateUserVC.swift */; };
 		4466607426E77D8600DACC35 /* UpdateUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466607226E77D8600DACC35 /* UpdateUserVC.xib */; };
-		4466608526E7A03B00DACC35 /* RolesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466608326E7A03B00DACC35 /* RolesPopupVC.swift */; };
-		4466608626E7A03B00DACC35 /* RolesPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466608426E7A03B00DACC35 /* RolesPopupVC.xib */; };
 		4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */; };
 		4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */; };
 		4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */; };
@@ -196,6 +196,8 @@
 		4445319426D946C300ADDC16 /* StandAloneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandAloneVC.swift; sourceTree = "<group>"; };
 		4446461926DF521A00651174 /* ServerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerVC.swift; sourceTree = "<group>"; };
 		4446461A26DF521A00651174 /* ServerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerVC.xib; sourceTree = "<group>"; };
+		4453F3B626E8F8B90020DA79 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		4453F3B726E8F8B90020DA79 /* AddUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserViewController.xib; sourceTree = "<group>"; };
 		445F1BEF26CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerViewModel.swift; sourceTree = "<group>"; };
 		445F1BF326CA6A6D00EC55CC /* TopTenNonPerformerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTenNonPerformerModel.swift; sourceTree = "<group>"; };
 		4466605326E7512C00DACC35 /* UserManagementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementModel.swift; sourceTree = "<group>"; };
@@ -203,8 +205,6 @@
 		4466606E26E7567300DACC35 /* UserManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementViewModel.swift; sourceTree = "<group>"; };
 		4466607126E77D8600DACC35 /* UpdateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserVC.swift; sourceTree = "<group>"; };
 		4466607226E77D8600DACC35 /* UpdateUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateUserVC.xib; sourceTree = "<group>"; };
-		4466608326E7A03B00DACC35 /* RolesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesPopupVC.swift; sourceTree = "<group>"; };
-		4466608426E7A03B00DACC35 /* RolesPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesPopupVC.xib; sourceTree = "<group>"; };
 		4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesTableViewCell.swift; sourceTree = "<group>"; };
 		4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesTableViewCell.xib; sourceTree = "<group>"; };
 		4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostModel.swift; sourceTree = "<group>"; };
@@ -324,8 +324,8 @@
 				4426326726E6630200B92296 /* UserManagementViewController.xib */,
 				4466607126E77D8600DACC35 /* UpdateUserVC.swift */,
 				4466607226E77D8600DACC35 /* UpdateUserVC.xib */,
-				4466608326E7A03B00DACC35 /* RolesPopupVC.swift */,
-				4466608426E7A03B00DACC35 /* RolesPopupVC.xib */,
+				4453F3B626E8F8B90020DA79 /* AddUserViewController.swift */,
+				4453F3B726E8F8B90020DA79 /* AddUserViewController.xib */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -847,6 +847,7 @@
 				73A627F826AEAF090073F0EB /* Aileron-HeavyItalic.otf in Resources */,
 				44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */,
 				7349BAF626A0798F001360ED /* ScheduleDetailsVC.xib in Resources */,
+				4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
 				73A627F426AEAF090073F0EB /* Aileron-Heavy.otf in Resources */,
 				440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */,
@@ -869,7 +870,6 @@
 				73A627DD26AE9A3E0073F0EB /* RobotDetailsTableViewCell.xib in Resources */,
 				4426326926E6630200B92296 /* UserManagementViewController.xib in Resources */,
 				73A627FC26AEAF090073F0EB /* Aileron-Italic.otf in Resources */,
-				4466608626E7A03B00DACC35 /* RolesPopupVC.xib in Resources */,
 				73A627F626AEAF090073F0EB /* Aileron-LightItalic.otf in Resources */,
 				73A627F726AEAF090073F0EB /* Aileron-Thin.otf in Resources */,
 				73A627F526AEAF090073F0EB /* Aileron-UltraLightItalic.otf in Resources */,
@@ -935,12 +935,12 @@
 				CDEE0C1026B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift in Sources */,
 				44FB10D426CAA69300A88DF4 /* CostSavingsViewModel.swift in Sources */,
 				CDC4177A26B3FE4300B445A8 /* RadarMarkerView.swift in Sources */,
+				4453F3B826E8F8B90020DA79 /* AddUserViewController.swift in Sources */,
 				7349BAE826A04D44001360ED /* SidePanelViewController.swift in Sources */,
 				44153F0226CFB3E900E0D03A /* SuccessRateDataModel.swift in Sources */,
 				4466606F26E7567300DACC35 /* UserManagementViewModel.swift in Sources */,
 				7349BAFB26A082E3001360ED /* ScheduleCollectionViewCell.swift in Sources */,
 				445F1BF226CA6A5D00EC55CC /* TopTenNonPerformerViewModel.swift in Sources */,
-				4466608526E7A03B00DACC35 /* RolesPopupVC.swift in Sources */,
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
 				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,

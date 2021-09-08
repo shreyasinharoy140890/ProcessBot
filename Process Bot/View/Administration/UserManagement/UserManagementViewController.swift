@@ -25,7 +25,10 @@ class UserManagementViewController: UIViewController{
     var filtered = [UserListModel]()
     var searchText:String?
     var isFiltering = false
-  
+    var usernamestring:String?
+    var fullnamestring:String?
+    var emailstring:String?
+    var rolename:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableusers.delegate = self
@@ -63,6 +66,11 @@ class UserManagementViewController: UIViewController{
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func btnadduser(_ sender: Any) {
+        let VC = AddUserViewController(nibName: "AddUserViewController", bundle: nil)
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
 extension UserManagementViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,8 +80,11 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: UserManagementTableViewCell.self), for: indexPath) as! UserManagementTableViewCell
         cell.labelusername.text = arrayfirstnamelist[indexPath.row]
+        usernamestring =  cell.labelusername.text
         cell.labeluseremail.text = arrayemaillist[indexPath.row]
+        emailstring = cell.labeluseremail.text
         cell.labelfullname.text = arrayfirstnamelist[indexPath.row]
+        fullnamestring =  cell.labelfullname.text
         date = arraydatelist[indexPath.row]
         print(date!.stringBefore("T"))
         let datestring = date!.stringBefore("T")
@@ -81,6 +92,7 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
         time = userlistdetails[indexPath.row].lastSuccessfulLogin
         let timestring = time!.stringAfter("T")
         cell.labeltime.text = timestring
+        cell.btnupdate.addTarget(self, action: #selector(navigatetonext(_:)), for: .touchUpInside)
         return cell
     }
     
@@ -118,7 +130,15 @@ extension UserManagementViewController:SidePanelDelegate {
         }
         self.tableusers.reloadData()
     }
-    
+    @objc func navigatetonext(_ sender:UIButton)
+    {
+     let VC = UpdateUserVC(nibName: "UpdateUserVC", bundle: nil)
+     UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+        VC.fullnamestring = fullnamestring
+        VC.usernamestring = usernamestring
+        VC.emailstring = emailstring
+        VC.rolename = rolename
+    }
 }
 extension UserManagementViewController:AlertDisplayer
 {
@@ -157,8 +177,8 @@ extension UserManagementViewController:AlertDisplayer
             }
         })
     }
-   
-    
+  
+  
 }
 extension String {
     func stringBefore(_ delimiter: Character) -> String {

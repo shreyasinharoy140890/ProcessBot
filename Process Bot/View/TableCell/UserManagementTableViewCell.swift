@@ -23,17 +23,13 @@ class UserManagementTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         viewDetails.isHidden = true
-        btnupdate.addTarget(self, action: #selector(navigatetonext(_:)), for: .touchUpInside)
+       
     }
     
     var isDetailViewHidden: Bool {
         return viewDetails.isHidden
     }
-    @objc func navigatetonext(_ sender:UIButton)
-    {
-     let VC = UpdateUserVC(nibName: "UpdateUserVC", bundle: nil)
-     UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
-    }
+    
     func showDetailView() {
         viewDetails.isHidden = false
     }
