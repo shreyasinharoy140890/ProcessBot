@@ -8,6 +8,7 @@ PODS:
   - Starscream (3.1.1)
 
 DEPENDENCIES:
+  - Alamofire
   - DLRadioButton (~> 1.4)
   - ExpandableCell
   - SignalRSwift (~> 2.0.2)
@@ -27,6 +28,6 @@ SPEC CHECKSUMS:
   SignalRSwift: 6f30893680780d4f4e9981795478ea43f5b63f3e
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 6d794d4b0cf269e53cf39eda9b71c4b72a533067
+PODFILE CHECKSUM: d1b4e04572033ca925136d4798982c66e31c2d76
 
 COCOAPODS: 1.10.2

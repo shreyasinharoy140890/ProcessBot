@@ -32,6 +32,9 @@
                         <constraint firstAttribute="width" constant="27" id="O8E-Qg-d2x"/>
                     </constraints>
                     <state key="normal" image="back_icon"/>
+                    <connections>
+                        <action selector="btnBack:" destination="-1" eventType="touchUpInside" id="mrC-ck-CFn"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcd-L8-nM6">
                     <rect key="frame" x="79" y="66" width="75.5" height="44"/>

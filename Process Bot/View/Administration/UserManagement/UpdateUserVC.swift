@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CellClass:UITableViewCell
 {
@@ -14,7 +15,6 @@ class CellClass:UITableViewCell
 
 class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITableViewDelegate {
    
-    
     @IBOutlet weak var textfielduserName: UITextField!
     @IBOutlet weak var textfieldfullName: UITextField!
     @IBOutlet weak var textfieldemail: UITextField!
@@ -33,7 +33,9 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     let tableView = UITableView()
     var selectedbutton = UIButton()
     var datasource = [String]()
-    
+    let token  = UserDefaults.standard.value(forKey: "TOKEN")
+    let userid = UserDefaults.standard.value(forKey: "USERID")
+    let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -75,8 +77,6 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         }, completion: nil)
     }
   
-    
-    
     func setupUI (){
         textfielduserName.layer.borderWidth = 2
         textfielduserName.layer.borderColor = UIColor.lightGray.cgColor
@@ -107,6 +107,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         buttonsave.layer.cornerRadius = 15
     
     }
+    
      
   //MARK:- Button actions
     @IBAction func btnBack(_ sender: Any) {
@@ -121,7 +122,16 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         selectedbutton = buttonaddrole!
         addtransparentView(frames:buttonaddrole.frame)
     }
-   
+    @IBAction func btnsave(_ sender: UIButton) {
+      if  buttonaddrole.isTouchInside == true
+      {
+        
+      }
+        else
+      {
+        updateuser()
+      }
+    }
    
     //MARK:- Webservice Call
         
@@ -153,6 +163,46 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
                 }
             })
         }
+    func updateuser()
+    {
+        let parameters = [
+            "UserID": userid!,
+            "ClientID":clientid!,
+            "FullName": textfieldfullName.text!,
+               "RoleID": "0",
+               "ActiveYN": "Y"
+        ]
+        let headers = [
+            "AppName":"IntelgicApp",
+            "Token":token!as! String,
+        ]
+        Alamofire.request("http://3.7.99.38:5001/api/User/UpdateUser?", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers: headers) .responseJSON { (response) in
+               print(response)
+            // Create the alert controller
+                let alertController = UIAlertController(title: "", message: "Profile Updated", preferredStyle: .alert)
+
+                // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                    UIAlertAction in
+                    NSLog("OK Pressed")
+                let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
+                self.navigationController?.pushViewController(VC, animated: true)
+                }
+            
+                // Add the actions
+                alertController.addAction(okAction)
+              
+
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
+           }
+    }
+ 
+ func roleupdate()
+ {
+    
+ }
+    
  //MARK: TableView datasource and delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
