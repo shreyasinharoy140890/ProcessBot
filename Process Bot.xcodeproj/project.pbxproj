@@ -29,6 +29,8 @@
 		4426324A26E636F600B92296 /* UserManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4426324826E636F600B92296 /* UserManagementTableViewCell.xib */; };
 		4426326826E6630200B92296 /* UserManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426326626E6630200B92296 /* UserManagementViewController.swift */; };
 		4426326926E6630200B92296 /* UserManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4426326726E6630200B92296 /* UserManagementViewController.xib */; };
+		442CF30C26EB2DDA00556F8E /* PermissionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CF30B26EB2DDA00556F8E /* PermissionListModel.swift */; };
+		442CF31026EB314B00556F8E /* PermissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CF30F26EB314B00556F8E /* PermissionListViewModel.swift */; };
 		4445319126D946A000ADDC16 /* StandAloneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445318F26D9469E00ADDC16 /* StandAloneTableViewCell.swift */; };
 		4445319226D946A000ADDC16 /* StandAloneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4445319026D946A000ADDC16 /* StandAloneTableViewCell.xib */; };
 		4445319526D946C300ADDC16 /* StandAloneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4445319326D946C200ADDC16 /* StandAloneVC.xib */; };
@@ -190,6 +192,8 @@
 		4426324826E636F600B92296 /* UserManagementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagementTableViewCell.xib; sourceTree = "<group>"; };
 		4426326626E6630200B92296 /* UserManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementViewController.swift; sourceTree = "<group>"; };
 		4426326726E6630200B92296 /* UserManagementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagementViewController.xib; sourceTree = "<group>"; };
+		442CF30B26EB2DDA00556F8E /* PermissionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionListModel.swift; sourceTree = "<group>"; };
+		442CF30F26EB314B00556F8E /* PermissionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionListViewModel.swift; sourceTree = "<group>"; };
 		4445318F26D9469E00ADDC16 /* StandAloneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandAloneTableViewCell.swift; sourceTree = "<group>"; };
 		4445319026D946A000ADDC16 /* StandAloneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandAloneTableViewCell.xib; sourceTree = "<group>"; };
 		4445319326D946C200ADDC16 /* StandAloneVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandAloneVC.xib; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				4466605326E7512C00DACC35 /* UserManagementModel.swift */,
+				442CF30B26EB2DDA00556F8E /* PermissionListModel.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				4466606E26E7567300DACC35 /* UserManagementViewModel.swift */,
+				442CF30F26EB314B00556F8E /* PermissionListViewModel.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -931,6 +937,7 @@
 				4466607326E77D8600DACC35 /* UpdateUserVC.swift in Sources */,
 				449F05D926DF511000A86F1E /* ServerTableViewCell.swift in Sources */,
 				441FE48126DF94A300473FEB /* ScheduledTableViewCell.swift in Sources */,
+				442CF30C26EB2DDA00556F8E /* PermissionListModel.swift in Sources */,
 				44153EFF26CF8E2500E0D03A /* RunningHistoryViewModel.swift in Sources */,
 				CDEE0C1026B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift in Sources */,
 				44FB10D426CAA69300A88DF4 /* CostSavingsViewModel.swift in Sources */,
@@ -984,6 +991,7 @@
 				44153EFB26CF8E0F00E0D03A /* RunningHistoryDataModel.swift in Sources */,
 				CDC4177B26B3FE4300B445A8 /* IntAxisValueFormatter.swift in Sources */,
 				4426326826E6630200B92296 /* UserManagementViewController.swift in Sources */,
+				442CF31026EB314B00556F8E /* PermissionListViewModel.swift in Sources */,
 				440A986D26CE62CE00AFF6D3 /* ActivityViewModel.swift in Sources */,
 				CDC4176E26B3FE0B00B445A8 /* DemoBaseViewController.swift in Sources */,
 				44E8B5A026DCBE3200C01833 /* DashboardVC.swift in Sources */,

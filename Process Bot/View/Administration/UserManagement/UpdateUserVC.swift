@@ -26,9 +26,13 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     var fullnamestring:String?
     var emailstring:String?
     var rolename:String?
+    var roledescription:String?
     var viewModelroleslistDetails:UserManagementViewModelProtocol?
     var rolelistdetails = [RoleListModel]()
+    var viewModelpermissionlistDetails:PermissionViewModelProtocol?
+    var permissionlistdetails = [PermissionListModel]()
     var arrayrolenamelist = [String]()
+    var arrayiseditable = [Bool]()
     let transparentView = UIView()
     let tableView = UITableView()
     var selectedbutton = UIButton()
@@ -44,7 +48,10 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         textfieldemail.text = emailstring
         self.viewModelroleslistDetails = UserManagementViewModel()
         viewModelroleslistDetails?.manager = RequestManager()
+        self.viewModelpermissionlistDetails = PermissionViewModel()
+        viewModelpermissionlistDetails?.manager = RequestManager()
         getrolelist()
+        getpermissionlist()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CellClass.self,forCellReuseIdentifier:"Cell")
@@ -82,6 +89,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         textfielduserName.layer.borderColor = UIColor.lightGray.cgColor
         textfielduserName.layer.cornerRadius = 8
         textfielduserName.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 3.0, opacity: 0.6)
+        textfielduserName.isUserInteractionEnabled = false
         
         textfieldfullName.layer.borderWidth = 2
         textfieldfullName.layer.borderColor = UIColor.lightGray.cgColor
@@ -92,12 +100,13 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         textfieldemail.layer.borderColor = UIColor.lightGray.cgColor
         textfieldemail.layer.cornerRadius = 8
         textfieldemail.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 3.0, opacity: 0.6)
+        textfieldemail.isUserInteractionEnabled = false
         
         textfieldrolename.layer.borderWidth = 2
         textfieldrolename.layer.borderColor = UIColor.lightGray.cgColor
         textfieldrolename.layer.cornerRadius = 8
         textfieldrolename.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 3.0, opacity: 0.6)
-        
+        textfieldrolename.isUserInteractionEnabled = false
         
         buttoncancel.layer.borderWidth = 2
         buttoncancel.layer.borderColor = UIColor.systemBlue.cgColor
@@ -123,9 +132,9 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         addtransparentView(frames:buttonaddrole.frame)
     }
     @IBAction func btnsave(_ sender: UIButton) {
-      if  buttonaddrole.isTouchInside == true
+      if  buttonaddrole.isEnabled == true
       {
-        
+        updateroles()
       }
         else
       {
@@ -151,6 +160,9 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
                             for i in 0..<rolelistdetails.count
                             {
                                 arrayrolenamelist.append(rolelistdetails[i].roleName!)
+                                rolename = rolelistdetails[i].roleName!
+                                roledescription = rolelistdetails[i].roleDescription!
+                                textfieldrolename.text = rolelistdetails[i].roleName!
                     }
                         }
                     }
@@ -169,8 +181,8 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
             "UserID": userid!,
             "ClientID":clientid!,
             "FullName": textfieldfullName.text!,
-               "RoleID": "0",
-               "ActiveYN": "Y"
+            "RoleID": "0",
+            "ActiveYN": "Y"
         ]
         let headers = [
             "AppName":"IntelgicApp",
@@ -198,11 +210,93 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
            }
     }
  
- func roleupdate()
+ func getpermissionlist()
  {
-    
+    DispatchQueue.main.async {
+        //   showActivityIndicator(viewController: self)
+    }
+    viewModelpermissionlistDetails?.getPermissionList(completion: { result in
+        switch result {
+        case .success(let result):
+            if let success = result as? Bool , success == true {
+                DispatchQueue.main.async { [self] in
+                    
+                 permissionlistdetails =   viewModelpermissionlistDetails!.permissionlist
+                    print(permissionlistdetails)
+                    for i in 0..<permissionlistdetails.count
+                    {
+                        arrayiseditable.append(permissionlistdetails[i].isEdit!)
+                        if arrayiseditable[i] == false
+                        {
+                           // buttonaddrole.isEnabled = false
+                            textfieldrolename.text = "Not allowed to change roles"
+                        }
+                       else
+                        {
+                            textfieldrolename.text = rolelistdetails[i].roleName!
+                            buttonaddrole.isEnabled = true
+                        }
+                       
+            }
+                    
+                }
+            }
+        case .failure(let error):
+            DispatchQueue.main.async {
+                hideActivityIndicator(viewController: self)
+                self.showAlertWith(message: error.localizedDescription)
+            }
+            
+        }
+    })
  }
     
+    
+func updateroles()
+{
+    print(permissionlistdetails)
+    let parameters = [
+        "RoleID":"0",
+            "ClientID": clientid!,
+            "RoleName": textfieldrolename.text!,
+            "RoleDescription": roledescription!,
+            "IsActive":"True",
+            "IsDelete":"False",
+            "CreatedBy":"sourish",
+            
+            "Permission":
+                permissionlistdetails
+        
+    ]
+    print(parameters)
+    let headers = [
+        "AppName":"IntelgicApp",
+        "Token":token!as! String,
+    ]
+    Alamofire.request("http://3.7.99.38:5001/api/User/AddUpdateRoles?", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers: headers) .responseJSON { (response) in
+           print(response)
+        // Create the alert controller
+            let alertController = UIAlertController(title: "", message: "Role Updated", preferredStyle: .alert)
+
+            // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
+            self.navigationController?.pushViewController(VC, animated: true)
+            }
+        
+            // Add the actions
+            alertController.addAction(okAction)
+          
+
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+       }
+    
+    
+}
+ 
  //MARK: TableView datasource and delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count

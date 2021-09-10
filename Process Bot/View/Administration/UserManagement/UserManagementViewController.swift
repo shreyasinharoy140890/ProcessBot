@@ -164,6 +164,7 @@ extension UserManagementViewController:AlertDisplayer
                             
                             arraytimelist.append(userlistdetails[i].lastSuccessfulLogin!)
                             time = userlistdetails[i].lastSuccessfulLogin!
+                            UserDefaults.standard.set(self.userlistdetails[i].username!, forKey: "USERNAME")
                         }
                         self.tableusers.reloadData()
                     }

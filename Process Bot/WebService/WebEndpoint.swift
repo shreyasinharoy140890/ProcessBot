@@ -130,6 +130,10 @@ extension Endpoint {
     {
         Endpoint(base:environment.baseURL, path: "api/User/RoleList?")
     }
+    static var permissionlistdetails:Self
+    {
+        Endpoint(base:environment.baseURL, path: "api/User/PermissionList?")
+    }
   
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         
