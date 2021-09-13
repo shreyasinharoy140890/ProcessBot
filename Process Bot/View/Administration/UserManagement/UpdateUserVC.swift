@@ -25,7 +25,16 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     var usernamestring:String?
     var fullnamestring:String?
     var emailstring:String?
+    var roleidupdated:Int?
     var rolename:String?
+    var createdby:String?
+    var componentcodeString:String?
+    var componentIDString:Int?
+    var componentNameString:String?
+    var isedit:Bool?
+    var isView:Bool?
+    var isDelete:Bool?
+    var isAdd:Bool?
     var roledescription:String?
     var viewModelroleslistDetails:UserManagementViewModelProtocol?
     var rolelistdetails = [RoleListModel]()
@@ -40,18 +49,35 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     let token  = UserDefaults.standard.value(forKey: "TOKEN")
     let userid = UserDefaults.standard.value(forKey: "USERID")
     let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
+    let roleid = UserDefaults.standard.value(forKey: "ROLEID")
+    let userroleid = UserDefaults.standard.value(forKey: "USERROLEID")
+    let componentcode = "UMGMT"
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         textfielduserName.text = usernamestring
         textfieldfullName.text = fullnamestring
         textfieldemail.text = emailstring
+        if rolename == "Not Applicable"
+        {
+            buttonaddrole.isEnabled = false
+            textfieldrolename.text = "Not allowed to change roles"
+        }
+       else
+        {
+
+            buttonaddrole.isEnabled = true
+            textfieldrolename.text = rolename
+        }
+        print(rolename)
+        print(usernamestring)
+        print(emailstring)
         self.viewModelroleslistDetails = UserManagementViewModel()
         viewModelroleslistDetails?.manager = RequestManager()
         self.viewModelpermissionlistDetails = PermissionViewModel()
         viewModelpermissionlistDetails?.manager = RequestManager()
         getrolelist()
-        getpermissionlist()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CellClass.self,forCellReuseIdentifier:"Cell")
@@ -132,14 +158,9 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         addtransparentView(frames:buttonaddrole.frame)
     }
     @IBAction func btnsave(_ sender: UIButton) {
-      if  buttonaddrole.isEnabled == true
-      {
-        updateroles()
-      }
-        else
-      {
+     
         updateuser()
-      }
+   
     }
    
     //MARK:- Webservice Call
@@ -161,9 +182,12 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
                             {
                                 arrayrolenamelist.append(rolelistdetails[i].roleName!)
                                 rolename = rolelistdetails[i].roleName!
-                                roledescription = rolelistdetails[i].roleDescription!
-                                textfieldrolename.text = rolelistdetails[i].roleName!
+                              
+                                UserDefaults.standard.set(self.rolelistdetails[i].roleID!, forKey: "ROLEID")
+                              
                     }
+                            getpermissionlist()
+                           
                         }
                     }
                 case .failure(let error):
@@ -175,13 +199,70 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
                 }
             })
         }
+    
+    func getpermissionlist()
+    {
+       
+       DispatchQueue.main.async {
+           //   showActivityIndicator(viewController: self)
+       }
+       viewModelpermissionlistDetails?.getPermissionList(completion: { result in
+           switch result {
+           case .success(let result):
+               if let success = result as? Bool , success == true {
+                   DispatchQueue.main.async { [self] in
+                       
+                    permissionlistdetails =   viewModelpermissionlistDetails!.permissionlist
+                    print(permissionlistdetails)
+                       for i in 0..<permissionlistdetails.count
+                       {
+                        if permissionlistdetails[i].componentCode == componentcode
+                        {
+                             componentcodeString = permissionlistdetails[i].componentCode
+                            componentIDString = permissionlistdetails[i].componentID
+                            componentNameString = permissionlistdetails[i].componentName
+                            isView = permissionlistdetails[i].isView
+                            isedit = permissionlistdetails[i].isEdit
+                            isAdd = permissionlistdetails[i].isAdd
+                            isDelete = permissionlistdetails[i].isDelete
+                        }
+                          
+                          
+               }
+                    print(componentcodeString!)
+                    print(componentIDString!)
+                    print(componentNameString!)
+                    
+                   }
+               }
+           case .failure(let error):
+               DispatchQueue.main.async {
+                   hideActivityIndicator(viewController: self)
+                   self.showAlertWith(message: error.localizedDescription)
+               }
+               
+           }
+       })
+    }
+       
+ 
+    
     func updateuser()
     {
+        if buttonaddrole.isSelected == true
+        {
+            roleidupdated = 0
+        }
+        else
+        {
+            roleidupdated = roleid! as! Int
+        }
+        
         let parameters = [
             "UserID": userid!,
             "ClientID":clientid!,
             "FullName": textfieldfullName.text!,
-            "RoleID": "0",
+            "RoleID": roleidupdated!,
             "ActiveYN": "Y"
         ]
         let headers = [
@@ -210,93 +291,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
            }
     }
  
- func getpermissionlist()
- {
-    DispatchQueue.main.async {
-        //   showActivityIndicator(viewController: self)
-    }
-    viewModelpermissionlistDetails?.getPermissionList(completion: { result in
-        switch result {
-        case .success(let result):
-            if let success = result as? Bool , success == true {
-                DispatchQueue.main.async { [self] in
-                    
-                 permissionlistdetails =   viewModelpermissionlistDetails!.permissionlist
-                    print(permissionlistdetails)
-                    for i in 0..<permissionlistdetails.count
-                    {
-                        arrayiseditable.append(permissionlistdetails[i].isEdit!)
-                        if arrayiseditable[i] == false
-                        {
-                           // buttonaddrole.isEnabled = false
-                            textfieldrolename.text = "Not allowed to change roles"
-                        }
-                       else
-                        {
-                            textfieldrolename.text = rolelistdetails[i].roleName!
-                            buttonaddrole.isEnabled = true
-                        }
-                       
-            }
-                    
-                }
-            }
-        case .failure(let error):
-            DispatchQueue.main.async {
-                hideActivityIndicator(viewController: self)
-                self.showAlertWith(message: error.localizedDescription)
-            }
-            
-        }
-    })
- }
-    
-    
-func updateroles()
-{
-    print(permissionlistdetails)
-    let parameters = [
-        "RoleID":"0",
-            "ClientID": clientid!,
-            "RoleName": textfieldrolename.text!,
-            "RoleDescription": roledescription!,
-            "IsActive":"True",
-            "IsDelete":"False",
-            "CreatedBy":"sourish",
-            
-            "Permission":
-                permissionlistdetails
-        
-    ]
-    print(parameters)
-    let headers = [
-        "AppName":"IntelgicApp",
-        "Token":token!as! String,
-    ]
-    Alamofire.request("http://3.7.99.38:5001/api/User/AddUpdateRoles?", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers: headers) .responseJSON { (response) in
-           print(response)
-        // Create the alert controller
-            let alertController = UIAlertController(title: "", message: "Role Updated", preferredStyle: .alert)
-
-            // Create the actions
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                NSLog("OK Pressed")
-            let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
-            self.navigationController?.pushViewController(VC, animated: true)
-            }
-        
-            // Add the actions
-            alertController.addAction(okAction)
-          
-
-            // Present the controller
-            self.present(alertController, animated: true, completion: nil)
-       }
-    
-    
-}
- 
+  
  //MARK: TableView datasource and delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
@@ -310,6 +305,7 @@ func updateroles()
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         textfieldrolename.text =  datasource[indexPath.row]
+        roledescription = arrayrolenamelist[indexPath.row].description
         removeTransparentView()
     }
   

@@ -46,8 +46,6 @@ setupUI()
         buttoncancel.layer.borderWidth = 2
         buttoncancel.layer.borderColor = UIColor.systemBlue.cgColor
         buttoncancel.layer.cornerRadius = 15
-        
-       
         buttonsave.layer.cornerRadius = 15
     
     }

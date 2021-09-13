@@ -20,6 +20,8 @@ class UserManagementViewController: UIViewController{
     var arrayemaillist = [String]()
     var arraytimelist = [String]()
     var arraydatelist = [String]()
+    var arrayrolenamelist = [String]()
+    var arraycreatedby = [String]()
     var date:String?
     var time:String?
     var filtered = [UserListModel]()
@@ -85,6 +87,8 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
         emailstring = cell.labeluseremail.text
         cell.labelfullname.text = arrayfirstnamelist[indexPath.row]
         fullnamestring =  cell.labelfullname.text
+        cell.labelrolename.text = arrayrolenamelist[indexPath.row]
+        rolename = cell.labelrolename.text
         date = arraydatelist[indexPath.row]
         print(date!.stringBefore("T"))
         let datestring = date!.stringBefore("T")
@@ -93,6 +97,7 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
         let timestring = time!.stringAfter("T")
         cell.labeltime.text = timestring
         cell.btnupdate.addTarget(self, action: #selector(navigatetonext(_:)), for: .touchUpInside)
+        cell.btnupdate.tag = indexPath.row
         return cell
     }
     
@@ -132,12 +137,21 @@ extension UserManagementViewController:SidePanelDelegate {
     }
     @objc func navigatetonext(_ sender:UIButton)
     {
-     let VC = UpdateUserVC(nibName: "UpdateUserVC", bundle: nil)
-     UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
-        VC.fullnamestring = fullnamestring
-        VC.usernamestring = usernamestring
-        VC.emailstring = emailstring
-        VC.rolename = rolename
+        let cell = tableusers.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? UserManagementTableViewCell
+        if (sender.isSelected){
+            let VC = UpdateUserVC(nibName: "UpdateUserVC", bundle: nil)
+            UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            VC.fullnamestring = arrayfirstnamelist[sender.tag]
+            VC.usernamestring = arrayfirstnamelist[sender.tag]
+            VC.emailstring = arrayemaillist[sender.tag]
+            VC.rolename = arrayrolenamelist[sender.tag]
+            VC.createdby = arraycreatedby[sender.tag]
+        }else {
+           
+            sender.isSelected = true
+        
+        }
+     
     }
 }
 extension UserManagementViewController:AlertDisplayer
@@ -163,8 +177,23 @@ extension UserManagementViewController:AlertDisplayer
                             arraydatelist.append(userlistdetails[i].createDate!)
                             
                             arraytimelist.append(userlistdetails[i].lastSuccessfulLogin!)
+                            arraycreatedby.append(userlistdetails[i].createdBy!)
+                            
+                            
                             time = userlistdetails[i].lastSuccessfulLogin!
+                            if let rolename = userlistdetails[i].roleName {
+                                print("No")
+                                arrayrolenamelist.append(userlistdetails[i].roleName!)
+                            } else {
+                               print("Yes")
+                                arrayrolenamelist.append("Not Applicable")
+                            }
+                           
                             UserDefaults.standard.set(self.userlistdetails[i].username!, forKey: "USERNAME")
+                            
+                            UserDefaults.standard.set(self.userlistdetails[i].roleID!, forKey: "USERROLEID")
+                            
+                            
                         }
                         self.tableusers.reloadData()
                     }

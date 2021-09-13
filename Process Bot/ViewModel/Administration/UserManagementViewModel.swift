@@ -88,7 +88,7 @@ class UserManagementViewModel:UserManagementViewModelProtocol {
           
          
          
-        self.manager?.request(.customGetURL(with: .userslistdetails, components: ["ClientID":clientId,"UserID":userId]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+        self.manager?.request(.customGetURL(with: .userslistdetails, components: ["ClientID":clientId,"UserID":""]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
              
              switch result {
              case .success(let jsonresponce):

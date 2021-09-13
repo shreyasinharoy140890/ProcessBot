@@ -87,48 +87,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "58C919E0-834D-4C84-8585-7205B3B3BD35"
+            uuid = "0E77B55D-C3D0-4072-B040-185165EB39E7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Process Bot/View/Administration/UserManagement/UpdateUserVC.swift"
+            filePath = "Pods/SignalRSwift/SignalR-Swift/Client/Hubs/HubConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "updateroles()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "didReceiveData(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97252AD0-9A26-45FC-BE7E-12037B9738DE"
+            uuid = "9ED51209-4F06-4472-8E4C-D9758ED36380"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Process Bot/View/Administration/UserManagement/UpdateUserVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "btnsave(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1302EB2F-2280-4B1B-9247-BD6A731DEB6D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Process Bot/View/Administration/UserManagement/UpdateUserVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "updateroles()"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "updateuser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

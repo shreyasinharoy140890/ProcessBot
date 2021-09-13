@@ -56,6 +56,7 @@ class StandAloneVC: UIViewController,AlertDisplayer {
             print("connected")
             
         }
+      
 
         connection.reconnecting = { [unowned self] in
             print("reconnecting")
