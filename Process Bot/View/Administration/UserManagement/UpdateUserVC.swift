@@ -35,6 +35,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     var isView:Bool?
     var isDelete:Bool?
     var isAdd:Bool?
+    var isroleadded:Bool?
     var roledescription:String?
     var viewModelroleslistDetails:UserManagementViewModelProtocol?
     var rolelistdetails = [RoleListModel]()
@@ -49,7 +50,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     let token  = UserDefaults.standard.value(forKey: "TOKEN")
     let userid = UserDefaults.standard.value(forKey: "USERID")
     let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
-    let roleid = UserDefaults.standard.value(forKey: "ROLEID")
+    var roleid = UserDefaults.standard.value(forKey: "ROLEID")
     let userroleid = UserDefaults.standard.value(forKey: "USERROLEID")
     let componentcode = "UMGMT"
    
@@ -152,7 +153,8 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func btnaddrole(_ sender: Any) {
+    @IBAction func btnaddrole(_ sender: UIButton) {
+       
         datasource = arrayrolenamelist
         selectedbutton = buttonaddrole!
         addtransparentView(frames:buttonaddrole.frame)
@@ -181,12 +183,10 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
                             for i in 0..<rolelistdetails.count
                             {
                                 arrayrolenamelist.append(rolelistdetails[i].roleName!)
-                                rolename = rolelistdetails[i].roleName!
-                              
-                                UserDefaults.standard.set(self.rolelistdetails[i].roleID!, forKey: "ROLEID")
+                               
                               
                     }
-                            getpermissionlist()
+                       //     getpermissionlist()
                            
                         }
                     }
@@ -249,22 +249,37 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     
     func updateuser()
     {
-        if buttonaddrole.isSelected == true
+        if buttonaddrole.isTouchInside == true
         {
-            roleidupdated = 0
+            roleid! = roleidupdated!
+        }
+        else if textfieldfullName.isEditing == true && buttonaddrole.isTouchInside == true
+        {
+            roleid! = roleidupdated!
+        }
+        
+        else if textfieldfullName.isEditing == true
+        {
+            roleid! = 0
+        }
+        else if textfieldfullName.isEditing == true && buttonaddrole.isTouchInside == false
+        {
+            roleid! = 0
         }
         else
         {
-            roleidupdated = roleid! as! Int
+            roleid! = roleidupdated!
         }
+        
         
         let parameters = [
             "UserID": userid!,
             "ClientID":clientid!,
             "FullName": textfieldfullName.text!,
-            "RoleID": roleidupdated!,
+            "RoleID": roleid!,
             "ActiveYN": "Y"
         ]
+        print(parameters)
         let headers = [
             "AppName":"IntelgicApp",
             "Token":token!as! String,
@@ -306,6 +321,9 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
        
         textfieldrolename.text =  datasource[indexPath.row]
         roledescription = arrayrolenamelist[indexPath.row].description
+        buttonaddrole.isTouchInside == true
+        roleidupdated = rolelistdetails[indexPath.row].roleID!
+        UserDefaults.standard.set(roleidupdated, forKey: "ROLEID")
         removeTransparentView()
     }
   

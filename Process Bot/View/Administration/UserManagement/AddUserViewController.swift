@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddUserViewController: UIViewController {
     @IBOutlet weak var textfielduserName: UITextField!
@@ -15,6 +16,11 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var buttoncancel: UIButton!
     @IBOutlet weak var buttonsave: UIButton!
     @IBOutlet weak var buttonaddrole: UIButton!
+    let token  = UserDefaults.standard.value(forKey: "TOKEN")
+    let userid = UserDefaults.standard.value(forKey: "USERID")
+    let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
+    let roleid = UserDefaults.standard.value(forKey: "ROLEID")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 setupUI()
@@ -54,4 +60,58 @@ setupUI()
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func btnsave(_ sender: UIButton) {
+     
+        createuser()
+   
+    }
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+   
+    
+  //MARK: Webservice Call
+    func createuser()
+    {
+        
+        let parameters = [
+            "Username":textfielduserName.text!,
+            "Email":textfieldemail.text!,
+             "ClientID":clientid!,
+             "RoleID":roleid!,
+             "CreatedBy":clientid!,
+             "FullName" :textfieldfullName.text!
+        ]
+        print(parameters)
+        let headers = [
+            "AppName":"IntelgicApp",
+            "Token":token!as! String,
+        ]
+        Alamofire.request("http://3.7.99.38:5001/api/User/CreateUser?", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers: headers) .responseJSON { (response) in
+               print(response)
+            // Create the alert controller
+                let alertController = UIAlertController(title: "", message: "Profile Updated", preferredStyle: .alert)
+
+                // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                    UIAlertAction in
+                    NSLog("OK Pressed")
+                let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
+                self.navigationController?.pushViewController(VC, animated: true)
+                }
+            
+                // Add the actions
+                alertController.addAction(okAction)
+              
+
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
+           }
+    }
+ 
+  
+    
+    
+    
+    
 }
