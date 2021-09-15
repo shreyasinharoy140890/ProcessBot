@@ -150,6 +150,7 @@
                 <constraint firstItem="sDe-Cc-h2N" firstAttribute="height" secondItem="JM6-W7-dS1" secondAttribute="height" multiplier="0.22" id="qVg-8b-wrp"/>
                 <constraint firstItem="tFY-Q6-8Cd" firstAttribute="bottom" secondItem="3Qs-LZ-r5a" secondAttribute="bottom" id="whi-an-D2T"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="66.666666666666671" y="60.267857142857139"/>
         </view>
     </objects>

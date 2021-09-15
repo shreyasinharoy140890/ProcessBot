@@ -47,10 +47,11 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     let tableView = UITableView()
     var selectedbutton = UIButton()
     var datasource = [String]()
-    let token  = UserDefaults.standard.value(forKey: "TOKEN")
-    let userid = UserDefaults.standard.value(forKey: "USERID")
-    let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
-    var roleid = UserDefaults.standard.value(forKey: "ROLEID")
+    var token  = UserDefaults.standard.value(forKey: "TOKEN")
+    var userid = UserDefaults.standard.value(forKey: "USER_ID")
+    var clientid = UserDefaults.standard.value(forKey: "CLIENTID")
+    var adminstatus = UserDefaults.standard.value(forKey: "ADMINSTATUS")
+    var roleid:Int?
     let userroleid = UserDefaults.standard.value(forKey: "USERROLEID")
     let componentcode = "UMGMT"
    
@@ -60,7 +61,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         textfielduserName.text = usernamestring
         textfieldfullName.text = fullnamestring
         textfieldemail.text = emailstring
-        if rolename == "Not Applicable"
+        if adminstatus as! String == "Y"
         {
             buttonaddrole.isEnabled = false
             textfieldrolename.text = "Not allowed to change roles"
@@ -249,36 +250,32 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     
     func updateuser()
     {
-        if buttonaddrole.isTouchInside == true
+       
+
+        print(roleid)
+        print(userid)
+        var parameters = [String:Any]()
+        if roleid != nil
         {
-            roleid! = roleidupdated!
-        }
-        else if textfieldfullName.isEditing == true && buttonaddrole.isTouchInside == true
-        {
-            roleid! = roleidupdated!
-        }
-        
-        else if textfieldfullName.isEditing == true
-        {
-            roleid! = 0
-        }
-        else if textfieldfullName.isEditing == true && buttonaddrole.isTouchInside == false
-        {
-            roleid! = 0
+            parameters = [
+                "UserID": userid!,
+                "ClientID":clientid!,
+                "FullName": textfieldfullName.text!,
+                "RoleID": roleid!,
+                "ActiveYN": "Y"
+            ]
         }
         else
         {
-            roleid! = roleidupdated!
+             parameters = [
+                "UserID": userid!,
+                "ClientID":clientid!,
+                "FullName": textfieldfullName.text!,
+                "RoleID": 0,
+                "ActiveYN": "Y"
+            ]
         }
         
-        
-        let parameters = [
-            "UserID": userid!,
-            "ClientID":clientid!,
-            "FullName": textfieldfullName.text!,
-            "RoleID": roleid!,
-            "ActiveYN": "Y"
-        ]
         print(parameters)
         let headers = [
             "AppName":"IntelgicApp",
@@ -322,8 +319,8 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         textfieldrolename.text =  datasource[indexPath.row]
         roledescription = arrayrolenamelist[indexPath.row].description
         buttonaddrole.isTouchInside == true
-        roleidupdated = rolelistdetails[indexPath.row].roleID!
-        UserDefaults.standard.set(roleidupdated, forKey: "ROLEID")
+        roleid = rolelistdetails[indexPath.row].roleID!
+        UserDefaults.standard.set(roleid, forKey: "ROLEID")
         removeTransparentView()
     }
   

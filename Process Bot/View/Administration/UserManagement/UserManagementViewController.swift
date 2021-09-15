@@ -22,6 +22,7 @@ class UserManagementViewController: UIViewController{
     var arraydatelist = [String]()
     var arrayrolenamelist = [String]()
     var arraycreatedby = [String]()
+    var arrayrole = [String]()
     var date:String?
     var time:String?
     var filtered = [UserListModel]()
@@ -31,6 +32,7 @@ class UserManagementViewController: UIViewController{
     var fullnamestring:String?
     var emailstring:String?
     var rolename:String?
+    var userid:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableusers.delegate = self
@@ -106,7 +108,10 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       UIView.animate(withDuration: 0.3) {
+        print(self.userlistdetails[indexPath.row].iD!)
+       UserDefaults.standard.set(self.userlistdetails[indexPath.row].iD!, forKey: "USER_ID")
+        UserDefaults.standard.set(self.userlistdetails[indexPath.row].adminYN!, forKey: "ADMINSTATUS")
+         UIView.animate(withDuration: 0.3) {
            self.tableusers.performBatchUpdates(nil)
        
 }
@@ -193,7 +198,8 @@ extension UserManagementViewController:AlertDisplayer
                             
                             UserDefaults.standard.set(self.userlistdetails[i].roleID!, forKey: "USERROLEID")
                             
-                            
+                           
+                         
                         }
                         self.tableusers.reloadData()
                     }

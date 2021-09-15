@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2926C67DF80011603A /* TopTenRobotModel.swift */; };
 		44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */; };
+		4405910E26F1D25A00347946 /* CompanyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405910C26F1D25A00347946 /* CompanyProfileVC.swift */; };
+		4405910F26F1D25A00347946 /* CompanyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4405910D26F1D25A00347946 /* CompanyProfileVC.xib */; };
+		4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405911526F1D60E00347946 /* PersonalInfoVC.swift */; };
+		4405911826F1D60E00347946 /* PersonalInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4405911626F1D60E00347946 /* PersonalInfoVC.xib */; };
+		4405912426F1D62400347946 /* LicenceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405912226F1D62400347946 /* LicenceInfo.swift */; };
+		4405912526F1D62400347946 /* LicenceInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4405912326F1D62400347946 /* LicenceInfo.xib */; };
 		440A315726C5019600A231AB /* PopOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A315626C5019600A231AB /* PopOver.xib */; };
 		440A315B26C5069C00A231AB /* PopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A315A26C5069B00A231AB /* PopOverVC.swift */; };
 		440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A316026C528C800A231AB /* departmentTableViewCell.swift */; };
@@ -172,6 +178,12 @@
 		24164C8B06E345739080EE30 /* Pods_Process_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Process_Bot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44034F2926C67DF80011603A /* TopTenRobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
 		44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
+		4405910C26F1D25A00347946 /* CompanyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileVC.swift; sourceTree = "<group>"; };
+		4405910D26F1D25A00347946 /* CompanyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyProfileVC.xib; sourceTree = "<group>"; };
+		4405911526F1D60E00347946 /* PersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoVC.swift; sourceTree = "<group>"; };
+		4405911626F1D60E00347946 /* PersonalInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoVC.xib; sourceTree = "<group>"; };
+		4405912226F1D62400347946 /* LicenceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceInfo.swift; sourceTree = "<group>"; };
+		4405912326F1D62400347946 /* LicenceInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenceInfo.xib; sourceTree = "<group>"; };
 		440A315626C5019600A231AB /* PopOver.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
 		440A315A26C5069B00A231AB /* PopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverVC.swift; sourceTree = "<group>"; };
 		440A316026C528C800A231AB /* departmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -313,9 +325,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4405910726F1D15400347946 /* Company Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4405910C26F1D25A00347946 /* CompanyProfileVC.swift */,
+				4405910D26F1D25A00347946 /* CompanyProfileVC.xib */,
+				4405911526F1D60E00347946 /* PersonalInfoVC.swift */,
+				4405911626F1D60E00347946 /* PersonalInfoVC.xib */,
+				4405912226F1D62400347946 /* LicenceInfo.swift */,
+				4405912326F1D62400347946 /* LicenceInfo.xib */,
+			);
+			path = "Company Profile";
+			sourceTree = "<group>";
+		};
 		4426326426E662AF00B92296 /* Administration */ = {
 			isa = PBXGroup;
 			children = (
+				4405910726F1D15400347946 /* Company Profile */,
 				4426326526E662C500B92296 /* UserManagement */,
 			);
 			path = Administration;
@@ -856,7 +882,9 @@
 				4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
 				73A627F426AEAF090073F0EB /* Aileron-Heavy.otf in Resources */,
+				4405912526F1D62400347946 /* LicenceInfo.xib in Resources */,
 				440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */,
+				4405910F26F1D25A00347946 /* CompanyProfileVC.xib in Resources */,
 				441FE47E26DF946800473FEB /* PublishRobotTableViewCell.xib in Resources */,
 				73CD3C6C269F174D00D451E0 /* LoginVC.xib in Resources */,
 				441FE47726DF940E00473FEB /* RobotVC.xib in Resources */,
@@ -875,6 +903,7 @@
 				7349BAFC26A082E3001360ED /* ScheduleCollectionViewCell.xib in Resources */,
 				73A627DD26AE9A3E0073F0EB /* RobotDetailsTableViewCell.xib in Resources */,
 				4426326926E6630200B92296 /* UserManagementViewController.xib in Resources */,
+				4405911826F1D60E00347946 /* PersonalInfoVC.xib in Resources */,
 				73A627FC26AEAF090073F0EB /* Aileron-Italic.otf in Resources */,
 				73A627F626AEAF090073F0EB /* Aileron-LightItalic.otf in Resources */,
 				73A627F726AEAF090073F0EB /* Aileron-Thin.otf in Resources */,
@@ -974,6 +1003,7 @@
 				4466605426E7512C00DACC35 /* UserManagementModel.swift in Sources */,
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
 				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
+				4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */,
 				CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */,
 				7393C870269DEC0C00F35C33 /* SceneDelegate.swift in Sources */,
 				441FE47C26DF946000473FEB /* PublishRobotTableViewCell.swift in Sources */,
@@ -985,6 +1015,7 @@
 				44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
+				4405910E26F1D25A00347946 /* CompanyProfileVC.swift in Sources */,
 				7349BAF526A0798F001360ED /* ScheduleDetailsVC.swift in Sources */,
 				440A316226C528C800A231AB /* departmentTableViewCell.swift in Sources */,
 				4426324926E636F600B92296 /* UserManagementTableViewCell.swift in Sources */,
@@ -1005,6 +1036,7 @@
 				440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */,
 				4445319626D946C300ADDC16 /* StandAloneVC.swift in Sources */,
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
+				4405912426F1D62400347946 /* LicenceInfo.swift in Sources */,
 				CDC4177C26B3FE4300B445A8 /* DayAxisValueFormatter.swift in Sources */,
 				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,
 				4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */,
