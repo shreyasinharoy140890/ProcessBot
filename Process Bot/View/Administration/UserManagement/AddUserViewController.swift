@@ -19,7 +19,7 @@ class AddUserViewController: UIViewController, UITableViewDataSource, UITableVie
     let token  = UserDefaults.standard.value(forKey: "TOKEN")
     let userid = UserDefaults.standard.value(forKey: "USERID")
     let clientid = UserDefaults.standard.value(forKey: "CLIENTID")
-    let roleid = UserDefaults.standard.value(forKey: "ROLEID")
+    var roleid = UserDefaults.standard.value(forKey: "ROLEID")
     var datasource = [String]()
     var roledescription:String?
     var arrayrolenamelist = [String]()
@@ -117,7 +117,7 @@ class AddUserViewController: UIViewController, UITableViewDataSource, UITableVie
   //MARK: Webservice Call
     func createuser()
     {
-        
+      roleid  = UserDefaults.standard.value(forKey: "ROLEID")
         let parameters = [
             "Username":textfielduserName.text!,
             "Email":textfieldemail.text!,
@@ -132,9 +132,10 @@ class AddUserViewController: UIViewController, UITableViewDataSource, UITableVie
             "Token":token!as! String,
         ]
         Alamofire.request("http://3.7.99.38:5001/api/User/CreateUser?", method:.post, parameters: parameters,encoding: JSONEncoding.default,headers: headers) .responseJSON { (response) in
-               print(response)
+            print(response.description)
+           
             // Create the alert controller
-                let alertController = UIAlertController(title: "", message: "Profile Updated", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "", message: "User Created", preferredStyle: .alert)
 
                 // Create the actions
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
