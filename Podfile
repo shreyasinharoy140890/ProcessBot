@@ -10,4 +10,5 @@ pod 'DLRadioButton', '~> 1.4'
 pod 'SignalRSwift', '~> 2.0.2'
 pod 'ExpandableCell'
 pod 'Alamofire'
+pod 'TimeZonePicker'
 end

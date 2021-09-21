@@ -17,6 +17,7 @@ class UserManagementViewController: UIViewController{
     var viewModeluserlistDetails:UserManagementViewModelProtocol?
     var userlistdetails = [UserListModel]()
     var arrayfirstnamelist = [String]()
+    var arrayusernamelist = [String]()
     var arrayemaillist = [String]()
     var arraytimelist = [String]()
     var arraydatelist = [String]()
@@ -83,7 +84,7 @@ extension UserManagementViewController: UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: UserManagementTableViewCell.self), for: indexPath) as! UserManagementTableViewCell
-        cell.labelusername.text = arrayfirstnamelist[indexPath.row]
+        cell.labelusername.text = arrayusernamelist[indexPath.row]
         usernamestring =  cell.labelusername.text
         cell.labeluseremail.text = arrayemaillist[indexPath.row]
         emailstring = cell.labeluseremail.text
@@ -178,6 +179,7 @@ extension UserManagementViewController:AlertDisplayer
                         {
                             print(userlistdetails[i].username!)
                             arrayfirstnamelist.append(userlistdetails[i].fullName!)
+                            arrayusernamelist.append(userlistdetails[i].username!)
                             arrayemaillist.append(userlistdetails[i].email!)
                             arraydatelist.append(userlistdetails[i].createDate!)
                             

@@ -122,11 +122,11 @@
                             </connections>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pCw-lg-1xC">
-                            <rect key="frame" x="321" y="-2" width="73" height="43"/>
+                            <rect key="frame" x="321" y="7" width="73" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="2un-Bc-mNz" firstAttribute="top" secondItem="d57-LR-VfT" secondAttribute="top" id="B3b-l5-DOS"/>
                         <constraint firstItem="2un-Bc-mNz" firstAttribute="leading" secondItem="d57-LR-VfT" secondAttribute="leading" constant="10" id="cf0-DE-816"/>

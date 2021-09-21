@@ -293,6 +293,11 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
                 UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
 
             }
+            else if  indexPath.row == 1
+            {
+                let VC = CompanyProfileVC(nibName: "CompanyProfileVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
         case 4:
             
             item = row4[indexPath.row]

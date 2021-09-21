@@ -6,12 +6,14 @@ PODS:
     - Alamofire (~> 4.2)
     - Starscream (~> 3.0)
   - Starscream (3.1.1)
+  - TimeZonePicker (1.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - DLRadioButton (~> 1.4)
   - ExpandableCell
   - SignalRSwift (~> 2.0.2)
+  - TimeZonePicker
 
 SPEC REPOS:
   trunk:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - ExpandableCell
     - SignalRSwift
     - Starscream
+    - TimeZonePicker
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -27,7 +30,8 @@ SPEC CHECKSUMS:
   ExpandableCell: c57c3057395df3066ec33d239b59623825f1f716
   SignalRSwift: 6f30893680780d4f4e9981795478ea43f5b63f3e
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  TimeZonePicker: 7f3e60375dc3754a44f4a417f01e5c707b2b72b4
 
-PODFILE CHECKSUM: d1b4e04572033ca925136d4798982c66e31c2d76
+PODFILE CHECKSUM: 467d10926930032dbc58ae3a09544bea3cbf56dd
 
 COCOAPODS: 1.10.2
