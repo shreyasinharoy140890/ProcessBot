@@ -64,6 +64,9 @@
 		448D163B26DE6CB700E3D244 /* MachineHostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */; };
 		449F05D926DF511000A86F1E /* ServerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F05D726DF511000A86F1E /* ServerTableViewCell.swift */; };
 		449F05DA26DF511000A86F1E /* ServerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 449F05D826DF511000A86F1E /* ServerTableViewCell.xib */; };
+		44A4D08926FB23E00022C8EC /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */; };
+		44A4D08A26FB23E00022C8EC /* UpdateProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D08826FB23E00022C8EC /* UpdateProfileVC.xib */; };
+		44A4D08E26FB38180022C8EC /* TimeZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
 		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
 		44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E8B59B26DCBE3200C01833 /* DashboardVC.xib */; };
@@ -237,6 +240,9 @@
 		448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostViewModel.swift; sourceTree = "<group>"; };
 		449F05D726DF511000A86F1E /* ServerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewCell.swift; sourceTree = "<group>"; };
 		449F05D826DF511000A86F1E /* ServerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerTableViewCell.xib; sourceTree = "<group>"; };
+		44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
+		44A4D08826FB23E00022C8EC /* UpdateProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateProfileVC.xib; sourceTree = "<group>"; };
+		44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneModel.swift; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
 		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		44E8B59B26DCBE3200C01833 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
@@ -342,6 +348,8 @@
 				4405911626F1D60E00347946 /* PersonalInfoVC.xib */,
 				4405912226F1D62400347946 /* LicenceInfo.swift */,
 				4405912326F1D62400347946 /* LicenceInfo.xib */,
+				44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */,
+				44A4D08826FB23E00022C8EC /* UpdateProfileVC.xib */,
 			);
 			path = "Company Profile";
 			sourceTree = "<group>";
@@ -430,6 +438,7 @@
 				4466605326E7512C00DACC35 /* UserManagementModel.swift */,
 				442CF30B26EB2DDA00556F8E /* PermissionListModel.swift */,
 				4438AE0626F8643700829147 /* CompanyProfileModel.swift */,
+				44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -894,6 +903,7 @@
 				7349BAF626A0798F001360ED /* ScheduleDetailsVC.xib in Resources */,
 				4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
+				44A4D08A26FB23E00022C8EC /* UpdateProfileVC.xib in Resources */,
 				73A627F426AEAF090073F0EB /* Aileron-Heavy.otf in Resources */,
 				4405912526F1D62400347946 /* LicenceInfo.xib in Resources */,
 				440A316326C528C800A231AB /* departmentTableViewCell.xib in Resources */,
@@ -1010,6 +1020,7 @@
 				73FA3A7E26C25D60002E471C /* RobotDetailsViewModel.swift in Sources */,
 				441FE47826DF940E00473FEB /* RobotVC.swift in Sources */,
 				73CD3C71269F1B3600D451E0 /* InternetStatus.swift in Sources */,
+				44A4D08E26FB38180022C8EC /* TimeZoneModel.swift in Sources */,
 				73CD3C74269F1B8100D451E0 /* Routing.swift in Sources */,
 				CDC4177D26B3FE4300B445A8 /* DateValueFormatter.swift in Sources */,
 				448D163B26DE6CB700E3D244 /* MachineHostViewModel.swift in Sources */,
@@ -1048,6 +1059,7 @@
 				44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */,
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
 				440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */,
+				44A4D08926FB23E00022C8EC /* UpdateProfileVC.swift in Sources */,
 				4445319626D946C300ADDC16 /* StandAloneVC.swift in Sources */,
 				CDEE0C2226B9A51F00A11DD9 /* JSONParameterEncoder.swift in Sources */,
 				4405912426F1D62400347946 /* LicenceInfo.swift in Sources */,

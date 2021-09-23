@@ -16,7 +16,7 @@ class CompanyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        buttonpersonalinfo.backgroundColor = UIColor.systemGray
+        buttonpersonalinfo.backgroundColor = UIColor.lightGray
         buttonlicenceinfo.backgroundColor = UIColor.white
       //  remove(asChildViewController: LicenceInfoViewController)
         add(asChildViewController: PersonalInfoViewController)
@@ -74,12 +74,12 @@ class CompanyProfileVC: UIViewController {
     }
     private func updateView() {
         if buttonpersonalinfo.isTouchInside == true {
-            buttonpersonalinfo.backgroundColor = UIColor.systemGray
+            buttonpersonalinfo.backgroundColor = UIColor.lightGray
             buttonlicenceinfo.backgroundColor = UIColor.white
             remove(asChildViewController: LicenceInfoViewController)
             add(asChildViewController: PersonalInfoViewController)
         } else {
-            buttonlicenceinfo.backgroundColor = UIColor.systemGray
+            buttonlicenceinfo.backgroundColor = UIColor.lightGray
             buttonpersonalinfo.backgroundColor = UIColor.white
             remove(asChildViewController: PersonalInfoViewController)
             add(asChildViewController: LicenceInfoViewController)

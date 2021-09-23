@@ -142,6 +142,12 @@ extension Endpoint {
     {
         Endpoint(base:environment.baseURL, path: "api/Customer/CurrentLicense?")
     }
+    
+    static var timezonelist:Self
+    {
+        Endpoint(base:environment.baseURL, path: "api/System/TimezoneList?")
+    }
+    
   
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         

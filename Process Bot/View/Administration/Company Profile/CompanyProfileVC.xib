@@ -104,6 +104,7 @@
                         <constraint firstAttribute="height" constant="68" id="tKW-P7-q0k"/>
                         <constraint firstAttribute="width" constant="207" id="uEO-TU-dEN"/>
                     </constraints>
+                    <color key="tintColor" systemColor="systemGray5Color"/>
                     <state key="normal" title="Personal Info">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -118,6 +119,7 @@
                         <constraint firstAttribute="height" constant="68" id="FWL-bM-i4Q"/>
                         <constraint firstAttribute="width" constant="207" id="z9k-XZ-008"/>
                     </constraints>
+                    <color key="tintColor" systemColor="systemGray5Color"/>
                     <state key="normal" title="Licence Info">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>

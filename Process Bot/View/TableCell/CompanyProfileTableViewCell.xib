@@ -46,8 +46,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78c-oG-bn8">
                         <rect key="frame" x="138" y="0.0" width="182" height="62"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-5I-TkW">
-                                <rect key="frame" x="10" y="10" width="172" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-5I-TkW">
+                                <rect key="frame" x="14" y="0.0" width="160" height="62"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="k5S-5I-TkW" secondAttribute="trailing" id="48k-0K-w21"/>
-                            <constraint firstAttribute="bottom" secondItem="k5S-5I-TkW" secondAttribute="bottom" constant="10" id="PWF-Gk-0jT"/>
-                            <constraint firstItem="k5S-5I-TkW" firstAttribute="leading" secondItem="78c-oG-bn8" secondAttribute="leading" constant="10" id="eMU-Cx-xD5"/>
-                            <constraint firstItem="k5S-5I-TkW" firstAttribute="top" secondItem="78c-oG-bn8" secondAttribute="top" constant="10" id="yc7-pI-th7"/>
+                            <constraint firstAttribute="trailing" secondItem="k5S-5I-TkW" secondAttribute="trailing" constant="8" id="48k-0K-w21"/>
+                            <constraint firstAttribute="bottom" secondItem="k5S-5I-TkW" secondAttribute="bottom" id="PWF-Gk-0jT"/>
+                            <constraint firstItem="k5S-5I-TkW" firstAttribute="leading" secondItem="78c-oG-bn8" secondAttribute="leading" constant="14" id="eMU-Cx-xD5"/>
+                            <constraint firstItem="k5S-5I-TkW" firstAttribute="top" secondItem="78c-oG-bn8" secondAttribute="top" id="yc7-pI-th7"/>
                         </constraints>
                     </view>
                 </subviews>

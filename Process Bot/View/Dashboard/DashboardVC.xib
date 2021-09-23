@@ -347,7 +347,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzZ-E6-M4W">
                                     <rect key="frame" x="23" y="942" width="346" height="723"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Success Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0H-rq-Xgd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0H-rq-Xgd">
                                             <rect key="frame" x="8" y="26" width="92" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="92" id="S5x-3h-atD"/>
@@ -366,7 +366,7 @@
                                         <constraint firstItem="pS3-pJ-LD5" firstAttribute="leading" secondItem="LzZ-E6-M4W" secondAttribute="leading" id="Bu0-H4-Go5"/>
                                         <constraint firstItem="w0H-rq-Xgd" firstAttribute="leading" secondItem="LzZ-E6-M4W" secondAttribute="leadingMargin" id="DCA-Yv-Zq3"/>
                                         <constraint firstAttribute="bottom" secondItem="pS3-pJ-LD5" secondAttribute="bottom" constant="19" id="EZ7-YA-z2O"/>
-                                        <constraint firstItem="pS3-pJ-LD5" firstAttribute="top" secondItem="w0H-rq-Xgd" secondAttribute="bottom" constant="27" id="Mu0-VG-y3x"/>
+                                        <constraint firstItem="pS3-pJ-LD5" firstAttribute="top" secondItem="w0H-rq-Xgd" secondAttribute="bottom" constant="21" id="Mu0-VG-y3x"/>
                                         <constraint firstAttribute="trailing" secondItem="pS3-pJ-LD5" secondAttribute="trailing" id="SuD-dt-Js7"/>
                                         <constraint firstItem="pS3-pJ-LD5" firstAttribute="top" secondItem="LzZ-E6-M4W" secondAttribute="top" constant="64" id="c9U-xk-StH"/>
                                     </constraints>

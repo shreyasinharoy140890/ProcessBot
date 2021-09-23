@@ -7,13 +7,15 @@
 
 import UIKit
 import TimeZonePicker
+import DropDown
 
-class PersonalInfoVC: UIViewController,AlertDisplayer, TimeZonePickerDelegate {
+class PersonalInfoVC: UIViewController,AlertDisplayer {
     @IBOutlet weak var buttonupdate: UIButton!
     @IBOutlet weak var labelname: UILabel!
     @IBOutlet weak var tblpersonaldetails: UITableView!
     var imageView:UIImage?
     var arraydetails = [String]()
+    var arraytimezones = [String]()
     var emailString:String?
     var number:String?
     var department:String?
@@ -21,9 +23,15 @@ class PersonalInfoVC: UIViewController,AlertDisplayer, TimeZonePickerDelegate {
     var companyname:String?
     var industry:String?
     var timezone:String?
+    var timezoneid:String?
     var viewModelprofilelistDetails:CompanyProfileViewModelProtocol?
     var profilelistdetails = [ProfileListModel]()
     var arrayDetails = ["Email","Phone Number","Department","Designation","Company Name","Industry","Time Zone"]
+    let dropDown = DropDown()
+    var viewModeltimezonelistDetails:CompanyProfileViewModel?
+    var timezonelistdetails = [TimeZoneModel]()
+    var token  = UserDefaults.standard.value(forKey: "TOKEN")
+    var clientid = UserDefaults.standard.value(forKey: "CLIENTID")
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -31,6 +39,8 @@ class PersonalInfoVC: UIViewController,AlertDisplayer, TimeZonePickerDelegate {
         tblpersonaldetails.reloadData()
         self.viewModelprofilelistDetails = CompanyProfileViewModel()
         viewModelprofilelistDetails?.manager = RequestManager()
+        self.viewModeltimezonelistDetails = CompanyProfileViewModel()
+        viewModeltimezonelistDetails?.manager = RequestManager()
       //  callProfileDetails()
        
     }
@@ -39,26 +49,47 @@ class PersonalInfoVC: UIViewController,AlertDisplayer, TimeZonePickerDelegate {
         tblpersonaldetails.reloadData()
         self.viewModelprofilelistDetails = CompanyProfileViewModel()
         viewModelprofilelistDetails?.manager = RequestManager()
-        callProfileDetails()
+        self.viewModeltimezonelistDetails = CompanyProfileViewModel()
+        viewModeltimezonelistDetails?.manager = RequestManager()
+       // callProfileDetails()
+        gettimezonelist()
         for i in 0..<profilelistdetails.count
         {
             labelname.text = profilelistdetails[i].custFullName
         }
         imageView = UIImage(named: "down-arrow")!
+      
+       
     }
  
     override func viewDidAppear(_ animated: Bool) {
         tblpersonaldetails.register(CompanyProfileTableViewCell.self)
         tblpersonaldetails.reloadData()
-        callProfileDetails()
+      //  callProfileDetails()
+        gettimezonelist()
         for i in 0..<profilelistdetails.count
         {
             labelname.text = profilelistdetails[i].custFullName
         }
         imageView = UIImage(named: "down-arrow")!
+       
     }
-   
-   
+ 
+ //MARK:- Button Actions
+    
+    @IBAction func buttonUpdate(_ sender: Any) {
+        let VC = UpdateProfileVC(nibName: "UpdateProfileVC", bundle: nil)
+        VC.email = emailString
+        VC.phone = number
+        VC.department = department
+        VC.designation = designation
+        VC.companyname = companyname
+        VC.industry = industry
+        VC.timeZone = timezone
+        self.navigationController?.pushViewController(VC, animated: true)
+        
+    }
+ 
 }
 extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,39 +106,43 @@ extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
             if (indexPath.row == 0)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].workEmail
+                emailString = profilelistdetails[i].workEmail
             }
             
             if (indexPath.row == 1)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].phoneNo
+            number = profilelistdetails[i].phoneNo
             }
             if (indexPath.row == 2)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].department
+                department = profilelistdetails[i].department
             }
             if (indexPath.row == 3)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].designation
+                designation = profilelistdetails[i].designation
             }
             if (indexPath.row == 4)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].companyName
+                companyname = profilelistdetails[i].companyName
             }
             if (indexPath.row == 5)
             {
                 cell.lblPostDetails.text = profilelistdetails[i].industry
+                industry = profilelistdetails[i].industry
             }
             if (indexPath.row == 6)
             {
-                cell.lblPostDetails.text = profilelistdetails[i].timeZoneID
-                let button = UIButton()
-                button.frame = CGRect(x: self.view.frame.size.width - 80, y: 20, width: 20, height: 20)
-               
+//                let currentTimeZone = TimeZone.current
+//                cell.lblPostDetails.text =  currentTimeZone.identifier + " " + currentTimeZone.abbreviation()!
+//                timezone =  cell.lblPostDetails.text
+                print(timezone)
+                cell.lblPostDetails.text = timezone
               
-                button.setImage( imageView!, for: .normal)
-                button.addTarget(self, action: #selector(openpicker), for: .touchUpInside)
-                cell.addSubview(button)
-                
+              
             }
             hideActivityIndicator(viewController: self)
         }
@@ -134,6 +169,12 @@ extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
                         
                         profilelistdetails = viewModelprofilelistDetails!.profilelist
                         print(profilelistdetails)
+                        for i in 0..<profilelistdetails.count
+                        {
+                            UserDefaults.standard.set(self.profilelistdetails[i].custID!, forKey: "CUSTOMERID")
+                            timezoneid = profilelistdetails[i].timeZoneID!
+                        }
+                       
                         self.tblpersonaldetails.reloadData()
                     }
                 }
@@ -146,20 +187,43 @@ extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
             }
         })
     }
-    
-    @objc func openpicker()
-  {
-    let timeZonePicker = TimeZonePickerViewController.getVC(withDelegate: self)
-    present(timeZonePicker, animated: true, completion: nil)
-}
-  
- func timeZonePicker(_ timeZonePicker: TimeZonePickerViewController, didSelectTimeZone timeZone: TimeZone) {
-        print(timeZone.identifier)
-      //  timeZoneName.text = timeZone.identifier
-       // timeZoneOffset.text = timeZone.abbreviation()
-        timeZonePicker.dismiss(animated: true, completion: nil)
-    }
-  
-}
-    
 
+    func gettimezonelist()
+    {
+    callProfileDetails()
+        DispatchQueue.main.async {
+            //   showActivityIndicator(viewController: self)
+        }
+        viewModeltimezonelistDetails?.gettimezonelist(completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async { [self] in
+                        
+                        timezonelistdetails = viewModeltimezonelistDetails!.timezonelist
+                        print(timezonelistdetails)
+                        self.tblpersonaldetails.reloadData()
+                        for i in 0..<timezonelistdetails.count
+                        {
+                            arraytimezones.append(timezonelistdetails[i].name!)
+                            if timezonelistdetails[i].iD! == timezoneid
+                            {
+                               timezone = timezonelistdetails[i].name!
+                            }
+                        }
+                        self.tblpersonaldetails.reloadData()
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+
+
+
+}

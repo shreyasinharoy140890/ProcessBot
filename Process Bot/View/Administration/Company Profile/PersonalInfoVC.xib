@@ -32,8 +32,8 @@
                                 <constraint firstAttribute="height" constant="101" id="kRg-S9-cEs"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="David Thomas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-g3-gCU">
-                            <rect key="frame" x="0.0" y="117" width="414" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-g3-gCU">
+                            <rect key="frame" x="0.0" y="117" width="414" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -68,6 +68,9 @@
                     <state key="normal" title="Update">
                         <color key="titleColor" name="AccentColor"/>
                     </state>
+                    <connections>
+                        <action selector="buttonUpdate:" destination="-1" eventType="touchUpInside" id="gpa-jf-BVD"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

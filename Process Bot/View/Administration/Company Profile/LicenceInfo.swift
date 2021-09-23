@@ -42,20 +42,7 @@ class LicenceInfo: UIViewController,AlertDisplayer {
         tbllicensedetails.reloadData()
     }
 //MARK: - Webservice call
-    func getLicenceInfo ()
-    {
-        var parameters = [String:Any]()
-        parameters = [
-           "ClientID":clientid!]
-        let headers = [
-            "AppName":"IntelgicApp",
-            "Token":token!as! String,
-        ]
-        Alamofire.request("http://3.7.99.38:5001/api/Customer/CurrentLicense?", method:.get, parameters: parameters,encoding: URLEncoding.queryString,headers: headers) .responseJSON { (response) in
-               print(response)
-           
-           }
-    }
+   
 func calllicenceinfo()
 {
     DispatchQueue.main.async {
