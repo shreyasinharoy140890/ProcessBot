@@ -193,20 +193,39 @@ class UpdateProfileVC: UIViewController,AlertDisplayer,UIScrollViewDelegate {
   {
     
     var parameters = [String:Any]()
-  
-        parameters = [
-            "ClientID" : clientid!,
-            "CustID" : "1",
-            "PhoneNo" : phoneNumbertextfield.text!,
-            "Department" :departmentTextfield.text!,
-            "Designation" : designationTextField.text!,
-            "CompanyName" : companynameTextField.text!,
-            "CompanyCountry" : "",
-            "State" : "",
-            "Industry" : industryTextField.text!,
-            "TimezoneID" : timezoneID!
+  if timezoneID == nil
+  {
+    parameters = [
+        "ClientID" : clientid!,
+        "CustID" : customerid!,
+        "PhoneNo" : phoneNumbertextfield.text!,
+        "Department" :departmentTextfield.text!,
+        "Designation" : designationTextField.text!,
+        "CompanyName" : companynameTextField.text!,
+        "CompanyCountry" : "",
+        "State" : "",
+        "Industry" : industryTextField.text!,
+        "TimezoneID" : ""
 
-        ]
+    ]
+  }
+    else
+  {
+    parameters = [
+        "ClientID" : clientid!,
+        "CustID" : customerid!,
+        "PhoneNo" : phoneNumbertextfield.text!,
+        "Department" :departmentTextfield.text!,
+        "Designation" : designationTextField.text!,
+        "CompanyName" : companynameTextField.text!,
+        "CompanyCountry" : "",
+        "State" : "",
+        "Industry" : industryTextField.text!,
+        "TimezoneID" : timezoneID!
+
+    ]
+  }
+       
     
     print(parameters)
     let headers = [

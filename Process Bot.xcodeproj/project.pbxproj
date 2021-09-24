@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2926C67DF80011603A /* TopTenRobotModel.swift */; };
 		44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */; };
+		4404A4D126FCB46E009DF2A6 /* RoleManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */; };
+		4404A4D226FCB46E009DF2A6 /* RoleManagementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4404A4D026FCB46E009DF2A6 /* RoleManagementVC.xib */; };
 		4405910E26F1D25A00347946 /* CompanyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405910C26F1D25A00347946 /* CompanyProfileVC.swift */; };
 		4405910F26F1D25A00347946 /* CompanyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4405910D26F1D25A00347946 /* CompanyProfileVC.xib */; };
 		4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405911526F1D60E00347946 /* PersonalInfoVC.swift */; };
@@ -62,6 +64,8 @@
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
 		448D163B26DE6CB700E3D244 /* MachineHostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */; };
+		4497295C26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497295A26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift */; };
+		4497295D26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */; };
 		449F05D926DF511000A86F1E /* ServerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F05D726DF511000A86F1E /* ServerTableViewCell.swift */; };
 		449F05DA26DF511000A86F1E /* ServerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 449F05D826DF511000A86F1E /* ServerTableViewCell.xib */; };
 		44A4D08926FB23E00022C8EC /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */; };
@@ -185,6 +189,8 @@
 		24164C8B06E345739080EE30 /* Pods_Process_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Process_Bot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44034F2926C67DF80011603A /* TopTenRobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
 		44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
+		4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManagementVC.swift; sourceTree = "<group>"; };
+		4404A4D026FCB46E009DF2A6 /* RoleManagementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoleManagementVC.xib; sourceTree = "<group>"; };
 		4405910C26F1D25A00347946 /* CompanyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileVC.swift; sourceTree = "<group>"; };
 		4405910D26F1D25A00347946 /* CompanyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyProfileVC.xib; sourceTree = "<group>"; };
 		4405911526F1D60E00347946 /* PersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoVC.swift; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
 		448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostViewModel.swift; sourceTree = "<group>"; };
+		4497295A26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManagementTableViewCell.swift; sourceTree = "<group>"; };
+		4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoleManagementTableViewCell.xib; sourceTree = "<group>"; };
 		449F05D726DF511000A86F1E /* ServerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewCell.swift; sourceTree = "<group>"; };
 		449F05D826DF511000A86F1E /* ServerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerTableViewCell.xib; sourceTree = "<group>"; };
 		44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
@@ -339,6 +347,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4404A4CC26FCB448009DF2A6 /* Role Management */ = {
+			isa = PBXGroup;
+			children = (
+				4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */,
+				4404A4D026FCB46E009DF2A6 /* RoleManagementVC.xib */,
+			);
+			path = "Role Management";
+			sourceTree = "<group>";
+		};
 		4405910726F1D15400347946 /* Company Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +374,7 @@
 		4426326426E662AF00B92296 /* Administration */ = {
 			isa = PBXGroup;
 			children = (
+				4404A4CC26FCB448009DF2A6 /* Role Management */,
 				4405910726F1D15400347946 /* Company Profile */,
 				4426326526E662C500B92296 /* UserManagement */,
 			);
@@ -602,6 +620,8 @@
 				4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */,
 				4438AE2826F8967B00829147 /* CompanyProfileTableViewCell.swift */,
 				4438AE2926F8967B00829147 /* CompanyProfileTableViewCell.xib */,
+				4497295A26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift */,
+				4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -894,6 +914,7 @@
 				73A627F326AEAF090073F0EB /* Aileron-UltraLight.otf in Resources */,
 				440A315726C5019600A231AB /* PopOver.xib in Resources */,
 				7349BAE926A04D44001360ED /* SidePanelViewController.xib in Resources */,
+				4497295D26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib in Resources */,
 				73A627F226AEAF090073F0EB /* Aileron-ThinItalic.otf in Resources */,
 				4438AE2B26F8967B00829147 /* CompanyProfileTableViewCell.xib in Resources */,
 				4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */,
@@ -910,6 +931,7 @@
 				4405910F26F1D25A00347946 /* CompanyProfileVC.xib in Resources */,
 				441FE47E26DF946800473FEB /* PublishRobotTableViewCell.xib in Resources */,
 				73CD3C6C269F174D00D451E0 /* LoginVC.xib in Resources */,
+				4404A4D226FCB46E009DF2A6 /* RoleManagementVC.xib in Resources */,
 				441FE47726DF940E00473FEB /* RobotVC.xib in Resources */,
 				73A627D826AE97470073F0EB /* RobotDetailsVC.xib in Resources */,
 				73A627FF26AEAF090073F0EB /* Aileron-Regular.otf in Resources */,
@@ -1014,6 +1036,7 @@
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
 				737B7BCB26BD44CE00C891DA /* robotModel.swift in Sources */,
 				CDC4177826B3FE4300B445A8 /* XYMarkerView.swift in Sources */,
+				4404A4D126FCB46E009DF2A6 /* RoleManagementVC.swift in Sources */,
 				73A627D726AE97470073F0EB /* RobotDetailsVC.swift in Sources */,
 				CDC4177E26B3FE4300B445A8 /* LargeValueFormatter.swift in Sources */,
 				73A627DC26AE9A3E0073F0EB /* RobotDetailsTableViewCell.swift in Sources */,
@@ -1037,6 +1060,7 @@
 				73CD3C6B269F174D00D451E0 /* LoginVC.swift in Sources */,
 				4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */,
 				44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */,
+				4497295C26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
 				4405910E26F1D25A00347946 /* CompanyProfileVC.swift in Sources */,

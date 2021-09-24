@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserManagementViewController: UIViewController{
+class UserManagementViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var textFieldSearch: UITextField!
     @IBOutlet weak var tableusers: UITableView!
     @IBOutlet weak var viewHeader: UIView!
@@ -44,6 +44,7 @@ class UserManagementViewController: UIViewController{
         self.viewModeluserlistDetails = UserManagementViewModel()
         viewModeluserlistDetails?.manager = RequestManager()
         callGetuserlistDetails()
+        textFieldSearch.delegate = self
         textFieldSearch.addTarget(self, action: #selector(textFieldValueChange(_:)), for: .editingChanged)
         textFieldSearch.text = searchText
     }
