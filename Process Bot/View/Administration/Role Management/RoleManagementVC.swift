@@ -61,6 +61,25 @@ class RoleManagementVC: UIViewController, UITextFieldDelegate {
         }
         self.tablerolelist.reloadData()
     }
+    @objc func navigatetonext(_ sender:UIButton)
+    {
+        let cell = tablerolelist.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? UserManagementTableViewCell
+        if (sender.isSelected){
+            let VC = RoleUpdateVC(nibName: "RoleUpdateVC", bundle: nil)
+            UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            var roleid = rolelistdetails[sender.tag].roleID
+            UserDefaults.standard.set(roleid, forKey: "DEPARTMENTROLEID")
+            let componentname = rolelistdetails[sender.tag].roleName
+            VC.componentNameString = componentname
+            let componentdescription = rolelistdetails[sender.tag].roleDescription
+            VC.componentdescription = componentdescription
+        }else {
+           
+            sender.isSelected = true
+        
+        }
+     
+    }
     
     //MARK:- Button Actions
        @IBAction func btnMenuAction(_ sender: UIButton) {
@@ -144,7 +163,8 @@ extension RoleManagementVC: UITableViewDataSource,UITableViewDelegate {
         print(date!.stringBefore("T"))
         let datestring = date!.stringBefore("T")
         cell.labeldate.text = datestring
-        
+        cell.btnroleupdate.addTarget(self, action: #selector(navigatetonext(_:)), for: .touchUpInside)
+        cell.btnroleupdate.tag = indexPath.row
         return cell
     }
     

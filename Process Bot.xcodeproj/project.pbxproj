@@ -61,6 +61,8 @@
 		4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */; };
 		4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */; };
 		4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */; };
+		446D30782702F728004AD0C0 /* RoleUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D30762702F728004AD0C0 /* RoleUpdateVC.swift */; };
+		446D30792702F728004AD0C0 /* RoleUpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 446D30772702F728004AD0C0 /* RoleUpdateVC.xib */; };
 		4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */; };
 		4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */; };
 		448D163B26DE6CB700E3D244 /* MachineHostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */; };
@@ -73,6 +75,8 @@
 		44A4D08E26FB38180022C8EC /* TimeZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
 		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
+		44C2168C27035AB100A85C17 /* RoleUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */; };
+		44C2168D27035AB100A85C17 /* RoleUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C2168B27035AB100A85C17 /* RoleUpdateTableViewCell.xib */; };
 		44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E8B59B26DCBE3200C01833 /* DashboardVC.xib */; };
 		44E8B5A026DCBE3200C01833 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8B59E26DCBE3200C01833 /* DashboardVC.swift */; };
 		44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB10CF26CAA68700A88DF4 /* CostSavingsDataModel.swift */; };
@@ -241,6 +245,8 @@
 		4466608726E7A0F400DACC35 /* RolesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesTableViewCell.swift; sourceTree = "<group>"; };
 		4466608826E7A0F400DACC35 /* RolesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesTableViewCell.xib; sourceTree = "<group>"; };
 		4469ED9D26D5268B00D089A8 /* MachineHostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostModel.swift; sourceTree = "<group>"; };
+		446D30762702F728004AD0C0 /* RoleUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleUpdateVC.swift; sourceTree = "<group>"; };
+		446D30772702F728004AD0C0 /* RoleUpdateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoleUpdateVC.xib; sourceTree = "<group>"; };
 		4481E7CE26C5520E009D78C5 /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4481E7CF26C5520E009D78C5 /* dateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateCollectionViewCell.xib; sourceTree = "<group>"; };
 		448D163A26DE6CB700E3D244 /* MachineHostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineHostViewModel.swift; sourceTree = "<group>"; };
@@ -253,6 +259,8 @@
 		44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneModel.swift; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
 		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleUpdateTableViewCell.swift; sourceTree = "<group>"; };
+		44C2168B27035AB100A85C17 /* RoleUpdateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoleUpdateTableViewCell.xib; sourceTree = "<group>"; };
 		44E8B59B26DCBE3200C01833 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		44E8B59E26DCBE3200C01833 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		44FB10CF26CAA68700A88DF4 /* CostSavingsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostSavingsDataModel.swift; sourceTree = "<group>"; };
@@ -352,6 +360,8 @@
 			children = (
 				4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */,
 				4404A4D026FCB46E009DF2A6 /* RoleManagementVC.xib */,
+				446D30762702F728004AD0C0 /* RoleUpdateVC.swift */,
+				446D30772702F728004AD0C0 /* RoleUpdateVC.xib */,
 			);
 			path = "Role Management";
 			sourceTree = "<group>";
@@ -622,6 +632,8 @@
 				4438AE2926F8967B00829147 /* CompanyProfileTableViewCell.xib */,
 				4497295A26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift */,
 				4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */,
+				44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */,
+				44C2168B27035AB100A85C17 /* RoleUpdateTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -910,6 +922,7 @@
 				73A627F126AEAF090073F0EB /* Aileron-BoldItalic.otf in Resources */,
 				73A627FD26AEAF090073F0EB /* Aileron-BlackItalic.otf in Resources */,
 				7349BAEE26A054B7001360ED /* SidePanelTableViewCell.xib in Resources */,
+				44C2168D27035AB100A85C17 /* RoleUpdateTableViewCell.xib in Resources */,
 				73A627F026AEAF090073F0EB /* Aileron-Light.otf in Resources */,
 				73A627F326AEAF090073F0EB /* Aileron-UltraLight.otf in Resources */,
 				440A315726C5019600A231AB /* PopOver.xib in Resources */,
@@ -942,6 +955,7 @@
 				7356D8A2269EDA8000CC76D3 /* InputTableViewCell.xib in Resources */,
 				7393C87D269DEC0C00F35C33 /* LaunchScreen.storyboard in Resources */,
 				4446461C26DF521A00651174 /* ServerVC.xib in Resources */,
+				446D30792702F728004AD0C0 /* RoleUpdateVC.xib in Resources */,
 				73A627FB26AEAF090073F0EB /* Aileron-Bold.otf in Resources */,
 				4481E7D126C5520E009D78C5 /* dateCollectionViewCell.xib in Resources */,
 				4466607426E77D8600DACC35 /* UpdateUserVC.xib in Resources */,
@@ -1060,6 +1074,7 @@
 				73CD3C6B269F174D00D451E0 /* LoginVC.swift in Sources */,
 				4469ED9E26D5268B00D089A8 /* MachineHostModel.swift in Sources */,
 				44FB10D226CAA68700A88DF4 /* CostSavingsDataModel.swift in Sources */,
+				44C2168C27035AB100A85C17 /* RoleUpdateTableViewCell.swift in Sources */,
 				4497295C26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,
@@ -1091,6 +1106,7 @@
 				44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */,
 				4438AE2A26F8967B00829147 /* CompanyProfileTableViewCell.swift in Sources */,
 				4466608926E7A0F400DACC35 /* RolesTableViewCell.swift in Sources */,
+				446D30782702F728004AD0C0 /* RoleUpdateVC.swift in Sources */,
 				4438AE0726F8643700829147 /* CompanyProfileModel.swift in Sources */,
 				4446461B26DF521A00651174 /* ServerVC.swift in Sources */,
 				7393C889269DEE3B00F35C33 /* Constant.swift in Sources */,

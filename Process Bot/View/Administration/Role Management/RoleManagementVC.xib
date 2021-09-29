@@ -44,8 +44,8 @@
                                         <action selector="btnMenuAction:" destination="-1" eventType="touchUpInside" id="oR5-V3-f5I"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4X-AB-3Ev">
-                                    <rect key="frame" x="58.5" y="27.5" width="108.5" height="19"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administrative" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4X-AB-3Ev">
+                                    <rect key="frame" x="58.5" y="27.5" width="106.5" height="19"/>
                                     <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -72,41 +72,40 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="614-ub-YTZ">
-                            <rect key="frame" x="32" y="157" width="20" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="20" id="4eP-mA-QYY"/>
-                                <constraint firstAttribute="height" constant="20" id="bpZ-3k-BkS"/>
-                            </constraints>
-                            <state key="normal" image="back_icon"/>
+                            <rect key="frame" x="24" y="157" width="20" height="20"/>
+                            <state key="normal" image="back_arrow_icon"/>
                             <connections>
                                 <action selector="btnBack:" destination="-1" eventType="touchUpInside" id="0rD-EZ-QAm"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role Management" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-Uc-gNa">
-                            <rect key="frame" x="89" y="148" width="146.5" height="41"/>
+                            <rect key="frame" x="89" y="148" width="255" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="255" id="hvP-JG-lsz"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhI-gb-0uN">
-                            <rect key="frame" x="358" y="151" width="47" height="30"/>
+                            <rect key="frame" x="373" y="151" width="18" height="30"/>
                             <state key="normal" image="plus" catalog="system"/>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="gnd-Uc-gNa" secondAttribute="bottom" constant="8" id="4Ld-5O-oqG"/>
-                        <constraint firstItem="614-ub-YTZ" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="38" id="8qb-Be-WAx"/>
-                        <constraint firstAttribute="bottom" secondItem="614-ub-YTZ" secondAttribute="bottom" constant="20" id="Brf-xG-gw6"/>
-                        <constraint firstItem="QhI-gb-0uN" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="32" id="GVO-Hi-LD2"/>
+                        <constraint firstItem="614-ub-YTZ" firstAttribute="leading" secondItem="hed-Qi-KvB" secondAttribute="leading" constant="24" id="9br-PD-qwm"/>
                         <constraint firstItem="pRM-hK-oUi" firstAttribute="top" secondItem="hed-Qi-KvB" secondAttribute="top" constant="45" id="QDV-5m-AEp"/>
-                        <constraint firstItem="QhI-gb-0uN" firstAttribute="leading" secondItem="gnd-Uc-gNa" secondAttribute="trailing" constant="122.5" id="Ubk-Uc-RyA"/>
-                        <constraint firstAttribute="trailing" secondItem="QhI-gb-0uN" secondAttribute="trailing" constant="9" id="XlT-qX-HDU"/>
-                        <constraint firstItem="614-ub-YTZ" firstAttribute="leading" secondItem="hed-Qi-KvB" secondAttribute="leading" constant="32" id="YGD-Tr-2u1"/>
+                        <constraint firstItem="gnd-Uc-gNa" firstAttribute="leading" secondItem="614-ub-YTZ" secondAttribute="trailing" constant="45" id="RN4-Ec-Vsq"/>
+                        <constraint firstAttribute="bottom" secondItem="QhI-gb-0uN" secondAttribute="bottom" constant="16" id="S37-4B-dql"/>
                         <constraint firstAttribute="trailing" secondItem="pRM-hK-oUi" secondAttribute="trailing" constant="10" id="Z3f-YR-6zD"/>
-                        <constraint firstItem="gnd-Uc-gNa" firstAttribute="leading" secondItem="614-ub-YTZ" secondAttribute="trailing" constant="37" id="jOg-Uq-gP2"/>
+                        <constraint firstItem="614-ub-YTZ" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="38" id="gAF-5h-yDi"/>
+                        <constraint firstItem="QhI-gb-0uN" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="32" id="gvf-i7-5Yt"/>
+                        <constraint firstItem="gnd-Uc-gNa" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="29" id="hhB-gg-PWp"/>
+                        <constraint firstAttribute="bottom" secondItem="gnd-Uc-gNa" secondAttribute="bottom" constant="8" id="jN0-cV-qvE"/>
+                        <constraint firstAttribute="trailing" secondItem="QhI-gb-0uN" secondAttribute="trailing" constant="23" id="nny-oM-MBl"/>
+                        <constraint firstAttribute="bottom" secondItem="614-ub-YTZ" secondAttribute="bottom" constant="20" symbolic="YES" id="pQA-61-jkw"/>
                         <constraint firstItem="pRM-hK-oUi" firstAttribute="leading" secondItem="hed-Qi-KvB" secondAttribute="leading" constant="10" id="px4-eQ-ARY"/>
-                        <constraint firstItem="gnd-Uc-gNa" firstAttribute="top" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="29" id="tp5-rw-R9T"/>
-                        <constraint firstAttribute="bottom" secondItem="QhI-gb-0uN" secondAttribute="bottom" constant="16" id="vha-Oj-aK7"/>
+                        <constraint firstItem="gnd-Uc-gNa" firstAttribute="leading" secondItem="hed-Qi-KvB" secondAttribute="leading" constant="89" id="sGr-ez-oMv"/>
                         <constraint firstAttribute="bottom" secondItem="pRM-hK-oUi" secondAttribute="bottom" constant="78" id="xZ2-oo-ua7"/>
                     </constraints>
                 </view>
@@ -163,7 +162,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back_icon" width="37" height="62"/>
+        <image name="back_arrow_icon" width="37" height="62"/>
         <image name="floting_robot_icon" width="212" height="212"/>
         <image name="menu_icon" width="70" height="52"/>
         <image name="plus" catalog="system" width="128" height="113"/>

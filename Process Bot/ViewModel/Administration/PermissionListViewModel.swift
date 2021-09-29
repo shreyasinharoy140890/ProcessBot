@@ -24,7 +24,7 @@ class PermissionViewModel:PermissionViewModelProtocol
               return
           }
         
-        guard let userroleId  = UserDefaults.standard.value(forKey: "ROLEID") else {
+        guard let roleId  = UserDefaults.standard.value(forKey: "DEPARTMENTROLEID") else {
              completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
              return
          }
@@ -36,7 +36,7 @@ class PermissionViewModel:PermissionViewModelProtocol
              "AppName":"IntelgicApp"
          ]
 
-        self.manager?.request(.customGetURL(with: .permissionlistdetails, components: ["ClientID":clientId,"RoleID":userroleId]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+        self.manager?.request(.customGetURL(with: .permissionlistdetails, components: ["ClientID":clientId,"RoleID":roleId]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
              
              switch result {
              case .success(let jsonresponce):

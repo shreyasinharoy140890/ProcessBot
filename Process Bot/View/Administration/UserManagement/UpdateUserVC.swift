@@ -28,19 +28,11 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     var roleidupdated:Int?
     var rolename:String?
     var createdby:String?
-    var componentcodeString:String?
-    var componentIDString:Int?
-    var componentNameString:String?
-    var isedit:Bool?
-    var isView:Bool?
-    var isDelete:Bool?
-    var isAdd:Bool?
     var isroleadded:Bool?
     var roledescription:String?
     var viewModelroleslistDetails:UserManagementViewModelProtocol?
     var rolelistdetails = [RoleListModel]()
-    var viewModelpermissionlistDetails:PermissionViewModelProtocol?
-    var permissionlistdetails = [PermissionListModel]()
+    
     var arrayrolenamelist = [String]()
     var arrayiseditable = [Bool]()
     let transparentView = UIView()
@@ -53,7 +45,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
     var adminstatus = UserDefaults.standard.value(forKey: "ADMINSTATUS")
     var roleid:Int?
     let userroleid = UserDefaults.standard.value(forKey: "USERROLEID")
-    let componentcode = "UMGMT"
+   
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +69,6 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
         print(emailstring)
         self.viewModelroleslistDetails = UserManagementViewModel()
         viewModelroleslistDetails?.manager = RequestManager()
-        self.viewModelpermissionlistDetails = PermissionViewModel()
-        viewModelpermissionlistDetails?.manager = RequestManager()
         getrolelist()
         tableView.dataSource = self
         tableView.delegate = self
@@ -201,51 +191,7 @@ class UpdateUserVC: UIViewController,AlertDisplayer, UITableViewDataSource, UITa
             })
         }
     
-    func getpermissionlist()
-    {
-       
-       DispatchQueue.main.async {
-           //   showActivityIndicator(viewController: self)
-       }
-       viewModelpermissionlistDetails?.getPermissionList(completion: { result in
-           switch result {
-           case .success(let result):
-               if let success = result as? Bool , success == true {
-                   DispatchQueue.main.async { [self] in
-                       
-                    permissionlistdetails =   viewModelpermissionlistDetails!.permissionlist
-                    print(permissionlistdetails)
-                       for i in 0..<permissionlistdetails.count
-                       {
-                        if permissionlistdetails[i].componentCode == componentcode
-                        {
-                             componentcodeString = permissionlistdetails[i].componentCode
-                            componentIDString = permissionlistdetails[i].componentID
-                            componentNameString = permissionlistdetails[i].componentName
-                            isView = permissionlistdetails[i].isView
-                            isedit = permissionlistdetails[i].isEdit
-                            isAdd = permissionlistdetails[i].isAdd
-                            isDelete = permissionlistdetails[i].isDelete
-                        }
-                          
-                          
-               }
-                    print(componentcodeString!)
-                    print(componentIDString!)
-                    print(componentNameString!)
-                    
-                   }
-               }
-           case .failure(let error):
-               DispatchQueue.main.async {
-                   hideActivityIndicator(viewController: self)
-                   self.showAlertWith(message: error.localizedDescription)
-               }
-               
-           }
-       })
-    }
-       
+   
  
     
     func updateuser()

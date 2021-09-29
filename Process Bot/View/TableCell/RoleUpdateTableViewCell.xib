@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="RoleUpdateTableViewCell" customModule="Process_Bot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="484" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="484" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-fC-Ia1">
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-X9-mAc">
+                                <rect key="frame" x="8" y="10" width="188" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2aK-X9-mAc" firstAttribute="top" secondItem="LwG-fC-Ia1" secondAttribute="top" constant="10" id="0Vs-RI-YTH"/>
+                            <constraint firstItem="2aK-X9-mAc" firstAttribute="leading" secondItem="LwG-fC-Ia1" secondAttribute="leading" constant="8" id="AGA-8K-NH9"/>
+                            <constraint firstAttribute="bottom" secondItem="2aK-X9-mAc" secondAttribute="bottom" constant="11" id="FGx-lE-jev"/>
+                            <constraint firstAttribute="height" constant="75" id="Hz3-9l-qvI"/>
+                            <constraint firstAttribute="trailing" secondItem="2aK-X9-mAc" secondAttribute="trailing" id="dvO-8R-MJ4"/>
+                            <constraint firstAttribute="width" constant="196" id="mbs-Gg-Yji"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cd0-hz-tIa">
+                        <rect key="frame" x="197" y="0.0" width="95" height="75"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buw-gl-jrt">
+                                <rect key="frame" x="31" y="21" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="check_untick"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="7fu-Ru-dC9"/>
+                            <constraint firstAttribute="width" constant="95" id="oTf-zH-ky1"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5W-J9-fYJ">
+                        <rect key="frame" x="293" y="0.0" width="95" height="75"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-15-zDL">
+                                <rect key="frame" x="31" y="21" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="check_untick"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="95" id="YQe-uW-2DC"/>
+                            <constraint firstAttribute="height" constant="75" id="bxW-at-yMZ"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTQ-LF-qgr">
+                        <rect key="frame" x="389" y="0.0" width="95" height="75"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-ho-d5O">
+                                <rect key="frame" x="31" y="21" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="check_untick"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="bKa-c7-lQR"/>
+                            <constraint firstAttribute="width" constant="95" id="n3j-md-PXp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lTQ-LF-qgr" secondAttribute="trailing" id="5eB-s4-2Hf"/>
+                    <constraint firstAttribute="bottom" secondItem="lTQ-LF-qgr" secondAttribute="bottom" id="Mgf-1E-Qc4"/>
+                    <constraint firstItem="j5W-J9-fYJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="R7l-GR-fYX"/>
+                    <constraint firstItem="Cd0-hz-tIa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Twt-xR-oB0"/>
+                    <constraint firstItem="j5W-J9-fYJ" firstAttribute="leading" secondItem="Cd0-hz-tIa" secondAttribute="trailing" constant="1" id="UBH-qq-b9B"/>
+                    <constraint firstItem="lTQ-LF-qgr" firstAttribute="leading" secondItem="j5W-J9-fYJ" secondAttribute="trailing" constant="1" id="Wb6-2u-V6Y"/>
+                    <constraint firstAttribute="bottom" secondItem="LwG-fC-Ia1" secondAttribute="bottom" id="hF0-Hb-elb"/>
+                    <constraint firstItem="Cd0-hz-tIa" firstAttribute="leading" secondItem="LwG-fC-Ia1" secondAttribute="trailing" constant="1" id="hu5-6b-9BT"/>
+                    <constraint firstItem="LwG-fC-Ia1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nzT-2W-fCc"/>
+                    <constraint firstAttribute="bottom" secondItem="Cd0-hz-tIa" secondAttribute="bottom" id="pnS-aV-2aa"/>
+                    <constraint firstItem="lTQ-LF-qgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="s4P-FJ-wie"/>
+                    <constraint firstAttribute="bottom" secondItem="j5W-J9-fYJ" secondAttribute="bottom" id="thH-jZ-Yal"/>
+                    <constraint firstItem="LwG-fC-Ia1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yBa-dg-gRQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonAdd" destination="bv9-15-zDL" id="Dye-Ar-mfn"/>
+                <outlet property="buttonDelete" destination="QcG-ho-d5O" id="jT7-S4-dxc"/>
+                <outlet property="buttonView" destination="Buw-gl-jrt" id="kTt-LZ-zth"/>
+                <outlet property="labelroleName" destination="2aK-X9-mAc" id="3lH-aT-55X"/>
+                <outlet property="viewDelete" destination="lTQ-LF-qgr" id="oEK-F5-CjP"/>
+                <outlet property="viewEdit" destination="j5W-J9-fYJ" id="qOM-Lv-3yF"/>
+                <outlet property="viewroleName" destination="LwG-fC-Ia1" id="nbA-hy-oYV"/>
+                <outlet property="viewsubMenu" destination="Cd0-hz-tIa" id="mfW-hy-PCw"/>
+            </connections>
+            <point key="canvasLocation" x="124.6376811594203" y="57.924107142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_untick" width="32" height="32"/>
+    </resources>
+</document>
