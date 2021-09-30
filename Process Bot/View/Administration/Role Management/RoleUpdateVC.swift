@@ -46,9 +46,9 @@ class RoleUpdateVC: UIViewController,AlertDisplayer, SidePanelDelegate,UIScrollV
         tablerolelist.dataSource = self
         tablerolelist.register(RoleUpdateTableViewCell.self)
         SidePanelViewController.default.delegate = self
-        scrollView.delegate = self
-        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
-        scrollView.setContentOffset(bottomOffset, animated: true)
+//        scrollView.delegate = self
+//        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
+//        scrollView.setContentOffset(bottomOffset, animated: true)
     }
     func didDisplayMenu(status: Bool) {
         if status == false {
@@ -73,7 +73,7 @@ class RoleUpdateVC: UIViewController,AlertDisplayer, SidePanelDelegate,UIScrollV
         textfieldroledescription.isUserInteractionEnabled = false
        
         
-        buttonSave.layer.cornerRadius = 8
+       // buttonSave.layer.cornerRadius = 8
     }
     
     //MARK: ScrollView Delegate Method
@@ -162,12 +162,50 @@ extension RoleUpdateVC: UITableViewDataSource,UITableViewDelegate {
             }
         }
         isAdd = permissionlistdetails[indexPath.row].isAdd
+        if isAdd == true
+        {
+            if let image = UIImage(named: "check_tick.png") {
+                cell.buttonAdd.setImage(image, for: .normal)
+            }
+        }
+        else
+        {
+            if let image = UIImage(named: "check_untick.png") {
+                cell.buttonAdd.setImage(image, for: .normal)
+            }
+        }
         isedit = permissionlistdetails[indexPath.row].isEdit
+        if isedit == true
+        {
+            if let image = UIImage(named: "check_tick.png") {
+                cell.buttonAdd.setImage(image, for: .normal)
+            }
+        }
+        else
+        {
+            if let image = UIImage(named: "check_untick.png") {
+                cell.buttonAdd.setImage(image, for: .normal)
+            }
+        }
         isDelete = permissionlistdetails[indexPath.row].isDelete
+        if isDelete == true
+        {
+            if let image = UIImage(named: "check_tick.png") {
+                cell.buttonDelete.setImage(image, for: .normal)
+            }
+        }
+        else
+        {
+            if let image = UIImage(named: "check_untick.png") {
+                cell.buttonDelete.setImage(image, for: .normal)
+            }
+        }
+        
+        
        
-        
-        
-        
+      
+      
+   
         cell.cellSetup(index: indexPath.row)
         return cell
     }
