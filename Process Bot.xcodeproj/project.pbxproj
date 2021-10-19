@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4268F35A271DC604008A71DB /* RoleUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268F359271DC604008A71DB /* RoleUpdate.swift */; };
 		44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2926C67DF80011603A /* TopTenRobotModel.swift */; };
 		44034F2C26C684DF0011603A /* TopTenRobotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */; };
 		4404A4D126FCB46E009DF2A6 /* RoleManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */; };
@@ -191,6 +192,7 @@
 
 /* Begin PBXFileReference section */
 		24164C8B06E345739080EE30 /* Pods_Process_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Process_Bot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4268F359271DC604008A71DB /* RoleUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleUpdate.swift; sourceTree = "<group>"; };
 		44034F2926C67DF80011603A /* TopTenRobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotModel.swift; sourceTree = "<group>"; };
 		44034F2B26C684DF0011603A /* TopTenRobotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenRobotViewModel.swift; sourceTree = "<group>"; };
 		4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManagementVC.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				4404A4CF26FCB46E009DF2A6 /* RoleManagementVC.swift */,
 				4404A4D026FCB46E009DF2A6 /* RoleManagementVC.xib */,
 				446D30762702F728004AD0C0 /* RoleUpdateVC.swift */,
+				4268F359271DC604008A71DB /* RoleUpdate.swift */,
 				446D30772702F728004AD0C0 /* RoleUpdateVC.xib */,
 			);
 			path = "Role Management";
@@ -1065,6 +1068,7 @@
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
 				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
 				4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */,
+				4268F35A271DC604008A71DB /* RoleUpdate.swift in Sources */,
 				CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */,
 				7393C870269DEC0C00F35C33 /* SceneDelegate.swift in Sources */,
 				441FE47C26DF946000473FEB /* PublishRobotTableViewCell.swift in Sources */,

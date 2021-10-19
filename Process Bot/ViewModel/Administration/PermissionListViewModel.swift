@@ -9,11 +9,13 @@ import Foundation
 protocol PermissionViewModelProtocol : class {
     func getPermissionList(completion:@escaping (ProcessBot<Any?>) -> Void)
     var manager: RequestManager? { get set }
-    var permissionlist:[PermissionListModel]{get}
+    var permissionlist:[PermissionListModel]!{get}
    
 }
 class PermissionViewModel:PermissionViewModelProtocol
 {
+    var permissionlist: [PermissionListModel]!
+    
     func getPermissionList(completion: @escaping (ProcessBot<Any?>) -> Void) {
         guard let token  = UserDefaults.standard.value(forKey: "TOKEN") else {
              completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
@@ -66,7 +68,7 @@ class PermissionViewModel:PermissionViewModelProtocol
     
     var manager: RequestManager?
     
-    var permissionlist: [PermissionListModel] = []
+ //   var permissionlist: [PermissionListModel] = []
     
     
 }

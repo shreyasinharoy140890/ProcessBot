@@ -69,10 +69,11 @@ class RoleManagementVC: UIViewController, UITextFieldDelegate {
             UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
             var roleid = rolelistdetails[sender.tag].roleID
             UserDefaults.standard.set(roleid, forKey: "DEPARTMENTROLEID")
-            let componentname = rolelistdetails[sender.tag].roleName
-            VC.componentNameString = componentname
-            let componentdescription = rolelistdetails[sender.tag].roleDescription
-            VC.componentdescription = componentdescription
+            VC.roleid = roleid
+            let rolename = rolelistdetails[sender.tag].roleName
+            VC.roleNameString = rolename
+            let roledescription = rolelistdetails[sender.tag].roleDescription
+            VC.roledescription = roledescription
         }else {
            
             sender.isSelected = true

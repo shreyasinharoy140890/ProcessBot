@@ -9,20 +9,17 @@ import UIKit
 
 class RoleUpdateTableViewCell: UITableViewCell {
     @IBOutlet weak var viewroleName: UIView!
-    
     @IBOutlet weak var viewsubMenu: UIView!
-    
     @IBOutlet weak var viewEdit: UIView!
-    
     @IBOutlet weak var viewDelete: UIView!
-    
     @IBOutlet weak var labelroleName: UILabel!
-    
     @IBOutlet weak var buttonView: UIButton!
-    
     @IBOutlet weak var buttonAdd: UIButton!
-    
     @IBOutlet weak var buttonDelete: UIButton!
+    
+    var addchecked = false
+    var viewchecked = false
+    var deletechecked = false
     
     
     override func awakeFromNib() {
@@ -35,6 +32,8 @@ class RoleUpdateTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+
     func cellSetup(index:Int){
         
         if (index % 2 == 0) {
@@ -52,6 +51,6 @@ class RoleUpdateTableViewCell: UITableViewCell {
             
            
         }
-        
+     
 }
 }

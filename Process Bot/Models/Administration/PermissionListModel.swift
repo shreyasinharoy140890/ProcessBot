@@ -10,10 +10,10 @@ struct PermissionListModel : Codable {
     let componentID : Int?
     let componentCode : String?
     let componentName : String?
-    let isView : Bool?
-    let isAdd : Bool?
-    let isEdit : Bool?
-    let isDelete : Bool?
+    var isView : Bool?
+    var isAdd : Bool?
+    var isEdit : Bool?
+    var isDelete : Bool?
 
     enum CodingKeys: String, CodingKey {
 
