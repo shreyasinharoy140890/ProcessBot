@@ -49,11 +49,11 @@ class RoleManagementVC: UIViewController, UITextFieldDelegate {
         
         if (searchText != ""){
             isFiltering = true
-
+            
             filtered = rolelistdetails.filter {
                 $0.createdBy?.range(of: searchText!, options: .caseInsensitive, range: nil, locale: nil) != nil
-                        }
-                        print(filtered)
+            }
+            print(filtered)
             
         }else {
             isFiltering = false
@@ -75,28 +75,28 @@ class RoleManagementVC: UIViewController, UITextFieldDelegate {
             let roledescription = rolelistdetails[sender.tag].roleDescription
             VC.roledescription = roledescription
         }else {
-           
+            
             sender.isSelected = true
-        
+            
         }
-     
+        
     }
     
     //MARK:- Button Actions
-       @IBAction func btnMenuAction(_ sender: UIButton) {
-           if sender.isSelected {
-               SidePanelViewController.default.hide()
-               sender.isSelected = false
-           }
-           else {
-               SidePanelViewController.default.show(on: self)
-               sender.isSelected = true
-           }
-       }
+    @IBAction func btnMenuAction(_ sender: UIButton) {
+        if sender.isSelected {
+            SidePanelViewController.default.hide()
+            sender.isSelected = false
+        }
+        else {
+            SidePanelViewController.default.show(on: self)
+            sender.isSelected = true
+        }
+    }
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
 }
 extension RoleManagementVC:SidePanelDelegate,AlertDisplayer {
     func didDisplayMenu(status: Bool) {
@@ -105,49 +105,49 @@ extension RoleManagementVC:SidePanelDelegate,AlertDisplayer {
         }
     }
     //MARK:- Webservice Call
-        
-        func getrolelist()
-        {
-            DispatchQueue.main.async {
-                //   showActivityIndicator(viewController: self)
-            }
-            viewModelroleslistDetails?.getRolesList(completion: { result in
-                switch result {
-                case .success(let result):
-                    if let success = result as? Bool , success == true {
-                        DispatchQueue.main.async { [self] in
-                            
-                         rolelistdetails =   viewModelroleslistDetails!.roleslist
-                            print(rolelistdetails)
-                            for i in 0..<rolelistdetails.count
-                            {
-                                if let createdby = rolelistdetails[i].createdBy {
-                                    print("No")
-                                    arrayusernamelist.append(rolelistdetails[i].createdBy!)
-                                } else {
-                                   print("Yes")
-                                    arrayusernamelist.append("None")
-                                }
-                                
-                                
-                                arrayrolenamelist.append(rolelistdetails[i].roleName!)
-                                arrayroledescriptionlist.append(rolelistdetails[i].roleDescription!)
-                                usercountlist.append(rolelistdetails[i].userCount!)
-                                datelist.append(rolelistdetails[i].createDate!)
-                               
-                    }
-                            tablerolelist.reloadData()
-                        }
-                    }
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        hideActivityIndicator(viewController: self)
-                        self.showAlertWith(message: error.localizedDescription)
-                    }
-                    
-                }
-            })
+    
+    func getrolelist()
+    {
+        DispatchQueue.main.async {
+            //   showActivityIndicator(viewController: self)
         }
+        viewModelroleslistDetails?.getRolesList(completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async { [self] in
+                        
+                        rolelistdetails =   viewModelroleslistDetails!.roleslist
+                        print(rolelistdetails)
+                        for i in 0..<rolelistdetails.count
+                        {
+                            if let createdby = rolelistdetails[i].createdBy {
+                                print("No")
+                                arrayusernamelist.append(rolelistdetails[i].createdBy!)
+                            } else {
+                                print("Yes")
+                                arrayusernamelist.append("None")
+                            }
+                            
+                            
+                            arrayrolenamelist.append(rolelistdetails[i].roleName!)
+                            arrayroledescriptionlist.append(rolelistdetails[i].roleDescription!)
+                            usercountlist.append(rolelistdetails[i].userCount!)
+                            datelist.append(rolelistdetails[i].createDate!)
+                            
+                        }
+                        tablerolelist.reloadData()
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
 }
 extension RoleManagementVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -175,9 +175,9 @@ extension RoleManagementVC: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.3) {
-          self.tablerolelist.performBatchUpdates(nil)
-       
-}
+            self.tablerolelist.performBatchUpdates(nil)
+            
+        }
     }
-
+    
 }

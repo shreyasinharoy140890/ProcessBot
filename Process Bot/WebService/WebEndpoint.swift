@@ -147,7 +147,11 @@ extension Endpoint {
     {
         Endpoint(base:environment.baseURL, path: "api/System/TimezoneList?")
     }
-    
+    static var directorylist:Self
+       {
+           Endpoint(base:environment.baseURL, path: "api/User/DirectoryList?")
+       }
+       
   
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         

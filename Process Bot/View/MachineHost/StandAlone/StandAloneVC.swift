@@ -49,7 +49,7 @@ class StandAloneVC: UIViewController,AlertDisplayer {
         print(qs)
         
         connection = HubConnection(withUrl: "http://3.7.99.38:5001/signalr",queryString: qs)
- 
+        print(connection.url)
         // SignalR events
 
         connection.started = { [unowned self] in

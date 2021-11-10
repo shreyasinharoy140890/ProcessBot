@@ -304,6 +304,11 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
                 UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
             }
             
+            else if  indexPath.row == 4
+            {
+                let VC = DirectoryVC(nibName: "DirectoryVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
             
             
             
