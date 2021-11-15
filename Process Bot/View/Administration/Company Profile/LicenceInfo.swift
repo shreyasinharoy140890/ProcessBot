@@ -56,7 +56,11 @@ func calllicenceinfo()
                     
                     licencelistdetails = viewModellicencelistDetails!.licencelist
                     print(licencelistdetails)
-                    
+                    for i in 0..<licencelistdetails.count
+                    {
+                        UserDefaults.standard.set(self.licencelistdetails[i].custID!, forKey: "CUSTOMERID")
+                    }
+                  
                     self.tbllicensedetails.reloadData()
                 }
             }

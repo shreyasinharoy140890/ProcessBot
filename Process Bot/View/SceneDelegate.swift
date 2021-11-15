@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(frame: scene.coordinateSpace.bounds)
         self.window?.windowScene = scene
         if let _ = UserDefaults.standard.value(forKey: "USERID"){
-             let homeVC = RobotVC(nibName: "RobotVC", bundle: nil)
+             let homeVC = DashboardVC(nibName: "DashboardVC", bundle: nil)
             let navigationController = UINavigationController(rootViewController: homeVC)
             navigationController.navigationBar.isHidden = true
             navigationController.setNeedsStatusBarAppearanceUpdate()

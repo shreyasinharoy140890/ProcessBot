@@ -26,17 +26,17 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
     var delegate: SidePanelDelegate?
 
     var expandedSections : NSMutableSet = []
-    var sectionData :[String] = ["Digital Worker","Process","Cognitive Bot","Administrative","Machine / Bot","Dashboard","Logout"]
+    var sectionData :[String] = ["Digital Worker","Process","Administrative","Machine / Bot","Dashboard","Logout"]
     
-    var sectionImageData:[UIImage] = [UIImage(named: "robot_icon")!,UIImage(named: "process_icon")!, UIImage(named: "cognative_icon")!, UIImage(named: "administrative_icon")!, UIImage(named: "machine_hos_icon")!, UIImage(named: "dashboard_icon"
+    var sectionImageData:[UIImage] = [UIImage(named: "robot_icon")!,UIImage(named: "process_icon")!,  UIImage(named: "administrative_icon")!, UIImage(named: "machine_hos_icon")!, UIImage(named: "dashboard_icon"
 )!, UIImage(named: "logout_icon")!]
     
     
-    var row3 = ["User Management","Company Profile","Assignment","Role Management","Directory"]
-    var imagerow3:[UIImage] = [UIImage(named: "usermanagement")!,UIImage(named: "companyprofile")!, UIImage(named: "assignment")!, UIImage(named: "rolemanagement")!,UIImage(named: "directory")!]
+    var row2 = ["User Management","Company Profile","Assignment","Role Management","Directory"]
+    var imagerow2:[UIImage] = [UIImage(named: "usermanagement")!,UIImage(named: "companyprofile")!, UIImage(named: "assignment")!, UIImage(named: "rolemanagement")!,UIImage(named: "directory")!]
     
-    var row4 = ["Stand- Alone","Server"]
-    var imagerow4:[UIImage] = [UIImage(named:"standalonehost")!, UIImage(named:"server")!]
+    var row3 = ["Stand- Alone","Server"]
+    var imagerow3:[UIImage] = [UIImage(named:"standalonehost")!, UIImage(named:"server")!]
     
    override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,13 +79,13 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
             UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
             
         }
-     else   if section == 5
+     else   if section == 4
         {
             let VC = DashboardVC(nibName: "DashboardVC", bundle: nil)
             UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
             
         }
-    else if section == 6
+    else if section == 5
     {
         logout()
     }
@@ -193,7 +193,7 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
         tappedSection.addTarget(self, action: #selector(sectionTapped), for: .touchUpInside)
         tappedSection.tag = section
         
-        if section == 3 || section == 4
+        if section == 2 || section == 3
         {
             headerView.addSubview(imageView)
         }
@@ -219,10 +219,10 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
 //                return 0
 //            case 2:
 //                return 0
-            case 3 :
+            case 2 :
+                return row2.count
+            case 3:
                 return row3.count
-            case 4:
-                return row4.count
 //            case 5:
 //                return 0
             default:
@@ -239,18 +239,18 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
         cell.selectionStyle = .none
         switch indexPath.section {
 
+        case 2:
+            cell.lblMenu?.text = "\(row2[indexPath.row])"
+            cell.imageView?.image = imagerow2[indexPath.row]
+            return cell
         case 3:
             cell.lblMenu?.text = "\(row3[indexPath.row])"
             cell.imageView?.image = imagerow3[indexPath.row]
             return cell
-        case 4:
-            cell.lblMenu?.text = "\(row4[indexPath.row])"
-            cell.imageView?.image = imagerow4[indexPath.row]
-            return cell
             
         default:
-            cell.lblMenu?.text = "\(row4[indexPath.row])"
-            cell.imageView?.image = imagerow4[indexPath.row]
+            cell.lblMenu?.text = "\(row3[indexPath.row])"
+            cell.imageView?.image = imagerow3[indexPath.row]
            return cell
         }
      
@@ -284,9 +284,9 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
             print(indexPath.section)
         
         
-        case 3:
+        case 2:
             
-            item = row3[indexPath.row]
+            item = row2[indexPath.row]
             if indexPath.row == 0
             {
                 let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
@@ -298,6 +298,13 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
                 let VC = CompanyProfileVC(nibName: "CompanyProfileVC", bundle: nil)
                 UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
             }
+            else if  indexPath.row == 2
+            {
+                let VC = AssignmentVC(nibName: "AssignmentVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            
             else if  indexPath.row == 3
             {
                 let VC = RoleManagementVC(nibName: "RoleManagementVC", bundle: nil)
@@ -313,9 +320,9 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
             
             
             
-        case 4:
+        case 3:
             
-            item = row4[indexPath.row]
+            item = row3[indexPath.row]
             if indexPath.row == 0
             {
                 let VC = StandAloneVC(nibName: "StandAloneVC", bundle: nil)
@@ -330,7 +337,7 @@ extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
             
             
         default:
-            item = row4[indexPath.row]
+            item = row3[indexPath.row]
         }
         
       

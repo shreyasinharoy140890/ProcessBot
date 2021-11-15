@@ -17,9 +17,13 @@ class DirectoryVC: UIViewController, UITextFieldDelegate  {
     var directorylistdetails = [DirectoryModel]()
     var arraydirectorynamelist = [String]()
     var arraydirectorydescriptionlist = [String]()
+    var arraydatelist = [String]()
     var searchText:String?
     var filtered = [DirectoryModel]()
     var isFiltering = false
+    var date:String?
+    var time:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -33,6 +37,12 @@ class DirectoryVC: UIViewController, UITextFieldDelegate  {
         textFieldSearch.text = searchText
         textFieldSearch.addTarget(self, action: #selector(textFieldValueChange(_:)), for: .editingChanged)
         getdirectorylist()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+      
+    }
+    override func viewDidAppear(_ animated: Bool) {
+      
     }
 
     func setupUI (){
@@ -73,6 +83,14 @@ class DirectoryVC: UIViewController, UITextFieldDelegate  {
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func buttonTap(sender: UIButton) {
+        let VC = AddDirectoryVC(nibName: "AddDirectoryVC", bundle: nil)
+        
+        VC.modalPresentationStyle = .automatic
+        VC.preferredContentSize = CGSize(width: 300, height: 200)
+        self.navigationController?.present(VC, animated: true, completion: nil)
+        
+    }
 }
 extension DirectoryVC:SidePanelDelegate,AlertDisplayer {
     func didDisplayMenu(status: Bool) {
@@ -99,6 +117,7 @@ extension DirectoryVC:SidePanelDelegate,AlertDisplayer {
                         {
                         arraydirectorynamelist.append(directorylistdetails[i].directoryName!)
                         arraydirectorydescriptionlist.append(directorylistdetails[i].description!)
+                        arraydatelist.append(directorylistdetails[i].createDate!)
                         tabledirectorylist.reloadData()
                       
                     }
@@ -125,6 +144,16 @@ extension DirectoryVC: UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: DirectoryTableViewCell.self), for: indexPath) as! DirectoryTableViewCell
         cell.labeldirectoryname.text = arraydirectorynamelist[indexPath.row]
         cell.labeldescription.text = arraydirectorydescriptionlist[indexPath.row]
+        date = arraydatelist[indexPath.row]
+        time = arraydatelist[indexPath.row]
+        print(date!.stringBefore("T"))
+        print(time!.stringAfter("T"))
+        let datestring = date!.stringBefore("T")
+        let timestring = time!.stringAfter("T")
+        cell.labeldate.text = datestring
+        cell.labeltime.text = timestring
+        cell.buttonedit.addTarget(self, action: #selector(navigatetonext(_:)), for: .touchUpInside)
+        cell.buttonedit.tag = indexPath.row
         return cell
     }
     
@@ -135,7 +164,28 @@ extension DirectoryVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.3) {
             self.tabledirectorylist.performBatchUpdates(nil)
+            print(self.directorylistdetails[indexPath.row].directoryID!)
+            UserDefaults.standard.set(self.directorylistdetails[indexPath.row].directoryID!, forKey: "DIRECTORY_ID")
             
         }
+    }
+    @objc func navigatetonext(_ sender:UIButton)
+    {
+        let cell = tabledirectorylist.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? DirectoryTableViewCell
+        if (sender.isSelected){
+            let VC = UpdateDirectoryVC(nibName: "UpdateDirectoryVC", bundle: nil)
+            
+            VC.modalPresentationStyle = .automatic
+            VC.preferredContentSize = CGSize(width: 300, height: 200)
+            VC.directoryname = arraydirectorynamelist[sender.tag]
+            VC.directorydescription = arraydirectorydescriptionlist[sender.tag]
+            self.navigationController?.present(VC, animated: true, completion: nil)
+           
+        }else {
+           
+            sender.isSelected = true
+        
+        }
+     
     }
 }

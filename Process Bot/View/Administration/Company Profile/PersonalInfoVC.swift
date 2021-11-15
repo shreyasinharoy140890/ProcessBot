@@ -32,6 +32,8 @@ class PersonalInfoVC: UIViewController,AlertDisplayer {
     var timezonelistdetails = [TimeZoneModel]()
     var token  = UserDefaults.standard.value(forKey: "TOKEN")
     var clientid = UserDefaults.standard.value(forKey: "CLIENTID")
+    var licencelistdetails = [LicenceListModel]()
+    var viewModellicencelistDetails:CompanyProfileViewModelProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -41,7 +43,9 @@ class PersonalInfoVC: UIViewController,AlertDisplayer {
         viewModelprofilelistDetails?.manager = RequestManager()
         self.viewModeltimezonelistDetails = CompanyProfileViewModel()
         viewModeltimezonelistDetails?.manager = RequestManager()
-      //  callProfileDetails()
+        self.viewModellicencelistDetails = CompanyProfileViewModel()
+        viewModellicencelistDetails?.manager = RequestManager()
+        calllicenceinfo()
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -171,7 +175,8 @@ extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
                         print(profilelistdetails)
                         for i in 0..<profilelistdetails.count
                         {
-                            UserDefaults.standard.set(self.profilelistdetails[i].custID!, forKey: "CUSTOMERID")
+                            print(profilelistdetails[i].custID!)
+                          
                             timezoneid = profilelistdetails[i].timeZoneID!
                         }
                        
@@ -224,6 +229,36 @@ extension PersonalInfoVC : UITableViewDataSource,UITableViewDelegate {
         })
     }
 
+    func calllicenceinfo()
+    {
+        DispatchQueue.main.async {
+            //   showActivityIndicator(viewController: self)
+        }
+        viewModellicencelistDetails?.getlicencedetails(completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+                    DispatchQueue.main.async { [self] in
+                        
+                        licencelistdetails = viewModellicencelistDetails!.licencelist
+                        print(licencelistdetails)
+                        for i in 0..<licencelistdetails.count
+                        {
+                            UserDefaults.standard.set(self.licencelistdetails[i].custID!, forKey: "CUSTOMERID")
+                        }
+                      
+                        
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
 
 
 }

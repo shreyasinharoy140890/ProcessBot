@@ -83,7 +83,7 @@ class CompanyProfileViewModel:CompanyProfileViewModelProtocol
                      do{
                          let directorymodel = try JSONDecoder().decode([LicenceListModel].self, from: dictResponse as! Data)
                          self.licencelist = directorymodel
-
+//                        let customerID =  UserDefaults.standard.set(self.licencelist.custID!, forKey: "USER_ID")
                          completion(.success(true))
                      }
                      catch _ {
@@ -109,7 +109,7 @@ class CompanyProfileViewModel:CompanyProfileViewModelProtocol
              completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
              return
          }
-         guard let clientId  = UserDefaults.standard.value(forKey: "CLIENTID") else {
+         guard let customerid  = UserDefaults.standard.value(forKey: "CUSTOMERID") else {
               completion(.failure(ProcessBotError.customMessage("Please try after sometimes")))
               return
           }
@@ -120,7 +120,7 @@ class CompanyProfileViewModel:CompanyProfileViewModelProtocol
              "AppName":"IntelgicApp"
          ]
 
-        self.manager?.request(.customGetURL(with: .profilelistdetails, components: ["CustFlag":"Y","CustID":1]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
+        self.manager?.request(.customGetURL(with: .profilelistdetails, components: ["CustFlag":"Y","CustID":customerid]), method: .get,parameters: nil, encoding: .json, headers: headers, handler:   { (result) in
              
              switch result {
              case .success(let jsonresponce):
@@ -129,7 +129,7 @@ class CompanyProfileViewModel:CompanyProfileViewModelProtocol
                      do{
                          let directorymodel = try JSONDecoder().decode([ProfileListModel].self, from: dictResponse as! Data)
                          self.profilelist = directorymodel
-
+                        print(self.profilelist)
                          completion(.success(true))
                      }
                      catch _ {

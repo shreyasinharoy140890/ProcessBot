@@ -72,9 +72,9 @@ class PublishRobotTableViewCell: UITableViewCell {
         viewPopUP.addShadow(offset: CGSize.init(width: 0, height: 1), color: .black, radius: 2, opacity: 0.7)
         viewPopUP.isHidden = true
         viewProgressBar.safePercent = 100
-        viewProgressBar.lineColor = .blue
-        viewProgressBar.lineFinishColor = .blue
-        viewProgressBar.lineBackgroundColor = .gray
+        viewProgressBar.lineColor = UIColor(named: "ScheduleColor")!
+        viewProgressBar.lineFinishColor = UIColor(named: "ScheduleColor")!
+        viewProgressBar.lineBackgroundColor = .lightGray
        // handleTap()
        // viewStop.isHidden = true
         // Initialization code
@@ -96,7 +96,7 @@ class PublishRobotTableViewCell: UITableViewCell {
             lblPause.isHidden = false
             lblPause.text = arrayPublish?[Index].currentStaus ?? ""
             imgPause.image = UIImage(named: "play_icon")
-            imgthreeDotEye.image = UIImage(named: "dotted_icon_up")
+          //  imgthreeDotEye.image = UIImage(named: "menu")
             imgCancel.image = UIImage(named: "cancel_icon")
             lblCancel.text = "Cancel"
             imgCancel.isHidden = true
@@ -123,7 +123,7 @@ class PublishRobotTableViewCell: UITableViewCell {
             lblPause.isHidden = false
             imgCancel.image = UIImage(named: "resume_icon")
             lblCancel.text = "Resume"
-            imgthreeDotEye.image = UIImage(named: "dotted_icon_up")
+         //   imgthreeDotEye.image = UIImage(named: "dotted_icon_up")
             imgCancel.isHidden = false
             lblCancel.isHidden = false
             let name = arrayInAction?[Index].friendlyName ?? ""
@@ -144,7 +144,8 @@ class PublishRobotTableViewCell: UITableViewCell {
                 } else {
                     currentTime += 0.05
                     let percent = currentTime/2 * 100
-                    self.lblRobotName.text = "\(Int(self.viewProgressBar.progress ?? 0.0 * percent))"
+                   // self.lblRobotName.text =
+                        //"\(Int(self.viewProgressBar.progress ?? 0.0 * percent))"
                         //self.viewProgressBar.label.text
                         //"\(Int(progress * percent))"
                     //self.setForegroundLayerColorForSafePercent()
@@ -156,7 +157,7 @@ class PublishRobotTableViewCell: UITableViewCell {
        // }
 //            currentTime += 0.05
 //            let percent = currentTime/2 * 100
-            lblRobotName.text = viewProgressBar.label.text ?? ""
+         //   lblRobotName.text = viewProgressBar.label.text ?? ""
                 //"\(Int(viewProgressBar.progress ?? 0.0 * percent))"
                 //viewProgressBar.progr
                 //"\(Int(viewProgressBar. * percent))"
@@ -171,7 +172,7 @@ class PublishRobotTableViewCell: UITableViewCell {
             lblCancel.isHidden = false
             imgCancel.image = UIImage(named: "resume_icon")
             lblCancel.text = arrayLogHistory?[Index].eventStatus ?? ""
-            imgthreeDotEye.image = UIImage(named: "view_icon")
+            //imgthreeDotEye.image = UIImage(named: "view_icon")
             let name = arrayLogHistory?[Index].robotName ?? ""
             let name1 = name.components(separatedBy: ".")
             lblRobotName.text = name1[0]

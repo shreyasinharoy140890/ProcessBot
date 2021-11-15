@@ -115,7 +115,7 @@ class RobotVC: UIViewController,AlertDisplayer {
         getRobotWorkType = digitalWorkerType.Scheduled.rawValue
         view.endEditing(true)
         callGetAllWorkerRobot()
-        //tableRobot.reloadData()
+        tableRobot.reloadData()
     }
     
     @IBAction func btnAction(_ sender: Any) {
@@ -211,6 +211,11 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             cell.setupCell(workerType: getRobotWorkType, Index: indexPath.row)
             cell.btnRun.addTarget(self, action: #selector(btnRunRobot(_:)), for: .touchUpInside)
             cell.btnRun.tag = indexPath.row
+            cell.btnStop.addTarget(self, action: #selector(btnStopRobot(_:)), for: .touchUpInside)
+            cell.btnPauseRun.addTarget(self, action: #selector(btnStopRobot(_:)), for: .touchUpInside)
+            cell.btnCancelCompleted.addTarget(self, action: #selector(btnResumedRobot(_:)), for: .touchUpInside)
+            cell.btnStop.tag = indexPath.row
+            cell.btnPauseRun.tag = indexPath.row
         cell.selectionStyle = .none
         return cell
         }
@@ -236,6 +241,18 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
             cell.hideDetailView()
         }
         
+    }
+    
+    
+    @objc func btnStopRobot(_ sender:UIButton){
+        callStopPauseRobot(taskId:viewModelRobot?.arrayInAction[sender.tag].taskID ?? "", status:"Stoped")
+    }
+    
+    @objc func btnPauseRobot(_ sender:UIButton){
+         callStopPauseRobot(taskId:viewModelRobot?.arrayInAction[sender.tag].taskID ?? "", status:"Paused")
+    }
+    @objc func btnResumedRobot(_ sender:UIButton){
+         callStopPauseRobot(taskId:viewModelRobot?.arrayInAction[sender.tag].taskID ?? "", status:"Resumed")
     }
     
     @objc func RobotDetails(_ sender:UIButton ){
@@ -516,13 +533,28 @@ extension RobotVC {
 
                     DispatchQueue.main.async {
                         hideActivityIndicator(viewController: self)
-//                        let robotVC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
-//                        robotVC.dictRobotLogHistory = self.viewModelRobot?.arrayLogHistoryDetails[0]
-//                        robotVC.srtWorkerType = digitalWorkerType.LogHistory.rawValue
-//                        robotVC.robotimg = ""
-//                        robotVC.robotname = self.viewModelRobot?.arrayLogHistoryDetails[0].friendlyName ?? ""
-//                        robotVC.triggerid = triggeredid
-//                        self.navigationController?.pushViewController(robotVC, animated: true)
+
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    hideActivityIndicator(viewController: self)
+                    self.showAlertWith(message: error.localizedDescription)
+                }
+                
+            }
+        })
+    }
+    
+   func callStopPauseRobot(taskId:String, status:String){
+        viewModelRobot?.callStopPauseRobot(taskId: taskId, status: status, completion: { result in
+            switch result {
+            case .success(let result):
+                if let success = result as? Bool , success == true {
+
+                    DispatchQueue.main.async {
+                        hideActivityIndicator(viewController: self)
+
                     }
                 }
             case .failure(let error):

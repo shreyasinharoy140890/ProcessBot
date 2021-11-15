@@ -78,7 +78,7 @@ extension LoginVC {
                 if let success = result as? Bool , success == true {
                    DispatchQueue.main.async {
                     hideActivityIndicator(viewController: self)
-                    let robotVC = RobotVC(nibName: "RobotVC", bundle: nil)
+                    let robotVC = DashboardVC(nibName: "DashboardVC", bundle: nil)
                     self.navigationController?.pushViewController(robotVC, animated: true)
                     }
                 }

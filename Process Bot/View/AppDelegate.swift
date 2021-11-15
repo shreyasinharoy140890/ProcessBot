@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        if #available(iOS 13.0, *) {
-        }
-        else {
+//        if #available(iOS 13.0, *) {
+//        }
+//        else {
             
             if ((UserDefaults.standard.value(forKey: "USERID")) != nil) {
-                let robotVC = RobotVC(nibName: "RobotVC", bundle: nil)
+                let robotVC = DashboardVC(nibName: "DashboardVC", bundle: nil)
                 let navigationController = UINavigationController(rootViewController: robotVC)
                 navigationController.navigationBar.isHidden = true
                 navigationController.setNeedsStatusBarAppearanceUpdate()
@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         window?.rootViewController = navigationController
                         window?.makeKeyAndVisible()
             }
-        }
-        InternetStatus.shared.startMonitoring()
+      //  }
+       // InternetStatus.shared.startMonitoring()
         return true
     }
 

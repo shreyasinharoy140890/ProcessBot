@@ -1,25 +1,24 @@
 //
-//  DirectoryTableViewCell.swift
+//  AssignmentTableViewCell.swift
 //  Process Bot
 //
-//  Created by Shreya Sinha Roy on 10/11/21.
+//  Created by Shreya Sinha Roy on 15/11/21.
 //
 
 import UIKit
 
-class DirectoryTableViewCell: UITableViewCell {
+class AssignmentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labeldirectoryname: UILabel!
+    @IBOutlet weak var labelUsername: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
+    @IBOutlet weak var labelroleName: UILabel!
     @IBOutlet weak var viewDetails: UIView!
-    @IBOutlet weak var labeldescription: UILabel!
-    @IBOutlet weak var labeldate: UILabel!
-    @IBOutlet weak var labeltime: UILabel!
     
-    @IBOutlet weak var buttonedit: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+
     var isDetailViewHidden: Bool {
         return viewDetails.isHidden
     }
@@ -43,3 +42,6 @@ class DirectoryTableViewCell: UITableViewCell {
     }
     
 }
+
+    
+
