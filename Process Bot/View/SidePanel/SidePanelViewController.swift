@@ -26,7 +26,7 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
     var delegate: SidePanelDelegate?
 
     var expandedSections : NSMutableSet = []
-    var sectionData :[String] = ["Digital Worker","Process","Administrative","Machine / Bot","Dashboard","Logout"]
+    var sectionData :[String] = ["Robot","Process","Administrative","Machine / Bot","Dashboard","Logout"]
     
     var sectionImageData:[UIImage] = [UIImage(named: "robot_icon")!,UIImage(named: "process_icon")!,  UIImage(named: "administrative_icon")!, UIImage(named: "machine_hos_icon")!, UIImage(named: "dashboard_icon"
 )!, UIImage(named: "logout_icon")!]

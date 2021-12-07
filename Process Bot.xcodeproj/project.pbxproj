@@ -76,9 +76,7 @@
 		44A4D08926FB23E00022C8EC /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */; };
 		44A4D08A26FB23E00022C8EC /* UpdateProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D08826FB23E00022C8EC /* UpdateProfileVC.xib */; };
 		44A4D08E26FB38180022C8EC /* TimeZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */; };
-		44A8D2A927427EBB008DAA90 /* DirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2A127427EB9008DAA90 /* DirectoryVC.xib */; };
 		44A8D2AA27427EBB008DAA90 /* AddDirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2A427427EB9008DAA90 /* AddDirectoryVC.swift */; };
-		44A8D2AB27427EBB008DAA90 /* DirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2A527427EBA008DAA90 /* DirectoryVC.swift */; };
 		44A8D2AC27427EBB008DAA90 /* UpdateDirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2A627427EBA008DAA90 /* UpdateDirectoryVC.swift */; };
 		44A8D2AD27427EBB008DAA90 /* UpdateDirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2A727427EBA008DAA90 /* UpdateDirectoryVC.xib */; };
 		44A8D2AE27427EBB008DAA90 /* AddDirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2A827427EBA008DAA90 /* AddDirectoryVC.xib */; };
@@ -86,10 +84,6 @@
 		44A8D2B327427EE9008DAA90 /* AssignmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2B127427EE9008DAA90 /* AssignmentVC.xib */; };
 		44A8D2B827427F03008DAA90 /* AssignmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2B427427F02008DAA90 /* AssignmentTableViewCell.xib */; };
 		44A8D2B927427F03008DAA90 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2B527427F02008DAA90 /* AssignmentTableViewCell.swift */; };
-		44A8D2BA27427F03008DAA90 /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2B627427F02008DAA90 /* DirectoryTableViewCell.swift */; };
-		44A8D2BB27427F03008DAA90 /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2B727427F02008DAA90 /* DirectoryTableViewCell.xib */; };
-		44A8D2C92742800B008DAA90 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8D2C72742800A008DAA90 /* SidePanelViewController.swift */; };
-		44A8D2CA2742800B008DAA90 /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8D2C82742800A008DAA90 /* SidePanelViewController.xib */; };
 		44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */; };
 		44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */; };
 		44C2168C27035AB100A85C17 /* RoleUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */; };
@@ -146,6 +140,12 @@
 		73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0324626B9C1E90023E3CD /* ResultType.swift */; };
 		73FA3A7E26C25D60002E471C /* RobotDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */; };
 		8A5FDF4EE22640EFA1DA9CE4 /* Pods_Process_Bot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24164C8B06E345739080EE30 /* Pods_Process_Bot.framework */; };
+		CD471FA2275F5BD1002CB51D /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD471F9E275F5BD1002CB51D /* DirectoryTableViewCell.swift */; };
+		CD471FA3275F5BD1002CB51D /* DirectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FA1275F5BD1002CB51D /* DirectoryTableViewCell.xib */; };
+		CD471FA6275F5C2C002CB51D /* DirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD471FA4275F5C2C002CB51D /* DirectoryVC.swift */; };
+		CD471FA7275F5C2C002CB51D /* DirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FA5275F5C2C002CB51D /* DirectoryVC.xib */; };
+		CD471FAA275F5C4E002CB51D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD471FA8275F5C4E002CB51D /* SidePanelViewController.swift */; };
+		CD471FAB275F5C4E002CB51D /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FA9275F5C4E002CB51D /* SidePanelViewController.xib */; };
 		CDC4159826B3DC8700B445A8 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC4176B26B3FDDB00B445A8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; };
 		CDC4176C26B3FDDB00B445A8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -275,9 +275,7 @@
 		44A4D08726FB23E00022C8EC /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
 		44A4D08826FB23E00022C8EC /* UpdateProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateProfileVC.xib; sourceTree = "<group>"; };
 		44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneModel.swift; sourceTree = "<group>"; };
-		44A8D2A127427EB9008DAA90 /* DirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectoryVC.xib; path = "../../../../../../Desktop/ProcessBot/Process Bot/View/Administration/Directory/DirectoryVC.xib"; sourceTree = "<group>"; };
 		44A8D2A427427EB9008DAA90 /* AddDirectoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDirectoryVC.swift; sourceTree = "<group>"; };
-		44A8D2A527427EBA008DAA90 /* DirectoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectoryVC.swift; path = "../../../../../../Desktop/ProcessBot/Process Bot/View/Administration/Directory/DirectoryVC.swift"; sourceTree = "<group>"; };
 		44A8D2A627427EBA008DAA90 /* UpdateDirectoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirectoryVC.swift; sourceTree = "<group>"; };
 		44A8D2A727427EBA008DAA90 /* UpdateDirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateDirectoryVC.xib; sourceTree = "<group>"; };
 		44A8D2A827427EBA008DAA90 /* AddDirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDirectoryVC.xib; sourceTree = "<group>"; };
@@ -285,10 +283,6 @@
 		44A8D2B127427EE9008DAA90 /* AssignmentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignmentVC.xib; sourceTree = "<group>"; };
 		44A8D2B427427F02008DAA90 /* AssignmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignmentTableViewCell.xib; sourceTree = "<group>"; };
 		44A8D2B527427F02008DAA90 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
-		44A8D2B627427F02008DAA90 /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectoryTableViewCell.swift; path = "../../../../../Desktop/ProcessBot/Process Bot/View/TableCell/DirectoryTableViewCell.swift"; sourceTree = "<group>"; };
-		44A8D2B727427F02008DAA90 /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectoryTableViewCell.xib; path = "../../../../../Desktop/ProcessBot/Process Bot/View/TableCell/DirectoryTableViewCell.xib"; sourceTree = "<group>"; };
-		44A8D2C72742800A008DAA90 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidePanelViewController.swift; path = "../../../../../Desktop/ProcessBot/Process Bot/View/SidePanel/SidePanelViewController.swift"; sourceTree = "<group>"; };
-		44A8D2C82742800A008DAA90 /* SidePanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SidePanelViewController.xib; path = "../../../../../Desktop/ProcessBot/Process Bot/View/SidePanel/SidePanelViewController.xib"; sourceTree = "<group>"; };
 		44B6332726C6550F00EB576E /* DirectoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsModel.swift; sourceTree = "<group>"; };
 		44B6332B26C6574A00EB576E /* DirectoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleUpdateTableViewCell.swift; sourceTree = "<group>"; };
@@ -348,6 +342,12 @@
 		73FA3A7D26C25D60002E471C /* RobotDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotDetailsViewModel.swift; sourceTree = "<group>"; };
 		8895DB351D4663FE1B90F4C4 /* Pods-Process Bot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Process Bot.release.xcconfig"; path = "Target Support Files/Pods-Process Bot/Pods-Process Bot.release.xcconfig"; sourceTree = "<group>"; };
 		8A6F79715CB03CE886313529 /* Pods-Process Bot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Process Bot.debug.xcconfig"; path = "Target Support Files/Pods-Process Bot/Pods-Process Bot.debug.xcconfig"; sourceTree = "<group>"; };
+		CD471F9E275F5BD1002CB51D /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
+		CD471FA1275F5BD1002CB51D /* DirectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryTableViewCell.xib; sourceTree = "<group>"; };
+		CD471FA4275F5C2C002CB51D /* DirectoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryVC.swift; sourceTree = "<group>"; };
+		CD471FA5275F5C2C002CB51D /* DirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryVC.xib; sourceTree = "<group>"; };
+		CD471FA8275F5C4E002CB51D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
+		CD471FA9275F5C4E002CB51D /* SidePanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
 		CDC4176026B3FD4700B445A8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoBaseViewController.swift; path = "Supporting Files/DemoBaseViewController.swift"; sourceTree = "<group>"; };
 		CDC4177026B3FE4300B445A8 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
@@ -576,10 +576,10 @@
 		44B71CEF2728253200EAC613 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
+				CD471FA4275F5C2C002CB51D /* DirectoryVC.swift */,
+				CD471FA5275F5C2C002CB51D /* DirectoryVC.xib */,
 				44A8D2A427427EB9008DAA90 /* AddDirectoryVC.swift */,
 				44A8D2A827427EBA008DAA90 /* AddDirectoryVC.xib */,
-				44A8D2A527427EBA008DAA90 /* DirectoryVC.swift */,
-				44A8D2A127427EB9008DAA90 /* DirectoryVC.xib */,
 				44A8D2A627427EBA008DAA90 /* UpdateDirectoryVC.swift */,
 				44A8D2A727427EBA008DAA90 /* UpdateDirectoryVC.xib */,
 			);
@@ -601,8 +601,8 @@
 		7349BAE526A04C9C001360ED /* SidePanel */ = {
 			isa = PBXGroup;
 			children = (
-				44A8D2C72742800A008DAA90 /* SidePanelViewController.swift */,
-				44A8D2C82742800A008DAA90 /* SidePanelViewController.xib */,
+				CD471FA8275F5C4E002CB51D /* SidePanelViewController.swift */,
+				CD471FA9275F5C4E002CB51D /* SidePanelViewController.xib */,
 			);
 			path = SidePanel;
 			sourceTree = "<group>";
@@ -663,6 +663,8 @@
 		7356D89D269ED81E00CC76D3 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				CD471F9E275F5BD1002CB51D /* DirectoryTableViewCell.swift */,
+				CD471FA1275F5BD1002CB51D /* DirectoryTableViewCell.xib */,
 				448D4232273A9AA900A7F7F7 /* PublishRobotTableViewCell.swift */,
 				448D4234273A9AAA00A7F7F7 /* PublishRobotTableViewCell.xib */,
 				448D4231273A9AA900A7F7F7 /* ScheduledTableViewCell.swift */,
@@ -688,8 +690,6 @@
 				4438AE2826F8967B00829147 /* CompanyProfileTableViewCell.swift */,
 				44A8D2B527427F02008DAA90 /* AssignmentTableViewCell.swift */,
 				44A8D2B427427F02008DAA90 /* AssignmentTableViewCell.xib */,
-				44A8D2B627427F02008DAA90 /* DirectoryTableViewCell.swift */,
-				44A8D2B727427F02008DAA90 /* DirectoryTableViewCell.xib */,
 				4438AE2926F8967B00829147 /* CompanyProfileTableViewCell.xib */,
 				4497295A26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift */,
 				4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */,
@@ -989,21 +989,21 @@
 				73A627F326AEAF090073F0EB /* Aileron-UltraLight.otf in Resources */,
 				44A8D2AD27427EBB008DAA90 /* UpdateDirectoryVC.xib in Resources */,
 				440A315726C5019600A231AB /* PopOver.xib in Resources */,
-				44A8D2A927427EBB008DAA90 /* DirectoryVC.xib in Resources */,
 				448D4238273A9AAA00A7F7F7 /* PublishRobotTableViewCell.xib in Resources */,
 				4497295D26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib in Resources */,
 				73A627F226AEAF090073F0EB /* Aileron-ThinItalic.otf in Resources */,
 				4438AE2B26F8967B00829147 /* CompanyProfileTableViewCell.xib in Resources */,
 				4466608A26E7A0F400DACC35 /* RolesTableViewCell.xib in Resources */,
 				73A627FA26AEAF090073F0EB /* Aileron-SemiBold.otf in Resources */,
-				44A8D2CA2742800B008DAA90 /* SidePanelViewController.xib in Resources */,
 				73A627F826AEAF090073F0EB /* Aileron-HeavyItalic.otf in Resources */,
+				CD471FAB275F5C4E002CB51D /* SidePanelViewController.xib in Resources */,
 				44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */,
 				7349BAF626A0798F001360ED /* ScheduleDetailsVC.xib in Resources */,
 				4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */,
+				CD471FA7275F5C2C002CB51D /* DirectoryVC.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
 				44A4D08A26FB23E00022C8EC /* UpdateProfileVC.xib in Resources */,
-				44A8D2BB27427F03008DAA90 /* DirectoryTableViewCell.xib in Resources */,
+				CD471FA3275F5BD1002CB51D /* DirectoryTableViewCell.xib in Resources */,
 				448D4237273A9AAA00A7F7F7 /* ScheduledTableViewCell.xib in Resources */,
 				448D4230273A9A7D00A7F7F7 /* RobotVC.xib in Resources */,
 				44A8D2AE27427EBB008DAA90 /* AddDirectoryVC.xib in Resources */,
@@ -1091,6 +1091,7 @@
 			files = (
 				4466607326E77D8600DACC35 /* UpdateUserVC.swift in Sources */,
 				449F05D926DF511000A86F1E /* ServerTableViewCell.swift in Sources */,
+				CD471FA6275F5C2C002CB51D /* DirectoryVC.swift in Sources */,
 				442CF30C26EB2DDA00556F8E /* PermissionListModel.swift in Sources */,
 				44153EFF26CF8E2500E0D03A /* RunningHistoryViewModel.swift in Sources */,
 				CDEE0C1026B9A51100A11DD9 /* DigitalWorkerRobotViewModel.swift in Sources */,
@@ -1165,11 +1166,10 @@
 				CDEE0C2626B9A51F00A11DD9 /* HTTPHeaders.swift in Sources */,
 				736DE88B26A83C6000277988 /* SplashLoadingViewController.swift in Sources */,
 				7393C878269DEC0C00F35C33 /* Process_Bot.xcdatamodeld in Sources */,
-				44A8D2BA27427F03008DAA90 /* DirectoryTableViewCell.swift in Sources */,
+				CD471FA2275F5BD1002CB51D /* DirectoryTableViewCell.swift in Sources */,
 				448D4235273A9AAA00A7F7F7 /* ScheduledTableViewCell.swift in Sources */,
 				44034F2A26C67DF80011603A /* TopTenRobotModel.swift in Sources */,
 				7356D8A1269EDA8000CC76D3 /* InputTableViewCell.swift in Sources */,
-				44A8D2AB27427EBB008DAA90 /* DirectoryVC.swift in Sources */,
 				440A986B26CE62B800AFF6D3 /* ActivityDataModel.swift in Sources */,
 				44A4D08926FB23E00022C8EC /* UpdateProfileVC.swift in Sources */,
 				4445319626D946C300ADDC16 /* StandAloneVC.swift in Sources */,
@@ -1184,7 +1184,7 @@
 				446D30782702F728004AD0C0 /* RoleUpdateVC.swift in Sources */,
 				4438AE0726F8643700829147 /* CompanyProfileModel.swift in Sources */,
 				4446461B26DF521A00651174 /* ServerVC.swift in Sources */,
-				44A8D2C92742800B008DAA90 /* SidePanelViewController.swift in Sources */,
+				CD471FAA275F5C4E002CB51D /* SidePanelViewController.swift in Sources */,
 				7393C889269DEE3B00F35C33 /* Constant.swift in Sources */,
 				73D0324726B9C1E90023E3CD /* ResultType.swift in Sources */,
 				4466606C26E7558B00DACC35 /* RobotViewModel.swift in Sources */,
