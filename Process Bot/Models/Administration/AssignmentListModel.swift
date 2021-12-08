@@ -1,12 +1,12 @@
 //
-//  AssignmentListModel.swift
+//  RobotListmodel.swift
 //  Process Bot
 //
-//  Created by Shreya Sinha Roy on 15/11/21.
+//  Created by Appsbee on 08/12/21.
 //
 
 import Foundation
-struct AssignementListModel : Codable {
+struct AssignmentListModel : Codable {
     let publishedScriptID : String?
     let robotName : String?
     let version : String?
@@ -41,4 +41,3 @@ struct AssignementListModel : Codable {
     }
 
 }
-

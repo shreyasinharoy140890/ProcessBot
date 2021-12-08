@@ -78,10 +78,6 @@ class AssignmentVC: UIViewController,UITextFieldDelegate{
                sender.isSelected = true
            }
        }
-    @IBAction func btnBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
    
 }
 extension AssignmentVC: UITableViewDataSource,UITableViewDelegate {
@@ -95,10 +91,11 @@ extension AssignmentVC: UITableViewDataSource,UITableViewDelegate {
         usernamestring =  cell.labelUsername.text
         cell.labelroleName.text = arrayrolenamelist[indexPath.row]
         cell.labelEmail.text = arrayemaillist[indexPath.row]
+        cell.btnshowlist.addTarget(self, action: #selector(showrobotlist), for:.touchUpInside)
         rolename = cell.labelroleName.text
         date = arraydatelist[indexPath.row]
         print(date!.stringBefore("T"))
-        let datestring = date!.stringBefore("T")
+        _ = date!.stringBefore("T")
         
         return cell
     }
@@ -115,7 +112,15 @@ extension AssignmentVC: UITableViewDataSource,UITableViewDelegate {
            self.tableusers.performBatchUpdates(nil)
        
 }
+       
+        
     }
+    @objc func showrobotlist()
+    {
+        let VC = RobotListVC(nibName: "RobotListVC", bundle: nil)
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+    
 }
 extension AssignmentVC:SidePanelDelegate {
     func didDisplayMenu(status: Bool) {

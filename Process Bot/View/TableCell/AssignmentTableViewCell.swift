@@ -13,6 +13,7 @@ class AssignmentTableViewCell: UITableViewCell {
     @IBOutlet weak var labelEmail: UILabel!
     @IBOutlet weak var labelroleName: UILabel!
     @IBOutlet weak var viewDetails: UIView!
+    @IBOutlet weak var btnshowlist: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,9 @@ class AssignmentTableViewCell: UITableViewCell {
             hideDetailView()
         }
     }
+ 
+  
+    
     
 }
 

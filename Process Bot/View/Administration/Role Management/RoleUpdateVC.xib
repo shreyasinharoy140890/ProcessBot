@@ -235,8 +235,9 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-j8-s1l">
-                            <rect key="frame" x="116" y="1000" width="292" height="55"/>
+                            <rect key="frame" x="116.5" y="1000" width="292" height="55"/>
                             <constraints>
+                                <constraint firstAttribute="height" constant="55" id="7Jo-SS-X9M"/>
                                 <constraint firstAttribute="width" constant="292" id="dx3-CR-xzo"/>
                             </constraints>
                             <state key="normal" title="Save" image="save_btn">
@@ -260,12 +261,12 @@
                         <constraint firstAttribute="bottom" secondItem="C9r-j8-s1l" secondAttribute="bottom" constant="35" id="GI4-qZ-hFC"/>
                         <constraint firstAttribute="trailing" secondItem="fsq-s2-jrQ" secondAttribute="trailing" constant="20" id="XT5-mf-1PK"/>
                         <constraint firstItem="C9r-j8-s1l" firstAttribute="top" secondItem="Xaa-Pp-PK2" secondAttribute="bottom" constant="-31" id="cCr-Gi-6Ab"/>
+                        <constraint firstItem="C9r-j8-s1l" firstAttribute="centerX" secondItem="Xaa-Pp-PK2" secondAttribute="centerX" id="dlZ-M3-yvG"/>
                         <constraint firstItem="fsq-s2-jrQ" firstAttribute="top" secondItem="1f5-wu-6SP" secondAttribute="top" constant="20" id="kwF-7Y-LwM"/>
                         <constraint firstItem="fsq-s2-jrQ" firstAttribute="leading" secondItem="1f5-wu-6SP" secondAttribute="leading" constant="20" id="mSF-vK-sjz"/>
                         <constraint firstItem="1f5-wu-6SP" firstAttribute="trailing" secondItem="Xaa-Pp-PK2" secondAttribute="trailing" constant="184" id="sop-uS-Nqo"/>
                         <constraint firstItem="Xaa-Pp-PK2" firstAttribute="leading" secondItem="1f5-wu-6SP" secondAttribute="leading" constant="185" id="v5b-f5-CzS"/>
                         <constraint firstItem="fsq-s2-jrQ" firstAttribute="centerX" secondItem="bbK-0X-IaU" secondAttribute="centerX" id="xVQ-vC-Amp"/>
-                        <constraint firstItem="C9r-j8-s1l" firstAttribute="centerX" secondItem="bbK-0X-IaU" secondAttribute="centerX" id="yIV-fE-q5l"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="PwU-GZ-vQG"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="1f5-wu-6SP"/>

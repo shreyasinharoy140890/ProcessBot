@@ -163,6 +163,7 @@
             <viewLayoutGuide key="safeArea" id="Vu7-mH-gRR"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="btnshowlist" destination="4hF-va-hOa" id="MUg-7s-avJ"/>
                 <outlet property="labelEmail" destination="udn-7P-ceF" id="cMg-Dd-S7I"/>
                 <outlet property="labelUsername" destination="X15-OM-cCe" id="lBh-Dr-kbE"/>
                 <outlet property="labelroleName" destination="ot7-3O-pcp" id="SyM-Oa-QNU"/>

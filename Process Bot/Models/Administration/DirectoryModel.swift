@@ -39,3 +39,20 @@ struct DirectoryModel : Codable {
     }
 
 }
+struct CurrentDirectoryModel : Codable {
+    let directoryID : Int?
+    let directoryName : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case directoryID = "DirectoryID"
+        case directoryName = "DirectoryName"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        directoryID = try values.decodeIfPresent(Int.self, forKey: .directoryID)
+        directoryName = try values.decodeIfPresent(String.self, forKey: .directoryName)
+    }
+
+}

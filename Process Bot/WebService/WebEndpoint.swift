@@ -152,6 +152,18 @@ extension Endpoint {
            Endpoint(base:environment.baseURL, path: "api/User/DirectoryList?")
        }
        
+    static var getWorkingDirectory:Self
+       {
+           Endpoint(base:environment.baseURL, path: "api/User/GetWorkingDirectory?")
+       }
+       
+    static var getAssignmentList:Self
+       {
+           Endpoint(base:environment.baseURL, path: "api/User/AssignmentList?")
+       }
+       
+    
+    
   
     static func customGetURL(with endpoint:Self, components:[String:Any]) -> Self {
         

@@ -146,6 +146,12 @@
 		CD471FA7275F5C2C002CB51D /* DirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FA5275F5C2C002CB51D /* DirectoryVC.xib */; };
 		CD471FAA275F5C4E002CB51D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD471FA8275F5C4E002CB51D /* SidePanelViewController.swift */; };
 		CD471FAB275F5C4E002CB51D /* SidePanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FA9275F5C4E002CB51D /* SidePanelViewController.xib */; };
+		CD471FC8275F8542002CB51D /* RobotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD471FC6275F8542002CB51D /* RobotListVC.swift */; };
+		CD471FC9275F8542002CB51D /* RobotListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD471FC7275F8542002CB51D /* RobotListVC.xib */; };
+		CD855539276079880025DCFB /* RobotListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD855537276079880025DCFB /* RobotListTableViewCell.swift */; };
+		CD85553A276079880025DCFB /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD855538276079880025DCFB /* RobotListTableViewCell.xib */; };
+		CD8555442760D8650025DCFB /* AssignmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8555432760D8650025DCFB /* AssignmentListModel.swift */; };
+		CD8555462760D8A60025DCFB /* AssignmentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8555452760D8A60025DCFB /* AssignmentListViewModel.swift */; };
 		CDC4159826B3DC8700B445A8 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC4176B26B3FDDB00B445A8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; };
 		CDC4176C26B3FDDB00B445A8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -348,6 +354,12 @@
 		CD471FA5275F5C2C002CB51D /* DirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryVC.xib; sourceTree = "<group>"; };
 		CD471FA8275F5C4E002CB51D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		CD471FA9275F5C4E002CB51D /* SidePanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidePanelViewController.xib; sourceTree = "<group>"; };
+		CD471FC6275F8542002CB51D /* RobotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListVC.swift; sourceTree = "<group>"; };
+		CD471FC7275F8542002CB51D /* RobotListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RobotListVC.xib; sourceTree = "<group>"; };
+		CD855537276079880025DCFB /* RobotListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListTableViewCell.swift; sourceTree = "<group>"; };
+		CD855538276079880025DCFB /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
+		CD8555432760D8650025DCFB /* AssignmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListModel.swift; sourceTree = "<group>"; };
+		CD8555452760D8A60025DCFB /* AssignmentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListViewModel.swift; sourceTree = "<group>"; };
 		CDC4176026B3FD4700B445A8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoBaseViewController.swift; path = "Supporting Files/DemoBaseViewController.swift"; sourceTree = "<group>"; };
 		CDC4177026B3FE4300B445A8 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
@@ -414,6 +426,7 @@
 		4426326426E662AF00B92296 /* Administration */ = {
 			isa = PBXGroup;
 			children = (
+				44A8D2AF27427EE9008DAA90 /* Assignment */,
 				44B71CEF2728253200EAC613 /* Directory */,
 				4404A4CC26FCB448009DF2A6 /* Role Management */,
 				4405910726F1D15400347946 /* Company Profile */,
@@ -500,6 +513,7 @@
 				4438AE0626F8643700829147 /* CompanyProfileModel.swift */,
 				44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */,
 				4404101C2729357600AD25C8 /* DirectoryModel.swift */,
+				CD8555432760D8650025DCFB /* AssignmentListModel.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -551,6 +565,7 @@
 				442CF30F26EB314B00556F8E /* PermissionListViewModel.swift */,
 				4438AE1A26F8761000829147 /* CompanyProfileViewModel.swift */,
 				448D4245273A9CA500A7F7F7 /* DirectoryListViewModel.swift */,
+				CD8555452760D8A60025DCFB /* AssignmentListViewModel.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -569,8 +584,11 @@
 			children = (
 				44A8D2B027427EE9008DAA90 /* AssignmentVC.swift */,
 				44A8D2B127427EE9008DAA90 /* AssignmentVC.xib */,
+				CD471FC6275F8542002CB51D /* RobotListVC.swift */,
+				CD471FC7275F8542002CB51D /* RobotListVC.xib */,
 			);
-			path = Assignment;
+			name = Assignment;
+			path = ../Assignment;
 			sourceTree = "<group>";
 		};
 		44B71CEF2728253200EAC613 /* Directory */ = {
@@ -628,7 +646,6 @@
 		7356D87A269EBF0900CC76D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				44A8D2AF27427EE9008DAA90 /* Assignment */,
 				7393C86D269DEC0C00F35C33 /* AppDelegate.swift */,
 				7393C86F269DEC0C00F35C33 /* SceneDelegate.swift */,
 				4426326426E662AF00B92296 /* Administration */,
@@ -695,6 +712,8 @@
 				4497295B26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.xib */,
 				44C2168A27035AB100A85C17 /* RoleUpdateTableViewCell.swift */,
 				44C2168B27035AB100A85C17 /* RoleUpdateTableViewCell.xib */,
+				CD855537276079880025DCFB /* RobotListTableViewCell.swift */,
+				CD855538276079880025DCFB /* RobotListTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -999,6 +1018,7 @@
 				CD471FAB275F5C4E002CB51D /* SidePanelViewController.xib in Resources */,
 				44E8B59F26DCBE3200C01833 /* DashboardVC.xib in Resources */,
 				7349BAF626A0798F001360ED /* ScheduleDetailsVC.xib in Resources */,
+				CD85553A276079880025DCFB /* RobotListTableViewCell.xib in Resources */,
 				4453F3B926E8F8B90020DA79 /* AddUserViewController.xib in Resources */,
 				CD471FA7275F5C2C002CB51D /* DirectoryVC.xib in Resources */,
 				73A627FE26AEAF090073F0EB /* Aileron-Black.otf in Resources */,
@@ -1017,6 +1037,7 @@
 				73A627FF26AEAF090073F0EB /* Aileron-Regular.otf in Resources */,
 				449F05DA26DF511000A86F1E /* ServerTableViewCell.xib in Resources */,
 				4445319226D946A000ADDC16 /* StandAloneTableViewCell.xib in Resources */,
+				CD471FC9275F8542002CB51D /* RobotListVC.xib in Resources */,
 				4426324A26E636F600B92296 /* UserManagementTableViewCell.xib in Resources */,
 				7356D8A2269EDA8000CC76D3 /* InputTableViewCell.xib in Resources */,
 				7393C87D269DEC0C00F35C33 /* LaunchScreen.storyboard in Resources */,
@@ -1107,12 +1128,14 @@
 				CDEE0C2426B9A51F00A11DD9 /* TCSNetworkError.swift in Sources */,
 				7393C890269DEEE300F35C33 /* AlertDisplayer.swift in Sources */,
 				4481E7D026C5520E009D78C5 /* dateCollectionViewCell.swift in Sources */,
+				CD8555462760D8A60025DCFB /* AssignmentListViewModel.swift in Sources */,
 				7393C86E269DEC0C00F35C33 /* AppDelegate.swift in Sources */,
 				CDEE0C2326B9A51F00A11DD9 /* HTTPMethod.swift in Sources */,
 				44153F0626CFB43400E0D03A /* SuccessRateViewModel.swift in Sources */,
 				7393C88D269DEE5900F35C33 /* CustomExtension.swift in Sources */,
 				CDEE0C1F26B9A51F00A11DD9 /* WebEndpoint.swift in Sources */,
 				44B6332C26C6574A00EB576E /* DirectoryDetailsViewModel.swift in Sources */,
+				CD8555442760D8650025DCFB /* AssignmentListModel.swift in Sources */,
 				CDEE0C2726B9A51F00A11DD9 /* NetworkLogger.swift in Sources */,
 				445F1BF426CA6A6D00EC55CC /* TopTenNonPerformerModel.swift in Sources */,
 				CDEE0C0F26B9A51100A11DD9 /* LoginViewModel.swift in Sources */,
@@ -1131,6 +1154,7 @@
 				4466605426E7512C00DACC35 /* UserManagementModel.swift in Sources */,
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
 				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
+				CD855539276079880025DCFB /* RobotListTableViewCell.swift in Sources */,
 				4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */,
 				4268F35A271DC604008A71DB /* RoleUpdate.swift in Sources */,
 				CDEE0C1E26B9A51F00A11DD9 /* RequestManager.swift in Sources */,
@@ -1144,6 +1168,7 @@
 				44C2168C27035AB100A85C17 /* RoleUpdateTableViewCell.swift in Sources */,
 				44A8D2AA27427EBB008DAA90 /* AddDirectoryVC.swift in Sources */,
 				448D4246273A9CA500A7F7F7 /* DirectoryListViewModel.swift in Sources */,
+				CD471FC8275F8542002CB51D /* RobotListVC.swift in Sources */,
 				4497295C26FDF0FA00DB7CC5 /* RoleManagementTableViewCell.swift in Sources */,
 				CDEE0C2026B9A51F00A11DD9 /* ParameterEncoding.swift in Sources */,
 				73479E9426BA837F005B06B5 /* LoginModels.swift in Sources */,

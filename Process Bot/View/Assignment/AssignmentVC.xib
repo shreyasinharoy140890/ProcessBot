@@ -41,6 +41,9 @@
                                         <constraint firstAttribute="width" secondItem="BZa-3B-lvq" secondAttribute="height" multiplier="1:0.8" constant="-5" id="VzE-xD-V3S"/>
                                     </constraints>
                                     <state key="normal" image="menu_icon"/>
+                                    <connections>
+                                        <action selector="btnMenuAction:" destination="-1" eventType="touchUpInside" id="eye-BI-gpz"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administrative" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U6-Jl-8Au">
                                     <rect key="frame" x="58.5" y="27.5" width="102" height="19"/>
@@ -69,13 +72,6 @@
                                 <constraint firstItem="8U6-Jl-8Au" firstAttribute="top" secondItem="r1e-7E-eO9" secondAttribute="top" constant="27.5" id="uQa-po-Zgm"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf9-0O-GrX">
-                            <rect key="frame" x="24" y="157" width="20" height="20"/>
-                            <state key="normal" image="back_arrow_icon"/>
-                            <connections>
-                                <action selector="btnBack:" destination="-1" eventType="touchUpInside" id="reJ-TH-rpO"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvR-sZ-jOf">
                             <rect key="frame" x="89" y="148" width="255" height="41"/>
                             <constraints>
@@ -89,14 +85,10 @@
                     <constraints>
                         <constraint firstItem="CvR-sZ-jOf" firstAttribute="top" secondItem="r1e-7E-eO9" secondAttribute="bottom" constant="29" id="5Ix-yW-h8c"/>
                         <constraint firstAttribute="bottom" secondItem="CvR-sZ-jOf" secondAttribute="bottom" constant="8" id="Cqc-AZ-ypa"/>
-                        <constraint firstItem="Qf9-0O-GrX" firstAttribute="leading" secondItem="Wy7-8n-4bK" secondAttribute="leading" constant="24" id="EYi-ih-C8Y"/>
                         <constraint firstItem="r1e-7E-eO9" firstAttribute="top" secondItem="Wy7-8n-4bK" secondAttribute="top" constant="45" id="NB5-6C-tZE"/>
-                        <constraint firstItem="CvR-sZ-jOf" firstAttribute="leading" secondItem="Qf9-0O-GrX" secondAttribute="trailing" constant="45" id="Nyc-5D-ufO"/>
                         <constraint firstAttribute="trailing" secondItem="r1e-7E-eO9" secondAttribute="trailing" constant="10" id="SxD-E6-bcn"/>
                         <constraint firstItem="r1e-7E-eO9" firstAttribute="leading" secondItem="Wy7-8n-4bK" secondAttribute="leading" constant="10" id="T5H-QH-k8w"/>
                         <constraint firstAttribute="bottom" secondItem="r1e-7E-eO9" secondAttribute="bottom" constant="78" id="VE5-fU-jT0"/>
-                        <constraint firstAttribute="bottom" secondItem="Qf9-0O-GrX" secondAttribute="bottom" constant="20" symbolic="YES" id="bOW-4W-ZUM"/>
-                        <constraint firstItem="Qf9-0O-GrX" firstAttribute="top" secondItem="r1e-7E-eO9" secondAttribute="bottom" constant="38" id="hQC-58-ohW"/>
                         <constraint firstItem="CvR-sZ-jOf" firstAttribute="leading" secondItem="Wy7-8n-4bK" secondAttribute="leading" constant="89" id="ieg-5e-g2R"/>
                     </constraints>
                 </view>
@@ -151,7 +143,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back_arrow_icon" width="37" height="62"/>
         <image name="floting_robot_icon" width="212" height="212"/>
         <image name="menu_icon" width="70" height="52"/>
         <image name="search_icon" width="70" height="70"/>
