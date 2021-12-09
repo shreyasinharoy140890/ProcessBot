@@ -26,12 +26,18 @@ class RobotListVC: UIViewController,AlertDisplayer {
     var currentdirectory = [CurrentDirectoryModel]()
     var viewModelassignmentlist:AssignmentListViewModelProtocol?
     var assignmentlistdetails = [AssignmentListModel]()
-    
+    var arrayisSelected = [Bool]()
     var directoryname:String?
     var directoryid:Int?
     var arraydirectorynamelist = [String]()
     var arraydirectorydescriptionlist = [String]()
     let chooseDirectoryDropDown = DropDown()
+    
+    var token  = UserDefaults.standard.value(forKey: "TOKEN")
+    var clientid = UserDefaults.standard.value(forKey: "CLIENTID")
+    var userid = UserDefaults.standard.value(forKey: "USERID")
+    
+    
     
     lazy var dropDowns: [DropDown] = {
         return [
@@ -44,10 +50,7 @@ class RobotListVC: UIViewController,AlertDisplayer {
         super.viewDidLoad()
      
         setupUI()
-       
-//        tablerobotlist.delegate = self
-//        tablerobotlist.dataSource = self
-//        tablerobotlist.register(RoleUpdateTableViewCell.self)
+ 
         self.viewModeldirectorylistDetails = DirectoryViewModel()
         viewModeldirectorylistDetails?.manager = RequestManager()
         self.viewModelcurrentDirectory = DirectoryViewModel()
@@ -62,13 +65,15 @@ class RobotListVC: UIViewController,AlertDisplayer {
         chooseDirectory.layer.borderWidth = 1;
         chooseDirectory.layer.borderColor = UIColor.systemBlue.cgColor
         
-        getdirectorylist()
         getcurrentdirectory()
         getassignmentlist()
+        getdirectorylist()
+       
         
         tablerobotlist.delegate = self
         tablerobotlist.dataSource = self
         tablerobotlist.register(RobotListTableViewCell.self)
+       
     }
 
 
@@ -99,6 +104,92 @@ class RobotListVC: UIViewController,AlertDisplayer {
         chooseDirectoryDropDown.show()
     }
     
+    @IBAction func btnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func btnSave(_sender:UIButton)
+    {
+       
+        var assignmentArray = [AssignmentList]()
+        
+        for each in assignmentlistdetails{
+            let eachValue = AssignmentList(AssignedID: each.assignedID!, PublishedScriptID: each.publishedScriptID!, AssignedToUserID: each.assignedToUserID!,Enabled:each.enabled! )
+            assignmentArray.append(eachValue)
+        }
+       let requestBody = AssignmentUpdate( ClientID: clientid! as! String, AssignedByUserID:userid! as! String, AssignedList: assignmentArray)
+        
+        
+        let jsonEncoder = JSONEncoder()
+        var encodedData: Data?
+        do{
+            
+            encodedData = try! jsonEncoder.encode(requestBody)
+          //  print(data)
+            let str = String(decoding: encodedData!, as: UTF8.self)
+            print("Strung value is \(str)")
+        }
+        
+        catch{
+            
+        }
+        
+     let Url = String(format: "http://3.7.99.38:5001/api/User/AddAssignment")
+            guard let serviceUrl = URL(string: Url) else { return }
+        var request = URLRequest(url: serviceUrl)
+            request.httpMethod = "POST"
+        request.addValue("IntelgicApp", forHTTPHeaderField: "AppName")
+        request.addValue(token! as! String, forHTTPHeaderField: "Token")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            request.httpBody = encodedData
+            
+            let session = URLSession.shared
+        session.dataTask(with: request) { data, response, error in
+            print(response?.description)
+            guard error == nil else{
+                print("error after network call \(error?.localizedDescription)")
+                return
+            }
+            
+            
+            let dataString = String(decoding: data!, as: UTF8.self)
+            print("data string \(dataString)")
+            DispatchQueue.main.async {
+            if dataString == "\"Saved\""
+            {
+            let alertController = UIAlertController(title: "", message: "Assigned List Updated", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+                let VC = AssignmentVC(nibName: "AssignmentVC", bundle: nil)
+                self.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            // Add the actions
+            alertController.addAction(okAction)
+            
+            
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+        }
+                   
+       }
+    
+        print(response?.description)
+        }.resume()
+        
+        
+        
+    
+}
+
+    
+    
+    
     
     //MARK:- Webservice Call
     func setupChooseArticleDropDown() {
@@ -118,7 +209,7 @@ class RobotListVC: UIViewController,AlertDisplayer {
             self?.getassignmentlist()
             UserDefaults.standard.set(self?.directoryid, forKey: "DIRECTORYID")
             self?.chooseDirectoryDropDown.hide()
-            
+           
         }
         
         chooseDirectoryDropDown.multiSelectionAction = { [weak self] (indices, items) in
@@ -185,7 +276,8 @@ class RobotListVC: UIViewController,AlertDisplayer {
                             UserDefaults.standard.set(directoryid, forKey: "DIRECTORYID")
                         
                     }
-                        
+                        getassignmentlist()
+                        self.tablerobotlist.reloadData()
                 }
                 }
             case .failure(let error):
@@ -210,8 +302,13 @@ class RobotListVC: UIViewController,AlertDisplayer {
                     DispatchQueue.main.async { [self] in
                         
                         assignmentlistdetails = viewModelassignmentlist!.assignmentlist
-                        print(assignmentlistdetails)
                         tablerobotlist.reloadData()
+                        for i in 0..<assignmentlistdetails.count
+                        {
+                            arrayisSelected.append(assignmentlistdetails[i].enabled!)
+                        }
+                        print(arrayisSelected)
+                       
                         
                 }
                 }
@@ -236,10 +333,45 @@ extension RobotListVC: UITableViewDataSource,UITableViewDelegate {
         cell.cellSetup(index: indexPath.row)
         cell.labelrobotName.text = assignmentlistdetails[indexPath.row].robotName
         cell.labelversionName.text = assignmentlistdetails[indexPath.row].version
-        if let image = UIImage(named: "check_untick.png") {
-            cell.buttonselect.setImage(image, for: .normal)
+        let isSelected = arrayisSelected[indexPath.row]
+        if isSelected == true
+        {
+            if let image = UIImage(named: "check_tick.png") {
+                cell.buttonselect.setImage(image, for: .normal)
+            }
         }
+        else
+        {
+            if let image = UIImage(named: "check_untick.png") {
+                cell.buttonselect.setImage(image, for: .normal)
+            }
+        }
+        cell.buttonselect.addTarget(self, action:#selector(handleSelect), for: .touchUpInside)
         return cell
     }
-    
+  
+    @objc func handleSelect(sender:UIButton)
+    {
+        let buttonPosition:CGPoint = sender.convert(.zero, to:tablerobotlist)
+        let indexPath = tablerobotlist.indexPathForRow(at: buttonPosition)
+        
+        
+        if (assignmentlistdetails[indexPath!.row].enabled! == true)
+        {
+          
+            assignmentlistdetails[indexPath!.row].enabled! = false
+            let image = UIImage(named: "check_untick.png")
+            sender.setImage(image, for:.normal)
+            print(assignmentlistdetails)
+        }
+        else
+        {
+            assignmentlistdetails[indexPath!.row].enabled! = true
+            let image = UIImage(named: "check_tick.png")
+            sender.setImage(image, for:.normal)
+            print(assignmentlistdetails)
+        }
+        
+        
+    }
 }

@@ -14,7 +14,7 @@ struct AssignmentListModel : Codable {
     let assignedID : Int?
     let assignedToUserID : String?
     let assignedByUserID : String?
-    let enabled : Bool?
+    var enabled : Bool?
 
     enum CodingKeys: String, CodingKey {
 

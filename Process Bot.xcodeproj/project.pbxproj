@@ -152,6 +152,7 @@
 		CD85553A276079880025DCFB /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD855538276079880025DCFB /* RobotListTableViewCell.xib */; };
 		CD8555442760D8650025DCFB /* AssignmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8555432760D8650025DCFB /* AssignmentListModel.swift */; };
 		CD8555462760D8A60025DCFB /* AssignmentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8555452760D8A60025DCFB /* AssignmentListViewModel.swift */; };
+		CD90DE672761F3C6003B6DDB /* AssignmentUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD90DE662761F3C6003B6DDB /* AssignmentUpdate.swift */; };
 		CDC4159826B3DC8700B445A8 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC4176B26B3FDDB00B445A8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; };
 		CDC4176C26B3FDDB00B445A8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4176626B3FD4700B445A8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -360,6 +361,7 @@
 		CD855538276079880025DCFB /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
 		CD8555432760D8650025DCFB /* AssignmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListModel.swift; sourceTree = "<group>"; };
 		CD8555452760D8A60025DCFB /* AssignmentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListViewModel.swift; sourceTree = "<group>"; };
+		CD90DE662761F3C6003B6DDB /* AssignmentUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentUpdate.swift; sourceTree = "<group>"; };
 		CDC4176026B3FD4700B445A8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		CDC4176D26B3FE0B00B445A8 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoBaseViewController.swift; path = "Supporting Files/DemoBaseViewController.swift"; sourceTree = "<group>"; };
 		CDC4177026B3FE4300B445A8 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				44A4D08D26FB38180022C8EC /* TimeZoneModel.swift */,
 				4404101C2729357600AD25C8 /* DirectoryModel.swift */,
 				CD8555432760D8650025DCFB /* AssignmentListModel.swift */,
+				CD90DE662761F3C6003B6DDB /* AssignmentUpdate.swift */,
 			);
 			path = Administration;
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				448D163B26DE6CB700E3D244 /* MachineHostViewModel.swift in Sources */,
 				4466605426E7512C00DACC35 /* UserManagementModel.swift in Sources */,
 				7349BAED26A054B7001360ED /* SidePanelTableViewCell.swift in Sources */,
+				CD90DE672761F3C6003B6DDB /* AssignmentUpdate.swift in Sources */,
 				44B6332826C6550F00EB576E /* DirectoryDetailsModel.swift in Sources */,
 				CD855539276079880025DCFB /* RobotListTableViewCell.swift in Sources */,
 				4405911726F1D60E00347946 /* PersonalInfoVC.swift in Sources */,
