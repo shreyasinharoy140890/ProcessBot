@@ -243,6 +243,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
         
     }
     
+    //MARK:- Button Actions (Shreya - 10/1/2022)
     
     @objc func btnStopRobot(_ sender:UIButton){
         callStopPauseRobot(taskId:viewModelRobot?.arrayInAction[sender.tag].taskID ?? "", status:"Stoped")
@@ -349,7 +350,14 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
         }
 
     }
-
+    @IBAction func buttonshowDirectory(sender: UIButton) {
+        let VC = PopOverVC(nibName: "PopOver", bundle: nil)
+        
+        VC.modalPresentationStyle = .automatic
+        VC.preferredContentSize = CGSize(width: 300, height: 200)
+        self.navigationController?.present(VC, animated: true, completion: nil)
+        
+    }
 }
 
 extension RobotVC:SidePanelDelegate {
