@@ -13,8 +13,10 @@ protocol loginViewModelProtocol : class {
     var manager: RequestManager? {get set}
     func callLoginApi(strEmail:String?,strPassword:String?, completion:@escaping (ProcessBot<Any?>)-> Void)
     func getToken( completion:@escaping (ProcessBot<Any?>)-> Void)
+    func getLoginToken( completion:@escaping (ProcessBot<Any?>)-> Void)
 }
 class LoginViewModel:loginViewModelProtocol {
+   
     var arrayValueContainer = ["",""]
     var manager: RequestManager?
     var tokenModel:TokenModel?
@@ -24,7 +26,7 @@ class LoginViewModel:loginViewModelProtocol {
     func getToken( completion:@escaping (ProcessBot<Any?>)-> Void){
         
         let dictParams:[String:Any] = ["Appsecret": "C7B4C644-604B-4ADF-8B0E-1D23D13B8EC7",
-                                       "AppName": "IntelgicApp"]
+            "AppName": "IntelgicApp"]
         print(dictParams)
         self.manager?.request(.getToken, method: .post, parameters: dictParams, encoding: .json, headers: nil, handler: { (result) in
             
@@ -119,6 +121,45 @@ class LoginViewModel:loginViewModelProtocol {
             
         })
         
+    }
+    
+    func getLoginToken(completion: @escaping (ProcessBot<Any?>) -> Void) {
+        let appname  = UserDefaults.standard.value(forKey: "APPNAME")
+        let appsecret = UserDefaults.standard.value(forKey: "APPSECRET")
+        let dictParams:[String:Any] = ["Appsecret": appsecret,
+            "AppName": appname]
+        print(dictParams)
+        self.manager?.request(.getToken, method: .post, parameters: dictParams, encoding: .json, headers: nil, handler: { (result) in
+            
+            switch result {
+            
+            case .success(let jsonresponce):
+                if let dictResponse = jsonresponce {
+                    print(dictResponse)
+                    do {
+                        
+                        self.tokenModel = try JSONDecoder().decode(TokenModel.self, from: dictResponse as! Data)
+                        if let logintoken = self.tokenModel?.token {
+                            UserDefaults.standard.set(logintoken, forKey: "LOGINTOKEN")
+                        }
+
+                        completion(.success(true))
+                    }
+                    catch _ {
+                        completion(.failure(ProcessBotNetWorkrror.noData))
+                    }
+                    
+                    
+                }
+                else {
+                    completion(.failure(ProcessBotNetWorkrror.noData))
+                }
+                break
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            
+        })
     }
     
 }

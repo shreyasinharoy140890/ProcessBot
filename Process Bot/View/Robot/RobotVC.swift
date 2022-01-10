@@ -178,7 +178,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
            
             cell.btnThreeDot.tag = indexPath.row
 
-            cell.lblRobotName.text = viewModelRobot?.arraySchedule[indexPath.row].userName ?? ""
+            cell.lblRobotName.text = viewModelRobot?.arraySchedule[indexPath.row].friendlyName ?? ""
             cell.lblMachineName.text = viewModelRobot?.arraySchedule[indexPath.row].machineName ?? ""
             cell.lblSchedulePeriod.text = "\(viewModelRobot?.arraySchedule[indexPath.row].scheduledPeriod ?? 0) \(viewModelRobot?.arraySchedule[indexPath.row].scheduledType ?? "")"
             cell.lblRobotType.text = viewModelRobot?.arraySchedule[indexPath.row].timeZone ?? ""
@@ -300,7 +300,7 @@ extension RobotVC : UITableViewDataSource,UITableViewDelegate {
     @objc func btnShowScheduledDetails(_ sender:UIButton ){
         let scheduleVC = ScheduleDetailsVC(nibName: "ScheduleDetailsVC", bundle: nil)
         scheduleVC.robotimg = ""
-        scheduleVC.robotname = viewModelRobot?.arraySchedule[sender.tag].friendlyName
+        scheduleVC.robotname = viewModelRobot?.arraySchedule[sender.tag].userName
         scheduleVC.dictScheduleDetails = viewModelRobot?.arraySchedule[sender.tag]
         self.navigationController?.pushViewController(scheduleVC, animated: true)
         
