@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,17 +46,17 @@
                             <rect key="frame" x="10" y="45" width="394" height="39"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfO-Q5-b7B">
-                                    <rect key="frame" x="8" y="5.3333333333333339" width="35.333333333333336" height="28.333333333333329"/>
+                                    <rect key="frame" x="8" y="6.3333333333333712" width="20" height="20"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="UfO-Q5-b7B" secondAttribute="height" multiplier="1:0.8" id="6sU-KL-Bof"/>
+                                        <constraint firstAttribute="width" secondItem="UfO-Q5-b7B" secondAttribute="height" multiplier="1:0.8" constant="-5" id="6sU-KL-Bof"/>
                                     </constraints>
                                     <state key="normal" image="menu_icon"/>
                                     <connections>
                                         <action selector="btnShowMenu:" destination="-1" eventType="touchUpInside" id="SMd-Sl-tdI"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Worker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzS-NU-11n">
-                                    <rect key="frame" x="58.333333333333329" y="9.6666666666666625" width="104.99999999999999" height="19.333333333333329"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzS-NU-11n">
+                                    <rect key="frame" x="58.333333333333329" y="3.6666666666666288" width="44.666666666666671" height="19.333333333333329"/>
                                     <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -66,22 +66,22 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="h1r-tQ-m78" secondAttribute="height" multiplier="1:0.8" id="sfy-fG-URR"/>
                                     </constraints>
-                                    <state key="normal" image="floting_robot_icon"/>
+                                    <state key="normal" image="directory_folder"/>
                                     <connections>
-                                        <action selector="buttonshowDirectoryWithSender:" destination="-1" eventType="touchUpInside" id="4C6-r8-f4y"/>
+                                        <action selector="buttonTapWithSender:" destination="-1" eventType="touchUpInside" id="db4-c5-5WH"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="UfO-Q5-b7B" firstAttribute="width" secondItem="U5s-CB-gHm" secondAttribute="width" multiplier="0.09" id="0tw-lp-4rw"/>
+                                <constraint firstItem="UfO-Q5-b7B" firstAttribute="width" secondItem="U5s-CB-gHm" secondAttribute="width" multiplier="0.09" constant="-15.460000000000001" id="0tw-lp-4rw"/>
                                 <constraint firstAttribute="trailing" secondItem="h1r-tQ-m78" secondAttribute="trailing" constant="8" id="2pw-rw-OtP"/>
                                 <constraint firstItem="UfO-Q5-b7B" firstAttribute="leading" secondItem="U5s-CB-gHm" secondAttribute="leading" constant="8" id="5KJ-1f-mGB"/>
                                 <constraint firstItem="h1r-tQ-m78" firstAttribute="width" secondItem="U5s-CB-gHm" secondAttribute="width" multiplier="0.08" id="Fh6-jq-gLZ"/>
                                 <constraint firstItem="h1r-tQ-m78" firstAttribute="centerY" secondItem="U5s-CB-gHm" secondAttribute="centerY" id="Pcz-ta-jtL"/>
-                                <constraint firstItem="QzS-NU-11n" firstAttribute="leading" secondItem="UfO-Q5-b7B" secondAttribute="trailing" constant="15" id="QMp-zA-Ygm"/>
-                                <constraint firstItem="UfO-Q5-b7B" firstAttribute="centerY" secondItem="U5s-CB-gHm" secondAttribute="centerY" id="apt-sR-agb"/>
-                                <constraint firstItem="QzS-NU-11n" firstAttribute="centerY" secondItem="UfO-Q5-b7B" secondAttribute="centerY" id="b5a-Hb-mJV"/>
+                                <constraint firstItem="QzS-NU-11n" firstAttribute="leading" secondItem="UfO-Q5-b7B" secondAttribute="trailing" constant="30.333333333333329" id="QMp-zA-Ygm"/>
+                                <constraint firstItem="UfO-Q5-b7B" firstAttribute="centerY" secondItem="U5s-CB-gHm" secondAttribute="centerY" constant="-3.1666666666666288" id="apt-sR-agb"/>
+                                <constraint firstItem="QzS-NU-11n" firstAttribute="centerY" secondItem="UfO-Q5-b7B" secondAttribute="centerY" constant="-3.0000000000000782" id="b5a-Hb-mJV"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1t4-J8-Sru">
@@ -317,7 +317,7 @@
     </objects>
     <resources>
         <image name="action_icon_1" width="63" height="54"/>
-        <image name="floting_robot_icon" width="212" height="212"/>
+        <image name="directory_folder" width="96" height="96"/>
         <image name="menu_icon" width="70" height="52"/>
         <image name="published_icon_1" width="62" height="55"/>
         <image name="schdule_icon1" width="48" height="56"/>
