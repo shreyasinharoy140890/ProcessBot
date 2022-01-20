@@ -100,7 +100,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBM-sN-R2F">
                     <rect key="frame" x="0.0" y="195" width="414" height="128"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="bJH-KH-i4O">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robot_circle_icon" translatesAutoresizingMaskIntoConstraints="NO" id="bJH-KH-i4O">
                             <rect key="frame" x="165.5" y="8" width="83" height="83"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="bJH-KH-i4O" secondAttribute="height" multiplier="1:1" id="bNw-Sb-kxZ"/>
@@ -154,7 +154,7 @@
         <image name="back_icon" width="37" height="62"/>
         <image name="floting_robot_icon" width="212" height="212"/>
         <image name="menu_icon" width="70" height="52"/>
-        <image name="profile_image" width="275" height="283"/>
+        <image name="robot_circle_icon" width="101" height="101"/>
         <namedColor name="customLightBlue">
             <color red="0.93000000715255737" green="0.95999997854232788" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

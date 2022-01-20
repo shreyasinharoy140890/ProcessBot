@@ -9,10 +9,8 @@ import UIKit
 
 protocol SidePanelDelegate:class {
     func didDisplayMenu(status:Bool)
-   
     
 }
-
 
 class SidePanelViewController: UIViewController,AlertDisplayer {
     
@@ -26,7 +24,19 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
     
     static let `default` = SidePanelViewController()
     var delegate: SidePanelDelegate?
-    var arrayMenuDispaly = [["Digital worked","robot_icon"],["Process","process_icon"],["Cognitive Bot","cognative_icon"],["Administrative","administrative_icon"],["Machine Host","machine_hos_icon"],["Dashboard","dashboard_icon"],["Logout","logout_icon"]]
+
+    var expandedSections : NSMutableSet = []
+    var sectionData :[String] = ["Robot","Process","Administrative","Machine / Bot","Dashboard","Logout"]
+    
+    var sectionImageData:[UIImage] = [UIImage(named: "robot_icon")!,UIImage(named: "process_icon")!,  UIImage(named: "administrative_icon")!, UIImage(named: "machine_hos_icon")!, UIImage(named: "dashboard_icon"
+)!, UIImage(named: "logout_icon")!]
+    
+    
+    var row2 = ["User Management","Company Profile","Assignment","Role Management","Directory"]
+    var imagerow2:[UIImage] = [UIImage(named: "usermanagement")!,UIImage(named: "companyprofile")!, UIImage(named: "assignment")!, UIImage(named: "rolemanagement")!,UIImage(named: "directory")!]
+    
+    var row3 = ["Stand- Alone","Server"]
+    var imagerow3:[UIImage] = [UIImage(named:"standalonehost")!, UIImage(named:"server")!]
     
    override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +44,59 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
     tableSidePanelList.dataSource = self
     tableSidePanelList.register(SidePanelTableViewCell.self)
     viewShadow.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 3.0, opacity: 0.6)
+ 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addUserInfo()
+        print(sectionData)
+        tableSidePanelList.delegate = self
+        tableSidePanelList.dataSource = self
+        tableSidePanelList.register(SidePanelTableViewCell.self)
+        tableSidePanelList.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+      //  tableSidePanelList.reloadData()
+        }
+    
+    
+    @objc func sectionTapped(_ sender: UIButton) {
+        //print("section Tapped")
+        let section = sender.tag
+        let shouldExpand = !expandedSections.contains(section)
+        if (shouldExpand) {
+            expandedSections.removeAllObjects()
+            expandedSections.add(section)
+        } else {
+           
+            expandedSections.removeAllObjects()
+        }
+        if section == 0
+        {
+            let VC = RobotVC(nibName: "RobotVC", bundle: nil)
+            UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            
+        }
+     else   if section == 4
+        {
+            let VC = DashboardVC(nibName: "DashboardVC", bundle: nil)
+            UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            
+        }
+    else if section == 5
+    {
+        logout()
+    }
 
-        // Do any additional setup after loading the view.
+
+        self.tableSidePanelList.reloadData()
     }
     
     
     func show(on parent:UIViewController) {
-        
+        delegate?.didDisplayMenu(status: true)
         self.view.frame.origin.x = 0
         parent.addChild(self)
         
@@ -57,13 +113,13 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
         parent.view.addSubview(self.view)
         self.didMove(toParent: parent)
         CATransaction.commit()
-       
+        tableSidePanelList.reloadData()
     }
     
     
     func hide(handler: ((Bool) -> Void)? = nil) {
         delegate?.didDisplayMenu(status: false)
-        self.view.backgroundColor = .clear
+      //  self.view.backgroundColor = .clear
         
         // Right To Left Animation
         #if swift(>=5.3)
@@ -99,94 +155,215 @@ class SidePanelViewController: UIViewController,AlertDisplayer {
         hide()
     }
     
-   
-
+    func addUserInfo(){
+        if let name = UserDefaults.standard.value(forKey: "FULLNAME") {
+            lblNameOfUser.text = name as? String
+        }
+        if let email = UserDefaults.standard.value(forKey: "EMAIL") {
+            lblEmailofUser.text = email as? String
+        }
+    }
+ 
 }
 
 extension SidePanelViewController: UITableViewDelegate,UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionData.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 70))
+        var imageView = UIImageView()
+        if (expandedSections.contains(section)) {
+            imageView = UIImageView.init(frame: CGRect(x: 200, y: 25, width: 18, height: 10))
+            imageView.image = UIImage(named: "down-arrow")
+        } else {
+            imageView = UIImageView.init(frame: CGRect(x: 210, y: 25, width: 10, height: 18))
+            imageView.image = UIImage(named: "right-arrow")
+        }
+        
+        let headerTitle = UILabel.init(frame: CGRect(x: 70, y: 12, width: 250, height: 35))
+        headerTitle.text = sectionData[section]
+        headerTitle.font = UIFont.boldSystemFont(ofSize: 16.0)
+        let headerimageView = UIImageView()
+        headerimageView.frame = CGRect(x: 15, y: 10, width: 30, height: 30)
+        headerimageView.image = sectionImageData[section]
+        let tappedSection = UIButton.init(frame: CGRect(x: 0, y: 0, width: headerView.frame.size.width , height: headerView.frame.size.height))
+        
+        tappedSection.addTarget(self, action: #selector(sectionTapped), for: .touchUpInside)
+        tappedSection.tag = section
+        
+        if section == 2 || section == 3
+        {
+            headerView.addSubview(imageView)
+        }
+      
+      
+        headerView.addSubview(headerTitle)
+        headerView.addSubview(headerimageView)
+        headerView.addSubview(tappedSection)
+        headerView.backgroundColor = UIColor.white
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayMenuDispaly.count
+        if(expandedSections.contains(section)) {
+            switch section {
+//            case 0:
+//                return 0
+//            case 1:
+//                return 0
+//            case 2:
+//                return 0
+            case 2 :
+                return row2.count
+            case 3:
+                return row3.count
+//            case 5:
+//                return 0
+            default:
+                return 0
+            }
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: SidePanelTableViewCell.self), for: indexPath) as! SidePanelTableViewCell
+        
+        cell.selectionStyle = .none
+        switch indexPath.section {
 
-        cell.selectionStyle = .gray
-        cell.lblMenu.text = arrayMenuDispaly[indexPath.row][0]
-        cell.imageMenu.image = UIImage(named: arrayMenuDispaly[indexPath.row][1])
-        return cell
+        case 2:
+            cell.lblMenu?.text = "\(row2[indexPath.row])"
+            cell.imageView?.image = imagerow2[indexPath.row]
+            return cell
+        case 3:
+            cell.lblMenu?.text = "\(row3[indexPath.row])"
+            cell.imageView?.image = imagerow3[indexPath.row]
+            return cell
+            
+        default:
+            cell.lblMenu?.text = "\(row3[indexPath.row])"
+            cell.imageView?.image = imagerow3[indexPath.row]
+           return cell
+        }
+     
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0
+        {
+           
+                           let VC = RobotVC(nibName: "RobotVC", bundle: nil)
+                           UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+           
+                    
+        }
+    }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0) {
-            if let VC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: RobotVC.self) {
-                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(VC, animated: true)
-            }
-            else {
+        var item = ""
+        
+        switch indexPath.section {
+        case 0 :
+            
+           
                 let VC = RobotVC(nibName: "RobotVC", bundle: nil)
                 UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
 
-            }
-        }else if (indexPath.row == 1){
-
-//            if let VC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: RobotDetailsVC.self) {
-//                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(VC, animated: true)
-//            }
-//            else {
-//                let VC = RobotDetailsVC(nibName: "RobotDetailsVC", bundle: nil)
-//                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
-//            }
-        }
-        else if (indexPath.row == 2){
-
-           
-
-        } else if (indexPath.row == 3){
+        case 1 :
+            print(indexPath.section)
+        
+        
+        case 2:
             
-        }
-        else if (indexPath.row == 4){
-            
-        }
-        else if (indexPath.row == 5){
-            if let VC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: DashboardVC.self) {
-                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(VC, animated: true)
-            }
-            else {
-                let VC = DashboardVC(nibName: "DashboardVC", bundle: nil)
+            item = row2[indexPath.row]
+            if indexPath.row == 0
+            {
+                let VC = UserManagementViewController(nibName: "UserManagementViewController", bundle: nil)
                 UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
 
-     }
+            }
+            else if  indexPath.row == 1
+            {
+                let VC = CompanyProfileVC(nibName: "CompanyProfileVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            else if  indexPath.row == 2
+            {
+                let VC = AssignmentVC(nibName: "AssignmentVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            
+            else if  indexPath.row == 3
+            {
+                let VC = RoleManagementVC(nibName: "RoleManagementVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            else if  indexPath.row == 4
+            {
+                let VC = DirectoryVC(nibName: "DirectoryVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            
+            
+            
+        case 3:
+            
+            item = row3[indexPath.row]
+            if indexPath.row == 0
+            {
+                let VC = StandAloneVC(nibName: "StandAloneVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+
+            }
+            else
+            {
+                let VC = ServerVC(nibName: "ServerVC", bundle: nil)
+                UIApplication.getTopMostViewController()?.navigationController?.pushViewController(VC, animated: true)
+            }
+            
+            
+        default:
+            item = row3[indexPath.row]
         }
-        else{
+        
+      
 
-
-            logout()
-        }
-        hide()
-
+            self.tableSidePanelList.reloadRows(at: [indexPath], with: .automatic)
+       
     }
     
-    
+
     func logout() {
-        
-       
-        
-        
-        let alertOkAction = UIAlertAction(title: "YES".localized(), style: .default) { (_) in
+      let alertOkAction = UIAlertAction(title: "YES".localized(), style: .default) { (_) in
             
-//            let defaults = UserDefaults.standard
-//            defaults.synchronize()
-//            defaults.removeObject(forKey: "ID")
-//            defaults.removeObject(forKey: "EMAIL")
-//            defaults.removeObject(forKey: "NAME")
-//            if let appDomain = Bundle.main.bundleIdentifier {
-//                UserDefaults.standard.removePersistentDomain(forName: appDomain)
-//            }
-//            // UserDefaults.standard.synchronize()
+            let defaults = UserDefaults.standard
+            defaults.synchronize()
+            defaults.removeObject(forKey: "USERID")
+            defaults.removeObject(forKey: "EMAIL")
+            defaults.removeObject(forKey: "CLIENTID")
+            defaults.removeObject(forKey: "FULLNAME")
+            if let appDomain = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            }
+            // UserDefaults.standard.synchronize()
 //            let manager = LoginManager()
 //            manager.logOut()
-            if let editpassVC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: LoginVC.self) {
-                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(editpassVC, animated: true)
+            if let loginVC = UIApplication.getTopMostViewController()?.navigationController?.ifExitsOnStack(vc: LoginVC.self) {
+                UIApplication.getTopMostViewController()?.navigationController?.popToViewController(loginVC, animated: true)
 
             }else {
                 let myCartVC = LoginVC(nibName: "LoginVC", bundle: nil)

@@ -24,7 +24,7 @@ class SplashLoadingViewController: UIViewController {
            progress.completedUnitCount = 0
 
            // 2
-           Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (timer) in
                guard self.progress.isFinished == false else {
                    timer.invalidate()
                 self.callLoginVC()

@@ -11,6 +11,7 @@ class SidePanelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblMenu: UILabel!
     @IBOutlet weak var imageMenu: UIImageView!
+    static let ID = "sidepanel"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

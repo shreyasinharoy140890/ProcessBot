@@ -7,6 +7,16 @@
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
+    <key>UIAppFonts</key>
+        <array>
+            <string>Aileron-Light.otf</string>
+            <string>Aileron-Heavy.otf</string>
+            <string>Aileron-Thin.otf</string>
+            <string>Aileron-SemiBold.otf</string>
+            <string>Aileron-Bold.otf</string>
+            <string>Aileron-Black.otf</string>
+            <string>Aileron-Regular.otf</string>
+        </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

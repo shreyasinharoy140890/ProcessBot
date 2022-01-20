@@ -26,9 +26,9 @@ extension Environment {
     var baseURL : String {
         switch self {
             case .production:
-                return "http://3.7.99.38:5001/"
+                return "http://3.7.99.38:5001"
             case .staging:
-                return "http://3.7.99.38:5001/"
+                return "http://3.7.99.38:5001"
         }
     }
     

@@ -1,0 +1,2116 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BE255B0F12A6FE61D9F0DD2FF3A11C3 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191293ECDAB9A838D91E960DE5576944 /* Connection.swift */; };
+		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB5DF1871B4A457A7219B2F7B557657 /* ParameterEncoding.swift */; };
+		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D22DB55EA0EFE49F3FC36CB63FF71 /* Notifications.swift */; };
+		13870B4D41C6ED9BB7FB8F7AEBBD9401 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9515D1CD3CD1B81F95A7E2D4D929DA7E /* UIKit.framework */; };
+		184883BB7718A0F19A03B3C7BB39424C /* HttpTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3710130219FB246ACB36D911223BC1DD /* HttpTransport.swift */; };
+		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC71474C5C2A78BDF9C092946F2DFC08 /* Alamofire-dummy.m */; };
+		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4E1A4694049C70D26C24415906745 /* MultipartFormData.swift */; };
+		19B6BBF909BB0FA4C250AB18E694C3AD /* ExpandableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A02B96FC10039B5CBD18FC831E0D57 /* ExpandableStyle.swift */; };
+		1AE0F37A497DB766FC91B1EF4A483E5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		204A6E95882F28B8C56A1E63556A7BE8 /* ExpandableCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3622F72FA63309E6C35F046F3EA39327 /* ExpandableCell.bundle */; };
+		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04920113B88A9BB0F2AF6DF68B87E737 /* SessionDelegate.swift */; };
+		2D517F0637ABC10D02F7033D3CDFCD0F /* HubProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AD54DC48E1F3C93F878360389961C /* HubProxy.swift */; };
+		2D859537C26186EB5F1BFC31B8558443 /* SignalRSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B5279F38F372ACDE60DBB6196615C9 /* SignalRSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FCEBF6DAE938366773A01F4C2AEBBDF /* SSLClientCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EFE16718B6EF313D1A627D1897557B /* SSLClientCertificate.swift */; };
+		3047CEAA36C4A19CF0FC8A99F3ECBFBA /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1CA888F0FE9DB48DB7D8BDE61B8031 /* HubConnection.swift */; };
+		306BC61800067611636435BBC9591AE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821BEF01F63BC6B921AC8AD44EFCFEB6 /* NetworkReachabilityManager.swift */; };
+		361F5CE2807CBD530C8C6E63FD245F5A /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0403C645C395B543F6008030CF66BD /* DropDownCell.swift */; };
+		36D947485EEFF7670DD61272AFDB287C /* ExpandableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F53B4A146BA74A75E56ACA449628DC3D /* ExpandableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B44CC99955EBBBEE30F4710ABA75312 /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63DD6A4809CEBDD609CF0DB781AFD /* NegotiationResponse.swift */; };
+		3B8E5E375FAF798E1F36FEEF92BCA597 /* TimeZonePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2D3964A204CEF23E6125C8E8FF2B3B /* TimeZonePickerViewController.swift */; };
+		3D043BAA2E7C4BC3F7B8368DD9832A02 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB2EC2C0653F7BAD595AFE4CD7639 /* WebSocket.swift */; };
+		43DD7057C283F8116FD2D56D7734EB97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		46076EBE819798CF04114E4BA095090B /* DLRadioButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 155BAB43ECD8C40DA8362E236879AF74 /* DLRadioButton-dummy.m */; };
+		475691128B3B51EFDADB294899844DF3 /* TimeZonePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4D1519E259672F69A4582226E8631 /* TimeZonePickerDataSource.swift */; };
+		4A8FE4C4F6D45B41CE01A00D24C56961 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4081E33F98D32A1D78269407B5DB0C /* DPDUIView+Extension.swift */; };
+		50013C33D35EBAF31ACF3A8B3A9A3FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		52C9752B5899A0793645D063AD23B7AA /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613439D571A9EC2C5A1AFB86A9AB86EC /* Compression.swift */; };
+		530EFCC4A5FA58C173C5DB631BEF8551 /* HubResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89346CCAB68B4649F4B85B275B32E8CF /* HubResult.swift */; };
+		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAF0BA4D324EC3AA970F50C024E91D /* Validation.swift */; };
+		54FA663EC5E9E49C2CE32C61E7167AD0 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DAA38D100A3136268FD195638E70B /* ConnectionState.swift */; };
+		59E9DB7C9DC9293D44F0EF65A59BD092 /* TimeZonePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C67F53332CBED57597844C3282384F /* TimeZonePicker-dummy.m */; };
+		5AF0B9FD3947EC242B0AFC9EA6A07BB7 /* HeartbeatMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E51D4AA482097A27A47D1DED6D3084 /* HeartbeatMonitor.swift */; };
+		5F515237FF94DAB4C8A15B7E33A3877B /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD73FAA7EE36FE6E04855164D90A91 /* DPDConstants.swift */; };
+		6064C623428CE711C252E442741F81AB /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31D3E6CD8D3BDB68B08BC09795AE2C /* DropDown+Appearance.swift */; };
+		636F6BD0BDEEA256239DB1562A8976ED /* ServerSentEventsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D4D477B3F3E3B36E3D496B4F0CD147 /* ServerSentEventsTransport.swift */; };
+		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDC0B870D55A924CB50AC727A6BB75 /* Result.swift */; };
+		6517625BAD17D9C34B26DFEC721383E3 /* HubInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9AE93FDAD608770996D115FCC41135 /* HubInvocation.swift */; };
+		6C5F1D9D3BD4ABEA54EF38F5B1D97B99 /* HubConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1095E82176FB96F5F176F223108A183 /* HubConnectionProtocol.swift */; };
+		6E00343A5B08C18A16AC4E5C6BDBA3A5 /* ExceptionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E372885F17DA9D874EE9F9E5E6901 /* ExceptionHelper.swift */; };
+		73EC77ADBCBF3DBFEDE60C46E5D76D5A /* TimeZonePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E22E5CBCD1D54309BA2F806CC59FCC /* TimeZonePicker.storyboard */; };
+		7C24CDE95BD926225B59F299D7C17E64 /* Pods-Process Bot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DC0CAD7258221733D57879B51303B4 /* Pods-Process Bot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D18D40D5B428042E414E93E6857713E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFD81214D006D6B78A4A2DAF3C7C0B /* AFError.swift */; };
+		83B26E80727B70E1D5EA36E87F8A597B /* ExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE267B90AD0EE9B091C17DEBFFCD3B /* ExpandableCell.xcassets */; };
+		842DFBB1471889C2CA329AE05620BBE7 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900E57A8442E58A8AD67C2DBEE10CE90 /* DropDown.swift */; };
+		85E55C1EBB154C552E16982727B49972 /* ConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8317DE11F19D025E5F710E5BB317B9 /* ConnectionProtocol.swift */; };
+		872DB3818CC377BD28AC81A21D17CCFA /* CityCountryTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEC8578AAC42BF39AFF1B00710E412 /* CityCountryTimeZone.swift */; };
+		8B8FB66D09BCC13179A1974B91020AF2 /* ClientTransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B48CBF488E725C3A4507D2D35FD609 /* ClientTransportProtocol.swift */; };
+		8EE10781CD4816C0610A364A093E9504 /* CitiesAndTimeZones.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBE0AC87128C4572D8FDACD635BB559 /* CitiesAndTimeZones.json */; };
+		91AC93055033CC902753E358CE034668 /* ServerSentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA876E4DCB30EBA8378891FF8BBE329 /* ServerSentEvent.swift */; };
+		931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C70B65393E350839FC04976821F1990 /* SessionManager.swift */; };
+		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316FB83EBE24B6446C38F61F7964588C /* Timeline.swift */; };
+		949A420AEB01E21FEADC8A920E4866EE /* HubProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5AA8A8DECC42C678E0FC3F0181CFBC /* HubProxyProtocol.swift */; };
+		9518195DB69E904D77247E0A55A0043C /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7116563BEC4B9731074A179FB86261 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95897DCFD4071A7D61AEAE1DA86BB539 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B0561941066851D7EEAC3E19475CEE /* DropDown-dummy.m */; };
+		9621251F99E5C334E250D62BDFE22C8B /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC163FA18A2CBF7CB53E743A79EF9D /* DLRadioButton.m */; };
+		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211304323C9B1B178D53811350E62BDA /* Request.swift */; };
+		9A0B7E0E592D0C1573BE1837F0DBA2BB /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73760372117A9F6EDE5895C1360FD72D /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D3A8391DC361E13DADFD6BDD8DB6534 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533E1ECE6CA7A335C09439FE0CEF68F /* ExpandableTableView.swift */; };
+		A1C41F00B8ED31CDEA9C10FBBB4955A0 /* ExpandableProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6028E3D875A9345558A83A95329A6AE /* ExpandableProcessor.swift */; };
+		AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFDF25C5B34F7268BC9CD36BC3AD1EB /* TaskDelegate.swift */; };
+		B38A9B3101E438BE392289373767B554 /* TimeZonePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F9C55289AD76A5FDF1E9A9608663E /* TimeZonePickerDelegate.swift */; };
+		B38D2BDD2AC0AA6F8DE983EF8320F9C6 /* ChunkBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A528E34B3678796C2C8EB4C3108B0F /* ChunkBuffer.swift */; };
+		B5E40858ECA001E3057D0A16845E86AD /* LongPollingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750EDF20B228AC7C106D5C1B08C3C0F7 /* LongPollingTransport.swift */; };
+		B6A20657E215DD9ECA06A019ABDA5868 /* ExpandableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A486A6C8E80DA36D37A9B8BA60DC236 /* ExpandableDelegate.swift */; };
+		B988C34DF99CBE15FA966ED1A5E49BDB /* WebSocketConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB1CCAB288BA4E54FB4808CE50BA42 /* WebSocketConnectionInfo.swift */; };
+		BA7BB2FF04CE1CAFC5238D1807EF0034 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37E8C839099D28C97216FF9198962 /* DPDKeyboardListener.swift */; };
+		BCE2EBCBB3B0FDA8DA53E6C7FAE5EA65 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EC8401A58AB7B8A90B7E97E4B008 /* ReceivedMessage.swift */; };
+		BE9CE67585FF0086FDBC959F4A1A39B2 /* TimeZonePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 763D61414D7BBE84711173809641DE37 /* TimeZonePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E87F0C0600A33E55AB899F1BA1AE /* Alamofire.swift */; };
+		C43248DB5DC9F273F051EBFFEEDADB44 /* ExpandableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 810750C64EE00E4276B0129D21D5B11E /* ExpandableCell-dummy.m */; };
+		C4F21833FFCFAC315D79510AA5E2564A /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B266D0BDDA6C1884ADF1EB39E05265F /* ExpandableCell.swift */; };
+		C5219FA0606BFEE8F3BD0FA75BC65151 /* DLRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = E96CB8D723BB9808CDC4F362EB27D803 /* DLRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75039E2CF0A5F9B8EA10302DFE8ED1D /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518CBF2F8585F7CDC67368D26C7E1B4 /* SSLSecurity.swift */; };
+		C89BC636B61B8B40B3A129AADD02C8DA /* KeepAliveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C236B971C09652C59D0878CB982A449 /* KeepAliveData.swift */; };
+		C99487C04757ECF4F73FA1D4519CFD6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		CA38EF0020E2139FFB82A9E7E1E81890 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDAE761A0AC176CD2439577870D976F /* Alamofire.framework */; };
+		CBE4B91AD851E071859807667E804DBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		CC915DF356EED4EDDDD883F3C0B55BAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */; };
+		D1C950CF6B39A198D2DFEACE14C1937E /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF3EE7A414673C649135E37318B21 /* Dictionary+Json.swift */; };
+		D1F2AFADFEDFAFBB13E35644186E80BE /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9867EAABCA066EB53864DDFB973F1 /* ConnectionDelegate.swift */; };
+		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57A512FAC7F682EB8BD1BAAB2B6F8E /* DispatchQueue+Alamofire.swift */; };
+		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0781A44BEF1B757C8F78F3C5637F855 /* Response.swift */; };
+		D76128E3F24D482C5E94D3F32D38332A /* Pods-Process Bot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A733D93D77F241A6CFFEC33D1CDA5D6E /* Pods-Process Bot-dummy.m */; };
+		DE8496D090D3D2A7555832B806D1E6ED /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0146D83F71FED6ECFD2608A018B3A6 /* Starscream.framework */; };
+		E29E7C160A42C37D9E557396D6450E4D /* DLRadioButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A8D03DE5F22A52CDB975A9B005FA5CD /* DLRadioButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890BFDDC6910DC1214960B358D6E49B /* ResponseSerialization.swift */; };
+		E406A18B8D4B14E8083BB740BC8BA120 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1B05CFC477A762B57A206911F784AE /* Version.swift */; };
+		E88BA53738404755203022A231DA591B /* SignalRSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE308DE6B082972D8FEEDACAB8CDE6B /* SignalRSwift-dummy.m */; };
+		EB3D83C05EC7793D23A1192C11B9F631 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2B517B9BCC890F731ABCEE33814998 /* DropDownCell.xib */; };
+		EF745AFC94B80012F68AC149624E30C6 /* AutoTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B810BF2AFFCD060DD6D5B702B5615624 /* AutoTransport.swift */; };
+		F025D57494924368913E1D50936E4563 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9515D1CD3CD1B81F95A7E2D4D929DA7E /* UIKit.framework */; };
+		F0D41CC95EB50F532AFFA1FEF4803F84 /* WebSocketTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6A2EBCCD348A1161E00A1D6E3FB76 /* WebSocketTransport.swift */; };
+		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B24EEE704027D1008C1551084E656 /* ServerTrustPolicy.swift */; };
+		F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3AA18CEEC38484ECD22F57F8E7B107 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F911DC6F994B77A1C4C4B9219F0D99DE /* String+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FAFFA7849229D7665D95019B900336 /* String+Dictionary.swift */; };
+		FD5E139132FF9E9CF836962923C0C6E9 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE206B12C997B1E687DAECD0BEA1759 /* Starscream-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DDF66BA7D2792270826D4724C122EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
+			remoteInfo = Starscream;
+		};
+		3BC227642A58CE460B45A6A6588E43B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
+			remoteInfo = Starscream;
+		};
+		64CC1888EB807D4B4670ADF6DDCFB00B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E6C4045913212CD35E82B99586FC32D;
+			remoteInfo = SignalRSwift;
+		};
+		6F4DD6E2CFB6780B46EAF574492604A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 080916906CF38C9BA8FA4DEB79FF606F;
+			remoteInfo = "ExpandableCell-ExpandableCell";
+		};
+		9957B70BDC5DDB4B0C0210EFA1242254 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9F9401E9C74C0C393164FD8D86D0068;
+			remoteInfo = DropDown;
+		};
+		9C664566FD6E491E6BA5E8A033BCE80C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1AF3B7650BDFBF8B76B95E5E445176F;
+			remoteInfo = ExpandableCell;
+		};
+		A6796F841567BA2D7ABD74C3D0C9ADC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE7558C5F434D4CDA7B7DF1DD7E8F9F0;
+			remoteInfo = TimeZonePicker;
+		};
+		AF208AA704D20CAD72CE00846D8B5F60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		C595B378D686325A661A18588B7A14EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED8F38B6D4A3AD6DFF85D18F9F09435;
+			remoteInfo = DLRadioButton;
+		};
+		E4B262BEC4D2B7C42B07C19A15AE3D93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02AAF0BA4D324EC3AA970F50C024E91D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		04920113B88A9BB0F2AF6DF68B87E737 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		0533E1ECE6CA7A335C09439FE0CEF68F /* ExpandableTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableTableView.swift; path = ExpandableCell/ExpandableTableView.swift; sourceTree = "<group>"; };
+		0553FD17E154851A5F735E3074FBF625 /* DLRadioButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.release.xcconfig; sourceTree = "<group>"; };
+		081D22DB55EA0EFE49F3FC36CB63FF71 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		0A2CF3EE7A414673C649135E37318B21 /* Dictionary+Json.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+Json.swift"; path = "SignalR-Swift/Extensions/Dictionary+Json.swift"; sourceTree = "<group>"; };
+		0A8D03DE5F22A52CDB975A9B005FA5CD /* DLRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-umbrella.h"; sourceTree = "<group>"; };
+		0B5AD54DC48E1F3C93F878360389961C /* HubProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubProxy.swift; path = "SignalR-Swift/Client/Hubs/HubProxy.swift"; sourceTree = "<group>"; };
+		0B7116563BEC4B9731074A179FB86261 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		145267BA35E3DA2B271D047895A40D48 /* TimeZonePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TimeZonePicker.modulemap; sourceTree = "<group>"; };
+		155BAB43ECD8C40DA8362E236879AF74 /* DLRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLRadioButton-dummy.m"; sourceTree = "<group>"; };
+		1884D2933E0706E062D2D03276CC6A0C /* TimeZonePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TimeZonePicker.debug.xcconfig; sourceTree = "<group>"; };
+		191293ECDAB9A838D91E960DE5576944 /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = "SignalR-Swift/Client/Connection.swift"; sourceTree = "<group>"; };
+		19DB1CCAB288BA4E54FB4808CE50BA42 /* WebSocketConnectionInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketConnectionInfo.swift; path = "SignalR-Swift/Transports/WebSockets/WebSocketConnectionInfo.swift"; sourceTree = "<group>"; };
+		1BFDF25C5B34F7268BC9CD36BC3AD1EB /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		1E1B05CFC477A762B57A206911F784AE /* Version.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Version.swift; path = "SignalR-Swift/Client/Infrastructure/Version.swift"; sourceTree = "<group>"; };
+		1F9AE93FDAD608770996D115FCC41135 /* HubInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubInvocation.swift; path = "SignalR-Swift/Client/Hubs/HubInvocation.swift"; sourceTree = "<group>"; };
+		211304323C9B1B178D53811350E62BDA /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		2890BFDDC6910DC1214960B358D6E49B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		2C4F9C55289AD76A5FDF1E9A9608663E /* TimeZonePickerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeZonePickerDelegate.swift; path = Classes/TimeZonePickerDelegate.swift; sourceTree = "<group>"; };
+		2C965F5494FAE116B8D52FA7BA73C490 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		2CDCE62EA81F46C398AF4919AF7F22A7 /* ExpandableCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.debug.xcconfig; sourceTree = "<group>"; };
+		2CE86E312ACAD89FDCB60872E3FBA900 /* Pods-Process Bot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Process Bot.modulemap"; sourceTree = "<group>"; };
+		2F4081E33F98D32A1D78269407B5DB0C /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		2FDDC0B870D55A924CB50AC727A6BB75 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		3016E47422F5E62BA3678A648AFF8DFD /* DropDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.release.xcconfig; sourceTree = "<group>"; };
+		316FB83EBE24B6446C38F61F7964588C /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		3622F72FA63309E6C35F046F3EA39327 /* ExpandableCell.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ExpandableCell.bundle; path = "ExpandableCell-ExpandableCell.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3710130219FB246ACB36D911223BC1DD /* HttpTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpTransport.swift; path = "SignalR-Swift/Transports/HttpTransport.swift"; sourceTree = "<group>"; };
+		38AD9B5AEABACB6003EB13DC4AD646CF /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
+		3A2B517B9BCC890F731ABCEE33814998 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		3A2F428BBC64C9A04531C37B029D7F3F /* ExpandableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableCell.modulemap; sourceTree = "<group>"; };
+		3C236B971C09652C59D0878CB982A449 /* KeepAliveData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeepAliveData.swift; path = "SignalR-Swift/Client/KeepAliveData.swift"; sourceTree = "<group>"; };
+		3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DLRadioButton.framework; path = DLRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5AA8A8DECC42C678E0FC3F0181CFBC /* HubProxyProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubProxyProtocol.swift; path = "SignalR-Swift/Client/Protocols/HubProxyProtocol.swift"; sourceTree = "<group>"; };
+		415D5199BFB44654E3D0F5D5F00EF05A /* DLRadioButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-prefix.pch"; sourceTree = "<group>"; };
+		4220AA766F5B2048D4D75B66D559DDFE /* Pods-Process Bot-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Process Bot-Info.plist"; sourceTree = "<group>"; };
+		43EEC8578AAC42BF39AFF1B00710E412 /* CityCountryTimeZone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CityCountryTimeZone.swift; path = Classes/CityCountryTimeZone.swift; sourceTree = "<group>"; };
+		46B5279F38F372ACDE60DBB6196615C9 /* SignalRSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SignalRSwift-umbrella.h"; sourceTree = "<group>"; };
+		48E9867EAABCA066EB53864DDFB973F1 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionDelegate.swift; path = "SignalR-Swift/Client/Protocols/ConnectionDelegate.swift"; sourceTree = "<group>"; };
+		4EE206B12C997B1E687DAECD0BEA1759 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		519799014C941762D5B22054194AB122 /* ExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableCell.framework; path = ExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54526720D09862FE191FD738026A91AB /* SignalRSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SignalRSwift-prefix.pch"; sourceTree = "<group>"; };
+		5554B679734BAB321321B88712AA462C /* ExpandableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-prefix.pch"; sourceTree = "<group>"; };
+		559E372885F17DA9D874EE9F9E5E6901 /* ExceptionHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExceptionHelper.swift; path = "SignalR-Swift/Client/Infrastructure/ExceptionHelper.swift"; sourceTree = "<group>"; };
+		56AE427FA725954072E2F679D1586CDF /* TimeZonePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TimeZonePicker.release.xcconfig; sourceTree = "<group>"; };
+		5AD4E1A4694049C70D26C24415906745 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		5AE1BAB2E9D37EC7EB2C321FAC27225F /* DropDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.debug.xcconfig; sourceTree = "<group>"; };
+		5B0403C645C395B543F6008030CF66BD /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
+		5B1932420A01AB15788240186102EBB5 /* TimeZonePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TimeZonePicker.framework; path = TimeZonePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C263EED869C4E3A2CE42F33EBF79726 /* Pods-Process Bot-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Process Bot-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5CF63DD6A4809CEBDD609CF0DB781AFD /* NegotiationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NegotiationResponse.swift; path = "SignalR-Swift/Client/NegotiationResponse.swift"; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60291A6A9429D31B031E93E94C374738 /* SignalRSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SignalRSwift.framework; path = SignalRSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		613439D571A9EC2C5A1AFB86A9AB86EC /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Starscream/Compression.swift; sourceTree = "<group>"; };
+		63FC163FA18A2CBF7CB53E743A79EF9D /* DLRadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = DLRadioButton/DLRadioButton.m; sourceTree = "<group>"; };
+		65E22E5CBCD1D54309BA2F806CC59FCC /* TimeZonePicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = TimeZonePicker.storyboard; path = Resources/TimeZonePicker.storyboard; sourceTree = "<group>"; };
+		67B53C4447B5719D307151EA809D076F /* TimeZonePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TimeZonePicker-Info.plist"; sourceTree = "<group>"; };
+		6A486A6C8E80DA36D37A9B8BA60DC236 /* ExpandableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableDelegate.swift; path = ExpandableCell/ExpandableDelegate.swift; sourceTree = "<group>"; };
+		6D1CA888F0FE9DB48DB7D8BDE61B8031 /* HubConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnection.swift; path = "SignalR-Swift/Client/Hubs/HubConnection.swift"; sourceTree = "<group>"; };
+		6D2D3964A204CEF23E6125C8E8FF2B3B /* TimeZonePickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeZonePickerViewController.swift; path = Classes/TimeZonePickerViewController.swift; sourceTree = "<group>"; };
+		6F835B79FAE19340E9FE5DC84EA610FE /* DLRadioButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.debug.xcconfig; sourceTree = "<group>"; };
+		717224B495580FB8EAC8B3FB9EA41CE1 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
+		73760372117A9F6EDE5895C1360FD72D /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		750EDF20B228AC7C106D5C1B08C3C0F7 /* LongPollingTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LongPollingTransport.swift; path = "SignalR-Swift/Transports/LongPollingTransport.swift"; sourceTree = "<group>"; };
+		763D61414D7BBE84711173809641DE37 /* TimeZonePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeZonePicker-umbrella.h"; sourceTree = "<group>"; };
+		7877C808B3DEF98F866C3267D96EA6DE /* TimeZonePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeZonePicker-prefix.pch"; sourceTree = "<group>"; };
+		7A51E87F0C0600A33E55AB899F1BA1AE /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		7A57A512FAC7F682EB8BD1BAAB2B6F8E /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		7B266D0BDDA6C1884ADF1EB39E05265F /* ExpandableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = ExpandableCell/ExpandableCell.swift; sourceTree = "<group>"; };
+		7DBE0AC87128C4572D8FDACD635BB559 /* CitiesAndTimeZones.json */ = {isa = PBXFileReference; includeInIndex = 1; name = CitiesAndTimeZones.json; path = Resources/CitiesAndTimeZones.json; sourceTree = "<group>"; };
+		7E2956629EC3151A15E559ADB081A7DF /* ExpandableCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.release.xcconfig; sourceTree = "<group>"; };
+		810750C64EE00E4276B0129D21D5B11E /* ExpandableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableCell-dummy.m"; sourceTree = "<group>"; };
+		81C67F53332CBED57597844C3282384F /* TimeZonePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TimeZonePicker-dummy.m"; sourceTree = "<group>"; };
+		821BEF01F63BC6B921AC8AD44EFCFEB6 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89346CCAB68B4649F4B85B275B32E8CF /* HubResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubResult.swift; path = "SignalR-Swift/Client/Hubs/HubResult.swift"; sourceTree = "<group>"; };
+		8C70B65393E350839FC04976821F1990 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
+		8DF44ACDD23D0A9F5DF906CE8E82151A /* Pods-Process Bot-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Process Bot-acknowledgements.plist"; sourceTree = "<group>"; };
+		8E8B28C02D2039EC0FB61975BD3125FF /* ExpandableCell-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ExpandableCell-Info.plist"; sourceTree = "<group>"; };
+		900E57A8442E58A8AD67C2DBEE10CE90 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		91A528E34B3678796C2C8EB4C3108B0F /* ChunkBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChunkBuffer.swift; path = "SignalR-Swift/Transports/ServerSentEvents/ChunkBuffer.swift"; sourceTree = "<group>"; };
+		92644CE53CBB1B8B3ACFF909FE1C63FB /* DLRadioButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DLRadioButton-Info.plist"; sourceTree = "<group>"; };
+		93A02B96FC10039B5CBD18FC831E0D57 /* ExpandableStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableStyle.swift; path = ExpandableCell/ExpandableStyle.swift; sourceTree = "<group>"; };
+		9515D1CD3CD1B81F95A7E2D4D929DA7E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9518CBF2F8585F7CDC67368D26C7E1B4 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/Starscream/SSLSecurity.swift; sourceTree = "<group>"; };
+		96CD1C9351C0B7771C9B03C000DF6005 /* Starscream-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Starscream-Info.plist"; sourceTree = "<group>"; };
+		99B48CBF488E725C3A4507D2D35FD609 /* ClientTransportProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClientTransportProtocol.swift; path = "SignalR-Swift/Client/Protocols/ClientTransportProtocol.swift"; sourceTree = "<group>"; };
+		9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDE267B90AD0EE9B091C17DEBFFCD3B /* ExpandableCell.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ExpandableCell.xcassets; path = ExpandableCell/ExpandableCell.xcassets; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DB4D1519E259672F69A4582226E8631 /* TimeZonePickerDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeZonePickerDataSource.swift; path = Classes/TimeZonePickerDataSource.swift; sourceTree = "<group>"; };
+		9E5E8EAA57C46829A7EE598C1ECB6E11 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		9EBFD81214D006D6B78A4A2DAF3C7C0B /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A733D93D77F241A6CFFEC33D1CDA5D6E /* Pods-Process Bot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Process Bot-dummy.m"; sourceTree = "<group>"; };
+		AB667EFDAEA33784F14B4FAB6FF5AF50 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		AB7B24EEE704027D1008C1551084E656 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		ABDAE761A0AC176CD2439577870D976F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADBB3F1FB5907BF014BF41679062FA36 /* SignalRSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SignalRSwift.modulemap; sourceTree = "<group>"; };
+		AF0146D83F71FED6ECFD2608A018B3A6 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B046EC8401A58AB7B8A90B7E97E4B008 /* ReceivedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReceivedMessage.swift; path = "SignalR-Swift/Models/ReceivedMessage.swift"; sourceTree = "<group>"; };
+		B09C8CBFC468E15A35354135258BF3B6 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
+		B22BB2EC2C0653F7BAD595AFE4CD7639 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/Starscream/WebSocket.swift; sourceTree = "<group>"; };
+		B5F8283C5628D77C38E3BF3F3470E8AF /* SignalRSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SignalRSwift.release.xcconfig; sourceTree = "<group>"; };
+		B6028E3D875A9345558A83A95329A6AE /* ExpandableProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableProcessor.swift; path = ExpandableCell/ExpandableProcessor.swift; sourceTree = "<group>"; };
+		B6EFE16718B6EF313D1A627D1897557B /* SSLClientCertificate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLClientCertificate.swift; path = Sources/Starscream/SSLClientCertificate.swift; sourceTree = "<group>"; };
+		B7E51D4AA482097A27A47D1DED6D3084 /* HeartbeatMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeartbeatMonitor.swift; path = "SignalR-Swift/Client/HeartbeatMonitor.swift"; sourceTree = "<group>"; };
+		B810BF2AFFCD060DD6D5B702B5615624 /* AutoTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTransport.swift; path = "SignalR-Swift/Transports/AutoTransport.swift"; sourceTree = "<group>"; };
+		BBAD73FAA7EE36FE6E04855164D90A91 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		BC1DAA38D100A3136268FD195638E70B /* ConnectionState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionState.swift; path = "SignalR-Swift/Client/Enums/ConnectionState.swift"; sourceTree = "<group>"; };
+		C1095E82176FB96F5F176F223108A183 /* HubConnectionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionProtocol.swift; path = "SignalR-Swift/Client/Protocols/HubConnectionProtocol.swift"; sourceTree = "<group>"; };
+		C2B37E8C839099D28C97216FF9198962 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		C2DC0CAD7258221733D57879B51303B4 /* Pods-Process Bot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Process Bot-umbrella.h"; sourceTree = "<group>"; };
+		C35E1AFD75D7547CF4BE29A040CAF3D8 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		C584B867C75973452C38D3746A892927 /* ResourceBundle-ExpandableCell-ExpandableCell-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ExpandableCell-ExpandableCell-Info.plist"; sourceTree = "<group>"; };
+		C8070FFAAD1687490E0FA5BF334F01EF /* Pods-Process Bot-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Process Bot-frameworks.sh"; sourceTree = "<group>"; };
+		CC71474C5C2A78BDF9C092946F2DFC08 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		CDA876E4DCB30EBA8378891FF8BBE329 /* ServerSentEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerSentEvent.swift; path = "SignalR-Swift/Transports/ServerSentEvents/ServerSentEvent.swift"; sourceTree = "<group>"; };
+		CE8317DE11F19D025E5F710E5BB317B9 /* ConnectionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionProtocol.swift; path = "SignalR-Swift/Client/Protocols/ConnectionProtocol.swift"; sourceTree = "<group>"; };
+		D0781A44BEF1B757C8F78F3C5637F855 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		D18EE2A9AD97881AF0A94E2DD03D9454 /* SignalRSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SignalRSwift-Info.plist"; sourceTree = "<group>"; };
+		D1B0561941066851D7EEAC3E19475CEE /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		D7DE65CF06BF139A822851C4EC9DF1F2 /* Starscream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.debug.xcconfig; sourceTree = "<group>"; };
+		D7E6A2EBCCD348A1161E00A1D6E3FB76 /* WebSocketTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketTransport.swift; path = "SignalR-Swift/Transports/WebSocketTransport.swift"; sourceTree = "<group>"; };
+		DAE308DE6B082972D8FEEDACAB8CDE6B /* SignalRSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SignalRSwift-dummy.m"; sourceTree = "<group>"; };
+		DC3AA18CEEC38484ECD22F57F8E7B107 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		DDA55B3E73FB52BAD53AB7C76B42E050 /* Pods-Process Bot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Process Bot.debug.xcconfig"; sourceTree = "<group>"; };
+		DF23674D2E84215207E95BEACA3F82C5 /* Pods-Process Bot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Process Bot.release.xcconfig"; sourceTree = "<group>"; };
+		DF70CB54BBE9654B8386A3DC5442F64B /* Pods_Process_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Process_Bot.framework; path = "Pods-Process Bot.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07A0240FB7762F342940BDBA40CF82D /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		E17CC6732C6F6AFB4B10A0C03277DA9D /* Starscream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.release.xcconfig; sourceTree = "<group>"; };
+		E96CB8D723BB9808CDC4F362EB27D803 /* DLRadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = DLRadioButton/DLRadioButton.h; sourceTree = "<group>"; };
+		EFA09CE86559BB28A61828A74F91ECD7 /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
+		F1CFB37B8A8936E8831B3C10EDAABD69 /* DLRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLRadioButton.modulemap; sourceTree = "<group>"; };
+		F1D4D477B3F3E3B36E3D496B4F0CD147 /* ServerSentEventsTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerSentEventsTransport.swift; path = "SignalR-Swift/Transports/ServerSentEventsTransport.swift"; sourceTree = "<group>"; };
+		F48D5EAD574E41BE2986F01CC4F32AA8 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		F53B4A146BA74A75E56ACA449628DC3D /* ExpandableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-umbrella.h"; sourceTree = "<group>"; };
+		F8ECC7997DEFA46CB957C761CF5C67D5 /* SignalRSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SignalRSwift.debug.xcconfig; sourceTree = "<group>"; };
+		F9FAFFA7849229D7665D95019B900336 /* String+Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Dictionary.swift"; path = "SignalR-Swift/Extensions/String+Dictionary.swift"; sourceTree = "<group>"; };
+		FD31D3E6CD8D3BDB68B08BC09795AE2C /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		FDB5DF1871B4A457A7219B2F7B557657 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		090C1D63463ACF622287EFF9D5C9392D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50013C33D35EBAF31ACF3A8B3A9A3FB4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		444A7B18FA37C11FF9FCB99038295724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE4B91AD851E071859807667E804DBD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A3235D423CA08A52A61ACA68ED65AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				306BC61800067611636435BBC9591AE3 /* Foundation.framework in Frameworks */,
+				13870B4D41C6ED9BB7FB8F7AEBBD9401 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1558AF3B33E331AB1C3A37A28A25C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA38EF0020E2139FFB82A9E7E1E81890 /* Alamofire.framework in Frameworks */,
+				1AE0F37A497DB766FC91B1EF4A483E5B /* Foundation.framework in Frameworks */,
+				DE8496D090D3D2A7555832B806D1E6ED /* Starscream.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8842383EB79547C917FC66B72CA03ECC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D18D40D5B428042E414E93E6857713E /* Foundation.framework in Frameworks */,
+				F025D57494924368913E1D50936E4563 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93495F341ECBBD05D905D15AC73BDF65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DD7057C283F8116FD2D56D7734EB97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9727840973A9C2692E58F7089A7C243E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99487C04757ECF4F73FA1D4519CFD6D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3D1702BDA71CC7CDF78B3C8692920E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5501BBA0CC51AE65C46F9000C77D8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC915DF356EED4EDDDD883F3C0B55BAA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C51E9AEC9B7A7EBB2E6E791F56F5FC2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A2F428BBC64C9A04531C37B029D7F3F /* ExpandableCell.modulemap */,
+				810750C64EE00E4276B0129D21D5B11E /* ExpandableCell-dummy.m */,
+				8E8B28C02D2039EC0FB61975BD3125FF /* ExpandableCell-Info.plist */,
+				5554B679734BAB321321B88712AA462C /* ExpandableCell-prefix.pch */,
+				F53B4A146BA74A75E56ACA449628DC3D /* ExpandableCell-umbrella.h */,
+				2CDCE62EA81F46C398AF4919AF7F22A7 /* ExpandableCell.debug.xcconfig */,
+				7E2956629EC3151A15E559ADB081A7DF /* ExpandableCell.release.xcconfig */,
+				C584B867C75973452C38D3746A892927 /* ResourceBundle-ExpandableCell-ExpandableCell-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ExpandableCell";
+			sourceTree = "<group>";
+		};
+		187C447034AEEE405F1A7AE39A8D8BAA /* SignalRSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B810BF2AFFCD060DD6D5B702B5615624 /* AutoTransport.swift */,
+				91A528E34B3678796C2C8EB4C3108B0F /* ChunkBuffer.swift */,
+				99B48CBF488E725C3A4507D2D35FD609 /* ClientTransportProtocol.swift */,
+				191293ECDAB9A838D91E960DE5576944 /* Connection.swift */,
+				48E9867EAABCA066EB53864DDFB973F1 /* ConnectionDelegate.swift */,
+				CE8317DE11F19D025E5F710E5BB317B9 /* ConnectionProtocol.swift */,
+				BC1DAA38D100A3136268FD195638E70B /* ConnectionState.swift */,
+				0A2CF3EE7A414673C649135E37318B21 /* Dictionary+Json.swift */,
+				559E372885F17DA9D874EE9F9E5E6901 /* ExceptionHelper.swift */,
+				B7E51D4AA482097A27A47D1DED6D3084 /* HeartbeatMonitor.swift */,
+				3710130219FB246ACB36D911223BC1DD /* HttpTransport.swift */,
+				6D1CA888F0FE9DB48DB7D8BDE61B8031 /* HubConnection.swift */,
+				C1095E82176FB96F5F176F223108A183 /* HubConnectionProtocol.swift */,
+				1F9AE93FDAD608770996D115FCC41135 /* HubInvocation.swift */,
+				0B5AD54DC48E1F3C93F878360389961C /* HubProxy.swift */,
+				3E5AA8A8DECC42C678E0FC3F0181CFBC /* HubProxyProtocol.swift */,
+				89346CCAB68B4649F4B85B275B32E8CF /* HubResult.swift */,
+				3C236B971C09652C59D0878CB982A449 /* KeepAliveData.swift */,
+				750EDF20B228AC7C106D5C1B08C3C0F7 /* LongPollingTransport.swift */,
+				5CF63DD6A4809CEBDD609CF0DB781AFD /* NegotiationResponse.swift */,
+				B046EC8401A58AB7B8A90B7E97E4B008 /* ReceivedMessage.swift */,
+				CDA876E4DCB30EBA8378891FF8BBE329 /* ServerSentEvent.swift */,
+				F1D4D477B3F3E3B36E3D496B4F0CD147 /* ServerSentEventsTransport.swift */,
+				F9FAFFA7849229D7665D95019B900336 /* String+Dictionary.swift */,
+				1E1B05CFC477A762B57A206911F784AE /* Version.swift */,
+				19DB1CCAB288BA4E54FB4808CE50BA42 /* WebSocketConnectionInfo.swift */,
+				D7E6A2EBCCD348A1161E00A1D6E3FB76 /* WebSocketTransport.swift */,
+				F1C5400FE83843B8A94D7EF75A1C5E41 /* Support Files */,
+			);
+			name = SignalRSwift;
+			path = SignalRSwift;
+			sourceTree = "<group>";
+		};
+		1C1058459DCAD5EBA1B71DB3838DDA80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E2733A7AA27A6213975F2072C4BD1CA /* Alamofire */,
+				5B3179ABB01620945FCAEE3996390DB6 /* DLRadioButton */,
+				5D25BB8B0B178A95DA0A2D9CE29DB904 /* DropDown */,
+				67278A6FD10C7CA961480ACBC07E15F5 /* ExpandableCell */,
+				187C447034AEEE405F1A7AE39A8D8BAA /* SignalRSwift */,
+				586C47F3B5FCFCE86E0E85795A9DB5DA /* Starscream */,
+				CA8DEE236E306BA719DFA3AC7F13F87F /* TimeZonePicker */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E2733A7AA27A6213975F2072C4BD1CA /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				9EBFD81214D006D6B78A4A2DAF3C7C0B /* AFError.swift */,
+				7A51E87F0C0600A33E55AB899F1BA1AE /* Alamofire.swift */,
+				7A57A512FAC7F682EB8BD1BAAB2B6F8E /* DispatchQueue+Alamofire.swift */,
+				5AD4E1A4694049C70D26C24415906745 /* MultipartFormData.swift */,
+				821BEF01F63BC6B921AC8AD44EFCFEB6 /* NetworkReachabilityManager.swift */,
+				081D22DB55EA0EFE49F3FC36CB63FF71 /* Notifications.swift */,
+				FDB5DF1871B4A457A7219B2F7B557657 /* ParameterEncoding.swift */,
+				211304323C9B1B178D53811350E62BDA /* Request.swift */,
+				D0781A44BEF1B757C8F78F3C5637F855 /* Response.swift */,
+				2890BFDDC6910DC1214960B358D6E49B /* ResponseSerialization.swift */,
+				2FDDC0B870D55A924CB50AC727A6BB75 /* Result.swift */,
+				AB7B24EEE704027D1008C1551084E656 /* ServerTrustPolicy.swift */,
+				04920113B88A9BB0F2AF6DF68B87E737 /* SessionDelegate.swift */,
+				8C70B65393E350839FC04976821F1990 /* SessionManager.swift */,
+				1BFDF25C5B34F7268BC9CD36BC3AD1EB /* TaskDelegate.swift */,
+				316FB83EBE24B6446C38F61F7964588C /* Timeline.swift */,
+				02AAF0BA4D324EC3AA970F50C024E91D /* Validation.swift */,
+				B6896F45F89BFA8E4B789318A5D45218 /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		2767CF531E52A2D406829D508B8BFDAA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				38AD9B5AEABACB6003EB13DC4AD646CF /* DropDown.modulemap */,
+				D1B0561941066851D7EEAC3E19475CEE /* DropDown-dummy.m */,
+				EFA09CE86559BB28A61828A74F91ECD7 /* DropDown-Info.plist */,
+				717224B495580FB8EAC8B3FB9EA41CE1 /* DropDown-prefix.pch */,
+				0B7116563BEC4B9731074A179FB86261 /* DropDown-umbrella.h */,
+				5AE1BAB2E9D37EC7EB2C321FAC27225F /* DropDown.debug.xcconfig */,
+				3016E47422F5E62BA3678A648AFF8DFD /* DropDown.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DropDown";
+			sourceTree = "<group>";
+		};
+		27B8622592AEEF705D77A6A605C0753D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AC9A9F0B047567378B0BE781DE245A3 /* Pods-Process Bot */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		49A9E8E389F8E2A2255A32F4614D0A4E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DBE0AC87128C4572D8FDACD635BB559 /* CitiesAndTimeZones.json */,
+				65E22E5CBCD1D54309BA2F806CC59FCC /* TimeZonePicker.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4AC9A9F0B047567378B0BE781DE245A3 /* Pods-Process Bot */ = {
+			isa = PBXGroup;
+			children = (
+				2CE86E312ACAD89FDCB60872E3FBA900 /* Pods-Process Bot.modulemap */,
+				5C263EED869C4E3A2CE42F33EBF79726 /* Pods-Process Bot-acknowledgements.markdown */,
+				8DF44ACDD23D0A9F5DF906CE8E82151A /* Pods-Process Bot-acknowledgements.plist */,
+				A733D93D77F241A6CFFEC33D1CDA5D6E /* Pods-Process Bot-dummy.m */,
+				C8070FFAAD1687490E0FA5BF334F01EF /* Pods-Process Bot-frameworks.sh */,
+				4220AA766F5B2048D4D75B66D559DDFE /* Pods-Process Bot-Info.plist */,
+				C2DC0CAD7258221733D57879B51303B4 /* Pods-Process Bot-umbrella.h */,
+				DDA55B3E73FB52BAD53AB7C76B42E050 /* Pods-Process Bot.debug.xcconfig */,
+				DF23674D2E84215207E95BEACA3F82C5 /* Pods-Process Bot.release.xcconfig */,
+			);
+			name = "Pods-Process Bot";
+			path = "Target Support Files/Pods-Process Bot";
+			sourceTree = "<group>";
+		};
+		586C47F3B5FCFCE86E0E85795A9DB5DA /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				613439D571A9EC2C5A1AFB86A9AB86EC /* Compression.swift */,
+				B6EFE16718B6EF313D1A627D1897557B /* SSLClientCertificate.swift */,
+				9518CBF2F8585F7CDC67368D26C7E1B4 /* SSLSecurity.swift */,
+				B22BB2EC2C0653F7BAD595AFE4CD7639 /* WebSocket.swift */,
+				FB2651F570870C92C4B4E53041EC2326 /* Support Files */,
+			);
+			name = Starscream;
+			path = Starscream;
+			sourceTree = "<group>";
+		};
+		5B3179ABB01620945FCAEE3996390DB6 /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				E96CB8D723BB9808CDC4F362EB27D803 /* DLRadioButton.h */,
+				63FC163FA18A2CBF7CB53E743A79EF9D /* DLRadioButton.m */,
+				6CEE6A7891D63A369B67618575892432 /* Support Files */,
+			);
+			name = DLRadioButton;
+			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		5D25BB8B0B178A95DA0A2D9CE29DB904 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				BBAD73FAA7EE36FE6E04855164D90A91 /* DPDConstants.swift */,
+				C2B37E8C839099D28C97216FF9198962 /* DPDKeyboardListener.swift */,
+				2F4081E33F98D32A1D78269407B5DB0C /* DPDUIView+Extension.swift */,
+				900E57A8442E58A8AD67C2DBEE10CE90 /* DropDown.swift */,
+				FD31D3E6CD8D3BDB68B08BC09795AE2C /* DropDown+Appearance.swift */,
+				5B0403C645C395B543F6008030CF66BD /* DropDownCell.swift */,
+				7041E67130F40F78EE2FA00FA7302030 /* Resources */,
+				2767CF531E52A2D406829D508B8BFDAA /* Support Files */,
+			);
+			name = DropDown;
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		67278A6FD10C7CA961480ACBC07E15F5 /* ExpandableCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B266D0BDDA6C1884ADF1EB39E05265F /* ExpandableCell.swift */,
+				6A486A6C8E80DA36D37A9B8BA60DC236 /* ExpandableDelegate.swift */,
+				B6028E3D875A9345558A83A95329A6AE /* ExpandableProcessor.swift */,
+				93A02B96FC10039B5CBD18FC831E0D57 /* ExpandableStyle.swift */,
+				0533E1ECE6CA7A335C09439FE0CEF68F /* ExpandableTableView.swift */,
+				DC1E2244F3D2AD18C609CB3312872A8C /* Resources */,
+				0C51E9AEC9B7A7EBB2E6E791F56F5FC2 /* Support Files */,
+			);
+			name = ExpandableCell;
+			path = ExpandableCell;
+			sourceTree = "<group>";
+		};
+		6CEE6A7891D63A369B67618575892432 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1CFB37B8A8936E8831B3C10EDAABD69 /* DLRadioButton.modulemap */,
+				155BAB43ECD8C40DA8362E236879AF74 /* DLRadioButton-dummy.m */,
+				92644CE53CBB1B8B3ACFF909FE1C63FB /* DLRadioButton-Info.plist */,
+				415D5199BFB44654E3D0F5D5F00EF05A /* DLRadioButton-prefix.pch */,
+				0A8D03DE5F22A52CDB975A9B005FA5CD /* DLRadioButton-umbrella.h */,
+				6F835B79FAE19340E9FE5DC84EA610FE /* DLRadioButton.debug.xcconfig */,
+				0553FD17E154851A5F735E3074FBF625 /* DLRadioButton.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DLRadioButton";
+			sourceTree = "<group>";
+		};
+		7041E67130F40F78EE2FA00FA7302030 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A2B517B9BCC890F731ABCEE33814998 /* DropDownCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9410C3A2DC9C74C037D999B599C3BD47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */,
+				9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */,
+				3622F72FA63309E6C35F046F3EA39327 /* ExpandableCell.bundle */,
+				519799014C941762D5B22054194AB122 /* ExpandableCell.framework */,
+				DF70CB54BBE9654B8386A3DC5442F64B /* Pods_Process_Bot.framework */,
+				60291A6A9429D31B031E93E94C374738 /* SignalRSwift.framework */,
+				891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */,
+				5B1932420A01AB15788240186102EBB5 /* TimeZonePicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B30D71734C23A720B94AB825E3BB4319 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A60D3F459EFBCE91B5152CA7E2E8B07D /* Foundation.framework */,
+				9515D1CD3CD1B81F95A7E2D4D929DA7E /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B6896F45F89BFA8E4B789318A5D45218 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F48D5EAD574E41BE2986F01CC4F32AA8 /* Alamofire.modulemap */,
+				CC71474C5C2A78BDF9C092946F2DFC08 /* Alamofire-dummy.m */,
+				C35E1AFD75D7547CF4BE29A040CAF3D8 /* Alamofire-Info.plist */,
+				2C965F5494FAE116B8D52FA7BA73C490 /* Alamofire-prefix.pch */,
+				DC3AA18CEEC38484ECD22F57F8E7B107 /* Alamofire-umbrella.h */,
+				E07A0240FB7762F342940BDBA40CF82D /* Alamofire.debug.xcconfig */,
+				AB667EFDAEA33784F14B4FAB6FF5AF50 /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		C439B65E2EC78B6C4269C3D3849C0E66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABDAE761A0AC176CD2439577870D976F /* Alamofire.framework */,
+				AF0146D83F71FED6ECFD2608A018B3A6 /* Starscream.framework */,
+				B30D71734C23A720B94AB825E3BB4319 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA8DEE236E306BA719DFA3AC7F13F87F /* TimeZonePicker */ = {
+			isa = PBXGroup;
+			children = (
+				43EEC8578AAC42BF39AFF1B00710E412 /* CityCountryTimeZone.swift */,
+				9DB4D1519E259672F69A4582226E8631 /* TimeZonePickerDataSource.swift */,
+				2C4F9C55289AD76A5FDF1E9A9608663E /* TimeZonePickerDelegate.swift */,
+				6D2D3964A204CEF23E6125C8E8FF2B3B /* TimeZonePickerViewController.swift */,
+				49A9E8E389F8E2A2255A32F4614D0A4E /* Resources */,
+				E100B3270E85CA16B577E800176F9C97 /* Support Files */,
+			);
+			name = TimeZonePicker;
+			path = TimeZonePicker;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				C439B65E2EC78B6C4269C3D3849C0E66 /* Frameworks */,
+				1C1058459DCAD5EBA1B71DB3838DDA80 /* Pods */,
+				9410C3A2DC9C74C037D999B599C3BD47 /* Products */,
+				27B8622592AEEF705D77A6A605C0753D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DC1E2244F3D2AD18C609CB3312872A8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BDE267B90AD0EE9B091C17DEBFFCD3B /* ExpandableCell.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E100B3270E85CA16B577E800176F9C97 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				145267BA35E3DA2B271D047895A40D48 /* TimeZonePicker.modulemap */,
+				81C67F53332CBED57597844C3282384F /* TimeZonePicker-dummy.m */,
+				67B53C4447B5719D307151EA809D076F /* TimeZonePicker-Info.plist */,
+				7877C808B3DEF98F866C3267D96EA6DE /* TimeZonePicker-prefix.pch */,
+				763D61414D7BBE84711173809641DE37 /* TimeZonePicker-umbrella.h */,
+				1884D2933E0706E062D2D03276CC6A0C /* TimeZonePicker.debug.xcconfig */,
+				56AE427FA725954072E2F679D1586CDF /* TimeZonePicker.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TimeZonePicker";
+			sourceTree = "<group>";
+		};
+		F1C5400FE83843B8A94D7EF75A1C5E41 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADBB3F1FB5907BF014BF41679062FA36 /* SignalRSwift.modulemap */,
+				DAE308DE6B082972D8FEEDACAB8CDE6B /* SignalRSwift-dummy.m */,
+				D18EE2A9AD97881AF0A94E2DD03D9454 /* SignalRSwift-Info.plist */,
+				54526720D09862FE191FD738026A91AB /* SignalRSwift-prefix.pch */,
+				46B5279F38F372ACDE60DBB6196615C9 /* SignalRSwift-umbrella.h */,
+				F8ECC7997DEFA46CB957C761CF5C67D5 /* SignalRSwift.debug.xcconfig */,
+				B5F8283C5628D77C38E3BF3F3470E8AF /* SignalRSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SignalRSwift";
+			sourceTree = "<group>";
+		};
+		FB2651F570870C92C4B4E53041EC2326 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B09C8CBFC468E15A35354135258BF3B6 /* Starscream.modulemap */,
+				4EE206B12C997B1E687DAECD0BEA1759 /* Starscream-dummy.m */,
+				96CD1C9351C0B7771C9B03C000DF6005 /* Starscream-Info.plist */,
+				9E5E8EAA57C46829A7EE598C1ECB6E11 /* Starscream-prefix.pch */,
+				73760372117A9F6EDE5895C1360FD72D /* Starscream-umbrella.h */,
+				D7DE65CF06BF139A822851C4EC9DF1F2 /* Starscream.debug.xcconfig */,
+				E17CC6732C6F6AFB4B10A0C03277DA9D /* Starscream.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		042E21698549CC2D939AEF644300EA18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5219FA0606BFEE8F3BD0FA75BC65151 /* DLRadioButton.h in Headers */,
+				E29E7C160A42C37D9E557396D6450E4D /* DLRadioButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		236EA5EEC0319AEE91A3454C01DDFB68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE9CE67585FF0086FDBC959F4A1A39B2 /* TimeZonePicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2582784E4FA6A1AC5D23FC53AC3F6EE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BB5683F7D1AA8FB2F94DA252A664DB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9518195DB69E904D77247E0A55A0043C /* DropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		661E6DCAC0BD29FE4E737C2E0E43F559 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0B7E0E592D0C1573BE1837F0DBA2BB /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B82A4E970E5B5B8C70FF56690CEE0518 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C24CDE95BD926225B59F299D7C17E64 /* Pods-Process Bot-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07567D70CD1B61BF4975500291035E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36D947485EEFF7670DD61272AFDB287C /* ExpandableCell-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D902519CEABA19B7E5167B6DF8509C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D859537C26186EB5F1BFC31B8558443 /* SignalRSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		080916906CF38C9BA8FA4DEB79FF606F /* ExpandableCell-ExpandableCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F4AA8ABD0A7FC5571E1494691BC0FB /* Build configuration list for PBXNativeTarget "ExpandableCell-ExpandableCell" */;
+			buildPhases = (
+				C25F1C4CB8D9F8A3727C478456D73A91 /* Sources */,
+				A3D1702BDA71CC7CDF78B3C8692920E9 /* Frameworks */,
+				2F7CF4557511D18E1B593CD31AAA0CF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ExpandableCell-ExpandableCell";
+			productName = "ExpandableCell-ExpandableCell";
+			productReference = 3622F72FA63309E6C35F046F3EA39327 /* ExpandableCell.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1E6C4045913212CD35E82B99586FC32D /* SignalRSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77728AF48B88A64816CEA27661D6A315 /* Build configuration list for PBXNativeTarget "SignalRSwift" */;
+			buildPhases = (
+				D7D902519CEABA19B7E5167B6DF8509C /* Headers */,
+				66042C06719DC603325724631F22D5B4 /* Sources */,
+				6D1558AF3B33E331AB1C3A37A28A25C4 /* Frameworks */,
+				8FEF6DB3C825EEC800C73C8357211F46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AC8C9086EA0B09661C094FFEA0315A6 /* PBXTargetDependency */,
+				326325C02524908D79DA7F377B929327 /* PBXTargetDependency */,
+			);
+			name = SignalRSwift;
+			productName = SignalRSwift;
+			productReference = 60291A6A9429D31B031E93E94C374738 /* SignalRSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6603177D9E2F8B5BD47FF6C10D408C02 /* Pods-Process Bot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C6383F19B0089D0C67AF264979DA7E5 /* Build configuration list for PBXNativeTarget "Pods-Process Bot" */;
+			buildPhases = (
+				B82A4E970E5B5B8C70FF56690CEE0518 /* Headers */,
+				6A57080FB10E7B752C5C19676159FD2E /* Sources */,
+				444A7B18FA37C11FF9FCB99038295724 /* Frameworks */,
+				236AD3463E5A816D4B4C19DB9479B0FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD097C01FBA044A349C7DCBB0DB2E261 /* PBXTargetDependency */,
+				3A4F3E365351B86C33C6A8C6592FE454 /* PBXTargetDependency */,
+				A8CDB876E84257A92F6583A12B7A0D64 /* PBXTargetDependency */,
+				5A021223790069A88365F042A40D550D /* PBXTargetDependency */,
+				C6A2127A0CAF33916AFB8B8AD6B7BB90 /* PBXTargetDependency */,
+				095B1C7097B831A810AD78E6CFAE0C14 /* PBXTargetDependency */,
+				2866D409C1901FA4BB83FE699BA0D682 /* PBXTargetDependency */,
+			);
+			name = "Pods-Process Bot";
+			productName = "Pods-Process Bot";
+			productReference = DF70CB54BBE9654B8386A3DC5442F64B /* Pods_Process_Bot.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B6970662433D4A9BC53262D6F6CECCA /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				661E6DCAC0BD29FE4E737C2E0E43F559 /* Headers */,
+				C3964E2F643B40B36B9B548A2A8D1844 /* Sources */,
+				FD5501BBA0CC51AE65C46F9000C77D8C /* Frameworks */,
+				89910C018535CF62E144C26ED7378445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87AB35F442A65AB7A3F31FE027C26974 /* Build configuration list for PBXNativeTarget "DLRadioButton" */;
+			buildPhases = (
+				042E21698549CC2D939AEF644300EA18 /* Headers */,
+				491106F648A199B7352F838E2B5B107D /* Sources */,
+				93495F341ECBBD05D905D15AC73BDF65 /* Frameworks */,
+				8961E51E48F32A896073C1461708CB0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLRadioButton;
+			productName = DLRadioButton;
+			productReference = 3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE7558C5F434D4CDA7B7DF1DD7E8F9F0 /* TimeZonePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0904064A78751499569EDE70BFE63CF /* Build configuration list for PBXNativeTarget "TimeZonePicker" */;
+			buildPhases = (
+				236EA5EEC0319AEE91A3454C01DDFB68 /* Headers */,
+				251DC4373D83554BE325DDAADBA0B7C1 /* Sources */,
+				6A3235D423CA08A52A61ACA68ED65AC7 /* Frameworks */,
+				2D5B7BAF6E512094E77AA08127CB6D0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeZonePicker;
+			productName = TimeZonePicker;
+			productReference = 5B1932420A01AB15788240186102EBB5 /* TimeZonePicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBED57D13F9A2559E14BCD92E7CFF597 /* Build configuration list for PBXNativeTarget "DropDown" */;
+			buildPhases = (
+				2BB5683F7D1AA8FB2F94DA252A664DB8 /* Headers */,
+				FAFA782452D3B598A37FB459CD314120 /* Sources */,
+				9727840973A9C2692E58F7089A7C243E /* Frameworks */,
+				D0143B72ED2669C4E98A5B8BBCE72151 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DropDown;
+			productName = DropDown;
+			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				2582784E4FA6A1AC5D23FC53AC3F6EE2 /* Headers */,
+				2DDFD9AC10F181CD7130BDF5F9E0502B /* Sources */,
+				090C1D63463ACF622287EFF9D5C9392D /* Frameworks */,
+				473D3E892ABB6C798CFF290644259B34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1AF3B7650BDFBF8B76B95E5E445176F /* ExpandableCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FE2D5A468110FB36F418B5E8BEE6D4F /* Build configuration list for PBXNativeTarget "ExpandableCell" */;
+			buildPhases = (
+				D07567D70CD1B61BF4975500291035E4 /* Headers */,
+				7078B7E127ADC95EC42E6A3DA050F906 /* Sources */,
+				8842383EB79547C917FC66B72CA03ECC /* Frameworks */,
+				5EE5543B2ECA5C5F7E01C57B528CFD07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				129EE2D8CB507F369CA8E89BC7C8B238 /* PBXTargetDependency */,
+			);
+			name = ExpandableCell;
+			productName = ExpandableCell;
+			productReference = 519799014C941762D5B22054194AB122 /* ExpandableCell.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 9410C3A2DC9C74C037D999B599C3BD47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */,
+				E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */,
+				F1AF3B7650BDFBF8B76B95E5E445176F /* ExpandableCell */,
+				080916906CF38C9BA8FA4DEB79FF606F /* ExpandableCell-ExpandableCell */,
+				6603177D9E2F8B5BD47FF6C10D408C02 /* Pods-Process Bot */,
+				1E6C4045913212CD35E82B99586FC32D /* SignalRSwift */,
+				9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */,
+				DE7558C5F434D4CDA7B7DF1DD7E8F9F0 /* TimeZonePicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		236AD3463E5A816D4B4C19DB9479B0FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D5B7BAF6E512094E77AA08127CB6D0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE10781CD4816C0610A364A093E9504 /* CitiesAndTimeZones.json in Resources */,
+				73EC77ADBCBF3DBFEDE60C46E5D76D5A /* TimeZonePicker.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F7CF4557511D18E1B593CD31AAA0CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B26E80727B70E1D5EA36E87F8A597B /* ExpandableCell.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		473D3E892ABB6C798CFF290644259B34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EE5543B2ECA5C5F7E01C57B528CFD07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				204A6E95882F28B8C56A1E63556A7BE8 /* ExpandableCell.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8961E51E48F32A896073C1461708CB0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89910C018535CF62E144C26ED7378445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEF6DB3C825EEC800C73C8357211F46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0143B72ED2669C4E98A5B8BBCE72151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB3D83C05EC7793D23A1192C11B9F631 /* DropDownCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		251DC4373D83554BE325DDAADBA0B7C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				872DB3818CC377BD28AC81A21D17CCFA /* CityCountryTimeZone.swift in Sources */,
+				59E9DB7C9DC9293D44F0EF65A59BD092 /* TimeZonePicker-dummy.m in Sources */,
+				475691128B3B51EFDADB294899844DF3 /* TimeZonePickerDataSource.swift in Sources */,
+				B38A9B3101E438BE392289373767B554 /* TimeZonePickerDelegate.swift in Sources */,
+				3B8E5E375FAF798E1F36FEEF92BCA597 /* TimeZonePickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DDFD9AC10F181CD7130BDF5F9E0502B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */,
+				BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */,
+				1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */,
+				D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */,
+				1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */,
+				3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */,
+				132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */,
+				0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */,
+				98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */,
+				D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */,
+				E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */,
+				64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */,
+				F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */,
+				2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */,
+				931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */,
+				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
+				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
+				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		491106F648A199B7352F838E2B5B107D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9621251F99E5C334E250D62BDFE22C8B /* DLRadioButton.m in Sources */,
+				46076EBE819798CF04114E4BA095090B /* DLRadioButton-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66042C06719DC603325724631F22D5B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF745AFC94B80012F68AC149624E30C6 /* AutoTransport.swift in Sources */,
+				B38D2BDD2AC0AA6F8DE983EF8320F9C6 /* ChunkBuffer.swift in Sources */,
+				8B8FB66D09BCC13179A1974B91020AF2 /* ClientTransportProtocol.swift in Sources */,
+				0BE255B0F12A6FE61D9F0DD2FF3A11C3 /* Connection.swift in Sources */,
+				D1F2AFADFEDFAFBB13E35644186E80BE /* ConnectionDelegate.swift in Sources */,
+				85E55C1EBB154C552E16982727B49972 /* ConnectionProtocol.swift in Sources */,
+				54FA663EC5E9E49C2CE32C61E7167AD0 /* ConnectionState.swift in Sources */,
+				D1C950CF6B39A198D2DFEACE14C1937E /* Dictionary+Json.swift in Sources */,
+				6E00343A5B08C18A16AC4E5C6BDBA3A5 /* ExceptionHelper.swift in Sources */,
+				5AF0B9FD3947EC242B0AFC9EA6A07BB7 /* HeartbeatMonitor.swift in Sources */,
+				184883BB7718A0F19A03B3C7BB39424C /* HttpTransport.swift in Sources */,
+				3047CEAA36C4A19CF0FC8A99F3ECBFBA /* HubConnection.swift in Sources */,
+				6C5F1D9D3BD4ABEA54EF38F5B1D97B99 /* HubConnectionProtocol.swift in Sources */,
+				6517625BAD17D9C34B26DFEC721383E3 /* HubInvocation.swift in Sources */,
+				2D517F0637ABC10D02F7033D3CDFCD0F /* HubProxy.swift in Sources */,
+				949A420AEB01E21FEADC8A920E4866EE /* HubProxyProtocol.swift in Sources */,
+				530EFCC4A5FA58C173C5DB631BEF8551 /* HubResult.swift in Sources */,
+				C89BC636B61B8B40B3A129AADD02C8DA /* KeepAliveData.swift in Sources */,
+				B5E40858ECA001E3057D0A16845E86AD /* LongPollingTransport.swift in Sources */,
+				3B44CC99955EBBBEE30F4710ABA75312 /* NegotiationResponse.swift in Sources */,
+				BCE2EBCBB3B0FDA8DA53E6C7FAE5EA65 /* ReceivedMessage.swift in Sources */,
+				91AC93055033CC902753E358CE034668 /* ServerSentEvent.swift in Sources */,
+				636F6BD0BDEEA256239DB1562A8976ED /* ServerSentEventsTransport.swift in Sources */,
+				E88BA53738404755203022A231DA591B /* SignalRSwift-dummy.m in Sources */,
+				F911DC6F994B77A1C4C4B9219F0D99DE /* String+Dictionary.swift in Sources */,
+				E406A18B8D4B14E8083BB740BC8BA120 /* Version.swift in Sources */,
+				B988C34DF99CBE15FA966ED1A5E49BDB /* WebSocketConnectionInfo.swift in Sources */,
+				F0D41CC95EB50F532AFFA1FEF4803F84 /* WebSocketTransport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A57080FB10E7B752C5C19676159FD2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76128E3F24D482C5E94D3F32D38332A /* Pods-Process Bot-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7078B7E127ADC95EC42E6A3DA050F906 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F21833FFCFAC315D79510AA5E2564A /* ExpandableCell.swift in Sources */,
+				C43248DB5DC9F273F051EBFFEEDADB44 /* ExpandableCell-dummy.m in Sources */,
+				B6A20657E215DD9ECA06A019ABDA5868 /* ExpandableDelegate.swift in Sources */,
+				A1C41F00B8ED31CDEA9C10FBBB4955A0 /* ExpandableProcessor.swift in Sources */,
+				19B6BBF909BB0FA4C250AB18E694C3AD /* ExpandableStyle.swift in Sources */,
+				9D3A8391DC361E13DADFD6BDD8DB6534 /* ExpandableTableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25F1C4CB8D9F8A3727C478456D73A91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3964E2F643B40B36B9B548A2A8D1844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C9752B5899A0793645D063AD23B7AA /* Compression.swift in Sources */,
+				2FCEBF6DAE938366773A01F4C2AEBBDF /* SSLClientCertificate.swift in Sources */,
+				C75039E2CF0A5F9B8EA10302DFE8ED1D /* SSLSecurity.swift in Sources */,
+				FD5E139132FF9E9CF836962923C0C6E9 /* Starscream-dummy.m in Sources */,
+				3D043BAA2E7C4BC3F7B8368DD9832A02 /* WebSocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFA782452D3B598A37FB459CD314120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F515237FF94DAB4C8A15B7E33A3877B /* DPDConstants.swift in Sources */,
+				BA7BB2FF04CE1CAFC5238D1807EF0034 /* DPDKeyboardListener.swift in Sources */,
+				4A8FE4C4F6D45B41CE01A00D24C56961 /* DPDUIView+Extension.swift in Sources */,
+				842DFBB1471889C2CA329AE05620BBE7 /* DropDown.swift in Sources */,
+				6064C623428CE711C252E442741F81AB /* DropDown+Appearance.swift in Sources */,
+				95897DCFD4071A7D61AEAE1DA86BB539 /* DropDown-dummy.m in Sources */,
+				361F5CE2807CBD530C8C6E63FD245F5A /* DropDownCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		095B1C7097B831A810AD78E6CFAE0C14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */;
+			targetProxy = 2DDF66BA7D2792270826D4724C122EAE /* PBXContainerItemProxy */;
+		};
+		129EE2D8CB507F369CA8E89BC7C8B238 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ExpandableCell-ExpandableCell";
+			target = 080916906CF38C9BA8FA4DEB79FF606F /* ExpandableCell-ExpandableCell */;
+			targetProxy = 6F4DD6E2CFB6780B46EAF574492604A9 /* PBXContainerItemProxy */;
+		};
+		2866D409C1901FA4BB83FE699BA0D682 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TimeZonePicker;
+			target = DE7558C5F434D4CDA7B7DF1DD7E8F9F0 /* TimeZonePicker */;
+			targetProxy = A6796F841567BA2D7ABD74C3D0C9ADC7 /* PBXContainerItemProxy */;
+		};
+		2AC8C9086EA0B09661C094FFEA0315A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = AF208AA704D20CAD72CE00846D8B5F60 /* PBXContainerItemProxy */;
+		};
+		326325C02524908D79DA7F377B929327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */;
+			targetProxy = 3BC227642A58CE460B45A6A6588E43B0 /* PBXContainerItemProxy */;
+		};
+		3A4F3E365351B86C33C6A8C6592FE454 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DLRadioButton;
+			target = BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */;
+			targetProxy = C595B378D686325A661A18588B7A14EC /* PBXContainerItemProxy */;
+		};
+		5A021223790069A88365F042A40D550D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ExpandableCell;
+			target = F1AF3B7650BDFBF8B76B95E5E445176F /* ExpandableCell */;
+			targetProxy = 9C664566FD6E491E6BA5E8A033BCE80C /* PBXContainerItemProxy */;
+		};
+		A8CDB876E84257A92F6583A12B7A0D64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropDown;
+			target = E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */;
+			targetProxy = 9957B70BDC5DDB4B0C0210EFA1242254 /* PBXContainerItemProxy */;
+		};
+		C6A2127A0CAF33916AFB8B8AD6B7BB90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SignalRSwift;
+			target = 1E6C4045913212CD35E82B99586FC32D /* SignalRSwift */;
+			targetProxy = 64CC1888EB807D4B4670ADF6DDCFB00B /* PBXContainerItemProxy */;
+		};
+		FD097C01FBA044A349C7DCBB0DB2E261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = E4B262BEC4D2B7C42B07C19A15AE3D93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		173BEE1F540EC77D768AE5EF2EDDBD98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17CC6732C6F6AFB4B10A0C03277DA9D /* Starscream.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4A17D27FFBCE427192C281661D3F5767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AE1BAB2E9D37EC7EB2C321FAC27225F /* DropDown.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				PRODUCT_MODULE_NAME = DropDown;
+				PRODUCT_NAME = DropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4FCE3A4CC32B2927810AD453055599FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8ECC7997DEFA46CB957C761CF5C67D5 /* SignalRSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SignalRSwift/SignalRSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SignalRSwift/SignalRSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SignalRSwift/SignalRSwift.modulemap";
+				PRODUCT_MODULE_NAME = SignalRSwift;
+				PRODUCT_NAME = SignalRSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56778AB9638E4EE10CBC7EF1681C2AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F835B79FAE19340E9FE5DC84EA610FE /* DLRadioButton.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/DLRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B82FA55F6A12DBC8196D07B0C1EEB40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6C4C540B087A95F10E081755C931F648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CDCE62EA81F46C398AF4919AF7F22A7 /* ExpandableCell.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ExpandableCell";
+				IBSC_MODULE = ExpandableCell;
+				INFOPLIST_FILE = "Target Support Files/ExpandableCell/ResourceBundle-ExpandableCell-ExpandableCell-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ExpandableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6C6178559BD9074C26E073DF5769DB42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		70445D2836B0DC6472FC75CAFC28AACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E2956629EC3151A15E559ADB081A7DF /* ExpandableCell.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ExpandableCell/ExpandableCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ExpandableCell/ExpandableCell-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ExpandableCell/ExpandableCell.modulemap";
+				PRODUCT_MODULE_NAME = ExpandableCell;
+				PRODUCT_NAME = ExpandableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7A990D4D7A394E906F2DE82D639771CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB667EFDAEA33784F14B4FAB6FF5AF50 /* Alamofire.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D3B5F552E62D8E9659E56118F15D1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CDCE62EA81F46C398AF4919AF7F22A7 /* ExpandableCell.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ExpandableCell/ExpandableCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ExpandableCell/ExpandableCell-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ExpandableCell/ExpandableCell.modulemap";
+				PRODUCT_MODULE_NAME = ExpandableCell;
+				PRODUCT_NAME = ExpandableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B1C8E3D7F67A9235AA20B7857FC1731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7DE65CF06BF139A822851C4EC9DF1F2 /* Starscream.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B28DAA7DDFFF9A20AD710664AC96ADD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3016E47422F5E62BA3678A648AFF8DFD /* DropDown.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				PRODUCT_MODULE_NAME = DropDown;
+				PRODUCT_NAME = DropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93AD64353C65D45C0D4197F9ECAD786D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07A0240FB7762F342940BDBA40CF82D /* Alamofire.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6D8BE935CA37ABC3C520B5A40E92CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF23674D2E84215207E95BEACA3F82C5 /* Pods-Process Bot.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Process Bot/Pods-Process Bot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Process Bot/Pods-Process Bot.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AEFF88FDB387939B46E0336D9F6E581C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0553FD17E154851A5F735E3074FBF625 /* DLRadioButton.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/DLRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE93EAD5A667323669DAC081B20DA7CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F8283C5628D77C38E3BF3F3470E8AF /* SignalRSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SignalRSwift/SignalRSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SignalRSwift/SignalRSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SignalRSwift/SignalRSwift.modulemap";
+				PRODUCT_MODULE_NAME = SignalRSwift;
+				PRODUCT_NAME = SignalRSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D194E1E30068972CE52A0FE39D518B44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56AE427FA725954072E2F679D1586CDF /* TimeZonePicker.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TimeZonePicker/TimeZonePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TimeZonePicker/TimeZonePicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TimeZonePicker/TimeZonePicker.modulemap";
+				PRODUCT_MODULE_NAME = TimeZonePicker;
+				PRODUCT_NAME = TimeZonePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2035A0DA875C2A4B6F93537B9CED72D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDA55B3E73FB52BAD53AB7C76B42E050 /* Pods-Process Bot.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Process Bot/Pods-Process Bot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Process Bot/Pods-Process Bot.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E810E60C8C750F227A42BD8704908AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1884D2933E0706E062D2D03276CC6A0C /* TimeZonePicker.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TimeZonePicker/TimeZonePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TimeZonePicker/TimeZonePicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TimeZonePicker/TimeZonePicker.modulemap";
+				PRODUCT_MODULE_NAME = TimeZonePicker;
+				PRODUCT_NAME = TimeZonePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F09A396CAF51DB35CA4F0C9073608C67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E2956629EC3151A15E559ADB081A7DF /* ExpandableCell.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ExpandableCell";
+				IBSC_MODULE = ExpandableCell;
+				INFOPLIST_FILE = "Target Support Files/ExpandableCell/ResourceBundle-ExpandableCell-ExpandableCell-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ExpandableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15F4AA8ABD0A7FC5571E1494691BC0FB /* Build configuration list for PBXNativeTarget "ExpandableCell-ExpandableCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4C540B087A95F10E081755C931F648 /* Debug */,
+				F09A396CAF51DB35CA4F0C9073608C67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B6970662433D4A9BC53262D6F6CECCA /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B1C8E3D7F67A9235AA20B7857FC1731 /* Debug */,
+				173BEE1F540EC77D768AE5EF2EDDBD98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FE2D5A468110FB36F418B5E8BEE6D4F /* Build configuration list for PBXNativeTarget "ExpandableCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3B5F552E62D8E9659E56118F15D1A1 /* Debug */,
+				70445D2836B0DC6472FC75CAFC28AACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6178559BD9074C26E073DF5769DB42 /* Debug */,
+				5B82FA55F6A12DBC8196D07B0C1EEB40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77728AF48B88A64816CEA27661D6A315 /* Build configuration list for PBXNativeTarget "SignalRSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FCE3A4CC32B2927810AD453055599FE /* Debug */,
+				BE93EAD5A667323669DAC081B20DA7CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87AB35F442A65AB7A3F31FE027C26974 /* Build configuration list for PBXNativeTarget "DLRadioButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56778AB9638E4EE10CBC7EF1681C2AD8 /* Debug */,
+				AEFF88FDB387939B46E0336D9F6E581C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C6383F19B0089D0C67AF264979DA7E5 /* Build configuration list for PBXNativeTarget "Pods-Process Bot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2035A0DA875C2A4B6F93537B9CED72D /* Debug */,
+				A6D8BE935CA37ABC3C520B5A40E92CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0904064A78751499569EDE70BFE63CF /* Build configuration list for PBXNativeTarget "TimeZonePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E810E60C8C750F227A42BD8704908AC5 /* Debug */,
+				D194E1E30068972CE52A0FE39D518B44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93AD64353C65D45C0D4197F9ECAD786D /* Debug */,
+				7A990D4D7A394E906F2DE82D639771CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBED57D13F9A2559E14BCD92E7CFF597 /* Build configuration list for PBXNativeTarget "DropDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A17D27FFBCE427192C281661D3F5767 /* Debug */,
+				8B28DAA7DDFFF9A20AD710664AC96ADD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

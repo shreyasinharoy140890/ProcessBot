@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="307" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxf-F7-0XE">
-                            <rect key="frame" x="20" y="102" width="267" height="100"/>
+                            <rect key="frame" x="20" y="70" width="267" height="100"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_pic5" translatesAutoresizingMaskIntoConstraints="NO" id="fI5-yb-lmR">
                                     <rect key="frame" x="5" y="23" width="61" height="54"/>
@@ -36,15 +36,15 @@
                                         <constraint firstAttribute="width" secondItem="fI5-yb-lmR" secondAttribute="height" multiplier="61:54" id="CWr-qg-Hzg"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronit Roy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-dt-YuR">
-                                    <rect key="frame" x="74" y="23" width="185" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-dt-YuR">
+                                    <rect key="frame" x="74" y="23" width="185" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronit.roy@intelgic.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ct-Pw-amq">
-                                    <rect key="frame" x="74" y="54" width="185" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ct-Pw-amq">
+                                    <rect key="frame" x="74" y="33" width="185" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -64,8 +64,8 @@
                                 <constraint firstItem="fI5-yb-lmR" firstAttribute="leading" secondItem="bxf-F7-0XE" secondAttribute="leading" constant="5" id="yxA-Jh-IgY"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nNT-88-XsL">
-                            <rect key="frame" x="0.0" y="240" width="267" height="656"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nNT-88-XsL" customClass="ExpandableTableView" customModule="ExpandableCell">
+                            <rect key="frame" x="0.0" y="208" width="267" height="688"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
@@ -74,7 +74,7 @@
                         <constraint firstItem="nNT-88-XsL" firstAttribute="leading" secondItem="83h-5m-lRD" secondAttribute="leading" id="34L-9Q-4UG"/>
                         <constraint firstAttribute="trailing" secondItem="nNT-88-XsL" secondAttribute="trailing" constant="40" id="OEj-Nh-BXH"/>
                         <constraint firstItem="nNT-88-XsL" firstAttribute="top" secondItem="bxf-F7-0XE" secondAttribute="bottom" constant="38" id="Ra3-0V-4d6"/>
-                        <constraint firstItem="bxf-F7-0XE" firstAttribute="top" secondItem="83h-5m-lRD" secondAttribute="top" constant="102" id="afA-Ct-VpC"/>
+                        <constraint firstItem="bxf-F7-0XE" firstAttribute="top" secondItem="83h-5m-lRD" secondAttribute="top" constant="70" id="afA-Ct-VpC"/>
                         <constraint firstItem="bxf-F7-0XE" firstAttribute="width" secondItem="83h-5m-lRD" secondAttribute="width" multiplier="0.869707" id="iGt-wF-Ftc"/>
                         <constraint firstItem="bxf-F7-0XE" firstAttribute="leading" secondItem="83h-5m-lRD" secondAttribute="leading" constant="20" id="sto-NQ-9JJ"/>
                         <constraint firstAttribute="bottom" secondItem="nNT-88-XsL" secondAttribute="bottom" id="xVL-3X-oJ4"/>

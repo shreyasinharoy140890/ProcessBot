@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-Regular.otf">
+            <string>Aileron-Regular</string>
+        </array>
+        <array key="Aileron-SemiBold.otf">
+            <string>Aileron-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RobotVC" customModule="Process_Bot" customModuleProvider="target">
             <connections>
@@ -47,9 +55,9 @@
                                         <action selector="btnShowMenu:" destination="-1" eventType="touchUpInside" id="SMd-Sl-tdI"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Worker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzS-NU-11n">
-                                    <rect key="frame" x="58.333333333333329" y="9.3333333333333339" width="106.99999999999999" height="20.333333333333329"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzS-NU-11n">
+                                    <rect key="frame" x="58.333333333333329" y="9.6666666666666625" width="44.666666666666671" height="19.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -58,7 +66,10 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="h1r-tQ-m78" secondAttribute="height" multiplier="1:0.8" id="sfy-fG-URR"/>
                                     </constraints>
-                                    <state key="normal" image="floting_robot_icon"/>
+                                    <state key="normal" image="directory-folder"/>
+                                    <connections>
+                                        <action selector="buttonTapWithSender:" destination="-1" eventType="touchUpInside" id="Zs7-8D-q5r"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -85,9 +96,9 @@
                                                 <constraint firstAttribute="width" secondItem="ucN-0s-L8r" secondAttribute="height" multiplier="1:1" id="YWR-V6-jaL"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-Jm-R3b">
-                                            <rect key="frame" x="31" y="18.666666666666671" width="90" height="17"/>
-                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published Robots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-Jm-R3b">
+                                            <rect key="frame" x="31" y="21" width="90" height="12.333333333333336"/>
+                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -123,8 +134,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goC-e3-lTF">
-                                            <rect key="frame" x="31" y="17" width="90" height="18"/>
-                                            <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="13"/>
+                                            <rect key="frame" x="31" y="19.666666666666671" width="90" height="12.333333333333336"/>
+                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -158,9 +169,9 @@
                                                 <constraint firstAttribute="width" secondItem="9hm-MY-7i7" secondAttribute="height" multiplier="1:1" id="U5v-Vn-RFb"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scheduled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3il-43-Usd">
-                                            <rect key="frame" x="31" y="17" width="90" height="18"/>
-                                            <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="13"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduled" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3il-43-Usd">
+                                            <rect key="frame" x="31" y="19.666666666666671" width="90" height="12.333333333333336"/>
+                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -237,6 +248,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcs-oq-GNf">
                                     <rect key="frame" x="0.0" y="2" width="193" height="34.666666666666664"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="10"/>
                                     <state key="normal" title="Action">
                                         <color key="titleColor" systemColor="labelColor"/>
                                     </state>
@@ -246,6 +258,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0l-tt-zah">
                                     <rect key="frame" x="201" y="2" width="193" height="34.666666666666664"/>
+                                    <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="10"/>
                                     <state key="normal" title="Log History">
                                         <color key="titleColor" systemColor="labelColor"/>
                                     </state>
@@ -304,7 +317,7 @@
     </objects>
     <resources>
         <image name="action_icon_1" width="63" height="54"/>
-        <image name="floting_robot_icon" width="212" height="212"/>
+        <image name="directory-folder" width="96" height="96"/>
         <image name="menu_icon" width="70" height="52"/>
         <image name="published_icon_1" width="62" height="55"/>
         <image name="schdule_icon1" width="48" height="56"/>
